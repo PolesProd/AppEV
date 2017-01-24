@@ -4,24 +4,26 @@
     <meta charset="utf-8">
     <title>App Espaces Verts</title>
     <meta name="description" content="Une application de gestion des espaces verts.">
-    <meta name="viewport" content="width=device-with, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--- CSS --->
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="style.css">
-    <!--- Holder JS --->
-    <script src="../bower_components/holderjs/holder.js"></script>
     <!--- Google Maps API --->
-    <script src="https://maps.googleapis.com/maps/api/js?key=MA_CLE_API"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBHEcrTT2b64rkhUuwSmxf3BNsjOH7_gs"></script>
+    <!--- Source JS --->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-route/angular-route.min.js"></script>
+    <script src="../bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
     <!--- Modernizr --->
     <script src="../bower_components/modernizr/bin/modernizr"></script>
-    <!--- Source JS --->
-    <script src="../bower_components/jquery/dist/jquery.js"></script>
-    <script src="../bower_components/angular/angular.js"></script>
-    <script src="../bower_components/angular-route/angular-route.js"></script>
-    <script src="../bower_components/angularjs-geolocation/angularjs-geolocation.min.js"></script>
+    <!--- Angular Scripts --->
+    <script src="js/app.js"></script>
+    <script src="js/addCtrl.js"></script>
+    <script src="js/gservice.js"></script>
   </head>
 
-  <body>
+  <body ng-controller="addCtrl">
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
@@ -35,9 +37,7 @@
       <div class="row content">
         <!--- Google Map --->
         <div class="col-md-7">
-          <div id="map">
-            <img src="holder.js/645x645" alt="">
-          </div>
+          <div id="map" style="width:645px; height:645px;"></div>
           <!--- Panneau latéral --->
           <div class="col-md-5">
             <div class="panel panel-default">
@@ -102,7 +102,7 @@
                   </div>
                   <!--- Bouton de soumission. Notez qu'il est rattaché à la fonction createUser() du model addCtrl.
                      Notez également la logique ng-disabled qui empêche les prévisions précoces. -->
-                  <button type="submit" class="btn btn-danger btn-block" ng-disabled="addForm.$invallid">Envoyer</button>
+                  <button type="submit" class="btn btn-danger btn-block" ng-click="createUser();" ng-disabled="addForm.$invallid">Envoyer</button>
                 </form>
               </div>
             </div>
