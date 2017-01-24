@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html class="no-js" ng-app="AppEV">
+  <head>
+    <meta charset="utf-8">
+    <title>App Espaces Verts</title>
+    <meta name="description" content="Une application de gestion des espaces verts.">
+    <meta name="viewport" content="width=device-with, initial-scale=1">
+    <!--- CSS --->
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="style.css">
+    <!--- Holder JS --->
+    <script src="../bower_components/holderjs/holder.js"></script>
+    <!--- Google Maps API --->
+    <script src="https://maps.googleapis.com/maps/api/js?key=MA_CLE_API"></script>
+    <!--- Modernizr --->
+    <script src="../bower_components/modernizr/bin/modernizr"></script>
+    <!--- Source JS --->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+    <script src="../bower_components/angularjs-geolocation/angularjs-geolocation.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li active><a href="#">Rejoindre l'équipe</a></li>
+          <li disabled><a href="#">Trouver une équipe</a></li>
+        </ul>
+
+        <h3 class="text-muted">L'App Espaces Verts</h3>
+      </div>
+      <!--- Carte et Panneau latéral --->
+      <div class="row content">
+        <!--- Google Map --->
+        <div class="col-md-7">
+          <div id="map">
+            <img src="holder.js/645x645" alt="">
+          </div>
+          <!--- Panneau latéral --->
+          <div class="col-md-5">
+            <div class="panel panel-default">
+              <!--- Titre du Panneau --->
+              <div class="panel-heading">
+                <h2 class="panel-title text-center">Rejoindre l'équipe LePoleS <span class="glyphicon glyphicon-map-marker"></span></h2>
+              </div>
+              <!--- Corps du Panneau --->
+              <div class="panel-body">
+                <!--- Crée un formulaire (novalidate désactive la validation HTML, contrôle Angular) --->
+                <form name="addForm" novalidate="">
+                  <!--- Boîtes de texte et autres entrées utilisateur. Note ng-model lie les valeurs à Angular $scope --->
+                  <div class="form-group">
+                    <label for="username">Nom <span class="badge">Tous les champs sont requis</span></label>
+                    <input type="text" class="form-control" id="username" placeholder="OldandGold" ng-model="formData.username" required="">
+                  </div>
+                  <label class="radio control label">Genre</label>
+                  <div class="radio">
+                      <label>
+                          <input type="radio" name="optionsRadios" id="radiomale" value="Male" ng-model="formData.gender">
+                          Homme
+                      </label>
+                  </div>
+
+                  <div class="radio" required>
+                      <label>
+                          <input type="radio" name="optionsRadios" id="radiofemale" value="Female" ng-model="formData.gender">
+                          Femme
+                      </label>
+                  </div>
+
+                  <div class="radio">
+                      <label>
+                          <input type="radio" name="optionsRadios" id="radioother" value="What's it to ya?" ng-model="formData.gender">
+                          Qu'est-ce que c'est pour vous?
+                      </label>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="age">Âge</label>
+                      <input type="number" class="form-control" id="age" placeholder="72" ng-model="formData.age" required>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="language">Langue préférée</label>
+                      <input type="text" class="form-control" id="language" placeholder="Fortran" ng-model="formData.favlang" required>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="latitude">Latitude</label>
+                      <input type="text" class="form-control" id="latitude" value="39.500" ng-model="formData.latitude" readonly>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="longitude">Longitude</label>
+                      <input type="text" class="form-control" id="longitude" value="-98.350" ng-model="formData.longitude" readonly>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="verified">HTML5 Emplacement vérifié? <span><button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-refresh"></span></button></span></label>
+                      <input type="text" class="form-control" id="verified" placeholder= "Nope (Thanks for spamming my map...)" ng-model="formData.htmlverified" readonly>
+                  </div>
+                  <!--- Bouton de soumission. Notez qu'il est rattaché à la fonction createUser() du model addCtrl.
+                     Notez également la logique ng-disabled qui empêche les prévisions précoces. -->
+                  <button type="submit" class="btn btn-danger btn-block" ng-disabled="addForm.$invallid">Envoyer</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--- Footer --->
+        <div class="footer">
+          <p class="text-center">
+            <span class="glyphicon glyphicon-check"></span>Créé par LePoleS Prod pour la Municipalité de Villeneve La Garenne - <a href="http://lepoles.org">LePoleS</a> | <a href="https://github.com/PolesProd/AppEV">Repo Github</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
