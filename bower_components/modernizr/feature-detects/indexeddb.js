@@ -16,12 +16,7 @@ define(['Modernizr', 'prefixed'], function(Modernizr, prefixed) {
   // - Firefox shipped moz_indexedDB before FF4b9, but since then has been mozIndexedDB
   // For speed, we don't test the legacy (and beta-only) indexedDB
 
-  var indexeddb;
-  try {
-    indexeddb = prefixed('indexedDB', window);
-  } catch (e) {
-  }
-
+  var indexeddb = prefixed('indexedDB', window);
   Modernizr.addTest('indexeddb', !!indexeddb);
 
   if (!!indexeddb) {

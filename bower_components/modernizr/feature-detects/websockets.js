@@ -10,7 +10,7 @@
   ],
   "notes": [{
     "name": "CLOSING State and Spec",
-    "href": "https://www.w3.org/TR/websockets/#the-websocket-interface"
+    "href": "http://www.w3.org/TR/websockets/#the-websocket-interface"
   }],
   "polyfills": [
     "sockjs",

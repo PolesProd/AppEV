@@ -9,12 +9,12 @@ define(['isSVG'], function(isSVG) {
   if (!isSVG) {
 
     /**
-     * @preserve HTML5 Shiv 3.7.3 | @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
+     * @preserve HTML5 Shiv 3.7.2 | @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
      */
     ;(function(window, document) {
       /*jshint evil:true */
       /** version */
-      var version = '3.7.3';
+      var version = '3.7.2';
 
       /** Preset options */
       var options = window.html5 || {};
@@ -527,11 +527,7 @@ define(['isSVG'], function(isSVG) {
       // shiv for print
       shivPrint(document);
 
-      if(typeof module == 'object' && module.exports){
-        module.exports = html5;
-      }
-
-    }(typeof window !== "undefined" ? window : this, document));
+    }(this, document));
   }
 
   return html5;

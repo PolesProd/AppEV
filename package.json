@@ -1,30 +1,15 @@
 {
-  "name": "appev",
-  "version": "0.1.0",
-  "description": "A app for the management of greens spaces",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-     "start": "nodemon server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "\u0016https://github.com/PolesProd/AppEV.git"
-  },
-  "keywords": [
-    "MongoDB",
-    "Express",
-    "Angullar\u001b[D\u001b[\u001b[\u001b[C\u001b[C\u001b[D\u001b[CarJS",
-    "NodeJS"
-  ],
-  "author": "LePole Prod\u001b[D\u001b[D\u001b[D\u001b[D\u001b[DS Prod",
-  "license": "UNLICENCED",
-  "dependencies": {
-    "body-parser": "^1.16.0",
-    "express": "^4.14.0",
-    "jsonwebtoken": "^7.2.1",
-    "method-override": "^2.3.7",
-    "mongoose": "^4.7.8",
-    "morgan": "^1.7.0"
-  }
+    "name": "MeanMapsApp",
+    "version": "1.0.0",
+    "description": "Demo app showing the use of Google Maps in MEAN Apps",
+    "main": "server.js",
+    "author": "Ahmed Haque",
+    "dependencies" : {
+        "express"    : "~4.7.2",
+        "mongoose"   : "~4.1.0",
+        "morgan"     : "~1.2.2",
+        "body-parser": "~1.5.2",
+        "jsonwebtoken": "^5.0.2",
+        "method-override": "~2.1.2"
+    }
 }
