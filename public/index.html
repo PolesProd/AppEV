@@ -8,8 +8,6 @@
     <!--- CSS --->
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="style.css">
-    <!--- Google Maps API --->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBHEcrTT2b64rkhUuwSmxf3BNsjOH7_gs"></script>
     <!--- Source JS --->
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
     <script src="../bower_components/angular/angular.min.js"></script>
@@ -108,6 +106,20 @@
             </div>
           </div>
         </div>
+
+        <script type="text/javascript">
+        var map;
+        function initMap() {
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 48.936, lng: 2.3247},
+            zoom: 15
+          });
+        }
+        </script>
+
+        <!--- Google Maps API --->
+        <script async defer  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBHEcrTT2b64rkhUuwSmxf3BNsjOH7_gs&callback=initMap"></script>
+
         <!--- Footer --->
         <div class="footer">
           <p class="text-center">
