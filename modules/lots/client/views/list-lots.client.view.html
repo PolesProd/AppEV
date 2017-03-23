@@ -1,0 +1,22 @@
+<section>
+  <div class="page-header">
+    <h1>Lots</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="lot in vm.lots"
+       ui-sref="lots.view({ lotId: lot._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="lot.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="lot.user" ng-bind="lot.user.displayName"></span>
+        <span ng-if="!lot.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="lot.name"></h4>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.lots.$resolved && !vm.lots.length">
+    No Lots yet, why don't you <a ui-sref="lots.create">create one</a>?
+  </div>
+</section>

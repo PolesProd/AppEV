@@ -1,0 +1,84 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.lot._id ? 'Edit Lot' : 'New Lot'}}</h1>
+  </div>
+
+  <div class="col-md-12">
+    <form name="vm.form.lotForm" class="form-horizontal" ng-submit="vm.save(vm.form.lotForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Nom:</label>
+          <input name="name" type="text" ng-model="vm.lot.name" id="name" class="form-control" placeholder="Name" required>
+          <div ng-messages="vm.form.lotForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Lot name is required.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="number">N° du lot:</label>
+          <input name="number" type="number" ng-model="vm.lot.number" id="number" class="form-control" required>
+          <div ng-messages="vm.form.lotForm.number.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Le numéro du lot est requis.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="description">Description:</label>
+          <textarea name="description" type="text" ng-model="vm.lot.description" id="description" class="form-control" placeholder="Description du lot" required></textarea>
+          <div ng-messages="vm.form.lotForm.description.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">La description du lot est requiselocation.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="location">Lieu:</label>
+          <input name="location" type="number" ng-model="vm.lot.location" id="location" class="form-control" placeholder="Lieu" required>
+          <div ng-messages="vm.form.lotForm.location.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">La localisation du lot est requise.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="nature">Nature de l'intervention:</label>
+          <input name="nature" type="text" ng-model="vm.lot.nature" id="nature" class="form-control" placeholder="Ex: Tonte, Désherbage" required>
+          <div ng-messages="vm.form.lotForm.nature.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">La nature de l'intervention est requise.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="frequence">Fréquence de l'intervention</label>
+          <input name="frequence" type="number" ng-model="vm.lot.frequence" id="frequence" class="form-control" placeholder="Name" required>
+          <div ng-messages="vm.form.lotForm.frequence.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">La fréquence de l'intervention est requise.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="finition">Type de finition:</label>
+          <input name="finition" type="text" ng-model="vm.lot.finition" id="finition" class="form-control" placeholder="Name" required>
+          <div ng-messages="vm.form.lotForm.finition.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Le type de finition est requis.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="surface">Type de surface:</label>
+          <input name="surface" type="text" ng-model="vm.lot.surface" id="surface" class="form-control" placeholder="Name" required>
+          <div ng-messages="vm.form.lotForm.surface.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Le type de surface est requis.</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.lot._id ? 'Update' : 'Create'}}</button>
+        </div>
+
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+
+      </fieldset>
+    </form>
+  </div>
+</section>
