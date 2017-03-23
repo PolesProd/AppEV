@@ -11,8 +11,8 @@
     "url": "https://github.com/PolesProd/AppEV.git"
   },
   "engines": {
-    "node": ">=0.10.28",
-    "npm": ">=1.4.28"
+    "node": "6.9.5",
+    "npm": "3.10.10"
   },
   "scripts": {
     "start": "grunt",
@@ -42,6 +42,7 @@
     "grunt-cli": "~0.1.13",
     "helmet": "~0.9.1",
     "jasmine-core": "^2.3.4",
+    "kerberos": "0.0.23",
     "lodash": "^3.10.0",
     "method-override": "^2.3.3",
     "mocha": "~1.20.0",
