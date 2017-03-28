@@ -1,0 +1,37 @@
+/*Layout*/
+header.navbar.navbar-inverse.ng-scope{
+  width:40%;
+  display: inline-block;
+  float: right;
+}
+.container{
+  max-width: 100%;
+}
+.map{
+  float: left;
+  width: 60%;
+  display: inline-block;}
+.content{
+  margin-top: 0;
+  vertical-align: top;
+  width: 40%;
+  display: inline-block;
+  float: right;
+}
+
+/* User Interface */
+.navbar-inverse{
+  border-radius: 0;
+}
+.navbar-header{
+  float: none;
+}
+
+.navbar-nav {
+    float: none;
+  }
+  @media (min-width: 768px){
+    .navbar-nav {
+        float: none;
+    }
+  }
