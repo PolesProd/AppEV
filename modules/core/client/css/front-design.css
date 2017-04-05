@@ -57,6 +57,14 @@ background-image:linear-gradient(#0098b3, #00615b);
   opacity: 1;
   border:4px solid white;
 }
+/*.ng-scope .dropdown-toggle{
+  border-left: 3px;
+  background-color: white;
+  color: #af8f5c;
+  border-color: #af8f5c;
+  border-style: solid;
+  border-bottom: 3px;
+}*/
 
 /* content */
 .content h1, .content h2, .content h3, .content h4{
