@@ -27,7 +27,7 @@ var LotSchema = new Schema({
     required: 'Veuillez ajouté une description au lot'
   },
   location: {
-    type: [Number, Number],
+    type: Object,
     required: 'Veuillez renseigné la localisation du lot'
   },
   nature: {

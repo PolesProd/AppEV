@@ -32,10 +32,12 @@
 
         <div class="form-group" show-errors>
           <label class="control-label" for="location">Lieu:</label>
-          <input name="location" type="number" ng-model="vm.lot.location" id="location" class="form-control" placeholder="Lieu" required>
-          <div ng-messages="vm.form.lotForm.location.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">La localisation du lot est requise.</p>
-          </div>
+            <select name="location" ng-model="prop.value" ng-options="opt.id as opt.name for opt in sites" class="form-control" placeholder="Lieu" required>
+              <!-- <input name="location" type="number" ng-model="vm.lot.location" id="location" class="form-control" placeholder="Lieu" required> -->
+              <div ng-messages="vm.form.lotForm.location.$error" role="alert">
+                <p class="help-block error-text" ng-message="required">La localisation du lot est requise.</p>
+              </div>
+            </select>
         </div>
 
         <div class="form-group" show-errors>

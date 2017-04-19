@@ -5,8 +5,7 @@ module.exports = {
     lib: {
       css: [
         'public/lib/bootstrap/dist/css/bootstrap.css',
-        'public/lib/bootstrap/dist/css/bootstrap-theme.css',
-        'public/lib/leaflet.fullscreen/Control.FullScreen.css'
+        'public/lib/bootstrap/dist/css/bootstrap-theme.css'
       ],
       js: [
         'public/lib/angular/angular.js',
@@ -18,8 +17,7 @@ module.exports = {
         'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
         'public/lib/angular-file-upload/angular-file-upload.js',
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
-        'public/lib/angular-leaflet-directive/dist/angular-leaflet-directive.min.js',
-        'public/lib/leaflet.fullscreen/Control.FullScreen.js'
+        'public/lib/angular-leaflet-directive/dist/angular-leaflet-directive.min.js'
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },
