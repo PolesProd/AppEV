@@ -33,32 +33,23 @@ function ($scope, $http, Authentication, leafletData) {
   });
 
   // On récupère les données geo des sites depuis un fichier json
-  // $http.get('modules/core/client/json/sites.json')
-  // .then(function (data, status) {
-  //   angular.extend($scope, {
-  //     geojson: {
-  //       data: data,
-  //       style: {
-  //         fillColor: 'green',
-  //         weight: 2,
-  //         opacity: 1,
-  //         color: 'white',
-  //         // dashArray: '3',
-  //         fillOpacity: 0.7
-  //       }
-  //     }
-  //   });
-  // });
-  //
-  // $http.get('modules/core/client/json/arbres-voirie.json')
-  // .then(function (data, status) {
-  //   angular.extend($scope, {
-  //     geojson: {
-  //       data: data
-  //     }
-  //   });
-  // });
-  //
+  $http.get('modules/core/client/json/sites.json')
+  .success(function (data, status) {
+    angular.extend($scope, {
+      geojson: {
+        data: data,
+        style: {
+          fillColor: 'green',
+          weight: 2,
+          opacity: 1,
+          color: 'white',
+          // dashArray: '3',
+          fillOpacity: 0.7
+        }
+      }
+    });
+  });
+
   // $http.get('modules/core/client/json/arbres.json')
   // .then(function (data, status) {
   //   angular.extend($scope, {
@@ -67,13 +58,14 @@ function ($scope, $http, Authentication, leafletData) {
   //     }
   //   });
   // });
-  $http.get("data.json")
-  .then(function (response) {
-    $scope.foo = response.data;
-  });
-  $http.get("data1.json")
-  .then(function (response) {
-    $scope.bar = response.data;
-  });
+  
+  // $http.get("data.json")
+  // .then(function (response) {
+  //   $scope.foo = response.data;
+  // });
+  // $http.get("data1.json")
+  // .then(function (response) {
+  //   $scope.bar = response.data;
+  // });
 }
 ]);
