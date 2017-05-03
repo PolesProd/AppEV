@@ -59,13 +59,13 @@ function ($scope, $http, Authentication, leafletData) {
     });
   });
 
-  $http.get("modules/core/client/json/arbres.json")
-  .then(function (response) {
-    $scope.foo = response.data;
-  });
-  $http.get("modules/core/client/json/sites.json")
-  .then(function (response) {
-    $scope.bar = response.data;
-  });
+  // $http.get("modules/core/client/json/arbres.json")
+  // .then(function (response) {
+  //   $scope.foo = response.data;
+  // });
+  // $http.get("modules/core/client/json/sites.json")
+  // .then(function (response) {
+  //   $scope.bar = response.data;
+  // });
 }
 ]);
