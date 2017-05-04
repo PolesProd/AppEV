@@ -29,34 +29,61 @@ function ($scope, $http, Authentication, leafletData) {
       position: 'bottomright',
       colors: [ '#ff0000', '#28c9ff', '#0000ff', '#ecf386' ],
       labels: [ 'Légende 1', 'Légende 2', 'Légende 3', 'Légende 4' ]
+    },
+    popup: {
+      maxWidth: 300
     }
   });
 
   // On récupère les données geo des sites depuis un fichier json
-  $http.get('modules/core/client/json/sites.json')
-  .success(function (data, status) {
+  // $http.get('modules/core/client/json/sites.json')
+  // .success(function (data, status) {
+  //   angular.extend($scope, {
+  //     geojson: {
+  //       data: data,
+  //       style: {
+  //         fillColor: 'green',
+  //         weight: 2,
+  //         opacity: 1,
+  //         color: 'white',
+  //         fillOpacity: 0.7
+  //       }
+  //     }
+  //   });
+  // });
+
+  $http.get('modules/core/client/json/sites.json').then(function (response) {
     angular.extend($scope, {
       geojson: {
-        data: data,
+        data: response.data,
         style: {
-          fillColor: 'green',
-          weight: 2,
-          opacity: 1,
-          color: 'white',
-          // dashArray: '3',
-          fillOpacity: 0.7
+          'fillColor': '#ff0000',
+          'fillOpacity': 0.5,
+          'color': '#000000',
+          'opacity': 0.2
         }
       }
     });
   });
 
-  // $http.get('modules/core/client/json/arbres.json')
-  // .then(function (data, status) {
+  // $http.get('modules/core/client/json/arbres.json').then(function (response1) {
   //   angular.extend($scope, {
   //     geojson: {
-  //       data: data
+  //       data: response1.data,
   //     }
   //   });
+  // });
+  
+  // $http.get('modules/core/client/json/sites.json').success(function(response){
+  //   $scope.firstData = response;
+  // });
+  //
+  // $http.get('modules/core/client/json/arbres.json').success(function(response1){
+  //   $scope.secondData = response1;
+  // });
+
+  // leafletData.eachLayer(function (layer) {
+  //   layer.bindPopup(layer.feature.properties.name);
   // });
 
 }
