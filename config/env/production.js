@@ -9,11 +9,11 @@ module.exports = {
   port: process.env.PORT || 8443,
   sessionSecret: process.env.SESSION_SECRET || '|-*^%|vb=t.726t4WSk^%57w+839%b3a~|-V49cG',
   db: {
-    uri: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/mean',
-    options: {
-      user: 'sam00',
-      pass: 'Abdoulaye92'
-    },
+    uri: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://heroku_3cj7zbsh:r579jncjuf67ij1msvebfsu4sj@ds127321.mlab.com:27321/heroku_3cj7zbsh',
+    // options: {
+    //   user: '',
+    //   pass: ''
+    // },
     // Enable mongoose debug mode
     debug: process.env.MONGODB_DEBUG || false
   },
