@@ -1,0 +1,56 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.employee._id ? 'Modifier Employé' : 'Ajouter Employé'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.employeeForm" class="form-horizontal" ng-submit="vm.save(vm.form.employeeForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="lastname">Nom:</label>
+          <input name="lastname" type="text" ng-model="vm.employee.lastname" id="lastname" class="form-control" placeholder="Nom" required>
+          <div ng-messages="vm.form.employeeForm.lastname.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Nom requis.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="firstname">Prénom:</label>
+          <input name="firstname" type="text" ng-model="vm.employee.firstname" id="firstname" class="form-control" placeholder="Prénom" required>
+          <div ng-messages="vm.form.employeeForm.firstname.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Prénom requis.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="email">Email:</label>
+          <input name="email" type="text" ng-model="vm.employee.email" id="email" class="form-control" placeholder="Ex: example@example.com" required>
+          <div ng-messages="vm.form.employeeForm.email.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Email requis.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="contract">Contrat:</label>
+          <input name="contract" type="text" ng-model="vm.employee.contract" id="contract" class="form-control" placeholder="Ex: CDD" required>
+          <div ng-messages="vm.form.employeeForm.contract.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Email requis.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Formation:</label>
+          <input name="training" type="text" ng-model="vm.employee.training" id="training" class="form-control" placeholder="Formation" required>
+          <div ng-messages="vm.form.employeeForm.training.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Formation est requis.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.employee._id ? 'Mettre à jour' : 'Créer'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

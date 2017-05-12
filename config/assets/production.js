@@ -41,4 +41,4 @@ module.exports = {
     views: ['modules/*/client/views/**/*.html'],
     templates: ['build/templates.js']
   }
-}
+};

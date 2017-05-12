@@ -7,22 +7,27 @@ var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
 /**
- * Team Schema
+ * Planning Schema
  */
-var TeamSchema = new Schema({
+var PlanningSchema = new Schema({
   name: {
     type: String,
     default: '',
-    required: 'Please fill Team name',
+    required: 'Please fill Planning name',
     trim: true
   },
-  sites: {
-    type: String,
-    required: 'Vous devze précisé le site d\'intervention'
-  },
-  member: {
+  team: {
     type: Schema.ObjectId,
-    ref: 'Employee'
+    ref: 'Team'
+  },
+  site: {
+    type: Schema.ObjectId,
+    ref: 'Lot'
+  },
+  tasks: {
+    type: String,
+    default: '',
+    required: 'Veuillez remplir les tâches.'
   },
   created: {
     type: Date,
@@ -34,4 +39,4 @@ var TeamSchema = new Schema({
   }
 });
 
-mongoose.model('Team', TeamSchema);
+mongoose.model('Planning', PlanningSchema);

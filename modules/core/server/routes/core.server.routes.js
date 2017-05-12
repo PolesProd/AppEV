@@ -10,6 +10,11 @@ module.exports = function (app) {
   // Return a 404 for all undefined api, module or lib routes
   app.route('/:url(api|modules|lib)/*').get(core.renderNotFound);
 
+  // route to test if the user is logged in or not
+  // app.get('/signin', function(req, res) {
+  //   res.send(req.isAuthenticated() ? req.user : '0');
+  // });
+
   // Define application route
   app.route('/*').get(core.renderIndex);
 };

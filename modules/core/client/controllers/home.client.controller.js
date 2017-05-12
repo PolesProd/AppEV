@@ -5,6 +5,36 @@ function ($scope, $http, Authentication, leafletData) {
   // This provides Authentication context.
   $scope.authentication = Authentication;
 
+  // On récupère les données geo des sites depuis un fichier json
+  $http.get('modules/core/client/json/sites.json').then(function (response) {
+    angular.extend($scope, {
+      geojson: {
+        data: response.data,
+        style: {
+          'fillColor': '#ff0000',
+          'fillOpacity': 0.5,
+          'color': '#000000',
+          'opacity': 0.2
+        }
+      }
+    });
+  });
+
+  // $http.get('modules/core/client/json/arbres.json').then(function (response1) {
+  //   angular.extend($scope, {
+  //     geojson: {
+  //       data: response1.data,
+  //       style: {
+  //         'color': '#fff'
+  //       }
+  //     }
+  //   });
+  // });
+
+  // leafletData.eachLayer(function (layer) {
+  //   layer.bindPopup(layer.feature.properties.name);
+  // });
+
   angular.extend($scope, {
     center: {
       lat: 48.934070,
@@ -34,57 +64,6 @@ function ($scope, $http, Authentication, leafletData) {
       maxWidth: 300
     }
   });
-
-  // On récupère les données geo des sites depuis un fichier json
-  // $http.get('modules/core/client/json/sites.json')
-  // .success(function (data, status) {
-  //   angular.extend($scope, {
-  //     geojson: {
-  //       data: data,
-  //       style: {
-  //         fillColor: 'green',
-  //         weight: 2,
-  //         opacity: 1,
-  //         color: 'white',
-  //         fillOpacity: 0.7
-  //       }
-  //     }
-  //   });
-  // });
-
-  $http.get('modules/core/client/json/sites.json').then(function (response) {
-    angular.extend($scope, {
-      geojson: {
-        data: response.data,
-        style: {
-          'fillColor': '#ff0000',
-          'fillOpacity': 0.5,
-          'color': '#000000',
-          'opacity': 0.2
-        }
-      }
-    });
-  });
-
-  // $http.get('modules/core/client/json/arbres.json').then(function (response1) {
-  //   angular.extend($scope, {
-  //     geojson: {
-  //       data: response1.data,
-  //     }
-  //   });
-  // });
-  
-  // $http.get('modules/core/client/json/sites.json').success(function(response){
-  //   $scope.firstData = response;
-  // });
-  //
-  // $http.get('modules/core/client/json/arbres.json').success(function(response1){
-  //   $scope.secondData = response1;
-  // });
-
-  // leafletData.eachLayer(function (layer) {
-  //   layer.bindPopup(layer.feature.properties.name);
-  // });
 
 }
 ]);
