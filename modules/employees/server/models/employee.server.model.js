@@ -26,6 +26,10 @@ var EmployeeSchema = new Schema({
     default: '',
     required: 'Remplissez l\'email de l\'employé.'
   },
+  profileImageURL: {
+    type: String,
+    default: 'modules/users/client/img/profile/default.png'
+  },
   contract: {
     type: String,
     default: '',
