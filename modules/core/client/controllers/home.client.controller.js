@@ -4,36 +4,41 @@ angular.module('core').controller('HomeController', ['$scope', '$http', 'Authent
 function ($scope, $http, Authentication, leafletData) {
   // This provides Authentication context.
   $scope.authentication = Authentication;
+  // $scope.leafletdata = leafletData;
 
   // On récupère les données geo des sites depuis un fichier json
   $http.get('modules/core/client/json/sites.json').then(function (response) {
-    angular.extend($scope, {
-      geojson: {
-        data: response.data,
-        style: {
-          'fillColor': '#ff0000',
-          'fillOpacity': 0.5,
-          'color': '#000000',
-          'opacity': 0.2
-        }
+    $scope.geojson = {
+      data: response.data,
+      // message: {
+      //   polygon: response.data.features.properties,
+      //   point: response.data.features.properties
+      // },
+      style: {
+        'fillColor': '#ff0000',
+        'fillOpacity': 0.5,
+        'color': '#000000',
+        'opacity': 0.2
       }
+    };
+  });
+
+  $scope.$on('leafletDirectiveMarker.mouseover', function(event, args){
+    console.log('I am over!');
+    var popup = leafletData.popup()
+    .setLatLng([args.model.lat, args.model.lng])
+    .setContent(args.model.message);
+    leafletData.getMap().then(function(map) {
+      popup.openOn(map);
     });
   });
 
-  // $http.get('modules/core/client/json/arbres.json').then(function (response1) {
-  //   angular.extend($scope, {
-  //     geojson: {
-  //       data: response1.data,
-  //       style: {
-  //         'color': '#fff'
-  //       }
-  //     }
-  //   });
-  // });
+  $scope.$on('leafletDirectiveMarker.mouseout', function(event){
+    leafletData.getMap().then(function(map) {
+      map.closePopup();
+    });
+  });
 
-  // leafletData.eachLayer(function (layer) {
-  //   layer.bindPopup(layer.feature.properties.name);
-  // });
 
   angular.extend($scope, {
     center: {
@@ -59,11 +64,7 @@ function ($scope, $http, Authentication, leafletData) {
       position: 'bottomright',
       colors: [ '#ff0000', '#28c9ff', '#0000ff', '#ecf386' ],
       labels: [ 'Légende 1', 'Légende 2', 'Légende 3', 'Légende 4' ]
-    },
-    popup: {
-      maxWidth: 300
     }
   });
-
 }
 ]);

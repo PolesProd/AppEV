@@ -57,6 +57,5 @@
       { name: 'Employer 4', id: 4 },
       { name: 'Employer 5', id: 5 }
     ];
-    $scope.employee.find();
   }
 }());

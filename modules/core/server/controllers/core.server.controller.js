@@ -4,11 +4,11 @@
 * Render the main application page
 */
 exports.renderIndex = function (req, res) {
-  // if (!req.isAuthenticated())
-  //   res.status(200).render('modules/users/client/views/authentication/sigin');
-  // else
+  if (!req.isAuthenticated())
+    res.render('modules/users/client/views/authentication/signin');
+  else
   res.render('modules/core/server/views/index', {
-    user: req.user || null
+    user: req.user
   });
 };
 
