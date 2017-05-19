@@ -16,8 +16,12 @@ function ($scope, $http, Authentication, leafletData) {
         'color': '#000000',
         'opacity': 0.2
       },
-      onEachFeature : function (feature, layer) {
-        layer.bindPopup(feature.properties.message);
+      onEachFeature : function (feature, layer, $location) {
+        if (feature.properties.ID && feature.geometry.coordinates) {
+          layer.on("click", function (e) {
+            layer.overlayPane(feature.properties.message);
+          });
+        }
       }
     };
   });
@@ -29,7 +33,7 @@ function ($scope, $http, Authentication, leafletData) {
       zoom: 16
     },
     defaults: {
-      scrollWheelZoom: false
+      scrollWheelZoom: true
     },
     tiles: {
       Name: 'Espaces Verts Villeneuve la garenne',

@@ -58,3 +58,26 @@ exports.renderNotFound = function (req, res) {
     }
   });
 };
+
+// exports.renderMap = function (req, res) {
+//   res.render('modules/core/client/json/sites', {
+//     'application/json': function () {
+//       res.json({
+//         data: req.data,
+//         style: {
+//           'fillColor': '#ff0000',
+//           'fillOpacity': 0.5,
+//           'color': '#000000',
+//           'opacity': 0.2
+//         },
+//         onEachFeature : function (feature, layer, $location) {
+//           if (feature.properties.ID && feature.geometry.coordinates) {
+//             layer.on('click', function (e) {
+//               layer.bindPopup(feature.properties.message);
+//             });
+//           }
+//         }
+//       });
+//     }
+//   });
+// };
