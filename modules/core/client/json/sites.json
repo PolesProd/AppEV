@@ -5,7 +5,7 @@
     "properties": {
       "id": 1,
       "NOM": "LA COULEE VERTE",
-      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
     },
     "geometry": {
       "type": "Polygon",

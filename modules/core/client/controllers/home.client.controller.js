@@ -4,50 +4,32 @@ angular.module('core').controller('HomeController', ['$scope', '$http', 'Authent
 function ($scope, $http, Authentication, leafletData) {
   // This provides Authentication context.
   $scope.authentication = Authentication;
-  // $scope.leafletdata = leafletData;
+  $scope.leafletdata = leafletData;
 
   // On récupère les données geo des sites depuis un fichier json
   $http.get('modules/core/client/json/sites.json').then(function (response) {
     $scope.geojson = {
       data: response.data,
-      // message: {
-      //   polygon: response.data.features.properties,
-      //   point: response.data.features.properties
-      // },
       style: {
         'fillColor': '#ff0000',
         'fillOpacity': 0.5,
         'color': '#000000',
         'opacity': 0.2
+      },
+      onEachFeature : function (feature, layer) {
+        layer.bindPopup(feature.properties.message);
       }
     };
   });
-
-  $scope.$on('leafletDirectiveMarker.mouseover', function(event, args){
-    console.log('I am over!');
-    var popup = leafletData.popup()
-    .setLatLng([args.model.lat, args.model.lng])
-    .setContent(args.model.message);
-    leafletData.getMap().then(function(map) {
-      popup.openOn(map);
-    });
-  });
-
-  $scope.$on('leafletDirectiveMarker.mouseout', function(event){
-    leafletData.getMap().then(function(map) {
-      map.closePopup();
-    });
-  });
-
 
   angular.extend($scope, {
     center: {
       lat: 48.934070,
       lng: 2.327557,
-      zoom: 15
+      zoom: 16
     },
     defaults: {
-      scrollWheelZoom: true
+      scrollWheelZoom: false
     },
     tiles: {
       Name: 'Espaces Verts Villeneuve la garenne',

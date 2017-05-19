@@ -1,7 +1,7 @@
 /*Layout*/
 header.navbar.navbar-inverse.ng-scope{
-  width:40%;
   display: inline-block;
+  width:40%;
   float: right;
 }
 .container{
@@ -10,7 +10,8 @@ header.navbar.navbar-inverse.ng-scope{
 .map{
   float: left;
   width: 60%;
-  display: inline-block;}
+  display: inline-block;
+}
 .content{
   margin-top: 0;
   vertical-align: top;
@@ -28,10 +29,10 @@ header.navbar.navbar-inverse.ng-scope{
 }
 
 .navbar-nav {
-    float: none;
+  float: none;
+}
+@media (min-width: 768px){
+  .navbar-nav {
+      float: none;
   }
-  @media (min-width: 768px){
-    .navbar-nav {
-        float: none;
-    }
-  }
+}

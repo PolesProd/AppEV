@@ -1,12 +1,27 @@
 'use strict';
 
 /**
+ * Module dependencies.
+ */
+// var _ = require('lodash');
+
+/**
+ * Extend user's controller
+ */
+// module.exports = _.extend(
+//   require('./modules/users/server/controllers/users/users.authentication.server.controller'),
+//   require('./modules/users/server/controllers/users/users.authorization.server.controller'),
+//   require('./modules/users/server/controllers/users/users.password.server.controller'),
+//   require('./modules/users/server/controllers/users/users.profile.server.controller')
+// );
+
+/**
 * Render the main application page
 */
 exports.renderIndex = function (req, res) {
-  if (!req.isAuthenticated())
-    res.render('modules/users/client/views/authentication/signin');
-  else
+  // if (!req.user.isAuthenticated())
+  //   res.redirect('/authentication/signin');
+  // else
   res.render('modules/core/server/views/index', {
     user: req.user
   });
