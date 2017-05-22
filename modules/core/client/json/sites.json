@@ -3,10 +3,9 @@
   "features": [{
     "type": "Feature",
     "properties": {
-      "category": "site",
-      "id": 1,
-      "NOM": "LA COULEE VERTE",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "ID": 1,
+      "nom": "LA COULEE VERTE",
+      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
     },
     "geometry": {
       "type": "Polygon",
@@ -59,10 +58,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 2,
-      "NOM": "VERDUN-EMMAÜS",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "VERDUN-EMMAÜS",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type": "Polygon",
@@ -80,10 +78,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 3,
-      "NOM": "VERDUN",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "VERDUN",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type": "Polygon",
@@ -99,10 +96,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 4,
-      "NOM": "ALLEE DU CHEMIN VERT",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "ALLEE DU CHEMIN VERT",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type": "Polygon",
@@ -185,10 +181,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 5,
-      "NOM": "MADAME DE NANTEUIL",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "MADAME DE NANTEUIL",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type": "Polygon",
@@ -212,10 +207,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 6,
-      "NOM": "DE GAULE-LECLERC",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "DE GAULE-LECLERC",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type": "Polygon",
@@ -273,10 +267,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 7,
-      "NOM": "MOULIN DE CAGE",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "MOULIN DE CAGE",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type": "Polygon",
@@ -299,10 +292,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 8,
-      "NOM": "jEAN jAURES",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "jEAN jAURES",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type":"MultiPolygon",
@@ -330,10 +322,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 9,
-      "NOM": "VOIE PROMENADE SUD-CENTRE)",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "VOIE PROMENADE SUD-CENTRE)",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type":"MultiPolygon",
@@ -367,10 +358,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 10,
-      "NOM": "VOIE PROMENADE NORD",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "VOIE PROMENADE NORD",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type": "Polygon",
@@ -393,10 +383,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 11,
-      "NOM": "ABBE PIERRE-NORMANDIE",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "ABBE PIERRE-NORMANDIE",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type": "Polygon",
@@ -416,10 +405,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 12,
-      "NOM": "FOND DE LA NOUE",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "FOND DE LA NOUE",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type": "Polygon",
@@ -445,10 +433,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 13,
-      "NOM": "BOULEVARD GALLIENI",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "BOULEVARD GALLIENI",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type": "Polygon",
@@ -469,10 +456,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 14,
-      "NOM": "AUGUSTIN",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "AUGUSTIN",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type": "Polygon",
@@ -534,10 +520,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 15,
-      "NOM": "HAUT DE LA NOUE",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "HAUT DE LA NOUE",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type": "Polygon",
@@ -580,10 +565,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 16,
-      "NOM": "SQUARE RUE PASTEUR",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "SQUARE RUE PASTEUR",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type": "Polygon",
@@ -610,10 +594,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 17,
-      "NOM": "MAIL ROGER PREVOT",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "MAIL ROGER PREVOT",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type": "Polygon",
@@ -661,10 +644,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 18,
-      "NOM": "PONANT-PAUL SIGNAC",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "PONANT-PAUL SIGNAC",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type":"MultiPolygon",
@@ -742,10 +724,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 19,
-      "NOM": "FOSSE AUX ASTRES",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "FOSSE AUX ASTRES",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type": "Polygon",
@@ -763,10 +744,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 20,
-      "NOM": "SQUARE SAINTE MARIE",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "SQUARE SAINTE MARIE",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type":"MultiPolygon",
@@ -786,10 +766,9 @@
   },  {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 21,
-      "NOM": "CIMETIERES",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "CIMETIERES",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type":"Polygon",
@@ -810,10 +789,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 22,
-      "NOM": "CIMETIERES",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "CIMETIERES",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
         "type": "Polygon",
@@ -837,10 +815,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 23,
-      "NOM": "NELSON MANDELA",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "NELSON MANDELA",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type": "Polygon",
@@ -862,10 +839,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 24,
-      "NOM": "CHEMIN DES RENIERS",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "CHEMIN DES RENIERS",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type": "Polygon",
@@ -891,10 +867,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 25,
-      "NOM": "VIEUX CHEMIN DE SAINT-DENIS",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "VIEUX CHEMIN DE SAINT-DENIS",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type": "Polygon",
@@ -926,10 +901,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 26,
-      "NOM": "MADIESSE-LEDUDAL",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "MADIESSE-LEDUDAL",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type": "Polygon",
@@ -945,10 +919,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 27,
-      "NOM": "QUAI SISLEY",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "QUAI SISLEY",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type": "Polygon",
@@ -998,10 +971,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 28,
-      "NOM": "QUAI D\"ASNIERES",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "QUAI D\"ASNIERES",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type": "Polygon",
@@ -1036,10 +1008,10 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
+
       "ID": 29,
-      "NOM": "CHANTIERS NAVALS",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "CHANTIERS NAVALS",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type": "Polygon",
@@ -1061,10 +1033,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
         "ID": 30,
-        "NOM": "PASSAGE DE LA MEF",
-        "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+        "nom": "PASSAGE DE LA MEF",
+        "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
       },
       "geometry": {
         "type": "Polygon",
@@ -1080,10 +1051,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 31,
-      "NOM": "PISCINE",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "PISCINE",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type": "Polygon",
@@ -1116,10 +1086,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 32,
-      "NOM": "RUE DU 8 MAI 1945",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "RUE DU 8 MAI 1945",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type": "MultiPolygon",
@@ -1173,10 +1142,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 33,
-      "NOM": "BERTANE-BONGARDE",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "BERTANE-BONGARDE",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type":"MultiPolygon",
@@ -1195,10 +1163,9 @@
   }, {
     "type": "Feature",
     "properties": {
-      "category": "site",
       "ID": 34,
-      "NOM": "CHEMIN DU BÛCHER",
-      "message": "<div class='popup' style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "nom": "CHEMIN DU BÛCHER",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
       "type": "Polygon",

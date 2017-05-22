@@ -16,13 +16,29 @@ function ($scope, $http, Authentication, leafletData) {
         'color': '#000000',
         'opacity': 0.2
       },
-      onEachFeature : function (feature, layer, $location) {
-        if (feature.properties.ID && feature.geometry.coordinates) {
-          layer.on("click", function (e) {
-            layer.overlayPane(feature.properties.message);
-          });
-        }
+      onEachFeature: function (feature, layer){
+        layer.on({
+          click: function showResultsInDiv() {
+            var d = document.getElementById('site-info');
+            d.innerHTML = "";
+            for (feature in feature.properties){
+              d.innerHTML += feature + ": " + feature.properties + "<br>";
+            }
+            console.log(d.innerHTML);
+          }
+        });
       }
+
+      // onEachFeature: function (feature, layer) {
+      //   layer.on({
+      //     click: function (e) {
+      //       document.getElementById('id').innerHTML = feature.properties.ID
+      //       document.getElementById('name').innerHTML = feature.properties.nom
+      //       document.getElementById('content').innerHTML = feature.properties.message
+      //       document.getElementById('other').innerHTML = feature.properties
+      //     }
+      //   })
+      // }
     };
   });
 
