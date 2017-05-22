@@ -28,6 +28,17 @@ function ($scope, $http, Authentication, leafletData) {
           }
         });
       }
+
+      // onEachFeature: function (feature, layer) {
+      //   layer.on({
+      //     click: function (e) {
+      //       document.getElementById('id').innerHTML = feature.properties.ID
+      //       document.getElementById('name').innerHTML = feature.properties.nom
+      //       document.getElementById('content').innerHTML = feature.properties.message
+      //       document.getElementById('other').innerHTML = feature.properties
+      //     }
+      //   })
+      // }
     };
   });
 
