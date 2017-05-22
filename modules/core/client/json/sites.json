@@ -3,8 +3,8 @@
   "features": [{
     "type": "Feature",
     "properties": {
-      "id": 1,
-      "NOM": "LA COULEE VERTE",
+      "ID": 1,
+      "nom": "LA COULEE VERTE",
       "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
     },
     "geometry": {
@@ -58,8 +58,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 2,
-      "NOM": "VERDUN-EMMAÜS",
+      "ID": 2,
+      "nom": "VERDUN-EMMAÜS",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -78,8 +78,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 3,
-      "NOM": "VERDUN",
+      "ID": 3,
+      "nom": "VERDUN",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -96,8 +96,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 4,
-      "NOM": "ALLEE DU CHEMIN VERT",
+      "ID": 4,
+      "nom": "ALLEE DU CHEMIN VERT",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -181,8 +181,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 5,
-      "NOM": "MADAME DE NANTEUIL",
+      "ID": 5,
+      "nom": "MADAME DE NANTEUIL",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -207,8 +207,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 6,
-      "NOM": "DE GAULE-LECLERC",
+      "ID": 6,
+      "nom": "DE GAULE-LECLERC",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -267,8 +267,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 7,
-      "NOM": "MOULIN DE CAGE",
+      "ID": 7,
+      "nom": "MOULIN DE CAGE",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -292,8 +292,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 8,
-      "NOM": "jEAN jAURES",
+      "ID": 8,
+      "nom": "jEAN jAURES",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -322,8 +322,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 9,
-      "NOM": "VOIE PROMENADE SUD-CENTRE)",
+      "ID": 9,
+      "nom": "VOIE PROMENADE SUD-CENTRE)",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -358,8 +358,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 10,
-      "NOM": "VOIE PROMENADE NORD",
+      "ID": 10,
+      "nom": "VOIE PROMENADE NORD",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -383,8 +383,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 11,
-      "NOM": "ABBE PIERRE-NORMANDIE",
+      "ID": 11,
+      "nom": "ABBE PIERRE-NORMANDIE",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -405,8 +405,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 12,
-      "NOM": "FOND DE LA NOUE",
+      "ID": 12,
+      "nom": "FOND DE LA NOUE",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -433,8 +433,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 13,
-      "NOM": "BOULEVARD GALLIENI",
+      "ID": 13,
+      "nom": "BOULEVARD GALLIENI",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -456,8 +456,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 14,
-      "NOM": "AUGUSTIN",
+      "ID": 14,
+      "nom": "AUGUSTIN",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -520,8 +520,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 15,
-      "NOM": "HAUT DE LA NOUE",
+      "ID": 15,
+      "nom": "HAUT DE LA NOUE",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -565,8 +565,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 16,
-      "NOM": "SQUARE RUE PASTEUR",
+      "ID": 16,
+      "nom": "SQUARE RUE PASTEUR",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -594,8 +594,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 17,
-      "NOM": "MAIL ROGER PREVOT",
+      "ID": 17,
+      "nom": "MAIL ROGER PREVOT",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -644,8 +644,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 18,
-      "NOM": "PONANT-PAUL SIGNAC",
+      "ID": 18,
+      "nom": "PONANT-PAUL SIGNAC",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -724,8 +724,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 19,
-      "NOM": "FOSSE AUX ASTRES",
+      "ID": 19,
+      "nom": "FOSSE AUX ASTRES",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -744,8 +744,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 20,
-      "NOM": "SQUARE SAINTE MARIE",
+      "ID": 20,
+      "nom": "SQUARE SAINTE MARIE",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -766,8 +766,8 @@
   },  {
     "type": "Feature",
     "properties": {
-      "SITEID": 21,
-      "NOM": "CIMETIERES",
+      "ID": 21,
+      "nom": "CIMETIERES",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -789,8 +789,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 22,
-      "NOM": "CIMETIERES",
+      "ID": 22,
+      "nom": "CIMETIERES",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -815,8 +815,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 23,
-      "NOM": "NELSON MANDELA",
+      "ID": 23,
+      "nom": "NELSON MANDELA",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -839,8 +839,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 24,
-      "NOM": "CHEMIN DES RENIERS",
+      "ID": 24,
+      "nom": "CHEMIN DES RENIERS",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -867,8 +867,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 25,
-      "NOM": "VIEUX CHEMIN DE SAINT-DENIS",
+      "ID": 25,
+      "nom": "VIEUX CHEMIN DE SAINT-DENIS",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -901,8 +901,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 26,
-      "NOM": "MADIESSE-LEDUDAL",
+      "ID": 26,
+      "nom": "MADIESSE-LEDUDAL",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -919,8 +919,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 27,
-      "NOM": "QUAI SISLEY",
+      "ID": 27,
+      "nom": "QUAI SISLEY",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -971,8 +971,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 28,
-      "NOM": "QUAI D\"ASNIERES",
+      "ID": 28,
+      "nom": "QUAI D\"ASNIERES",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -1008,8 +1008,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 29,
-      "NOM": "CHANTIERS NAVALS",
+      "ID": 29,
+      "nom": "CHANTIERS NAVALS",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -1032,8 +1032,8 @@
   }, {
     "type": "Feature",
     "properties": {
-        "SITEID": 30,
-        "NOM": "PASSAGE DE LA MEF",
+        "ID": 30,
+        "nom": "PASSAGE DE LA MEF",
         "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
       },
       "geometry": {
@@ -1050,8 +1050,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 31,
-      "NOM": "PISCINE",
+      "ID": 31,
+      "nom": "PISCINE",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -1085,8 +1085,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 32,
-      "NOM": "RUE DU 8 MAI 1945",
+      "ID": 32,
+      "nom": "RUE DU 8 MAI 1945",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -1141,8 +1141,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 33,
-      "NOM": "BERTANE-BONGARDE",
+      "ID": 33,
+      "nom": "BERTANE-BONGARDE",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {
@@ -1162,8 +1162,8 @@
   }, {
     "type": "Feature",
     "properties": {
-      "SITEID": 34,
-      "NOM": "CHEMIN DU BÛCHER",
+      "ID": 34,
+      "nom": "CHEMIN DU BÛCHER",
       "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "geometry": {

@@ -16,8 +16,17 @@ function ($scope, $http, Authentication, leafletData) {
         'color': '#000000',
         'opacity': 0.2
       },
-      onEachFeature : function (feature, layer) {
-        layer.bindPopup(feature.properties.message);
+      onEachFeature: function (feature, layer){
+        layer.on({
+          click: function showResultsInDiv() {
+            var d = document.getElementById('site-info');
+            d.innerHTML = "";
+            for (feature in feature.properties){
+              d.innerHTML += feature + ": " + feature.properties + "<br>";
+            }
+            console.log(d.innerHTML);
+          }
+        });
       }
     };
   });
