@@ -4,7 +4,6 @@ angular.module('core').controller('HomeController', ['$scope', '$http', 'Authent
 function ($scope, $http, Authentication, leafletData) {
   // This provides Authentication context.
   $scope.authentication = Authentication;
-  $scope.leafletdata = leafletData;
 
   // On récupère les données geo des sites depuis un fichier json
   $http.get('modules/core/client/json/sites.json').then(function (response) {
@@ -16,29 +15,45 @@ function ($scope, $http, Authentication, leafletData) {
         'color': '#000000',
         'opacity': 0.2
       },
-      onEachFeature: function (feature, layer){
-        layer.on({
-          click: function showResultsInDiv() {
-            var d = document.getElementById('site-info');
-            d.innerHTML = "";
-            for (feature in feature.properties){
-              d.innerHTML += feature + ": " + feature.properties + "<br>";
-            }
-            console.log(d.innerHTML);
-          }
-        });
-      }
-
-      // onEachFeature: function (feature, layer) {
+      // onEachFeature: function (feature, layer){
       //   layer.on({
-      //     click: function (e) {
-      //       document.getElementById('id').innerHTML = feature.properties.ID
-      //       document.getElementById('name').innerHTML = feature.properties.nom
-      //       document.getElementById('content').innerHTML = feature.properties.message
-      //       document.getElementById('other').innerHTML = feature.properties
+      //     click: function showResultsInDiv() {
+      //       var d = document.getElementById('site-info');
+      //       d.innerHTML = "";
+      //       for (feature in feature.properties){
+      //         d.innerHTML += feature + ": " + feature.properties + "<br>";
+      //       }
+      //       console.log(d.innerHTML);
       //     }
-      //   })
+      //   });
       // }
+
+      onEachFeature: function (feature, layer) {
+        layer.on({
+          click: function (e) {
+            if (feature.geometry.type !== 'Point') {
+              document.getElementById('id').innerHTML = '<label>ID: </label> ' + feature.properties.ID
+              document.getElementById('name').innerHTML = '<label>Nom: </label> ' + feature.properties.nom
+              document.getElementById('content').innerHTML = '<label>Description: </label> ' + feature.properties.message
+            } else {
+              document.getElementById('id').innerHTML = '<label>ID: </label> ' + feature.properties.ID
+              document.getElementById('essence_scient').innerHTML = '<label>Essence(scientifique): </label> ' + feature.properties.essence_scient
+              document.getElementById('essence_commun').innerHTML = '<label>Essence(commun): </label> ' + feature.properties.essence_commun
+              document.getElementById('classe_age').innerHTML = '<label>Classe/Âge: </label> ' + feature.properties.classe_age
+              document.getElementById('circonference').innerHTML = '<label>Circonférence: </label> ' + feature.properties.circonference
+              document.getElementById('hauteur').innerHTML = '<label>Hauteur: </label> ' + feature.properties.hauteur
+              document.getElementById('nom_rue').innerHTML = '<label>Nom rue: </label> ' + feature.properties.nom_rue
+              document.getElementById('num_emp').innerHTML = '<label>N° Emp.: </label> ' + feature.properties.num_emp
+              document.getElementById('statut_emp').innerHTML = '<label>Satus Emp.: </label> ' + feature.properties.statut_emp
+              document.getElementById('geo_point_2d').innerHTML = '<label>Localisation: </label> ' + feature.properties.geo_point_2d
+              document.getElementById('num_rd').innerHTML = '<label>N° route: </label> ' + feature.properties.num_rd
+              document.getElementById('commune').innerHTML = '<label>Commune: </label> ' + feature.properties.commune
+              document.getElementById('code_insee').innerHTML = '<label>Code Insee: </label> ' + feature.properties.code_insee
+              document.getElementById('date_maj').innerHTML = '<label>Date Màj: </label> ' + feature.properties.date_maj
+            }
+          }
+        })
+      }
     };
   });
 
