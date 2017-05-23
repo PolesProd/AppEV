@@ -40,6 +40,10 @@ var EmployeeSchema = new Schema({
     default: '',
     required: 'Remplissez la formation de l\'employé'
   },
+  team_name: {
+    type: Schema.ObjectId,
+    ref: 'Team'
+  },
   created: {
     type: Date,
     default: Date.now
@@ -50,4 +54,4 @@ var EmployeeSchema = new Schema({
   }
 });
 
-mongoose.model('Employee', EmployeeSchema);
+module.exports = mongoose.model('Employee', EmployeeSchema);

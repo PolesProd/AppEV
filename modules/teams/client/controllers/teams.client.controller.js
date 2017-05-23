@@ -6,9 +6,9 @@
     .module('teams')
     .controller('TeamsController', TeamsController);
 
-  TeamsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'teamResolve'];
+  TeamsController.$inject = ['$scope', '$state', '$window', '$log', 'Authentication', 'teamResolve'];
 
-  function TeamsController ($scope, $state, $window, Authentication, team) {
+  function TeamsController ($scope, $state, $window, $log, Authentication, team) {
     var vm = this;
 
     vm.authentication = Authentication;
@@ -50,12 +50,10 @@
       }
     }
 
-    $scope.sites = [
-      { name: 'Employer 1', id: 1 },
-      { name: 'Employer 2', id: 2 },
-      { name: 'Employer 3', id: 3 },
-      { name: 'Employer 4', id: 4 },
-      { name: 'Employer 5', id: 5 }
-    ];
+    // Find a list of Teams
+    $scope.find = function () {
+      $log.info('executing TeamsController.$scope.find');
+      self.teams = Teams.query();
+    };
   }
 }());

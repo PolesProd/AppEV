@@ -23,4 +23,5 @@
     </em>
   </small>
   <p class="lead" ng-bind="vm.team.content"></p>
+  <select ng-model="vm.team" ng-options="t.name for t in teams"></select>
 </section>

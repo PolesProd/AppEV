@@ -5,6 +5,7 @@
  */
 var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
+  // User = require('./modules/users/server/models/user.sever.model.js');
 
 /**
  * Team Schema
@@ -34,4 +35,4 @@ var TeamSchema = new Schema({
   }
 });
 
-mongoose.model('Team', TeamSchema);
+module.exports = mongoose.model('Team', TeamSchema);
