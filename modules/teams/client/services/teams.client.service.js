@@ -10,7 +10,8 @@
 
   function TeamsService($resource) {
     return $resource('api/teams/:teamId', {
-      teamId: '@_id'
+      teamId: '@_id',
+      employeeId: '@_id'
     }, {
       update: {
         method: 'PUT'

@@ -25,7 +25,7 @@
         <div class="form-group" show-errors>
           <label class="control-label" for="member">Membre</label>
           <!-- <input name="member" type="text" ng-model="vm.team.member" id="member" class="form-control" placeholder="Name" required> -->
-          <select name="member" ng-model="vm.team.member" ng-options="opt.id as opt.name for opt in sites" class="form-control" required>
+            <select name="member" ng-model="vm.team.member" ng-options="employee.name for employee in employees" class="form-control" required></select>
             <div ng-messages="vm.form.teamForm.member.$error" role="alert">
               <p class="help-block error-text" ng-message="required">Les Membres sont requis pour l'équipe.</p>
             </div>

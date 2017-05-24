@@ -20,9 +20,13 @@ function ($scope, $http, Authentication, leafletData) {
           click: function showResultsInDiv() {
             var d = document.getElementById('site-info');
             d.innerHTML = "";
-            for (feature in feature.properties){
-              d.innerHTML += feature + ": " + feature.properties + "<br>";
+            console.log(feature)
+            for (var content in feature.properties ){
+              d.innerHTML += content + ": " + feature.properties[content] + "<br>";
             }
+            // feature.forEach(function () {
+            //
+            // })
             console.log(d.innerHTML);
           }
         });

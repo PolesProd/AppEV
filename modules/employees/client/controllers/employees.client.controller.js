@@ -49,5 +49,10 @@
         vm.error = res.data.message;
       }
     }
+
+    // $scope.find = function () {
+    //   $log.info('executing TeamsController.$scope.find');
+    //   self.team = Team.query();
+    // }
   }
 }());

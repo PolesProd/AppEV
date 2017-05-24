@@ -1,21 +1,6 @@
 'use strict';
 
 /**
- * Module dependencies.
- */
-// var _ = require('lodash');
-
-/**
- * Extend user's controller
- */
-// module.exports = _.extend(
-//   require('./modules/users/server/controllers/users/users.authentication.server.controller'),
-//   require('./modules/users/server/controllers/users/users.authorization.server.controller'),
-//   require('./modules/users/server/controllers/users/users.password.server.controller'),
-//   require('./modules/users/server/controllers/users/users.profile.server.controller')
-// );
-
-/**
 * Render the main application page
 */
 exports.renderIndex = function (req, res) {
@@ -58,26 +43,3 @@ exports.renderNotFound = function (req, res) {
     }
   });
 };
-
-// exports.renderMap = function (req, res) {
-//   res.render('modules/core/client/json/sites', {
-//     'application/json': function () {
-//       res.json({
-//         data: req.data,
-//         style: {
-//           'fillColor': '#ff0000',
-//           'fillOpacity': 0.5,
-//           'color': '#000000',
-//           'opacity': 0.2
-//         },
-//         onEachFeature : function (feature, layer, $location) {
-//           if (feature.properties.ID && feature.geometry.coordinates) {
-//             layer.on('click', function (e) {
-//               layer.bindPopup(feature.properties.message);
-//             });
-//           }
-//         }
-//       });
-//     }
-//   });
-// };

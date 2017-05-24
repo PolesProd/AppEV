@@ -10,6 +10,7 @@
 
   function TeamsController ($scope, $state, $window, $log, Authentication, team) {
     var vm = this;
+    // var Employees = require(path.resolve('./modules/employees/client/controllers/employees.client.controller.js'));
 
     vm.authentication = Authentication;
     vm.team = team;
@@ -50,10 +51,10 @@
       }
     }
 
-    // Find a list of Teams
-    $scope.find = function () {
-      $log.info('executing TeamsController.$scope.find');
-      self.teams = Teams.query();
-    };
+    // Find a list of Employees
+    // $scope.find = function () {
+    //   $log.info('executing EmployeesController.$scope.find');
+    //   self.employee = Employee.query();
+    // };
   }
 }());
