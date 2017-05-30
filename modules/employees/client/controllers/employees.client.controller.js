@@ -51,7 +51,7 @@
 
       $scope.find = function () {
         $log.info('executing TeamsController.$scope.find');
-        vm.team = Teams.query();
+        // vm.team = Teams.query();
       };
     }
 

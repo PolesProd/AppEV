@@ -23,12 +23,23 @@ function ($scope, $http, Authentication, leafletData) {
             for (var content in feature.properties){
               d.innerHTML += content + ': ' + feature.properties[content] + '<br>';
             }
-            console.log(d.innerHTML);
           }
         });
       },
-      icon: '/modules/core/client/img/brand/logo.png'
+      var local_icons: {
+        default_icon: {},
+        leaf_icon: {
+          iconUrl: '/modules/core/client/img/leaflet/leaf-green.png'
+          shadowUrl: '/modules/core/client/img/leaflet/leaf-shadow.png'
+          iconSize: [27, 27]
+          shadowSize: [27, 27]
+        }
+      }
     };
+  });
+
+  angular.extend($scope, {
+    icons: local_icons
   });
 
   angular.extend($scope, {
@@ -55,11 +66,6 @@ function ($scope, $http, Authentication, leafletData) {
       position: 'bottomright',
       colors: [ '#ff0000', '#28c9ff', '#0000ff', '#ecf386' ],
       labels: [ 'Légende 1', 'Légende 2', 'Légende 3', 'Légende 4' ]
-    },
-    defaultIcon: {},
-    leafIcon: {
-      iconUrl: 'img/leaf-green.png',
-      iconSize:     [38, 95], // size of the icon
     }
   });
 }
