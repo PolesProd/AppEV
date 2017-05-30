@@ -18,46 +18,16 @@ function ($scope, $http, Authentication, leafletData) {
       onEachFeature: function (feature, layer){
         layer.on({
           click: function showResultsInDiv() {
-            var d = document.getElementById('site-info');
-            d.innerHTML = "";
-            console.log(feature)
-            for (var content in feature.properties ){
-              d.innerHTML += content + ": " + feature.properties[content] + "<br>";
+            var d = document.getElementById('map-info');
+            d.innerHTML = '';
+            for (var content in feature.properties){
+              d.innerHTML += content + ': ' + feature.properties[content] + '<br>';
             }
-            // feature.forEach(function () {
-            //
-            // })
             console.log(d.innerHTML);
           }
         });
-      }
-
-      // onEachFeature: function (feature, layer) {
-      //   layer.on({
-      //     click: function (e) {
-      //       if (feature.geometry.type !== 'Point') {
-      //         document.getElementById('id').innerHTML = '<label>ID: </label> ' + feature.properties.ID;
-      //         document.getElementById('name').innerHTML = '<label>Nom: </label> ' + feature.properties.nom;
-      //         document.getElementById('content').innerHTML = '<label>Description: </label> ' + feature.properties.message;
-      //       } else {
-      //         document.getElementById('id').innerHTML = '<label>ID: </label> ' + feature.properties.ID;
-      //         document.getElementById('essence_scient').innerHTML = '<label>Essence(scientifique): </label> ' + feature.properties.essence_scient;
-      //         document.getElementById('essence_commun').innerHTML = '<label>Essence(commun): </label> ' + feature.properties.essence_commun;
-      //         document.getElementById('classe_age').innerHTML = '<label>Classe/Âge: </label> ' + feature.properties.classe_age;
-      //         document.getElementById('circonference').innerHTML = '<label>Circonférence: </label> ' + feature.properties.circonference;
-      //         document.getElementById('hauteur').innerHTML = '<label>Hauteur: </label> ' + feature.properties.hauteur;
-      //         document.getElementById('nom_rue').innerHTML = '<label>Nom rue: </label> ' + feature.properties.nom_rue;
-      //         document.getElementById('num_emp').innerHTML = '<label>N° Emp.: </label> ' + feature.properties.num_emp;
-      //         document.getElementById('statut_emp').innerHTML = '<label>Satus Emp.: </label> ' + feature.properties.statut_emp;
-      //         document.getElementById('geo_point_2d').innerHTML = '<label>Localisation: </label> ' + feature.properties.geo_point_2d;
-      //         document.getElementById('num_rd').innerHTML = '<label>N° route: </label> ' + feature.properties.num_rd;
-      //         document.getElementById('commune').innerHTML = '<label>Commune: </label> ' + feature.properties.commune;
-      //         document.getElementById('code_insee').innerHTML = '<label>Code Insee: </label> ' + feature.properties.code_insee;
-      //         document.getElementById('date_maj').innerHTML = '<label>Date Màj: </label> ' + feature.properties.date_maj;
-      //       }
-      //     }
-      //   });
-      // }
+      },
+      icon: '/modules/core/client/img/brand/logo.png'
     };
   });
 
@@ -85,6 +55,11 @@ function ($scope, $http, Authentication, leafletData) {
       position: 'bottomright',
       colors: [ '#ff0000', '#28c9ff', '#0000ff', '#ecf386' ],
       labels: [ 'Légende 1', 'Légende 2', 'Légende 3', 'Légende 4' ]
+    },
+    defaultIcon: {},
+    leafIcon: {
+      iconUrl: 'img/leaf-green.png',
+      iconSize:     [38, 95], // size of the icon
     }
   });
 }

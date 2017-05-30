@@ -5,9 +5,9 @@
     .module('employees')
     .controller('EmployeesListController', EmployeesListController);
 
-  EmployeesListController.$inject = ['EmployeesService'];
+  EmployeesListController.$inject = ['EmployeesService', 'TeamsService'];
 
-  function EmployeesListController(EmployeesService) {
+  function EmployeesListController(EmployeesService, TeamsService) {
     var vm = this;
 
     vm.employees = EmployeesService.query();

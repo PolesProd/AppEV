@@ -6,9 +6,9 @@
     .module('employees')
     .controller('EmployeesController', EmployeesController);
 
-  EmployeesController.$inject = ['$scope', '$state', '$window', 'Authentication', 'employeeResolve'];
+  EmployeesController.$inject = ['$scope', '$state', '$window', '$log', 'Authentication', 'employeeResolve'];
 
-  function EmployeesController ($scope, $state, $window, Authentication, employee) {
+  function EmployeesController ($scope, $state, $window, $log, Authentication, employee) {
     var vm = this;
 
     vm.authentication = Authentication;
@@ -48,11 +48,12 @@
       function errorCallback(res) {
         vm.error = res.data.message;
       }
+
+      $scope.find = function () {
+        $log.info('executing TeamsController.$scope.find');
+        vm.team = Teams.query();
+      };
     }
 
-    // $scope.find = function () {
-    //   $log.info('executing TeamsController.$scope.find');
-    //   self.team = Team.query();
-    // }
   }
 }());

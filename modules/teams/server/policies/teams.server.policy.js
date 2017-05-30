@@ -20,6 +20,12 @@ exports.invokeRolesPolicies = function () {
     }, {
       resources: '/api/teams/:teamId',
       permissions: '*'
+    }, {
+      resources: '/api/employees',
+      permissions: '*'
+    }, {
+      resources: '/api/employees/:employeeId',
+      permissions: '*'
     }]
   }, {
     roles: ['user'],
@@ -28,6 +34,12 @@ exports.invokeRolesPolicies = function () {
       permissions: ['get', 'post']
     }, {
       resources: '/api/teams/:teamId',
+      permissions: ['get']
+    }, {
+      resources: '/api/employees',
+      permissions: ['get', 'post']
+    }, {
+      resources: '/api/employees/:empolyeeId',
       permissions: ['get']
     }]
   }, {

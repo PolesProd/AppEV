@@ -9,12 +9,23 @@
   EmployeesService.$inject = ['$resource'];
 
   function EmployeesService($resource) {
-    return $resource('api/employees/:employeeId', {
-      employeeId: '@_id'
-    }, {
-      update: {
-        method: 'PUT'
-      }
-    });
+    return {
+      employees: $resource('api/employees/:employeeId', {
+        employeeId: '@_id'
+      }, {
+        update: {
+          method: 'PUT'
+        }
+      }),
+      teams: $resource('api/teams/teamId', {
+        teamId: '@_id'
+      }, {
+        update: {
+          method: 'PUT'
+        }, params: {
+          controllers: 'TeamsController'
+        }
+      })
+    };
   }
 }());
