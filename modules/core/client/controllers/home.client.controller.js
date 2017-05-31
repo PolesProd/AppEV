@@ -2,7 +2,7 @@
 
 angular.module('core').controller('HomeController', ['$scope', '$http', 'Authentication', 'leafletData',
 function ($scope, $http, Authentication, leafletData) {
-  // This provides Authentication context.
+  // Cela fournit un contexte d'authentification.
   $scope.authentication = Authentication;
 
   // On récupère les données geo des sites depuis un fichier json
@@ -27,26 +27,33 @@ function ($scope, $http, Authentication, leafletData) {
         });
       },
       pointToLayer: function (feature, latlng) {
-        var marker = feature.geometry.type;
-        var local_icons = {
-          default_icon: {},
-          leaf_icon: {
-            iconUrl: 'http://andywoodruff.com/maptime-leaflet/rat.png',
-            shadowUrl: '/modules/core/client/img/leaflet/leaf-shadow.png',
-            iconSize: [27, 27],
-            shadowSize: [27, 27]
-          }
-        }
-        // if (marker == 'Point') {
-        //   return marker(latlng, {icon: local_icons.leaf_icon });
+        var arbre = feature.geometry.type;
+        // var local_icons = {
+        //   default_icon: {},
+        //   leaf_icon: {
+        //     iconUrl: 'http://andywoodruff.com/maptime-leaflet/rat.png',
+        //     shadowUrl: '/modules/core/client/img/leaflet/leaf-shadow.png',
+        //     iconSize: [27, 27],
+        //     shadowSize: [27, 27]
+        //   }
         // }
-        console.log(marker);
+        var leaf_icon = L.icon({
+            iconUrl: '/modules/core/client/img/leaflet/leaf-green.png',
+            // shadowUrl: '/modules/core/client/img/leaflet/leaf-shadow.png',
+            iconSize: [27, 40],
+            shadowSize: [27, 27]
+          })
+
+        if (arbre == 'Point') {
+          return L.marker(latlng, { icon: leaf_icon } );
+          //return marker(latlng, {icon: local_icons.leaf_icon });
+        }
+        // console.log(marker);
+        // console.log( feature );
+        // console.log( local_icons.leaf_icon );
       }
     };
   });
-
-
-
 
   // angular.extend($scope, {
   //   icons: local_icons
@@ -79,5 +86,4 @@ function ($scope, $http, Authentication, leafletData) {
       labels: [ 'Légende 1', 'Légende 2', 'Légende 3', 'Légende 4' ]
     }
   });
-}
-]);
+}]);

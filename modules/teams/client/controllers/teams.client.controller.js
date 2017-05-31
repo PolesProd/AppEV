@@ -55,5 +55,7 @@
       $log.info('executing EmployeesController.$scope.find');
       // vm.employees = Employees.query();
     };
+
+    console.log(vm);
   }
 }());
