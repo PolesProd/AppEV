@@ -3,8 +3,8 @@
 
   // Employees controller
   angular
-    .module('employees')
-    .controller('EmployeesController', EmployeesController);
+  .module('employees')
+  .controller('EmployeesController', EmployeesController);
 
   EmployeesController.$inject = ['$scope', '$state', '$window', '$log', 'Authentication', 'employeeResolve'];
 
@@ -48,12 +48,12 @@
       function errorCallback(res) {
         vm.error = res.data.message;
       }
-
-      $scope.find = function () {
-        $log.info('executing TeamsController.$scope.find');
-        // vm.team = Teams.query();
-      };
     }
+
+    $scope.find = function () {
+      $log.info('executing TeamsController.$scope.find');
+      // vm.team = TeamsService.query();
+    };
 
   }
 }());

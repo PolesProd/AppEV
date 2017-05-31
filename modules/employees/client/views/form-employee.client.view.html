@@ -31,8 +31,7 @@
 
         <div class="form-group" show-errors>
           <label class="control-label" for="team">Equipe:</label>
-          <!-- <input name="contract" type="text" ng-model="vm.employee.team" id="team" class="form-control" required> -->
-          <select name="team" ng-model="selectedTeam" id="team" class="form-control" ng-options="t.name for team in teams" required></select>
+          <select name="team" ng-model="vm.employee.team" id="team" class="form-control" ng-options="t.name for t in teams" required></select>
           <div ng-messages="vm.form.employeeForm.team.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Equipe requise.</p>
           </div>

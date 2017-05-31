@@ -26,27 +26,38 @@ function ($scope, $http, Authentication, leafletData) {
           }
         });
       },
-      var local_icons: {
-        default_icon: {},
-        leaf_icon: {
-          iconUrl: '/modules/core/client/img/leaflet/leaf-green.png'
-          shadowUrl: '/modules/core/client/img/leaflet/leaf-shadow.png'
-          iconSize: [27, 27]
-          shadowSize: [27, 27]
+      pointToLayer: function (feature, latlng) {
+        var marker = feature.geometry.type;
+        var local_icons = {
+          default_icon: {},
+          leaf_icon: {
+            iconUrl: 'http://andywoodruff.com/maptime-leaflet/rat.png',
+            shadowUrl: '/modules/core/client/img/leaflet/leaf-shadow.png',
+            iconSize: [27, 27],
+            shadowSize: [27, 27]
+          }
         }
+        // if (marker == 'Point') {
+        //   return marker(latlng, {icon: local_icons.leaf_icon });
+        // }
+        console.log(marker);
       }
     };
   });
 
-  angular.extend($scope, {
-    icons: local_icons
-  });
+
+
+
+  // angular.extend($scope, {
+  //   icons: local_icons
+  // });
 
   angular.extend($scope, {
     center: {
       lat: 48.934070,
       lng: 2.327557,
-      zoom: 16
+      zoom: 16,
+      // icon: local_icons.leaf_icon,
     },
     defaults: {
       scrollWheelZoom: true

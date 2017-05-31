@@ -40,7 +40,7 @@ var EmployeeSchema = new Schema({
     default: '',
     required: 'Remplissez la formation de l\'employé'
   },
-  team_name: {
+  team: {
     type: Schema.ObjectId,
     ref: 'Team'
   },

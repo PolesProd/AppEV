@@ -1,16 +1,16 @@
 'use strict';
 
 /**
- * Module dependencies
- */
+* Module dependencies
+*/
 var acl = require('acl');
 
 // Using the memory backend
 acl = new acl(new acl.memoryBackend());
 
 /**
- * Invoke Employees Permissions
- */
+* Invoke Employees Permissions
+*/
 exports.invokeRolesPolicies = function () {
   acl.allow([{
     roles: ['admin'],
@@ -20,12 +20,6 @@ exports.invokeRolesPolicies = function () {
     }, {
       resources: '/api/employees/:employeeId',
       permissions: '*'
-    }, {
-      resources: '/api/teams',
-      permissions: '*'
-    }, {
-      resources: '/api/teams/:teamId',
-      permissions: '*'
     }]
   }, {
     roles: ['user'],
@@ -34,12 +28,6 @@ exports.invokeRolesPolicies = function () {
       permissions: ['get', 'post']
     }, {
       resources: '/api/employees/:employeeId',
-      permissions: ['get']
-    }, {
-      resources: '/api/teams',
-      permissions: ['get', 'post']
-    }, {
-      resources: '/api/teams/:teamId',
       permissions: ['get']
     }]
   }, {
@@ -55,8 +43,8 @@ exports.invokeRolesPolicies = function () {
 };
 
 /**
- * Check If Employees Policy Allows
- */
+* Check If Employees Policy Allows
+*/
 exports.isAllowed = function (req, res, next) {
   var roles = (req.user) ? req.user.roles : ['guest'];
 
