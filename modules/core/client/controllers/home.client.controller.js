@@ -28,43 +28,25 @@ function ($scope, $http, Authentication, leafletData) {
       },
       pointToLayer: function (feature, latlng) {
         var arbre = feature.geometry.type;
-        // var local_icons = {
-        //   default_icon: {},
-        //   leaf_icon: {
-        //     iconUrl: 'http://andywoodruff.com/maptime-leaflet/rat.png',
-        //     shadowUrl: '/modules/core/client/img/leaflet/leaf-shadow.png',
-        //     iconSize: [27, 27],
-        //     shadowSize: [27, 27]
-        //   }
-        // }
         var leaf_icon = L.icon({
-            iconUrl: '/modules/core/client/img/leaflet/leaf-green.png',
-            // shadowUrl: '/modules/core/client/img/leaflet/leaf-shadow.png',
-            iconSize: [27, 40],
-            shadowSize: [27, 27]
-          })
+            iconUrl: '/modules/core/client/img/icons/arbre.png',
+            shadowUrl: '/modules/core/client/img/icons/arbre_ombre.png',
+            iconSize: [16, 22],
+            shadowSize: [16, 22]
+          });
 
-        if (arbre == 'Point') {
+        if (arbre === 'Point') {
           return L.marker(latlng, { icon: leaf_icon } );
-          //return marker(latlng, {icon: local_icons.leaf_icon });
         }
-        // console.log(marker);
-        // console.log( feature );
-        // console.log( local_icons.leaf_icon );
       }
     };
   });
-
-  // angular.extend($scope, {
-  //   icons: local_icons
-  // });
 
   angular.extend($scope, {
     center: {
       lat: 48.934070,
       lng: 2.327557,
       zoom: 16,
-      // icon: local_icons.leaf_icon,
     },
     defaults: {
       scrollWheelZoom: true
