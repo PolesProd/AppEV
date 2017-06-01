@@ -17,7 +17,7 @@
     vm.form = {};
     vm.remove = remove;
     vm.save = save;
-  
+
 
     // Remove existing Employee
     function remove() {
@@ -53,12 +53,10 @@
 
     $scope.find = function () {
       $log.info('executing TeamsController.$scope.find');
+      // vm.team = Teams.query()
     };
 
-    $scope.employee = [
-      // vm.team = Teams.query()
-    ];
-
-    console.log(vm);
+    // $scope.employee = [
+    // ];
   }
 }());
