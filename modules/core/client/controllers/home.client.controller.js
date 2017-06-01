@@ -29,8 +29,8 @@ function ($scope, $http, Authentication, leafletData) {
       pointToLayer: function (feature, latlng) {
         var arbre = feature.geometry.type;
         var leaf_icon = L.icon({
-            iconUrl: '/modules/core/client/img/icons/arbre.png',
-            shadowUrl: '/modules/core/client/img/icons/arbre_ombre.png',
+            iconUrl: '../modules/core/client/img/icons/arbre.png',
+            shadowUrl: '../modules/core/client/img/icons/arbre_ombre.png',
             iconSize: [16, 22],
             shadowSize: [16, 22]
           });
