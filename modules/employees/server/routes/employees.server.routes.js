@@ -6,9 +6,9 @@
 
 var path = require('path'),
   employeesPolicy = require('../policies/employees.server.policy'),
-  teamsPolicy = require(path.resolve('../vlg-espaces-verts/modules/teams/server/policies/teams.server.policy')),
+  teamsPolicy = require(path.resolve('./modules/teams/server/policies/teams.server.policy')),
   employees = require('../controllers/employees.server.controller'),
-  teams = require(path.resolve('../vlg-espaces-verts/modules/teams/server/controllers/teams.server.controller'));
+  teams = require(path.resolve('./modules/teams/server/controllers/teams.server.controller'));
 
 module.exports = function(app) {
   // Employees Routes
