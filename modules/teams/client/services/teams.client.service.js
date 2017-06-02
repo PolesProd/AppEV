@@ -6,25 +6,45 @@
   .module('teams')
   .factory('TeamsService', TeamsService);
 
-  TeamsService.$inject = ['$resource'];
+  TeamsService.$inject = ['$resource', '$log'];
 
-  function TeamsService($resource) {
-    return {
-      // employees: [{value: 0, name: 'azerty'},{value: 0, name: 'qwerty'},{value: 0, name: 'AZERTY'}],
-      employees: $resource('api/employees/:employeeId', {
-        employeesId: '@_id'
-      }, {
-        update: {
-          meyhod: 'PUT'
-        }
-      }),
-      teams: $resource('api/teams/:teamId', {
-        teamId: '@_id'
-      }, {
-        update: {
-          method: 'PUT'
-        }
-      })
-    };
+  function TeamsService($resource, $log) {
+    var Team = $resource('/api/teams/:teamsId', {
+      teamsId: '@_id'
+    }, {
+      update: {
+        method: 'PUT'
+      }
+    });
+
+    angular.extend(Team.prototype, {
+      createOrUpdate: function () {
+        var team = this;
+        return createOrUpdate(team);
+      }
+    });
+
+    return Team;
+
+    function createOrUpdate(team) {
+      if (team._id) {
+        return team.$update(onSuccess, onError);
+      } else {
+        return team.$sava(onSuccess, onError);
+      }
+
+      function onSuccess(team) {
+        var success = team.data
+      }
+
+      function onError(errorResponse) {
+        var error = errorResponse.data;
+        handleError(error);
+      }
+    }
+
+    function handleError(team) {
+      $log.error(error);
+    }
   }
 })();

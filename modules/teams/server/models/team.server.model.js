@@ -5,7 +5,6 @@
  */
 var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
-  // User = require('./modules/users/server/models/user.sever.model.js');
 
 /**
  * Team Schema
@@ -14,7 +13,7 @@ var TeamSchema = new Schema({
   name: {
     type: String,
     default: '',
-    required: 'Please fill Team name',
+    required: 'Nom obligatoire',
     trim: true
   },
   sites: {

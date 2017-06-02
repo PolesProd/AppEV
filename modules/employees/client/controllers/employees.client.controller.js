@@ -55,8 +55,5 @@
       $log.info('executing TeamsController.$scope.find');
       // vm.team = Teams.query()
     };
-
-    // $scope.employee = [
-    // ];
   }
 }());
