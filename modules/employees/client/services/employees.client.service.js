@@ -3,10 +3,12 @@
   'use strict';
 
   angular
-    .module('employees')
-    .factory('EmployeesService', EmployeesService);
+  .module('employees')
+  .factory('EmployeesService', EmployeesService);
+  // .factory('TeamsService', TeamsService);
 
   EmployeesService.$inject = ['$resource', '$log'];
+  // TeamsService.$inject = ['$resource', '$log'];
 
   function EmployeesService($resource, $log) {
     var Employee = $resource('/api/employees/:employeeId', {
@@ -35,7 +37,8 @@
 
       // Gestion de la réponse réussie
       function onSuccess(employee) {
-        var success = employee.data
+        var success = employee.data;
+        return getAllTeams();
       }
 
       // Gestion de la réponse d'erreur
@@ -49,6 +52,14 @@
     function handleError(error) {
       // Journal d'erreurs
       $log.error(error);
+    }
+
+    function getAllTeams() {
+      return {
+        teams: $resource('/api/teams/:teamId', {}, {
+          query: { method: 'GET', params: {}, isArray: true }
+        })
+      };
     }
   }
 }());

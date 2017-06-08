@@ -1,19 +1,44 @@
 <section>
   <div class="page-header">
-    <h1>{{vm.planning._id ? 'Edit Planning' : 'New Planning'}}</h1>
+    <h1>{{vm.planning._id ? 'Editer Planning' : 'Ajouter Planning'}}</h1>
   </div>
   <div class="col-md-12">
     <form name="vm.form.planningForm" class="form-horizontal" ng-submit="vm.save(vm.form.planningForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
-          <label class="control-label" for="name">Name</label>
-          <input name="name" type="text" ng-model="vm.planning.name" id="name" class="form-control" placeholder="Name" required>
-          <div ng-messages="vm.form.planningForm.name.$error" role="alert">
+          <label class="control-label" for="week">Week</label>
+          <select name="week" ng-model="vm.planning.week" id="week" class="form-control" ng-options="t.name for t in teams" required></select>
+          <div ng-messages="vm.form.planningForm.week.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Planning name is required.</p>
           </div>
         </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="team">Equipe</label>
+          <select name="team" ng-model="vm.planning.team" id="team" class="form-control" ng-options="t.name for t in teams" required></select>
+          <div ng-messages="vm.form.planningForm.team.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Planning name is required.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="site">Site</label>
+          <select name="site" ng-model="vm.planning.site" id="site" class="form-control" ng-options="t.name for t in teams" required></select>
+          <div ng-messages="vm.form.planningForm.site.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Planning name is required.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="tasks">Tâches</label>
+          <input name="tasks" type="text" ng-model="vm.planning.tasks" id="tasks" class="form-control" placeholder="Ex: Désherbage..." required>
+          <div ng-messages="vm.form.planningForm.tasks.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Planning name is required.</p>
+          </div>
+        </div>
+
         <div class="form-group">
-          <button type="submit" class="btn btn-default">{{vm.planning._id ? 'Update' : 'Create'}}</button>
+          <button type="submit" class="btn btn-default">{{vm.planning._id ? 'Mettre à jour' : 'Créer'}}</button>
         </div>
         <div ng-show="vm.error" class="text-danger">
           <strong ng-bind="vm.error"></strong>

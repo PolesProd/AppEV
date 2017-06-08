@@ -34,7 +34,7 @@
       }
 
       function onSuccess(team) {
-        var success = team.data
+        var success = team.data;
       }
 
       function onError(errorResponse) {
@@ -43,7 +43,7 @@
       }
     }
 
-    function handleError(team) {
+    function handleError(error) {
       $log.error(error);
     }
   }

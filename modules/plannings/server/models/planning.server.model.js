@@ -10,7 +10,7 @@ var mongoose = require('mongoose'),
  * Planning Schema
  */
 var PlanningSchema = new Schema({
-  name: {
+  week: {
     type: String,
     default: '',
     required: 'Please fill Planning name',

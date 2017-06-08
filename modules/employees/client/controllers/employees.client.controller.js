@@ -14,10 +14,10 @@
     vm.authentication = Authentication;
     vm.employee = employee;
     vm.error = null;
+    vm.team = team;
     vm.form = {};
     vm.remove = remove;
     vm.save = save;
-
 
     // Remove existing Employee
     function remove() {
@@ -51,9 +51,25 @@
       }
     }
 
-    $scope.find = function () {
-      $log.info('executing TeamsController.$scope.find');
-      // vm.team = Teams.query()
-    };
+    // $scope.find = function () {
+    //   $log.info('executing EmployeesController.$scope.find');
+    // };
+
+    $scope.teams = [{
+      id: 1,
+      name: 'team.name1',
+      site: 'team.site1',
+      member: 'team.member1'
+    }, {
+      id: 2,
+      name: 'team.name2',
+      site: 'team.site2',
+      member: 'team.member2'
+    }, {
+      id: 3,
+      name: 'team.name3',
+      site: 'team.site3',
+      member: 'team.member3'
+    }]
   }
 }());

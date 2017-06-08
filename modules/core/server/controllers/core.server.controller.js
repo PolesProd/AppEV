@@ -5,7 +5,8 @@
 */
 exports.renderIndex = function (req, res) {
   // if (!req.user.isAuthenticated())
-  //   res.redirect('/authentication/signin');
+  //   // res.redirect('/authentication/signin');
+  //   res.redirect('modules/core/server/views/404');
   // else
   res.render('modules/core/server/views/index', {
     user: req.user
@@ -17,7 +18,7 @@ exports.renderIndex = function (req, res) {
 */
 exports.renderServerError = function (req, res) {
   res.status(500).render('modules/core/server/views/500', {
-    error: 'Oops! Something went wrong...'
+    error: 'It looks like the server does not want to work...'
   });
 };
 

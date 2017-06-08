@@ -15,6 +15,7 @@ var path = require('path'),
  */
 exports.create = function(req, res) {
   var employee = new Employee(req.body);
+  employee.team = Team.query();
   employee.user = req.user;
 
   employee.save(function(err) {
