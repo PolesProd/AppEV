@@ -50,10 +50,10 @@
       }
     }
 
-    // Find a list of Employees
+    // Find a list of employes
     $scope.find = function () {
-      $log.info('executing EmployeesController.$scope.find');
-      // vm.employees = Employees.query();
+      $log.info('executing employesController.$scope.find');
+      // vm.employes = employes.query();
     };
   }
 }());
