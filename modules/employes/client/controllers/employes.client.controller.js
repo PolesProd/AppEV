@@ -9,6 +9,7 @@
   EmployesController.$inject = ['$scope', '$state', '$window', 'Authentication', 'employeResolve'];
 
   function EmployesController ($scope, $state, $window, Authentication, employe) {
+
     var vm = this;
 
     vm.authentication = Authentication;
@@ -27,6 +28,7 @@
 
     // Save Employe
     function save(isValid) {
+      console.log("valid save");
       if (!isValid) {
         $scope.$broadcast('show-errors-check-validity', 'vm.form.employeForm');
         return false;
@@ -41,8 +43,9 @@
 
       function successCallback(res) {
         $state.go('employes.view', {
-          employeId: res._id
+          employeId: res._id,
         });
+        console.log(team);
       }
 
       function errorCallback(res) {

@@ -31,10 +31,9 @@
 
         <div class="form-group" show-errors>
           <label class="control-label" for="team">Equipe:</label>
-          <select name="team" ng-model="teams" id="team" class="form-control" ng-options="team as team.name for team in teams" required>
+          <select name="team" ng-model="vm.employe.team" id="team" class="form-control" ng-options="team as team.name for team in teams" required>
             <option value="">->-- Choisissez une équipe --<-</option>
           </select>
-
           <div ng-messages="vm.form.employeForm.team.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Equipe requise.</p>
           </div>
@@ -58,6 +57,7 @@
         <div class="form-group">
           <button type="submit" class="btn btn-default">{{vm.employe._id ? 'Mettre à jour' : 'Créer'}}</button>
         </div>
+        
         <div ng-show="vm.error" class="text-danger">
           <strong ng-bind="vm.error"></strong>
         </div>

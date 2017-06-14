@@ -1,50 +1,53 @@
-// Teams service used to communicate Teams REST endpoints
+// Employes service used to communicate Employes REST endpoints
 (function () {
   'use strict';
 
-  angular
+   angular
   .module('teams')
-  .factory('TeamsService', TeamsService);
+  .factory('TeamsService', EmployesService)
+  .factory('TeamsService', TeamsService)
 
-  TeamsService.$inject = ['$resource', '$log'];
+  .controller('TeamsController', ['$scope', '$resource', function ($scope, $resource) {
+    $resource('/api/employes/:employeId', {
+      'get': {
+        method: 'GET',
+        isArray: true
+      }
+    })
 
-  function TeamsService($resource, $log) {
-    var Team = $resource('/api/teams/:teamsId', {
-      teamsId: '@_id'
+    .get().$promise.then(
+      function(employes) {
+        $scope.employes = employes;
+        // teams
+
+
+        // console.log(teams);
+      },
+      function(response) {
+        alert('Error');
+      });
+  }]);
+
+  TeamsService.$inject = ['$resource'];
+  EmployesService.$inject = ['$resource'];
+
+  function TeamsService($resource) {
+    return $resource('/api/teams/:teamId', {
+      teamId: '@_id'
     }, {
       update: {
         method: 'PUT'
       }
     });
+  }
 
-    angular.extend(Team.prototype, {
-      createOrUpdate: function () {
-        var team = this;
-        return createOrUpdate(team);
+  function EmployesService($resources) {
+    return $resource('/api/employes/:employeId', {
+      employeId: '@_id'
+    }, {
+      update: {
+        method: 'PUT'
       }
     });
-
-    return Team;
-
-    function createOrUpdate(team) {
-      if (team._id) {
-        return team.$update(onSuccess, onError);
-      } else {
-        return team.$sava(onSuccess, onError);
-      }
-
-      function onSuccess(team) {
-        var success = team.data;
-      }
-
-      function onError(errorResponse) {
-        var error = errorResponse.data;
-        handleError(error);
-      }
-    }
-
-    function handleError(error) {
-      $log.error(error);
-    }
   }
-})();
+}());
