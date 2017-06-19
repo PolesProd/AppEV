@@ -29,6 +29,9 @@ exports.invokeRolesPolicies = function () {
     }, {
       resources: '/api/teams/:teamId',
       permissions: ['get']
+    }, {
+      resources: '/api/emplyes/:employeId',
+      permissions: ['get', 'post']
     }]
   }, {
     roles: ['guest'],
@@ -38,6 +41,9 @@ exports.invokeRolesPolicies = function () {
     }, {
       resources: '/api/teams/:teamId',
       permissions: ['get']
+    }, {
+      resources: '/api/emplyes/:employeId',
+      permissions: ['get', 'post']
     }]
   }]);
 };

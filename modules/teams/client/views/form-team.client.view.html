@@ -23,13 +23,13 @@
         </div>
 
         <div class="form-group" show-errors>
-          <label class="control-label" for="member">Membre</label>
-          <input name="member" type="text" ng-model="vm.team.member" id="member" class="form-control" placeholder="Name" required>
-            <!-- <select name="member" ng-model="selectedEmployee" ng-options="e.name for e in employes" class="form-control" required></select> -->
-            <div ng-messages="vm.form.teamForm.member.$error" role="alert">
-              <p class="help-block error-text" ng-message="required">Les Membres sont requis pour l'équipe.</p>
-            </div>
-        </select>
+          <label class="control-label" for="team">Membres:</label>
+          <select name="member" ng-model="vm.team.member" id="member" class="form-control" ng-options="employe as employe.name for employe in employes" required>
+            <option value="">->-- Choisissez des membres --<-</option>
+          </select>
+          <div ng-messages="vm.form.teamForm.member.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Equipe requise.</p>
+          </div>
         </div>
 
         <div class="form-group">

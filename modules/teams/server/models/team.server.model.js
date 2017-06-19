@@ -10,7 +10,7 @@ var mongoose = require('mongoose'),
  * Team Schema
  */
 var TeamSchema = new Schema({
-  name: { type: String, default: '', required: 'Nom obligatoire', trim: true },
+  name: { type: String, default: '', required: 'Nom est obligatoire', trim: true },
   sites: { type: String, required: 'Vous devze précisé le site d\'intervention' },
   member: { type: Schema.Types.ObjectId, ref: 'Employe' },
   created: { type: Date, default: Date.now },

@@ -54,10 +54,11 @@
             <p class="help-block error-text" ng-message="required">Formation est requis.</p>
           </div>
         </div>
+
         <div class="form-group">
           <button type="submit" class="btn btn-default">{{vm.employe._id ? 'Mettre à jour' : 'Créer'}}</button>
         </div>
-        
+
         <div ng-show="vm.error" class="text-danger">
           <strong ng-bind="vm.error"></strong>
         </div>

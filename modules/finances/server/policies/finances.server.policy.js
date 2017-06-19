@@ -9,53 +9,47 @@ var acl = require('acl');
 acl = new acl(new acl.memoryBackend());
 
 /**
- * Invoke Employes Permissions
+ * Invoke Finances Permissions
  */
 exports.invokeRolesPolicies = function () {
   acl.allow([{
     roles: ['admin'],
     allows: [{
-      resources: '/api/employes',
+      resources: '/api/finances',
       permissions: '*'
     }, {
-      resources: '/api/employes/:employeId',
+      resources: '/api/finances/:financeId',
       permissions: '*'
     }]
   }, {
     roles: ['user'],
     allows: [{
-      resources: '/api/employes',
+      resources: '/api/finances',
       permissions: ['get', 'post']
     }, {
-      resources: '/api/employes/:employeId',
+      resources: '/api/finances/:financeId',
       permissions: ['get']
-    }, {
-      resources: '/api/teams/:teamId',
-      permissions: ['get', 'post']
     }]
   }, {
     roles: ['guest'],
     allows: [{
-      resources: '/api/employes',
+      resources: '/api/finances',
       permissions: ['get']
     }, {
-      resources: '/api/employes/:employeId',
+      resources: '/api/finances/:financeId',
       permissions: ['get']
-    }, {
-      resources: '/api/teams/:teamId',
-      permissions: ['get', 'post']
     }]
   }]);
 };
 
 /**
- * Check If Employes Policy Allows
+ * Check If Finances Policy Allows
  */
 exports.isAllowed = function (req, res, next) {
   var roles = (req.user) ? req.user.roles : ['guest'];
 
-  // If an Employe is being processed and the current user created it then allow any manipulation
-  if (req.employe && req.user && req.employe.user && req.employe.user.id === req.user.id) {
+  // If an Finance is being processed and the current user created it then allow any manipulation
+  if (req.finance && req.user && req.finance.user && req.finance.user.id === req.user.id) {
     return next();
   }
 

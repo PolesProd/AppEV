@@ -2,63 +2,71 @@
 (function () {
   'use strict';
 
-   angular
-  .module('employes')
-  .factory('EmployesService', EmployesService)
-  .factory('EmployesService', TeamService)
+  angular
+    .module('employes')
+    .factory('EmployesService', EmployesService)
+    .factory('EmployesService', TeamService)
 
-  .controller('EmployesController', ['$scope', '$resource', function ($scope, $resource) {
-    $resource('/api/teams', null, {
-      'get': {
-        method: 'GET',
-        isArray: true
-      }
-    })
-
-    .get().$promise.then(
-      function(teams) {
-        $scope.teams = teams;
-        // console.log(teams);
-      },
-      function(response) {
-        alert('Error');
-      });
-
-      $resource('/api/teams', {
-        data: '@team'
-      }, {
-        'save': {
-          method: 'POST'
+    .controller('EmployesController', ['$scope', '$resource', function ($scope, $resource) {
+      $resource('/api/teams', null, {
+        'get': {
+          method: 'GET',
+          isArray: true
         }
       })
-      .save($scope.team).$promise.then(
-        function (team) {
-          $scope.teams.push(team);
-          console.log('success');
-        },
-        function (response) {
-          console.error('error');
-        }
-      );
+      .get().$promise.then(
+        function(teams) {
+          $scope.teams = teams;
 
-      $resource('/api/teams/:teamId', {
-        data: '@team'
-      }, {
-        'update': {
-          method: 'PUT'
-        }
-      })
-      .update({
-        id: $scope.team.id
-      }, $sccope.team).$promise.then(
-        function (team) {
-          console.log('success');
+          for (var i = 0; i < teams.length; i++) {
+            $scope.team_id = teams[i]._id;
+            $scope.name = teams[i].name;
+
+            console.log($scope.team_id);
+          }
         },
-        function (response) {
-          console.error('error');
-        }
-      );
-  }]);
+
+        function(response) {
+          alert('Error');
+        });
+        /*****************/
+      $resource('/api/teams/:teamsId', {
+          data: '@team'
+        }, {
+          'save': {
+            method: 'POST',
+            isArray: true
+          }
+        })
+        .save($scope.team).$promise.then(
+          function (team) {
+
+            $scope.teams.push(team);
+            console.log('success');
+          },
+          function (response) {
+            console.error('error');
+          }
+        );
+      /*****************/
+      // $resource('/api/teams/:teamId', {
+      //   data: '@team'
+      // }, {
+      //   'update': {
+      //     method: 'PUT'
+      //   }
+      // })
+      // .update({
+      //   id: $scope.team._id
+      // }, $sccope.team).$promise.then(
+      //   function (team) {
+      //     console.log('success');
+      //   },
+      //   function (response) {
+      //     console.error('error');
+      //   }
+      // );
+    }]);
 
   EmployesService.$inject = ['$resource'];
   TeamService.$inject = ['$resource'];
@@ -76,10 +84,6 @@
   function TeamService($resource) {
     return $resource('api/teams/:teamsId', {
       teamId: '@_id'
-    }, {
-      create: {
-        method: 'GET'
-      }
     }, {
       update: {
         method: 'PUT'

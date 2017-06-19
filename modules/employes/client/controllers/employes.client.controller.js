@@ -6,9 +6,9 @@
     .module('employes')
     .controller('EmployesController', EmployesController);
 
-  EmployesController.$inject = ['$scope', '$state', '$window', 'Authentication', 'employeResolve'];
+  EmployesController.$inject = ['$scope', '$state', '$window', 'Authentication', 'employeResolve', 'TeamsService'];
 
-  function EmployesController ($scope, $state, $window, Authentication, employe) {
+  function EmployesController ($scope, $state, $window, Authentication, employe, TeamsService) {
 
     var vm = this;
 
@@ -19,6 +19,20 @@
     vm.remove = remove;
     vm.save = save;
 
+    var findTeamError = function(team){
+       $scope.error = "Error Fetching Users. Message:" + team;
+     };
+
+     var findTeam = function(data){
+        $scope.users = data;
+     };
+
+    var getTeams = function(){
+       TeamsService.get().then(findTeam, findTeamError);
+     };
+
+     getTeams();
+
     // Remove existing Employe
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {
@@ -28,7 +42,6 @@
 
     // Save Employe
     function save(isValid) {
-      console.log("valid save");
       if (!isValid) {
         $scope.$broadcast('show-errors-check-validity', 'vm.form.employeForm');
         return false;
@@ -45,7 +58,6 @@
         $state.go('employes.view', {
           employeId: res._id,
         });
-        console.log(team);
       }
 
       function errorCallback(res) {
