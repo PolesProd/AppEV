@@ -9,24 +9,24 @@
 
     .controller('EmployesController', ['$scope', '$resource', '$http', function ($scope, $resource, $http) {
 
-      // -- Déclaration d'un Employee
-      $scope.employee = {};
+      // -- Déclaration d'un Employe
+      $scope.employe = {};
 
-      $scope.createEmployee = function() {
+      $scope.createEmploye = function() {
 
         // -- Vérification
         // console.log('executed')
         // console.log(isValid)
-        console.log($scope.employee)
+        console.log($scope.employe);
 
         // -- Persiste dans MongoDB
-        $resource('/api/employes/', null, {
+        $resource('/api/employes', null, {
           'save': {
             method: 'POST',
             isArray: false
           }
         })
-        .save($scope.employee).$promise.then(
+        .save($scope.employe).$promise.then(
           function(result) {
             // $scope.employes.push(result);
             // console.log('result is:')
@@ -36,7 +36,7 @@
           function(response) {
             console.log(response);
           });
-      }
+      };
       /* -----------------------------------------------------------------------
                                       RESSOURCE TEAMS
       ------------------------------------------------------------------------ */
@@ -53,7 +53,7 @@
         },
 
         function(response) {
-          console.error('error');
+          console.error(response);
         });
     }]);
 
@@ -61,7 +61,7 @@
   TeamService.$inject = ['$resource'];
 
   function EmployesService($resource) {
-    return $resource('api/employes/:employeId', {
+    return $resource('/api/employes/:employeId', {
       employeId: '@_id'
     }, {
       update: {
@@ -71,7 +71,7 @@
   }
 
   function TeamService($resource) {
-    return $resource('api/teams/:teamsId', {
+    return $resource('/api/teams/:teamsId', {
       teamId: '@_id'
     }, {
       update: {

@@ -1,5 +1,6 @@
-(function (app) {
-  'use strict';
+'use strict';
 
-  app.registerModule('plannings');
-}(ApplicationConfiguration));
+// Use Applicaion configuration module to register a new module
+ApplicationConfiguration.registerModule('plannings', ['teams']);
+ApplicationConfiguration.registerModule('plannings.admin', ['plannings']);
+ApplicationConfiguration.registerModule('plannings.admin.routes', ['ui.router']);

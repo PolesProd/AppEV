@@ -23,9 +23,6 @@ exports.create = function(req, res) {
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      // Employe.find(function (result) {
-      //
-      // })
       res.jsonp(team);
     }
   });

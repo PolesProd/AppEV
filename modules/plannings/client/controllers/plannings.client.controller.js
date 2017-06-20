@@ -6,9 +6,9 @@
     .module('plannings')
     .controller('PlanningsController', PlanningsController);
 
-  PlanningsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'planningResolve'];
+  PlanningsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'planningResolve', 'TeamsService'];
 
-  function PlanningsController ($scope, $state, $window, Authentication, planning) {
+  function PlanningsController ($scope, $state, $window, Authentication, planning, TeamsService) {
     var vm = this;
 
     vm.authentication = Authentication;

@@ -10,33 +10,12 @@ var mongoose = require('mongoose'),
  * Planning Schema
  */
 var PlanningSchema = new Schema({
-  week: {
-    type: String,
-    default: '',
-    required: 'Please fill Planning name',
-    trim: true
-  },
-  team: {
-    type: Schema.ObjectId,
-    ref: 'Team'
-  },
-  site: {
-    type: Schema.ObjectId,
-    ref: 'Lot'
-  },
-  tasks: {
-    type: String,
-    default: '',
-    required: 'Veuillez remplir les tâches.'
-  },
-  created: {
-    type: Date,
-    default: Date.now
-  },
-  user: {
-    type: Schema.ObjectId,
-    ref: 'User'
-  }
-});
+  week: { type: String, default: '', required: 'Please fill Planning name', trim: true },
+  team: { type: Schema.Types.ObjectId, ref: 'Team' },
+  site: { type: Schema.Types.ObjectId, ref: 'Lot' },
+  tasks: { type: String, default: '', required: 'Veuillez remplir les tâches.' },
+  created: { type: Date, default: Date.now },
+  user: { type: Schema.ObjectId, ref: 'User' }
+}, { collection: 'plannings'});
 
-mongoose.model('Planning', PlanningSchema);
+module.exports = mongoose.model('Planning', PlanningSchema);

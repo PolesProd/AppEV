@@ -3,6 +3,63 @@
     <h1>{{vm.planning._id ? 'Editer Planning' : 'Ajouter Planning'}}</h1>
   </div>
   <div class="col-md-12">
+    <form name="vm.form.planningForm" class="form-horizontal" ng-submit="createPlanning();" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="week">Week</label>
+          <select name="week" ng-model="planning.week" id="week" class="form-control" ng-options="t.name for t in teams" required></select>
+          <div ng-messages="vm.form.planningForm.week.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Planning name is required.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="team">Equipe:</label>
+          <!-- ng-options="team as team.name for team in teams"  -->
+          <select name="team" ng-model="planning.team" id="team" class="form-control">
+            <option value="" disabled selected>Choisissez une Equipe</option>
+            <option value="{{team._id}}" ng-repeat="team in teams">
+                {{team.name}}
+            </option>
+          </select>
+          <div ng-messages="vm.form.planningForm.team.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Equipe requise.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="site">Site</label>
+          <select name="site" ng-model="planning.site" id="site" class="form-control" ng-options="t.name for t in teams" required></select>
+          <div ng-messages="vm.form.planningForm.site.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Planning name is required.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="tasks">Tâches</label>
+          <input name="tasks" type="text" ng-model="planning.tasks" id="tasks" class="form-control" placeholder="Ex: Désherbage..." required>
+          <div ng-messages="vm.form.planningForm.tasks.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Planning name is required.</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.planning._id ? 'Mettre à jour' : 'Créer'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>
+
+
+<!-- <section>
+  <div class="page-header">
+    <h1>{{vm.planning._id ? 'Editer Planning' : 'Ajouter Planning'}}</h1>
+  </div>
+  <div class="col-md-12">
     <form name="vm.form.planningForm" class="form-horizontal" ng-submit="vm.save(vm.form.planningForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
@@ -46,4 +103,4 @@
       </fieldset>
     </form>
   </div>
-</section>
+</section> -->

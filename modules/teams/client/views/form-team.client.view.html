@@ -8,7 +8,7 @@
       <fieldset>
         <div class="form-group" show-errors>
           <label class="control-label" for="name">Nom:</label>
-          <input name="name" type="text" ng-model="vm.team.name" id="name" class="form-control" placeholder="Nom" required>
+          <input name="name" type="text" ng-model="team.name" id="name" class="form-control" placeholder="Nom" required>
           <div ng-messages="vm.form.teamForm.name.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Le nom de l'équipe est requis.</p>
           </div>
@@ -16,7 +16,7 @@
 
         <div class="form-group" show-errors>
           <label class="control-label" for="sites">Site:</label>
-          <input name="sites" type="text" ng-model="vm.team.sites" id="sites" class="form-control" placeholder="Ex: La Coulée Verte" required>
+          <input name="sites" type="text" ng-model="team.sites" id="sites" class="form-control" placeholder="Ex: La Coulée Verte" required>
           <div ng-messages="vm.form.teamForm.sites.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Le site de l'équipe est requis.</p>
           </div>
@@ -25,7 +25,7 @@
         <div class="form-group" show-errors>
           <label class="control-label" for="team">Membres:</label>
           <!-- ng-options="employe as employe.name for employe in employes" -->
-          <select name="member" ng-model="vm.team.member" id="member" class="form-control" required>
+          <select name="member" ng-model="team.member" id="member" class="form-control" required>
             <option value="" disabled selected>Choisissez des membres</option>
             <option value="{{employe._id}}" ng-repeat="employe in employes">
                 {{employe.lastname}} {{employe.firstname}}

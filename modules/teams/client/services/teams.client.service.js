@@ -7,7 +7,7 @@
     .factory('TeamsService', TeamsService)
     .factory('TeamsService', EmployeService)
 
-    .controller('TeamsController', ['$scope', '$resource', function ($scope, $resource) {
+    .controller('TeamsController', ['$scope', '$resource', '$http', function ($scope, $resource, $http) {
       // Déclaration d'une équipe
       $scope.team = {};
 
@@ -16,7 +16,7 @@
         console.log($scope.team);
 
         // Persiste dans MongoDB
-        $resource('/api/teams', null, {
+        $resource('/api/teams/', null, {
           'save': {
             method: 'POST',
             isArray: false
@@ -29,8 +29,8 @@
           function (response) {
             console.log(response);
           }
-        )
-      }
+        );
+      };
       /* -----------------------------------------------------------------------
                                       RESSOURCE EMPLOYEES
       ------------------------------------------------------------------------*/
@@ -48,7 +48,7 @@
         function (response) {
           console.error('error');
         }
-      )
+      );
     }]);
 
   TeamsService.$inject = ['$resource'];

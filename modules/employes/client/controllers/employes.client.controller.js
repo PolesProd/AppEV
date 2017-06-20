@@ -28,7 +28,6 @@
 
     // Save employe
     function save(isValid) {
-      console.log('submitted')
       if (!isValid) {
         $scope.$broadcast('show-errors-check-validity', 'vm.form.employeForm');
         return false;
