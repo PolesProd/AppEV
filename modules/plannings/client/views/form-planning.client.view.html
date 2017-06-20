@@ -7,7 +7,9 @@
       <fieldset>
         <div class="form-group" show-errors>
           <label class="control-label" for="week">Week</label>
-          <select name="week" ng-model="planning.week" id="week" class="form-control" ng-options="t.name for t in teams" required></select>
+          <input name="week" type="date" class="form-control" id="week" ng-model="planning.week" id="week" required>
+          <!-- <span class="btn btn-default"><i class="glyphicon glyphicon-calendar" ng-click="model.dateFrom=true"></i> </span> -->
+          <!-- <select name="week" ng-model="planning.week" id="week" class="form-control" ng-options="t.name for t in teams" required></select> -->
           <div ng-messages="vm.form.planningForm.week.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Planning name is required.</p>
           </div>
@@ -15,7 +17,6 @@
 
         <div class="form-group" show-errors>
           <label class="control-label" for="team">Equipe:</label>
-          <!-- ng-options="team as team.name for team in teams"  -->
           <select name="team" ng-model="planning.team" id="team" class="form-control">
             <option value="" disabled selected>Choisissez une Equipe</option>
             <option value="{{team._id}}" ng-repeat="team in teams">
@@ -29,7 +30,8 @@
 
         <div class="form-group" show-errors>
           <label class="control-label" for="site">Site</label>
-          <select name="site" ng-model="planning.site" id="site" class="form-control" ng-options="t.name for t in teams" required></select>
+          <!-- <select name="site" ng-model="planning.site" id="site" class="form-control" ng-options="t.name for t in teams" required></select> -->
+          <input type="text" name="site" ng-model="planning.site" id="site" class="form-control" placeholder="test" required>
           <div ng-messages="vm.form.planningForm.site.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Planning name is required.</p>
           </div>

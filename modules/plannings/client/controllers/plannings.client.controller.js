@@ -32,6 +32,20 @@
         return false;
       }
 
+      vm.format = 'dd-MM-yyyy';
+      vm.open = function($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+
+        vm.opened = {};
+        vm.opened[$event.target.id] = true;
+
+        // log this to check if its setting the log
+        console.log(vm.opened);
+      };
+
+      
+
       // TODO: move create/update logic to service
       if (vm.planning._id) {
         vm.planning.$update(successCallback, errorCallback);

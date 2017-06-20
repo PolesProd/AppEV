@@ -71,7 +71,7 @@
   }
 
   function TeamService($resource) {
-    return $resource('/api/teams/:teamsId', {
+    return $resource('/api/teams/:teamId', {
       teamId: '@_id'
     }, {
       update: {
