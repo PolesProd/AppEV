@@ -6,9 +6,9 @@
     .module('teams')
     .controller('TeamsController', TeamsController);
 
-  TeamsController.$inject = ['$scope', '$state', '$window', '$log', 'Authentication', 'teamResolve'];
+  TeamsController.$inject = ['$scope', '$state', '$window', '$log', 'Authentication', 'teamResolve', 'EmployesService'];
 
-  function TeamsController ($scope, $state, $window, $log, Authentication, team) {
+  function TeamsController ($scope, $state, $window, $log, Authentication, team, EmployesService) {
     var vm = this;
 
     vm.authentication = Authentication;
@@ -49,11 +49,5 @@
         vm.error = res.data.message;
       }
     }
-
-    // Find a list of employes
-    $scope.find = function () {
-      $log.info('executing employesController.$scope.find');
-      // vm.employes = employes.query();
-    };
   }
 }());

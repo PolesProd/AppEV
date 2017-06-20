@@ -1,5 +1,79 @@
 <section>
   <div class="page-header">
+    <h1>{{vm.employee._id ? 'Modifier Employé' : 'Ajouter Employé'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <!--  name="vm.form.employeeForm"  -->
+    <form class="form-horizontal" name="employeeForm" ng-submit="createEmployee()" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="lastname">Nom:</label>
+          <input name="lastname" type="text" ng-model="employee.lastname" id="lastname" class="form-control" placeholder="Nom">
+          <div ng-messages="vm.form.employeeForm.lastname.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Nom requis.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="firstname">Prénom:</label>
+          <input name="firstname" type="text" ng-model="employee.firstname" id="firstname" class="form-control" placeholder="Prénom">
+          <div ng-messages="vm.form.employeeForm.firstname.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Prénom requis.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="email">Email:</label>
+          <input name="email" type="text" ng-model="employee.email" id="email" class="form-control" placeholder="Ex: example@example.com">
+          <div ng-messages="vm.form.employeeForm.email.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Email requis.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="team">Equipe:</label>
+          <!-- ng-options="team as team.name for team in teams"  -->
+          <select name="team" ng-model="employee.team" id="team" class="form-control">
+            <option value="" disabled selected>Choisissez une Equipe</option>
+            <option value="{{team._id}}" ng-repeat="team in teams">
+                {{team.name}}
+            </option>
+          </select>
+          <div ng-messages="vm.form.employeeForm.team.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Equipe requise.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="contract">Contrat:</label>
+          <input name="contract" type="text" ng-model="employee.contract" id="contract" class="form-control" placeholder="Ex: CDD">
+          <div ng-messages="vm.form.employeeForm.contract.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Email requis.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Formation:</label>
+          <input name="formation" type="text" ng-model="employee.formation" id="formation" class="form-control" placeholder="Formation">
+          <div ng-messages="vm.form.employeeForm.formation.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Formation est requis.</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="submit" class="btn btn-default" value="{{vm.employee._id ? 'Mettre à jour' : 'Créer'}}">
+        </div>
+
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>
+
+<!-- <section>
+  <div class="page-header">
     <h1>{{vm.employe._id ? 'Modifier Employé' : 'Ajouter Employé'}}</h1>
   </div>
   <div class="col-md-12">
@@ -65,4 +139,4 @@
       </fieldset>
     </form>
   </div>
-</section>
+</section> -->

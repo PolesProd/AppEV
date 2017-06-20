@@ -7,7 +7,39 @@
     .factory('EmployesService', EmployesService)
     .factory('EmployesService', TeamService)
 
-    .controller('EmployesController', ['$scope', '$resource', function ($scope, $resource) {
+    .controller('EmployesController', ['$scope', '$resource', '$http', function ($scope, $resource, $http) {
+
+      // -- Déclaration d'un Employee
+      $scope.employee = {};
+
+      $scope.createEmployee = function() {
+
+        // -- Vérification
+        // console.log('executed')
+        // console.log(isValid)
+        console.log($scope.employee)
+
+        // -- Persiste dans MongoDB
+        $resource('/api/employes/', null, {
+          'save': {
+            method: 'POST',
+            isArray: false
+          }
+        })
+        .save($scope.employee).$promise.then(
+          function(result) {
+            // $scope.employes.push(result);
+            // console.log('result is:')
+            console.log(result);
+          },
+
+          function(response) {
+            console.log(response);
+          });
+      }
+      /* -----------------------------------------------------------------------
+                                      RESSOURCE TEAMS
+      ------------------------------------------------------------------------ */
       $resource('/api/teams', null, {
         'get': {
           method: 'GET',
@@ -17,55 +49,12 @@
       .get().$promise.then(
         function(teams) {
           $scope.teams = teams;
-
-          for (var i = 0; i < teams.length; i++) {
-            $scope.team_id = teams[i]._id;
-            $scope.name = teams[i].name;
-
-            console.log($scope.team_id);
-          }
+          console.log($scope.teams);
         },
 
         function(response) {
-          alert('Error');
+          console.error('error');
         });
-        /*****************/
-      $resource('/api/teams/:teamsId', {
-          data: '@team'
-        }, {
-          'save': {
-            method: 'POST',
-            isArray: true
-          }
-        })
-        .save($scope.team).$promise.then(
-          function (team) {
-
-            $scope.teams.push(team);
-            console.log('success');
-          },
-          function (response) {
-            console.error('error');
-          }
-        );
-      /*****************/
-      // $resource('/api/teams/:teamId', {
-      //   data: '@team'
-      // }, {
-      //   'update': {
-      //     method: 'PUT'
-      //   }
-      // })
-      // .update({
-      //   id: $scope.team._id
-      // }, $sccope.team).$promise.then(
-      //   function (team) {
-      //     console.log('success');
-      //   },
-      //   function (response) {
-      //     console.error('error');
-      //   }
-      // );
     }]);
 
   EmployesService.$inject = ['$resource'];

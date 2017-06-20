@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  // Employes controller
+  // employes controller
   angular
     .module('employes')
     .controller('EmployesController', EmployesController);
@@ -19,29 +19,16 @@
     vm.remove = remove;
     vm.save = save;
 
-    var findTeamError = function(team){
-       $scope.error = "Error Fetching Users. Message:" + team;
-     };
-
-     var findTeam = function(data){
-        $scope.users = data;
-     };
-
-    var getTeams = function(){
-       TeamsService.get().then(findTeam, findTeamError);
-     };
-
-     getTeams();
-
-    // Remove existing Employe
+    // Remove existing employe
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {
         vm.employe.$remove($state.go('employes.list'));
       }
     }
 
-    // Save Employe
+    // Save employe
     function save(isValid) {
+      console.log('submitted')
       if (!isValid) {
         $scope.$broadcast('show-errors-check-validity', 'vm.form.employeForm');
         return false;
