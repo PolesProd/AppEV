@@ -4,7 +4,7 @@
   </div>
   <div class="col-md-12">
     <!--  name="vm.form.employeForm"  -->
-    <form class="form-horizontal" name="employeForm" ng-submit="createEmploye()" novalidate>
+    <form class="form-horizontal" name="employeForm" ng-submit="createEmploye();" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
           <label class="control-label" for="lastname">Nom:</label>
@@ -24,7 +24,7 @@
 
         <div class="form-group" show-errors>
           <label class="control-label" for="email">Email:</label>
-          <input name="email" type="text" ng-model="employe.email" id="email" class="form-control" placeholder="Ex: example@example.com">
+          <input name="email" type="email" ng-model="employe.email" id="email" class="form-control" placeholder="Ex: example@example.com">
           <div ng-messages="vm.form.employeForm.email.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Email requis.</p>
           </div>
@@ -106,7 +106,7 @@
         <div class="form-group" show-errors>
           <label class="control-label" for="team">Equipe:</label>
           <select name="team" ng-model="vm.employe.team" id="team" class="form-control" ng-options="team as team.name for team in teams" required>
-            <option value="">->-- Choisissez une équipe --<-</option>
+            <option value="">Choisissez une équipe<-</option>
           </select>
           <div ng-messages="vm.form.employeForm.team.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Equipe requise.</p>

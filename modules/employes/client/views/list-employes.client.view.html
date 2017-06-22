@@ -13,8 +13,10 @@
         <span ng-if="employe.user" ng-bind="employe.user.displayName"></span>
         <span ng-if="!employe.user">Deleted User</span>
       </small>
-      <h4 class="list-group-item-heading" ng-bind="employe.lastname"></h4>
-      <h4 class="list-group-item-heading" ng-bind="employe.firstname"></h4>
+      <!-- <h4 class="list-group-item-heading" ng-bind="vm.employe.lastname"></h4> -->
+      <h4 class="list-group-item-heading">{{ employe.lastname }}</h4>
+      <!-- <h4 class="list-group-item-heading" ng-bind="employe.firstname"></h4> -->
+      <h4 class="list-group-item-heading">{{ employe.firstname }}</h4>
     </a>
   </div>
   <div class="alert alert-warning text-center" ng-if="vm.employes.$resolved && !vm.employes.length">

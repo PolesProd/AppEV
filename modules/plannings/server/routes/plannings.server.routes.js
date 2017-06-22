@@ -20,8 +20,12 @@ module.exports = function(app) {
     .put(plannings.update)
     .delete(plannings.delete);
 
-  app.route('/api/teams').all(teamsPolicy.isAllowed)
-    .get(teams.list);
+  // app.route('/api/teams').all(teamsPolicy.isAllowed)
+  //   .get(teams.list);
+  //
+  // app.route('/api/teams/:teamId').all(teamsPolicy.isAllowed)
+  //   .get(teams.read)
+  //   .put(teams.update);
 
   // Finish by binding the Planning middleware
   app.param('planningId', plannings.planningByID);

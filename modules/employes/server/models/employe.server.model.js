@@ -13,7 +13,7 @@ var EmployeSchema = new Schema({
   lastname: { type: String, default: '', required: 'Please fill Employe name', trim: true },
   firstname: { type: String, default: '', required: 'Please fill Employe firstname' },
   email: { type: String, default: '', required: 'Please fill Employe email' },
-  team_id: { type: Schema.Types.ObjectId, ref: 'Team' },
+  team: { type: Schema.Types.ObjectId, ref: 'Team', required: 'Vous devez selectionné une équipe !!' },
   formation: { type: String, default: '', requuired: 'Please fill Employe formation' },
   contract: { type: String, default: '', required: 'Please fill Employe contract' },
   created: { type: Date, default: Date.now },
