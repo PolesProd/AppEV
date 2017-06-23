@@ -5,7 +5,6 @@
   angular
     .module('employes')
     .factory('EmployesService', EmployesService)
-    .factory('EmployesService', TeamService)
 
     .controller('EmployesController', ['$scope', '$resource', '$http', function ($scope, $resource, $http) {
 
@@ -14,9 +13,6 @@
 
       $scope.createEmploye = function() {
 
-        // -- Vérification
-        // console.log('executed')
-        // console.log(isValid)
         console.log($scope.employe);
 
         // -- Persiste dans MongoDB
@@ -35,7 +31,8 @@
 
           function(response) {
             console.log(response);
-          });
+          }
+        );
       };
       /* -----------------------------------------------------------------------
                                       RESSOURCE TEAMS
@@ -58,7 +55,6 @@
     }]);
 
   EmployesService.$inject = ['$resource'];
-  TeamService.$inject = ['$resource'];
 
   function EmployesService($resource) {
     return $resource('/api/employes/:employeId', {
@@ -66,16 +62,10 @@
     }, {
       update: {
         method: 'PUT'
-      }
-    });
-  }
-
-  function TeamService($resource) {
-    return $resource('/api/teams/:teamsId', {
-      teamId: '@_id'
-    }, {
-      update: {
-        method: 'PUT'
+      },
+      query: {
+        method: 'GET',
+        isArray: true
       }
     });
   }
