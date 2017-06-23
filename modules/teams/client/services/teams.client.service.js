@@ -5,7 +5,6 @@
   angular
     .module('teams')
     .factory('TeamsService', TeamsService)
-    .factory('TeamsService', EmployeService)
 
     .controller('TeamsController', ['$scope', '$resource', '$http', function ($scope, $resource, $http) {
       // Déclaration d'une équipe
@@ -52,20 +51,9 @@
     }]);
 
   TeamsService.$inject = ['$resource'];
-  EmployeService.$inject = ['$resource'];
 
   function TeamsService($resource) {
     return $resource('api/teams/:teamId', {
-      employeId: '@_id'
-    }, {
-      update: {
-        method: 'PUT'
-      }
-    });
-  }
-
-  function EmployeService($resource) {
-    return $resource('api/employes/:employeId', {
       employeId: '@_id'
     }, {
       update: {

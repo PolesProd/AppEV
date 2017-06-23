@@ -16,6 +16,6 @@ var PlanningSchema = new Schema({
   tasks: { type: String, default: '', required: 'Veuillez remplir les tâches.' },
   created: { type: Date, default: Date.now },
   user: { type: Schema.ObjectId, ref: 'User' }
-}, { collection: 'plannings'});
+}, { collection: 'plannings' });
 
 module.exports = mongoose.model('Planning', PlanningSchema);

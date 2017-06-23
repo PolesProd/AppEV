@@ -5,7 +5,7 @@
   angular
     .module('employes')
     .factory('EmployesService', EmployesService)
-    .factory('EmployesService', TeamService)
+    /*.factory('EmployesService', TeamService)*/
 
     .controller('EmployesController', ['$scope', '$resource', '$http', function ($scope, $resource, $http) {
 
@@ -35,7 +35,15 @@
 
           function(response) {
             console.log(response);
-          });
+          }
+        );
+        /*.get($scope.employe).$promise.then(
+          function(result) {
+            find: function(id) {
+              return $scope.employe.query({ id: id });
+            }
+          }
+        );*/
       };
       /* -----------------------------------------------------------------------
                                       RESSOURCE TEAMS
@@ -58,7 +66,7 @@
     }]);
 
   EmployesService.$inject = ['$resource'];
-  TeamService.$inject = ['$resource'];
+  /*TeamService.$inject = ['$resource'];*/
 
   function EmployesService($resource) {
     return $resource('/api/employes/:employeId', {
@@ -66,17 +74,25 @@
     }, {
       update: {
         method: 'PUT'
+      },
+      query: {
+        method: 'GET',
+        isArray: true
       }
     });
   }
 
-  function TeamService($resource) {
+  /*function TeamService($resource) {
     return $resource('/api/teams/:teamId', {
       teamId: '@_id'
     }, {
       update: {
         method: 'PUT'
+      },
+      query: {
+        method: 'GET',
+        isArray: false
       }
     });
-  }
+  }*/
 }());
