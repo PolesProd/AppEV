@@ -22,11 +22,17 @@
       <span ng-if="!vm.employe.user">Deleted User</span>
     </em>
   </small>
-  <p class="lead" ng-bind="employe.lastname"></p>
-  <p class="lead" ng-bind="employe.firstname"></p>
-  <p class="lead" ng-bind="employe.email"></p>
-  <p class="lead" ng-bind="employe.team"></p>
-  <p class="lead" ng-bind="employe.contract"></p>
-  <p class="lead" ng-bind="employe.formation"></p>
+  <p class="lead" ng-bind="vm.employe.lastname"></p>
+  <!-- <p class="lead">{{ employe.lastname }}</p> -->
+  <p class="lead" ng-bind="vm.employe.firstname"></p>
+  <!-- <p class="lead">{{ employe.firstname }}</p> -->
+  <p class="lead" ng-bind="vm.employe.email"></p>
+  <!-- <p class="lead">{{ employe.email }}</p> -->
+  <p class="lead" ng-bind="vm.employe.team"></p>
+  <!-- <p class="lead">{{ employe.team }}</p> -->
+  <p class="lead" ng-bind="vm.employe.contract"></p>
+  <!-- <p class="lead">{{ employe.contract }}</p> -->
+  <p class="lead" ng-bind="vm.employe.formation"></p>
+  <!-- <p class="lead">{{ employe.formation }}</p> -->
 
 </section>

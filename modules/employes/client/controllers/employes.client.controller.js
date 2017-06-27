@@ -18,6 +18,12 @@
     vm.form = {};
     vm.remove = remove;
     vm.save = save;
+    vm.team = TeamsService.query();
+
+    $scope.teams = vm.team;
+    $scope.teams.$promise.then(function (resourceArray) {
+      $scope.item = resourceArray[0];
+    });
 
     // Remove existing employe
     function remove() {

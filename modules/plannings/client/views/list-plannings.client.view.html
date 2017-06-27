@@ -13,7 +13,8 @@
         <span ng-if="planning.user" ng-bind="planning.user.displayName"></span>
         <span ng-if="!planning.user">Deleted User</span>
       </small>
-      <h4 class="list-group-item-heading" ng-bind="planning.name"></h4>
+      <!-- ng-bind="vm.planning.name" -->
+      <h4 class="list-group-item-heading">{{ planning.name }}</h4>
     </a>
   </div>
   <div class="alert alert-warning text-center" ng-if="vm.plannings.$resolved && !vm.plannings.length">

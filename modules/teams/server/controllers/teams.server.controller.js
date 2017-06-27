@@ -6,7 +6,6 @@
 var path = require('path'),
   mongoose = require('mongoose'),
   Team = mongoose.model('Team'),
-  Employe = mongoose.model('Employe'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
   _ = require('lodash');
 
