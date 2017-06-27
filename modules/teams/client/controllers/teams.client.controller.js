@@ -20,6 +20,7 @@
     vm.employe = EmployesService.query();
 
     $scope.members = vm.employe;
+
     $scope.members.$promise.then(function (resourceArray) {
       $scope.item = resourceArray[0];
     });

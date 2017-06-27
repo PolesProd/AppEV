@@ -4,7 +4,7 @@
   </div>
 
   <div class="col-md-12">
-    <form name="teamForm" class="form-horizontal" ng-submit="vm.save(vm.form.teamForm.$valid)" novalidate>
+    <form name="vm.form.teamForm" class="form-horizontal" ng-submit="vm.save(vm.form.teamForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
           <label class="control-label" for="name">Nom:</label>
@@ -23,17 +23,17 @@
         </div>
 
         <div class="form-group" show-errors>
-          <label class="control-label" for="member">Membres:</label>
+          <label class="control-label" for="member">Equipe:</label>
           <select name="member" ng-model="vm.team.member" id="member" class="form-control">
             <option value="" disabled selected>Choisissez une Equipe</option>
             <option value="{{member._id}}" ng-repeat="member in members">
                 {{member.lastname}} {{ member.firstname }}
             </option>
           </select>
-          <div ng-messages="vm.form.teamForm.member.$error" role="alert">
+          <div ng-messages="vm.form.teamForm.team.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Equipe requise.</p>
           </div>
-        </div>
+        </div>member
 
         <div class="form-group">
           <button type="submit" class="btn btn-default">{{vm.team._id ? 'Mettre à jour' : 'Créer'}}</button>
