@@ -1,6 +1,5 @@
 (function () {
   'use strict';
-
   // employes controller
   angular
     .module('employes')

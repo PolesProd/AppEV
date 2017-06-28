@@ -37,7 +37,7 @@
         <div class="form-group" show-errors>
           <label class="control-label" for="site">Site:</label>
           <!-- <select name="site" ng-model="planning.site" id="site" class="form-control" ng-options="t.name for t in teams" required></select> -->
-          <input type="text" name="site" ng-model="planning.site" id="site" class="form-control" placeholder="test" required>
+          <input type="text" name="site" ng-model="vm.planning.site" id="site" class="form-control" placeholder="test" required>
           <div ng-messages="vm.form.planningForm.site.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Ajouter un site.</p>
           </div>
