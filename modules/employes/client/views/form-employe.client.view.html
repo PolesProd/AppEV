@@ -30,6 +30,14 @@
         </div>
 
         <div class="form-group" show-errors>
+          <label class="control-label" for="number">Numéro:</label>
+          <input name="number" type="text" ng-model="vm.employe.number" id="number" class="form-control" placeholder="Ex: 0102030405" required>
+          <div ng-messages="vm.form.employeForm.number.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Email requis.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
           <label class="control-label" for="team">Equipe:</label>
           <select name="team" ng-model="vm.employe.team" id="team" class="form-control">
             <option value="" disabled selected>Choisissez une Equipe</option>

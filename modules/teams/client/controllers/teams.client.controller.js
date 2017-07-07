@@ -6,9 +6,9 @@
     .module('teams')
     .controller('TeamsController', TeamsController);
 
-  TeamsController.$inject = ['$scope', '$state', '$window', '$log', 'Authentication', 'teamResolve', 'EmployesService'];
+  TeamsController.$inject = ['$scope', '$state', '$window', '$log', 'Authentication', 'teamResolve', 'EmployesService', 'LotsService'];
 
-  function TeamsController ($scope, $state, $window, $log, Authentication, team, EmployesService) {
+  function TeamsController ($scope, $state, $window, $log, Authentication, team, EmployesService, LotsService) {
     var vm = this;
 
     vm.authentication = Authentication;
@@ -18,11 +18,18 @@
     vm.remove = remove;
     vm.save = save;
     vm.employe = EmployesService.query();
+    vm.site = LotsService.query();
 
     $scope.members = vm.employe;
-
     $scope.members.$promise.then(function (resourceArray) {
       $scope.item = resourceArray[0];
+    });
+
+    $scope.sites = vm.site;
+    $scope.sites.$promise.then(function (resourceArray) {
+      $scope.item = resourceArray[0];
+
+      console.log($scope.item);
     });
 
     // Remove existing Team

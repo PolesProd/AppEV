@@ -6,9 +6,9 @@
     .module('plannings')
     .controller('PlanningsController', PlanningsController);
 
-  PlanningsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'planningResolve', 'TeamsService'];
+  PlanningsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'planningResolve', 'TeamsService', 'LotsService'];
 
-  function PlanningsController ($scope, $state, $window, Authentication, planning, TeamsService) {
+  function PlanningsController ($scope, $state, $window, Authentication, planning, TeamsService, LotsService) {
     var vm = this;
 
     vm.authentication = Authentication;
@@ -18,9 +18,15 @@
     vm.remove = remove;
     vm.save = save;
     vm.team = TeamsService.query();
+    vm.site = LotsService.query();
 
     $scope.teams = vm.team;
     $scope.teams.$promise.then(function (resourceArray) {
+      $scope.item = resourceArray[0];
+    });
+
+    $scope.sites = vm.site;
+    $scope.sites.$promise.then(function (resourceArray) {
       $scope.item = resourceArray[0];
     });
 

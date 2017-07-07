@@ -6,9 +6,9 @@
     .module('employes')
     .controller('EmployesController', EmployesController);
 
-  EmployesController.$inject = ['$scope', '$state', '$window', 'Authentication', 'employeResolve', 'TeamsService'];
+  EmployesController.$inject = ['$scope', '$state', '$window', 'Authentication', 'employeResolve', 'TeamsService', 'LotsService'];
 
-  function EmployesController ($scope, $state, $window, Authentication, employe, TeamsService) {
+  function EmployesController ($scope, $state, $window, Authentication, employe, TeamsService, LotsService) {
 
     var vm = this;
 
@@ -23,6 +23,8 @@
     $scope.teams = vm.team;
     $scope.teams.$promise.then(function (resourceArray) {
       $scope.item = resourceArray[0];
+
+      console.log($scope.item);
     });
 
     // Remove existing employe
