@@ -1,16 +1,16 @@
 'use strict';
 
 /**
- * Module dependencies.
- */
+* Module dependencies.
+*/
 var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
 /**
- * Planning Schema
- */
+* Planning Schema
+*/
 var PlanningSchema = new Schema({
-	name: { type: String, default: '', required: 'Nom requis', trim: true },
+  name: { type: String, default: '', required: 'Nom requis', trim: true },
   start: { type: Date, default: '', required: 'Date requise' },
   end: { type: Date, default: '', required: 'Date requise' },
   team: { type: Schema.Types.ObjectId, ref: 'Team', required: 'Equipe requise' },
