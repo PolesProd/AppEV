@@ -15,15 +15,19 @@
 
         <div class="form-group" show-errors>
           <label class="control-label" for="week">Semaine:</label>
-          <input name="week" type="date" class="form-control" id="week" ng-model="vm.planning.week" id="week" required>
-          <div ng-messages="vm.form.planningForm.week.$error" role="alert">
+          <input name="start" type="date" class="form-control" id="start" ng-model="vm.planning.start" id="start" required>
+          <input name="end" type="date" class="form-control" id="end" ng-model="vm.planning.end" id="end" required>
+          <div ng-messages="vm.form.planningForm.start.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Ajouter une semaine.</p>
+          </div>
+          <div ng-messages="vm.form.planningForm.end.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Ajouter une semaine.</p>
           </div>
         </div>
 
         <div class="form-group" show-errors>
           <label class="control-label" for="team">Equipe:</label>
-          <select name="team" ng-model="vm.employe.team" id="team" class="form-control">
+          <select name="team" ng-model="vm.planning.team" id="team" class="form-control" multiple="multiple">
             <option value="" disabled selected>Choisissez une Equipe</option>
             <option value="{{team._id}}" ng-repeat="team in teams">
                 {{team.name}}

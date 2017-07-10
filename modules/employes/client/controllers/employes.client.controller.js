@@ -3,10 +3,10 @@
 
   // employes controller
   angular
-    .module('employes')
+    .module('employes', ['amo.multiselect'])
     .controller('EmployesController', EmployesController);
 
-  EmployesController.$inject = ['$scope', '$state', '$window', 'Authentication', 'employeResolve', 'TeamsService', 'LotsService'];
+  EmployesController.$inject = ['$scope', '$state', '$window', 'Authentication', 'employeResolve', 'TeamsService', 'LotsService', 'amo.multiselect'];
 
   function EmployesController ($scope, $state, $window, Authentication, employe, TeamsService, LotsService) {
 

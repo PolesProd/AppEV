@@ -10,8 +10,9 @@ var mongoose = require('mongoose'),
  * Planning Schema
  */
 var PlanningSchema = new Schema({
-	// name: { type: String, default: '', required: 'Nom requis', trim: true },
-  week: { type: String, default: '', required: 'Date requise' },
+	name: { type: String, default: '', required: 'Nom requis', trim: true },
+  start: { type: Date, default: '', required: 'Date requise' },
+  end: { type: Date, default: '', required: 'Date requise' },
   team: { type: Schema.Types.ObjectId, ref: 'Team', required: 'Equipe requise' },
   site: { type: Schema.Types.ObjectId, ref: 'Lot', required: 'Site requise' },
   tasks: { type: String, default: '', required: 'Tâches requise' },
