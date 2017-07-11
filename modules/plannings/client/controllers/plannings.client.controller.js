@@ -30,6 +30,38 @@
       $scope.item = resourceArray[0];
     });
 
+    $scope.tasksList = [
+      { icon: '<img src="../modules/plannings/client/img/tondeuse.jpg"/>', name: 'Tonte(rustique)', frequence: '1x/mois', ticked: false },
+      { icon: '<img src="../modules/plannings/client/img/tondeuse.jpg"/>', name: 'Tonte(medium)', frequence: '3x/mois', ticked: false },
+      { icon: '<img src="../modules/plannings/client/img/tondeuse.jpg"/>', name: 'Tonte(prestige)', frequence: '5x/mois', ticked: false },
+      { icon: '<img src="../modules/plannings/client/img/brouette.jpg"/>', name: 'Ramassage(feuilles)', frequence: '2x/mois', ticked: false },
+      { icon: '<img src="../modules/plannings/client/img/plantage.png"/>', name: 'Plantage(fleurs)', frequence: '2x/mois', ticked: false },
+      { icon: '<img src="../modules/plannings/client/img/plantage.png"/>', name: 'Plantage(légumes)', frequence: '2x/mois', ticked: false },
+      { icon: '<img src="../modules/plannings/client/img/elagage.jpg"/>', name: 'Désherbage(rustique)', frequence: '2x/mois', ticked: false },
+      { icon: '<img src="../modules/plannings/client/img/elagage.jpg"/>', name: 'Désherbage(medium)',  frequence: '2x/mois', ticked: false },
+      { icon: '<img src="../modules/plannings/client/img/elagage.jpg"/>', name: 'Désherbage(prestige)',  frequence: '2x/mois', ticked: false },
+      { icon: '<img src="../modules/plannings/client/img/taillage.jpg"/>', name: 'Taille(Haies)', frequence: '2x/mois', ticked: false  },
+      { icon: '<img src="../modules/plannings/client/img/taillage.jpg"/>', name: 'Taille(arbres)', frequence: '2x/mois', ticked: false },
+      { icon: '<img src="../modules/plannings/client/img/bordure.png"/>', name: 'Bordure(trottoirs)', frequence: '2x/mois', ticked: false },
+      { icon: '<img src="../modules/plannings/client/img/bordure.png"/>', name: 'Bordure(parcs)', frequence: '2x/mois', ticked: false }
+    ];
+
+    var selected = [];
+    angular.forEach($scope.outputList, function (value, key) {
+      selected.push(value.itemId);
+      console.log(value.itemId);
+    });
+
+    console.log($scope.tasksList);
+
+    $scope.localLang = {
+      selectAll: 'Tous séléctionné',
+      selectNone: 'Déselectionné',
+      reset: 'Reset',
+      search: 'Chercher',
+      nothingSelected: 'Selectionner une/des tâche(s)'
+    };
+
     // Remove existing Planning
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {

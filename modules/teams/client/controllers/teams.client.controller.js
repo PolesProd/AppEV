@@ -20,17 +20,31 @@
     vm.employe = EmployesService.query();
     vm.site = LotsService.query();
 
-    $scope.members = vm.employe;
-    $scope.members.$promise.then(function (resourceArray) {
-      $scope.item = resourceArray[0];
+    $scope.membersList = vm.employe;
+    $scope.membersList.$promise.then(function (resourceArray) {
+      $scope.item = $scope.item = [{
+        icon: '<img src="../modules/users/client/img/default.png"/>', firstname: resourceArray[0].firstname, lastname: resourceArray[0].lastname, email: resourceArray[0].email, number: resourceArray[0].number, team: resourceArray[0].team, formation: resourceArray[0].formation, contract: resourceArray[0].contract, ticked: false
+      }];
+      // console.log($scope.item);
+      // console.log($scope.outputList);
     });
+
+    $scope.localLang = {
+      selectAll: 'Tous séléctionné',
+      selectNone: 'Déselectionné',
+      reset: 'Reset',
+      search: 'Chercher',
+      nothingSelected: 'Selectionner un/des salarié(es)'
+    };
 
     $scope.sites = vm.site;
     $scope.sites.$promise.then(function (resourceArray) {
       $scope.item = resourceArray[0];
-
-      console.log($scope.item);
     });
+
+    // angular.forEach($scope.outputList, function (key, value) {
+    //   console.log($scope.outputList);
+    // });
 
     // Remove existing Team
     function remove() {
