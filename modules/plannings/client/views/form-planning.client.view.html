@@ -29,12 +29,13 @@
 
         <div class="form-group" show-errors>
           <label class="control-label" for="team">Equipe:</label>
-          <select name="team" ng-model="vm.planning.team" id="team" class="form-control">
+          <!-- <select name="team" ng-model="vm.planning.team" id="team" class="form-control">
             <option value="" disabled selected>Choisissez une Equipe</option>
             <option value="{{team._id}}" ng-repeat="team in teams">
                 {{team.name}}
             </option>
-          </select>
+          </select> -->
+          <isteven-multi-select input-model="teamsList" output-model="outputList" ng-model="vm.team.site" name="site" id="site" button-label="icon site name" item-label="icon site name" selection-mode="single" translation="localLang" tick-property="ticked"></isteven-multi-select>
           <div ng-messages="vm.form.employeForm.team.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Equipe requise.</p>
           </div>
@@ -49,6 +50,8 @@
                 {{ site.properties.nom }}
             </option>
           </select>
+          <!-- <isteven-multi-select input-model="sitesList" output-model="outputList" ng-model="vm.planning.site" name="site" id="site" button-label="icon name" item-label="icon name" max-label="3" translation="localLang" tick-property="ticked"></isteven-multi-select> -->
+
           <div ng-messages="vm.form.teamForm.sites.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Site requis.</p>
           </div>

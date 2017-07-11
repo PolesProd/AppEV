@@ -3,8 +3,8 @@
 
   // Teams controller
   angular
-    .module('teams')
-    .controller('TeamsController', TeamsController);
+  .module('teams')
+  .controller('TeamsController', TeamsController);
 
   TeamsController.$inject = ['$scope', '$state', '$window', '$log', 'Authentication', 'teamResolve', 'EmployesService', 'LotsService'];
 
@@ -22,9 +22,10 @@
 
     $scope.membersList = vm.employe;
     $scope.membersList.$promise.then(function (resourceArray) {
-      $scope.item = $scope.item = [{
+      $scope.item = [{
         icon: '<img src="../modules/users/client/img/default.png"/>', firstname: resourceArray[0].firstname, lastname: resourceArray[0].lastname, email: resourceArray[0].email, number: resourceArray[0].number, team: resourceArray[0].team, formation: resourceArray[0].formation, contract: resourceArray[0].contract, ticked: false
       }];
+      // $scope.item = resourceArray[0];
       // console.log($scope.item);
       // console.log($scope.outputList);
     });
@@ -34,7 +35,7 @@
       selectNone: 'Déselectionné',
       reset: 'Reset',
       search: 'Chercher',
-      nothingSelected: 'Selectionner un/des salarié(es)'
+      nothingSelected: 'Selectionner'
     };
 
     $scope.sites = vm.site;

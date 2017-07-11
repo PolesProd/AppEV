@@ -20,14 +20,23 @@
     vm.team = TeamsService.query();
     vm.site = LotsService.query();
 
-    $scope.teams = vm.team;
-    $scope.teams.$promise.then(function (resourceArray) {
-      $scope.item = resourceArray[0];
+    $scope.teamsList = vm.team;
+    $scope.teamsList.$promise.then(function (resourceArray) {
+      // $scope.item = resourceArray[0];
+      $scope.team = [{
+        name: resourceArray[0].name, ticked: false
+      }];
+      console.log($scope.team);
     });
 
-    $scope.sites = vm.site;
-    $scope.sites.$promise.then(function (resourceArray) {
-      $scope.item = resourceArray[0];
+    $scope.sitesList = vm.site;
+    $scope.sitesList.$promise.then(function (resourceArray) {
+      // $scope.item = resourceArray[0];
+      // console.log($scope.item);
+      $scope.site = [{
+        name: resourceArray[0].properties.nom, ticked: false
+      }];
+      console.log($scope.site);
     });
 
     $scope.tasksList = [
@@ -59,7 +68,7 @@
       selectNone: 'Déselectionné',
       reset: 'Reset',
       search: 'Chercher',
-      nothingSelected: 'Selectionner une/des tâche(s)'
+      nothingSelected: 'Selectionner'
     };
 
     // Remove existing Planning
