@@ -26,42 +26,56 @@
       $scope.team = [{
         name: resourceArray[0].name, ticked: false
       }];
-      console.log($scope.team);
+      // return $scope.team.save();
+      // console.log($scope.team);
     });
 
     $scope.sitesList = vm.site;
     $scope.sitesList.$promise.then(function (resourceArray) {
       // $scope.item = resourceArray[0];
       // console.log($scope.item);
-      $scope.site = [{
-        name: resourceArray[0].properties.nom, ticked: false
-      }];
-      console.log($scope.site);
+      $scope.site = [
+        { icon: '<img src="../modules/plannings/client/img/tondeuse.jpg"/>', name: resourceArray[0].properties.nom, ticked: false }
+      ];
+      $scope.outputList = [
+        { icon: '<img src="../modules/plannings/client/img/tondeuse.jpg"/>', name: resourceArray[0].properties.nom, ticked: true }
+      ];
+      // console.log($scope.site);
     });
 
     $scope.tasksList = [
-      { icon: '<img src="../modules/plannings/client/img/tondeuse.jpg"/>', name: 'Tonte(rustique)', frequence: '1x/mois', ticked: false },
-      { icon: '<img src="../modules/plannings/client/img/tondeuse.jpg"/>', name: 'Tonte(medium)', frequence: '3x/mois', ticked: false },
-      { icon: '<img src="../modules/plannings/client/img/tondeuse.jpg"/>', name: 'Tonte(prestige)', frequence: '5x/mois', ticked: false },
-      { icon: '<img src="../modules/plannings/client/img/brouette.jpg"/>', name: 'Ramassage(feuilles)', frequence: '2x/mois', ticked: false },
-      { icon: '<img src="../modules/plannings/client/img/plantage.png"/>', name: 'Plantage(fleurs)', frequence: '2x/mois', ticked: false },
-      { icon: '<img src="../modules/plannings/client/img/plantage.png"/>', name: 'Plantage(légumes)', frequence: '2x/mois', ticked: false },
-      { icon: '<img src="../modules/plannings/client/img/elagage.jpg"/>', name: 'Désherbage(rustique)', frequence: '2x/mois', ticked: false },
-      { icon: '<img src="../modules/plannings/client/img/elagage.jpg"/>', name: 'Désherbage(medium)',  frequence: '2x/mois', ticked: false },
-      { icon: '<img src="../modules/plannings/client/img/elagage.jpg"/>', name: 'Désherbage(prestige)',  frequence: '2x/mois', ticked: false },
-      { icon: '<img src="../modules/plannings/client/img/taillage.jpg"/>', name: 'Taille(Haies)', frequence: '2x/mois', ticked: false  },
-      { icon: '<img src="../modules/plannings/client/img/taillage.jpg"/>', name: 'Taille(arbres)', frequence: '2x/mois', ticked: false },
-      { icon: '<img src="../modules/plannings/client/img/bordure.png"/>', name: 'Bordure(trottoirs)', frequence: '2x/mois', ticked: false },
-      { icon: '<img src="../modules/plannings/client/img/bordure.png"/>', name: 'Bordure(parcs)', frequence: '2x/mois', ticked: false }
+      { icon: '<img src="../modules/plannings/client/img/tondeuse.jpg"/>', name: 'Tonte(rustique)', frequence: 1, ticked: false },
+      { icon: '<img src="../modules/plannings/client/img/tondeuse.jpg"/>', name: 'Tonte(medium)', frequence: 2, ticked: false },
+      { icon: '<img src="../modules/plannings/client/img/tondeuse.jpg"/>', name: 'Tonte(prestige)', frequence: 3, ticked: false },
+      { icon: '<img src="../modules/plannings/client/img/brouette.jpg"/>', name: 'Ramassage(feuilles)', frequence: 3, ticked: false },
+      { icon: '<img src="../modules/plannings/client/img/plantage.png"/>', name: 'Plantage(fleurs)', frequence: 1, ticked: false },
+      { icon: '<img src="../modules/plannings/client/img/plantage.png"/>', name: 'Plantage(légumes)', frequence: 5, ticked: false },
+      { icon: '<img src="../modules/plannings/client/img/elagage.jpg"/>', name: 'Désherbage(rustique)', frequence: 1, ticked: false },
+      { icon: '<img src="../modules/plannings/client/img/elagage.jpg"/>', name: 'Désherbage(medium)',  frequence: 4, ticked: false },
+      { icon: '<img src="../modules/plannings/client/img/elagage.jpg"/>', name: 'Désherbage(prestige)', frequence: 12, ticked: false },
+      { icon: '<img src="../modules/plannings/client/img/taillage.jpg"/>', name: 'Taille(Haies)', frequence: 4, ticked: false  },
+      { icon: '<img src="../modules/plannings/client/img/taillage.jpg"/>', name: 'Taille(arbres)', frequence: 2, ticked: false },
+      { icon: '<img src="../modules/plannings/client/img/bordure.png"/>', name: 'Bordure(trottoirs)', frequence: 1, ticked: false },
+      { icon: '<img src="../modules/plannings/client/img/bordure.png"/>', name: 'Bordure(parcs)', frequence: 12, ticked: false }
     ];
+    // console.log($scope.tasksList);
 
-    var selected = [];
-    angular.forEach($scope.outputList, function (value, key) {
-      selected.push(value.itemId);
-      console.log(value.itemId);
-    });
-
-    console.log($scope.tasksList);
+    $scope.outputList = [
+      { icon: '<img src="../modules/plannings/client/img/tondeuse.jpg"/>', name: 'Tonte(rustique)', frequence: 1, ticked: true },
+      { icon: '<img src="../modules/plannings/client/img/tondeuse.jpg"/>', name: 'Tonte(medium)', frequence: 2, ticked: true },
+      { icon: '<img src="../modules/plannings/client/img/tondeuse.jpg"/>', name: 'Tonte(prestige)', frequence: 3, ticked: true },
+      { icon: '<img src="../modules/plannings/client/img/brouette.jpg"/>', name: 'Ramassage(feuilles)', frequence: 3, ticked: true },
+      { icon: '<img src="../modules/plannings/client/img/plantage.png"/>', name: 'Plantage(fleurs)', frequence: 1, ticked: true },
+      { icon: '<img src="../modules/plannings/client/img/plantage.png"/>', name: 'Plantage(légumes)', frequence: 5, ticked: true },
+      { icon: '<img src="../modules/plannings/client/img/elagage.jpg"/>', name: 'Désherbage(rustique)', frequence: 1, ticked: true },
+      { icon: '<img src="../modules/plannings/client/img/elagage.jpg"/>', name: 'Désherbage(medium)',  frequence: 4, ticked: true },
+      { icon: '<img src="../modules/plannings/client/img/elagage.jpg"/>', name: 'Désherbage(prestige)', frequence: 12, ticked: true },
+      { icon: '<img src="../modules/plannings/client/img/taillage.jpg"/>', name: 'Taille(Haies)', frequence: 4, ticked: true },
+      { icon: '<img src="../modules/plannings/client/img/taillage.jpg"/>', name: 'Taille(arbres)', frequence: 2, ticked: true },
+      { icon: '<img src="../modules/plannings/client/img/bordure.png"/>', name: 'Bordure(trottoirs)', frequence: 1, ticked: true },
+      { icon: '<img src="../modules/plannings/client/img/bordure.png"/>', name: 'Bordure(parcs)', frequence: 12, ticked: true }
+    ];
+    // console.log($scope.outputList);
 
     $scope.localLang = {
       selectAll: 'Tous séléctionné',
@@ -96,6 +110,7 @@
         $state.go('plannings.view', {
           planningId: res._id
         });
+        console.log(res);
       }
 
       function errorCallback(res) {

@@ -13,7 +13,18 @@ var path = require('path'),
  * Create a Planning
  */
 exports.create = function(req, res) {
-  var planning = new Planning(req.body);
+  var planning = new Planning(
+    {
+      name: req.body.name,
+      start: req.body.start,
+      end: req.body.end,
+      team: req.body.team,
+      site: req.body.site,
+      tasks: req.body.tasks,
+      created: req.body.created,
+      user: req.body.user
+    }
+  );
   planning.user = req.user;
 
   planning.save(function(err) {
@@ -23,6 +34,7 @@ exports.create = function(req, res) {
       });
     } else {
       res.jsonp(planning);
+      console.log(planning);
     }
   });
 };

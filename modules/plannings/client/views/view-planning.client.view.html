@@ -22,10 +22,21 @@
       <span ng-if="!vm.planning.user">Deleted User</span>
     </em>
   </small>
+  <label for="">Nom:</label>
   <p class="lead" ng-bind="vm.planning.name"></p>
+
+  <label for="">Début:</label>
   <p class="lead" ng-bind="vm.planning.start"></p>
+
+  <label for="">Fin:</label>
   <p class="lead" ng-bind="vm.planning.end"></p>
+
+  <label for="">ID Equipe</label>
   <p class="lead" ng-bind="vm.planning.team"></p>
+
+  <label for="">ID Site</label>
   <p class="lead" ng-bind="vm.planning.site"></p>
-  <p class="lead" ng-bind="vm.planning.tasks[0]"></p>
+
+  <label for="">Tâches:</label>
+  <p class="lead" ng-bind="vm.planning.tasks"></p>
 </section>

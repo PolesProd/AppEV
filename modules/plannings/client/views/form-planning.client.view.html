@@ -29,13 +29,14 @@
 
         <div class="form-group" show-errors>
           <label class="control-label" for="team">Equipe:</label>
-          <!-- <select name="team" ng-model="vm.planning.team" id="team" class="form-control">
+          <select name="team" ng-model="vm.planning.team" id="team" class="form-control">
             <option value="" disabled selected>Choisissez une Equipe</option>
-            <option value="{{team._id}}" ng-repeat="team in teams">
+            <option value="{{team._id}}" ng-repeat="team in teamsList">
                 {{team.name}}
             </option>
-          </select> -->
-          <isteven-multi-select input-model="teamsList" output-model="outputList" ng-model="vm.team.site" name="site" id="site" button-label="icon site name" item-label="icon site name" selection-mode="single" translation="localLang" tick-property="ticked"></isteven-multi-select>
+          </select>
+          <!-- <isteven-multi-select input-model="teamsList" output-model="outputList" ng-model="vm.planning.team" name="team" id="team" value="team._id" button-label="  icon name" item-label="icon name" selection-mode="single" translation="localLang" directive-id="team" tick-property="ticked"></isteven-multi-select> -->
+
           <div ng-messages="vm.form.employeForm.team.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Equipe requise.</p>
           </div>
@@ -46,7 +47,7 @@
           <!-- <input name="sites" type="text" ng-model="vm.team.sites" id="sites" class="form-control" placeholder="Ex: La Coulée Verte" required> -->
           <select name="site" ng-model="vm.planning.site" id="site" class="form-control">
             <option value="" disabled selected>Choisissez un Site</option>
-            <option value="{{site._id}}" ng-repeat="site in sites">
+            <option value="{{site._id}}" ng-repeat="site in sitesList">
                 {{ site.properties.nom }}
             </option>
           </select>
@@ -57,15 +58,15 @@
           </div>
         </div>
 
-        <!-- <div class="form-group" show-errors>
+        <label class="control-label" for="tasks">Tâches:</label>
+        <div class="form-group" show-errors>
           <label class="control-label" for="tasks">Tâches à réaliser:</label>
           <input name="tasks" type="text" ng-model="vm.planning.tasks" id="tasks" class="form-control" placeholder="Ex: Désherbage..." required>
           <div ng-messages="vm.form.planningForm.tasks.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Ajouter des tâches.</p>
           </div>
-        </div> -->
-        <label class="control-label" for="tasks">Tâches:</label>
-        <isteven-multi-select input-model="tasksList" output-model="outputList" ng-model="vm.planning.tasks" name="tasks" id="task" button-label="icon name frequence" item-label="icon name frequence" translation="localLang" tick-property="ticked"></isteven-multi-select>
+        </div>
+        <!-- <isteven-multi-select input-model="tasksList" output-model="outputList" ng-model="vm.planning.tasks" name="tasks" id="task" button-label="icon name frequence" item-label="icon name frequence" translation="localLang" tick-property="ticked"></isteven-multi-select> -->
 
         <div class="form-group">
           <button type="submit" class="btn btn-default">{{vm.planning._id ? 'Mettre à jour' : 'Créer'}}</button>

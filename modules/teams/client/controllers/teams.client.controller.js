@@ -23,7 +23,7 @@
     $scope.membersList = vm.employe;
     $scope.membersList.$promise.then(function (resourceArray) {
       $scope.item = [{
-        icon: '<img src="../modules/users/client/img/default.png"/>', firstname: resourceArray[0].firstname, lastname: resourceArray[0].lastname, email: resourceArray[0].email, number: resourceArray[0].number, team: resourceArray[0].team, formation: resourceArray[0].formation, contract: resourceArray[0].contract, ticked: false
+        icon: '<img src="../modules/plannings/client/img/tondeuse.jpg"/>', firstname: resourceArray[0].firstname, lastname: resourceArray[0].lastname, email: resourceArray[0].email, number: resourceArray[0].number, team: resourceArray[0].team, formation: resourceArray[0].formation, contract: resourceArray[0].contract, ticked: false
       }];
       // $scope.item = resourceArray[0];
       // console.log($scope.item);

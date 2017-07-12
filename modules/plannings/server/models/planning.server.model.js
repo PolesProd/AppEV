@@ -15,7 +15,7 @@ var PlanningSchema = new Schema({
   end: { type: Date, default: '', required: 'Date requise' },
   team: { type: Schema.Types.ObjectId, ref: 'Team', required: 'Equipe requise' },
   site: { type: Schema.Types.ObjectId, ref: 'Lot', required: 'Site requise' },
-  tasks: { type: Object, default: '', required: 'Tâches requise' },
+  tasks: { type: String, default: '', required: 'Tâches requise' },
   created: { type: Date, default: Date.now },
   user: { type: Schema.ObjectId, ref: 'User' }
 }, { collection: 'plannings' });
