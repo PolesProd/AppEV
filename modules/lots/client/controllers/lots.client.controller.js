@@ -18,6 +18,8 @@
     vm.remove = remove;
     vm.save = save;
 
+    
+
     // Remove existing Lot
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {

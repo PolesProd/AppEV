@@ -1,6 +1,6 @@
 <section>
   <div class="page-header">
-    <h1 ng-bind="vm.lot.name"></h1>
+    <h1 ng-bind="vm.lot.properties.nom"></h1>
   </div>
 
   <div class="pull-right" ng-show="vm.lot.isCurrentUserOwner">
@@ -25,12 +25,8 @@
   </small>
 
   <div class="lot-infos">
-    <p class="lead" ng-bind="lot.number"></p>
-    <p class="lead" ng-bind="lot.description"></p>
-    <p class="lead" ng-bind="lot.location"></p>
-    <p class="lead" ng-bind="lot.nature"></p>
-    <p class="lead" ng-bind="lot.frequence"></p>
-    <p class="lead" ng-bind="lot.finition"></p>
-    <p class="lead" ng-bind="lot.surface"></p>
+    <p class="lead" ng-bind="vm.lot.properties.description"></p>
+    <p class="lead" ng-bind="vm.lot.properties.image"></p>
+    <p class="lead" ng-bind="vm.lot.properties.surface"></p>
   </div>
 </section>

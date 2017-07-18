@@ -30,24 +30,63 @@
         </div>
 
         <div class="form-group" show-errors>
+          <label class="control-label" for="number">Numéro:</label>
+          <input name="number" type="text" ng-model="vm.employe.number" id="number" class="form-control" placeholder="Ex: 0102030405" required>
+          <div ng-messages="vm.form.employeForm.number.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Email requis.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
           <label class="control-label" for="team">Equipe:</label>
           <select name="team" ng-model="vm.employe.team" id="team" class="form-control">
             <option value="" disabled selected>Choisissez une Equipe</option>
-            <option value="{{team._id}}" ng-repeat="team in teams">
+            <option value="{{ team.name }}" ng-repeat="team in teams">
                 {{team.name}}
             </option>
           </select>
+          <!-- <div isteven-multi-select name="team" ng-model="vm.employe.team" input-model="teams" output-model="outputBrowsers" button-label="icon name" item-label="icon name" tick-property="ticked"></div> -->
           <div ng-messages="vm.form.employeForm.team.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Equipe requise.</p>
           </div>
         </div>
 
         <div class="form-group" show-errors>
-          <label class="control-label" for="contract">Contrat:</label>
-          <input name="contract" type="text" ng-model="vm.employe.contract" id="contract" class="form-control" placeholder="Ex: CDD" required>
+          <!-- <label class="control-label" for="contract">Contrat:</label> -->
+
+          <label class="control-label" for="cdi">CDI</label>
+          <input name="cdi" type="checkbox" ng-model="vm.employe.contract" id="cdi" value="'CDI'">
+
+          <label class="control-label" for="cdd">CDD</label>
+          <input name="cdd" type="checkbox" ng-model="vm.employe.contract" id="cdd" value="'CDD'">
+
+          <label class="control-label" for="cddi">CDDI</label>
+          <input name="cddi" type="checkbox" ng-model="vm.employe.contract" id="cddi" value="'CDDI'">
+
+          <label class="control-label" for="renouvel">Rouvelé</label>
+          <input name="renouvel" type="checkbox" ng-model="vm.employe.contract" id="renouvel" value="'Renouvelé'">
+
+          <label class="control-label" for="licencie">Licencié</label>
+          <input name="licencie" type="checkbox" ng-model="vm.employe.contract" id="licencie" value="'Licencié'">
+
           <div ng-messages="vm.form.employeForm.contract.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Email requis.</p>
           </div>
+        </div>
+
+        <div class="form-group" show-error>
+          <label class="control-label" for="start_date">Début</label>
+          <input name="start_date" type="date" ng-model="vm.employe.start_date" id="start_date">
+        </div>
+
+        <div class="form-group" show-error>
+          <label for="end_date" class="control-label">Fin</label>
+          <input name="end_date" type="date" ng-model="vm.employe.end_date" id="end_date">
+        </div>
+
+        <div class="form-group" show-error>
+          <label for="renew" class="control-label">Renouvelement</label>
+          <input name="renew" type="date" ng-model="vm.employe.renew" id="renew">
         </div>
 
         <div class="form-group" show-errors>

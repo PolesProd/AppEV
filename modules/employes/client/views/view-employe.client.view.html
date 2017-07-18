@@ -14,24 +14,41 @@
   </div>
   <small>
     <em class="text-muted">
-      Posted on
+      Publié le
       <span ng-bind="vm.employe.created | date:'mediumDate'"></span>
-      by
+      par
       <span ng-if="vm.employe.user"
             ng-bind="vm.employe.user.displayName"></span>
       <span ng-if="!vm.employe.user">Deleted User</span>
     </em>
   </small>
+  <label for="">Prénom:</label>
   <p class="lead" ng-bind="vm.employe.lastname"></p>
-  <!-- <p class="lead">{{ employe.lastname }}</p> -->
+
+  <label for="">Nom:</label>
   <p class="lead" ng-bind="vm.employe.firstname"></p>
-  <!-- <p class="lead">{{ employe.firstname }}</p> -->
+
+  <label for="">Email:</label>
   <p class="lead" ng-bind="vm.employe.email"></p>
-  <!-- <p class="lead">{{ employe.email }}</p> -->
+
+  <label for="">N° Tél:</label>
+  <p class="lead" ng-bind="vm.employe.number"></p>
+
+  <label for="">Equipe:</label>
   <p class="lead" ng-bind="vm.employe.team"></p>
-  <!-- <p class="lead">{{ employe.team }}</p> -->
+
+  <label for="">Contrat:</label>
   <p class="lead" ng-bind="vm.employe.contract"></p>
-  <!-- <p class="lead">{{ employe.contract }}</p> -->
+
+  <label for="">Début contrat:</label>
+  <p class="lead" ng-bind="vm.employe.start_date"></p>
+
+  <label for="">Fin contrat</label>
+  <p class="lead" ng-bind="vm.employe.end_date"></p>
+
+  <label for="">Renouvelement</label>
+  <p class="lead" ng-bind="vm.employe.renew"></p>
+
+  <label for="">Formation(s):</label>
   <p class="lead" ng-bind="vm.employe.formation"></p>
-  <!-- <p class="lead">{{ employe.formation }}</p> -->
 </section>

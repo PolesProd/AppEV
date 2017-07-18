@@ -2,12 +2,12 @@
   'use strict';
   // employes controller
   angular
-    .module('employes')
-    .controller('EmployesController', EmployesController);
+  .module('employes')
+  .controller('EmployesController', EmployesController);
 
-  EmployesController.$inject = ['$scope', '$state', '$window', 'Authentication', 'employeResolve', 'TeamsService'];
+  EmployesController.$inject = ['$scope', '$state', '$window', 'Authentication', 'employeResolve', 'TeamsService', 'LotsService'];
 
-  function EmployesController ($scope, $state, $window, Authentication, employe, TeamsService) {
+  function EmployesController ($scope, $state, $window, Authentication, employe, TeamsService, LotsService) {
 
     var vm = this;
 
@@ -21,7 +21,10 @@
 
     $scope.teams = vm.team;
     $scope.teams.$promise.then(function (resourceArray) {
-      $scope.item = resourceArray[0];
+      $scope.item = [
+        { icon: "<img src='https://www.iconfinder.com/data/icons/social-messaging-productivity-1-1/128/gender-male2-128.png'/>", name: resourceArray[0].name, ticked: false }
+      ];
+      console.log($scope.item);
     });
 
     // Remove existing employe

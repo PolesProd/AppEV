@@ -10,56 +10,16 @@ var mongoose = require('mongoose'),
  * Lot Schema
  */
 var LotSchema = new Schema({
-  name: {
-    type: String,
-    default: '',
-    required: 'Veuillez indiquer le nom du lot',
-    trim: true
-  },
-  number: {
-    type: Number,
-    required: 'Veuillez indiquer le numéro du lot'
-  },
-  description: {
-    type: String,
-    default: '',
-    trim: true,
-    required: 'Veuillez ajouté une description au lot'
-  },
-  location: {
-    type: Object,
-    required: 'Veuillez renseigné la localisation du lot'
-  },
-  nature: {
-    type: String,
-    default: '',
-    trim: true,
-    required: 'Veuillez indiquer la nature de l\'intervention'
-  },
-  frequence: {
-    type: Number,
-    required: 'Veuillez indiquer la fréquence d\'intervention'
-  },
-  finition: {
-    type: String,
-    default: '',
-    trim: true,
-    required: 'Veuillez indiquer le type de finition souhaité'
-  },
-  surface: {
-    type: String,
-    default: '',
-    trim: true,
-    required: 'Veuillez indiquer le type de surface'
-  },
-  created: {
-    type: Date,
-    default: Date.now
-  },
-  user: {
-    type: Schema.ObjectId,
-    ref: 'User'
-  }
+  name: { type: String, default: '', required: '', trim: true },
+  number: { type: Number, required: '' },
+  description: { type: String, default: '', trim: true, required: '' },
+  location: { type: Object, required: '' },
+  nature: { type: String, default: '', trim: true, required: '' },
+  frequence: { type: Number, required: '' },
+  finition: { type: String, default: '', trim: true, required: '' },
+  surface: { type: String, default: '', trim: true, required: '' },
+  created: { type: Date, default: Date.now },
+  user: { type: Schema.ObjectId, ref: 'User' }
 });
 
 mongoose.model('Lot', LotSchema);

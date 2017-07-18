@@ -1,20 +1,21 @@
 'use strict';
 
 /**
- * Module dependencies.
- */
+* Module dependencies.
+*/
 var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
 /**
- * Planning Schema
- */
+* Planning Schema
+*/
 var PlanningSchema = new Schema({
-	name: { type: String, default: '', required: 'Le nom est obligatoire', trim: true },
-  week: { type: String, default: '', required: 'Please fill Planning name' },
-  team: { type: Schema.Types.ObjectId, ref: 'Team' },
-  site: { type: String },
-  tasks: { type: String, default: '', required: 'Veuillez remplir les tâches.' },
+  name: { type: String, default: '', required: 'Nom requis', trim: true },
+  start: { type: Date, default: '', required: 'Date requise' },
+  end: { type: Date, default: '', required: 'Date requise' },
+  team: { type: String, default: 'Par Défaut', required: 'Equipe requise' },
+  site: { type: String, default: 'Lot', required: 'Site requise' },
+  tasks: { type: String, default: '', required: 'Tâches requise' },
   created: { type: Date, default: Date.now },
   user: { type: Schema.ObjectId, ref: 'User' }
 }, { collection: 'plannings' });
