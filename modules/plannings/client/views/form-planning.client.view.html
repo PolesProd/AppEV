@@ -31,8 +31,8 @@
           <label class="control-label" for="team">Equipe:</label>
           <select name="team" ng-model="vm.planning.team" id="team" class="form-control">
             <option value="" disabled selected>Choisissez une Equipe</option>
-            <option value="{{team._id}}" ng-repeat="team in teamsList">
-                {{team.name}}
+            <option value="{{ team.name }}" ng-repeat="team in teamsList">
+                {{ team.name }}
             </option>
           </select>
           <!-- <isteven-multi-select input-model="teamsList" output-model="outputList" ng-model="vm.planning.team" name="team" id="team" value="team._id" button-label="  icon name" item-label="icon name" selection-mode="single" translation="localLang" directive-id="team" tick-property="ticked"></isteven-multi-select> -->
@@ -47,18 +47,16 @@
           <!-- <input name="sites" type="text" ng-model="vm.team.sites" id="sites" class="form-control" placeholder="Ex: La Coulée Verte" required> -->
           <select name="site" ng-model="vm.planning.site" id="site" class="form-control">
             <option value="" disabled selected>Choisissez un Site</option>
-            <option value="{{site._id}}" ng-repeat="site in sitesList">
+            <option value="{{ site.properties.nom }}" ng-repeat="site in sitesList">
                 {{ site.properties.nom }}
             </option>
           </select>
           <!-- <isteven-multi-select input-model="sitesList" output-model="outputList" ng-model="vm.planning.site" name="site" id="site" button-label="icon name" item-label="icon name" max-label="3" translation="localLang" tick-property="ticked"></isteven-multi-select> -->
-
           <div ng-messages="vm.form.teamForm.sites.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Site requis.</p>
           </div>
         </div>
 
-        <label class="control-label" for="tasks">Tâches:</label>
         <div class="form-group" show-errors>
           <label class="control-label" for="tasks">Tâches à réaliser:</label>
           <input name="tasks" type="text" ng-model="vm.planning.tasks" id="tasks" class="form-control" placeholder="Ex: Désherbage..." required>

@@ -19,7 +19,7 @@
           <!-- <input name="sites" type="text" ng-model="vm.team.sites" id="sites" class="form-control" placeholder="Ex: La Coulée Verte" required> -->
           <select name="site" ng-model="vm.team.site" id="site" class="form-control">
             <option value="" disabled selected>Choisissez un Site</option>
-            <option value="{{site._id}}" ng-repeat="site in sites">
+            <option value="{{site.properties.nom}}" ng-repeat="site in sites">
                 {{ site.properties.nom }}
             </option>
           </select>
@@ -34,7 +34,7 @@
           <label class="control-label" for="member">Salarié(e)s:</label>
           <select name="member" ng-model="vm.team.member" id="member" class="form-control">
             <option value="" disabled selected>Choisissez salarié(e)s</option>
-            <option value="{{member._id}}" ng-repeat="member in membersList">
+            <option value="{{ member.firstname}}{{member.lastname}}" ng-repeat="member in membersList">
                 {{member.lastname}} {{ member.firstname }}
             </option>
           </select>

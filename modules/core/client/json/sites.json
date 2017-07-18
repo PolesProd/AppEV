@@ -5,7 +5,7 @@
     "properties": {
       "ID": 1,
       "nom": "LA COULEE VERTE",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/coulee-verte.jpg' alt='la coulée verte' /><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige, rustique et naturel)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes et rosiers</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes</li></ul></div>"
     },
     "geometry": {
       "type": "Polygon",
@@ -60,8 +60,7 @@
     "properties": {
       "ID": 2,
       "nom": "VERDUN-EMMAÜS",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
-
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/avenue-verdun.png' alt='verdun emmaüs' /><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige, rustique et naturel)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes et vivaces</li></ul></div>"
     },
     "geometry": {
       "type": "Polygon",
@@ -81,7 +80,7 @@
     "properties": {
       "ID": 3,
       "nom": "VERDUN",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/avenue-verdun2.jpg' alt='verdun'/><ul class='listTache'><li class='tache'>Tonte des pelouses(prestige)</li><li class='tache'>Binage du pied des arbres(jusqu’à des aménagements à réaliser)</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes et vivaces</li></ul></div>"
     },
     "geometry": {
       "type": "Polygon",
@@ -99,7 +98,7 @@
     "properties": {
       "ID": 4,
       "nom": "ALLEE DU CHEMIN VERT",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/allee-du-chemin-vert.jpg' alt='allée du chemin vert' /><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes</li></ul></div>"
     },
     "geometry": {
       "type": "Polygon",
@@ -184,7 +183,7 @@
     "properties": {
       "ID": 5,
       "nom": "MADAME DE NANTEUIL",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/parking-madame-nanteuil.jpg' alt='parking madame de nanteuil' /><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige et rustique)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes</li></ul></div>"
     },
     "geometry": {
       "type": "Polygon",
@@ -210,7 +209,7 @@
     "properties": {
       "ID": 6,
       "nom": "DE GAULE-LECLERC",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/boulevard-charles-de-gaulle.jpg' alt='boulevard charles de gaule' /><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige, rustique et naturel)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes</li></ul></div>"
     },
     "geometry": {
       "type": "Polygon",
@@ -270,7 +269,7 @@
     "properties": {
       "ID": 7,
       "nom": "MOULIN DE CAGE",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/quai-du-moulin-de-cage.jpg' alt='quai du moulin de cage' /><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige et rustique)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Désherbage des massifs d’arbustes, vivaces et pieds des arbres</li></ul></div>"
     },
     "geometry": {
       "type": "Polygon",
@@ -295,7 +294,7 @@
     "properties": {
       "ID": 8,
       "nom": "jEAN jAURES",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/rue-jean-jaures.jpg' alt='rue jean jaurès' /><ul class='listTache'><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes</li></ul></div>"
     },
     "geometry": {
       "type":"MultiPolygon",
@@ -325,7 +324,7 @@
     "properties": {
       "ID": 9,
       "nom": "VOIE PROMENADE SUD-CENTRE)",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/voix-promenade.jpg' alt='voie promenade centre et sud' /><ul class='listTache'><li class='tache'>Tontes des pelouses (prestige)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes et de plantes vivaces</li></ul></div>"
     },
     "geometry": {
       "type":"MultiPolygon",
@@ -361,7 +360,7 @@
     "properties": {
       "ID": 10,
       "nom": "VOIE PROMENADE NORD",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/voix-promenade-nord.jpg' alt='voie promenade nord' /><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige)</li><li class='tache'>Taille des arbustes</li><li class='tache'> Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes et vivaces</li></ul></div>"
     },
     "geometry": {
       "type": "Polygon",
@@ -386,7 +385,7 @@
     "properties": {
       "ID": 11,
       "nom": "ABBE PIERRE-NORMANDIE",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/jardin-du-bery.jpg' alt='square Abbé Pierre' /><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes et vivaces</li></ul></div>"
     },
     "geometry": {
       "type": "Polygon",
@@ -408,7 +407,7 @@
     "properties": {
       "ID": 12,
       "nom": "FOND DE LA NOUE",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/rue-du-fond-de-la-noue.jpg' alt='rue du fond de la nous' /><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes et vivaces</li></ul></div>"
     },
     "geometry": {
       "type": "Polygon",
@@ -436,7 +435,7 @@
     "properties": {
       "ID": 13,
       "nom": "BOULEVARD GALLIENI",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/boulevard-galienni.jpg' alt='boulevard galienni' /><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige et rustique)</li><li class='tache'>Taille des arbustes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Nettoyage des aires stabilisées </li><li class='tache'>Désherbage des massifs d’arbustes, vivaces et pieds des arbres</li></ul></div>"
     },
     "geometry": {
       "type": "Polygon",
@@ -459,7 +458,7 @@
     "properties": {
       "ID": 14,
       "nom": "AUGUSTIN",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/rue-des-augustins.jpg' alt='rue des augustins' /><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes</li><li class='tache'>Désherbage des massifs d’arbustes, vivaces et pieds des arbres</li></ul></div>"
     },
     "geometry": {
       "type": "Polygon",
@@ -523,7 +522,7 @@
     "properties": {
       "ID": 15,
       "nom": "HAUT DE LA NOUE",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/rue-du-haut-de-la-noue.jpg' alt='rue du haut de la noue' /><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige)</li><li class='tache'>Binage du pied des arbres</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes et vivaces</li><li class='tache'>Désherbage des massifs d’arbustes, vivaces et pieds des arbres</li></ul></div>"
     },
     "geometry": {
       "type": "Polygon",
@@ -568,7 +567,7 @@
     "properties": {
       "ID": 16,
       "nom": "SQUARE RUE PASTEUR",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/.jpg' alt='coulée verte' /><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige)</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes et vivaces</li><li class='tache'>Désherbage des massifs d’arbustes, vivaces et pieds des arbres</li></ul></div>"
     },
     "geometry": {
       "type": "Polygon",
@@ -597,7 +596,7 @@
     "properties": {
       "ID": 17,
       "nom": "MAIL ROGER PREVOT",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/mail-roger-prevost.jpg' alt='coulée verte' /><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige, rustique et naturel)</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes</li></ul></div>"
     },
     "geometry": {
       "type": "Polygon",
@@ -647,7 +646,7 @@
     "properties": {
       "ID": 18,
       "nom": "PONANT-PAUL SIGNAC",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/.jpg' alt='coulée verte' /><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige et rustique)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Désherbage des massifs d’arbustes</li></ul></div>"
     },
     "geometry": {
       "type":"MultiPolygon",
@@ -727,7 +726,7 @@
     "properties": {
       "ID": 19,
       "nom": "FOSSE AUX ASTRES",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/impasse-fosse-aux-astres.jpg' alt='impasse de la fosse aux astres' /><ul class='listTache'><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes</li></ul></div>"
     },
     "geometry": {
       "type": "Polygon",
@@ -747,7 +746,7 @@
     "properties": {
       "ID": 20,
       "nom": "SQUARE SAINTE MARIE",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/square-sainte-marie.jpg' alt='square sainte marie' /><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes</li></ul></div>"
     },
     "geometry": {
       "type":"MultiPolygon",
@@ -769,7 +768,7 @@
     "properties": {
       "ID": 21,
       "nom": "CIMETIERES",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/espace-vert-cimetiere.jpg' alt='coulée verte' /><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes et vivaces</li></ul></div>"
     },
     "geometry": {
       "type":"Polygon",
@@ -792,10 +791,10 @@
     "properties": {
       "ID": 22,
       "nom": "CIMETIERES",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/nouveau-cimetiere.jpg' alt='nouveau cimetiere' /><ul class='listTache'><li class='tache'>Nettoyage des feuilles et déchets divers dans les allées</li><li class='tache'>Désherbage des allées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li></ul></div>"
     },
     "geometry": {
-        "type": "Polygon",
+      "type": "Polygon",
       "coordinates":
       [
         [
@@ -818,7 +817,7 @@
     "properties": {
       "ID": 23,
       "nom": "NELSON MANDELA",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/rue-nelson-mandela.jpg' alt='rue nelson mandela' /><ul class='listTache'><li class='tache'>Entretien des massifs de plantes vivaces (au niveau de la chaussée)</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes, vivaces et couvre sol</li></ul></div>"
     },
     "geometry": {
       "type": "Polygon",
@@ -842,7 +841,7 @@
     "properties": {
       "ID": 24,
       "nom": "CHEMIN DES RENIERS",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/chemin-des-reniers.jpg' alt='chemin des reniers' /><ul class='listTache'><li class='tache'>Tonte des pelouses(rustique et naturel)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes</li></ul></div>"
     },
     "geometry": {
       "type": "Polygon",
@@ -870,7 +869,7 @@
     "properties": {
       "ID": 25,
       "nom": "VIEUX CHEMIN DE SAINT-DENIS",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/vieux-chemin-saint-denis.jpg' alt='vieux chemin de saint-denis' /><ul class='listTache'><li class='tache'>Tonte des pelouses(rustique et naturel)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Désherbage physique sans utilisation de produits phytosanitaires de synthèse des massifs d’arbustes et des parties minérales</li></ul></div>"
     },
     "geometry": {
       "type": "Polygon",
@@ -904,7 +903,7 @@
     "properties": {
       "ID": 26,
       "nom": "MADIESSE-LEDUDAL",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/square-madiesse-rue-noel-dudal.jpg' alt='square madiesse' /><ul class='listTache'><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Désherbage physique sans utilisation de produits phytosanitaires de synthèse des massifs d’arbustes et des parties minérales</li></ul></div>"
     },
     "geometry": {
       "type": "Polygon",
@@ -922,7 +921,7 @@
     "properties": {
       "ID": 27,
       "nom": "QUAI SISLEY",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/quai-sisley.jpg' alt='quai sisley' /><ul class='listTache'><li class='tache'>Tonte des pelouses(prestige, rustique et naturel)</li><li class='tache'>Taille des arbustes</li><li class='tache'>Taille des haies</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Désherbage des massifs d’arbustes, vivaces et pieds des arbres et des parties minérales</li></ul></div>"
     },
     "geometry": {
       "type": "Polygon",
@@ -974,7 +973,7 @@
     "properties": {
       "ID": 28,
       "nom": "QUAI D\"ASNIERES",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/quai-asnieres.jpg' alt='quai d'asnières' /><ul class='listTache'><li class='tache'>Tonte des pelouses(prestige, rustique et naturel)</li><li class='tache'>Taille des arbustes</li><li class='tache'>Taille des haies</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Désherbage des massifs d’arbustes, vivaces et pieds des arbres et des parties minérales</li></ul></div>"
     },
     "geometry": {
       "type": "Polygon",
@@ -1012,7 +1011,7 @@
 
       "ID": 29,
       "nom": "CHANTIERS NAVALS",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' /><ul class='listTache'><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Désherbage physique sans utilisation de produits phytosanitaires de synthèse des massifs d’arbustes et des parties minérales</li></ul></div>"
     },
     "geometry": {
       "type": "Polygon",
@@ -1036,7 +1035,7 @@
     "properties": {
         "ID": 30,
         "nom": "PASSAGE DE LA MEF",
-        "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+        "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/passage-de-la-mef-rue-henri-barbusse-quai-sisley.jpg' alt='coulée verte' /><ul class='listTache'><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des branches et brindilles</li><li class='tache'>Désherbage physique sans utilisation de produits phytosanitaires de synthèse des massifs d’arbustes et des parties minérales</li></ul></div>"
       },
       "geometry": {
         "type": "Polygon",
@@ -1054,7 +1053,7 @@
     "properties": {
       "ID": 31,
       "nom": "PISCINE",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/.jpg' alt='coulée verte' /><ul class='listTache'><li class='tache'>Tonte des pelouses(prestige, rustique et naturel)</li><li class='tache'>Taille des haies (ces haies sont progressivement supprimées)</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Désherbage des massifs d’arbustes et des parties minérales</li></ul></div>"
     },
     "geometry": {
       "type": "Polygon",
@@ -1089,7 +1088,7 @@
     "properties": {
       "ID": 32,
       "nom": "RUE DU 8 MAI 1945",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/rue-du-8-mai-1945.jpg' alt='rue du 8 mai 1945' /><ul class='listTache'><li class='tache'>Tonte des pelouses(prestige et rustique)</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Désherbage des massifs d’arbustes et des parties minérales</li></ul></div>"
     },
     "geometry": {
       "type": "MultiPolygon",
@@ -1145,7 +1144,7 @@
     "properties": {
       "ID": 33,
       "nom": "BERTANE-BONGARDE",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/avenue-de-la-longue-bertrane.jpg' alt='avenue de la longue bertrane' /><ul class='listTache'><li class='tache'>Tonte des pelouses(prestige et rustique)</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Désherbage des massifs d’arbustes, vivaces et pieds des arbres</li></ul></div>"
     },
     "geometry": {
       "type":"MultiPolygon",
@@ -1166,7 +1165,7 @@
     "properties": {
       "ID": 34,
       "nom": "CHEMIN DU BÛCHER",
-      "message": "<div style='color:red'>Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipisicing elit.<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' width='300' height='200'/><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>"
+      "description": "<div class='sitePhoto'><img src='modules/core/client/img/photoSite/chemin-du-bucher.jpg' alt='chemin du bûcher' /><ul class='listTache'><li class='tache'>Tonte des pelouses(prestige et rustique)</li><li class='tache'>Taille des arbustes</li><li class='tache'>Ramassage des branches et brindilles</li>Entretien des massifs d’arbustes, vivaces et pieds des arbres<li class='tache'></li></ul></div>"
     },
     "geometry": {
       "type": "Polygon",
