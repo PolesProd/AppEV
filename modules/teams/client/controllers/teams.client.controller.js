@@ -20,8 +20,8 @@
     vm.employe = EmployesService.query();
     vm.site = LotsService.query();
 
-    $scope.membersList = vm.employe;
-    $scope.membersList.$promise.then(function (resourceArray) {
+    $scope.memberList = vm.employe;
+    $scope.memberList.$promise.then(function (resourceArray) {
       $scope.item = [{
         icon: '<img src="../modules/plannings/client/img/tondeuse.jpg"/>', firstname: resourceArray[0].firstname, lastname: resourceArray[0].lastname, email: resourceArray[0].email, number: resourceArray[0].number, team: resourceArray[0].team, formation: resourceArray[0].formation, contract: resourceArray[0].contract, ticked: false
       }];
@@ -30,13 +30,13 @@
       // console.log($scope.outputList);
     });
 
-    $scope.localLang = {
-      selectAll: 'Tous séléctionné',
-      selectNone: 'Déselectionné',
-      reset: 'Reset',
-      search: 'Chercher',
-      nothingSelected: 'Selectionner'
-    };
+    // $scope.localLang = {
+    //   selectAll: 'Tous séléctionné',
+    //   selectNone: 'Déselectionné',
+    //   reset: 'Reset',
+    //   search: 'Chercher',
+    //   nothingSelected: 'Selectionner'
+    // };
 
     $scope.sites = vm.site;
     $scope.sites.$promise.then(function (resourceArray) {
