@@ -1,18 +1,17 @@
-<section class="displayHome" ng-controller="HomeController">
-  <h1>Accueil</h1>
-  <div id="map-info">
-    <script type="text/javascript">
-    showResultsInDiv();
-    </script>
+<div class="columnsContainer" ng-controller="HomeController">
+  <div class="leftColumn">
+  <h1>Carto</h1>
+    <div class="map container">
+      <leaflet center="center" geojson="geojson" controls="controls" markers="markers" defaults="defaults" legend="legend" url-hash-center="yes" tiles ="tiles" width="100%" height="93vh"></leaflet>
+    </div>
   </div>
-
-  <div class="page-header">
-    <h1>Tous les sites</h1>
+  
+  <div class="rightColumn displayHome">
+    <h1>Accueil</h1>
+    <div id="map-info">
+      <script type="text/javascript">
+        showResultsInDiv();
+      </script>
+    </div>
   </div>
-
-  <div class="list-group">
-    <a ng-repeat="lot in vm.lots" ui-sref="lots.view({ lotId: lot._id })" class="list-group-item">
-      <h4 class="list-group-item-heading" ng-bind="lot.properties.nom"></h4>
-    </a>
-  </div>
-</section>
+</div>

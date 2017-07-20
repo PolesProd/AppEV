@@ -16,7 +16,10 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
     .state('home', {
       url: '/',
       templateUrl: 'modules/core/client/views/home.client.view.html',
-      authRequired: true
+      authRequired: true,
+      data: {
+        roles: ['user', 'admin']
+      }
     })
     .state('not-found', {
       url: '/not-found',

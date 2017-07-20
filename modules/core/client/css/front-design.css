@@ -1,24 +1,14 @@
 /*Layout*/
 header.navbar.navbar-inverse.ng-scope{
-  display: inline-block;
-  width:40%;
-  float: right;
+  width:100%;
 }
-.container{
+/* .container{
   max-width: 100%;
-}
+} */
 .map{
-  float: left;
-  width: 60%;
-  display: inline-block;
+  width: 100%;
 }
-.content{
-  margin-top: 0;
-  vertical-align: top;
-  width: 40%;
-  display: inline-block;
-  float: right;
-}
+
 
 /* User Interface */
 .navbar-inverse{
@@ -31,11 +21,7 @@ header.navbar.navbar-inverse.ng-scope{
 .navbar-nav {
   float: none;
 }
-@media (min-width: 768px){
-  .navbar-nav {
-      float: none;
-  }
-}
+
 /* Affichage de chaques sites */
 
 .displayHome{
@@ -53,8 +39,42 @@ header.navbar.navbar-inverse.ng-scope{
   }
 #map-info{
   padding-right: 8px;
-  width: 103%;
-  /* padding-right: 25px; */
+  width: 100%;
   max-height: 70vh;
   overflow-y: scroll;
+}
+
+.columnsContainer{
+  position: relative;
+  margin-top: -6%;
+}
+
+.leftColumn, .rightColumn{
+  padding: 1.25em;
+}
+
+.leftColumn {
+  margin-bottom: .5em;
+  width: 60%;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 47.5em ) {
+  .leftColumn {
+    margin-right: 19.5em;
+  }
+
+  .rightColumn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 60%;
+    width: 36.75em;
+  }  
+}
+
+@media (min-width: 768px){
+  .navbar-nav {
+      float: none;
+  }
 }

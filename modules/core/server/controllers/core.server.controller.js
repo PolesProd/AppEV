@@ -4,15 +4,9 @@
 * Render the main application page
 */
 exports.renderIndex = function (req, res, next) {
-  // if (req.session.authenticated) {
-    // console.log('MessageServer: "core server controller status": "CONNECTER"');
-    res.render('modules/core/server/views/index', {
-      user: req.user
-    });
-  // } else {
-  //   console.log('MessageServer: "core server controller status": "DECONNECTER" -> Veuillez vous conecté conncté conec cone con co... c.... TA G@l&/ P/%t@&#');
-  //   res.redirect('/authentication/signin');
-  // }
+  res.render('modules/core/server/views/index', {
+    user: req.user
+  });
 };
 
 /**
