@@ -6,24 +6,24 @@
   .module('employes')
   .controller('EmployesController', EmployesController);
 
-  EmployesController.$inject = ['$scope', '$state', '$window', 'Authentication', 'employeResolve', 'TeamsService', 'LotsService'];
+  EmployesController.$inject= ['$scope', '$state', '$window', 'Authentication', 'employeResolve', 'TeamsService', 'LotsService'];
 
   function EmployesController ($scope, $state, $window, Authentication, employe, TeamsService, LotsService) {
 
-    var vm = this;
+    var vm= this;
 
-    vm.authentication = Authentication;
-    vm.employe = employe;
-    vm.error = null;
-    vm.form = {};
-    vm.remove = remove;
-    vm.save = save;
-    vm.team = TeamsService.query();
+    vm.authentication= Authentication;
+    vm.employe= employe;
+    vm.error= null;
+    vm.form= {};
+    vm.remove= remove;
+    vm.save= save;
+    vm.team= TeamsService.query();
 
-    $scope.teams = vm.team;
+    $scope.teams= vm.team;
     $scope.teams.$promise.then(function (resourceArray) {
-      $scope.item = [
-        { icon: "<img src='https://www.iconfinder.com/data/icons/social-messaging-productivity-1-1/128/gender-male2-128.png'/>", name: resourceArray[0].name, ticked: false }
+      $scope.item= [
+        { icon: '<img src="https://www.iconfinder.com/data/icons/social-messaging-productivity-1-1/128/gender-male2-128.png"/>', name: resourceArray[0].name, ticked: false }
       ];
       console.log($scope.item);
     });
@@ -56,7 +56,7 @@
       }
 
       function errorCallback(res) {
-        vm.error = res.data.message;
+        vm.error= res.data.message;
       }
     }
   }

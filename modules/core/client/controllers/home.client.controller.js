@@ -19,25 +19,38 @@ function ($scope, $http, Authentication, leafletData) {
         layer.on({
           click: function showResultsInDiv() {
             var d = document.getElementById('map-info');
-            d.innerHTML = '';
+            var siteImg ,siteInfos, siteTitle, siteNum = '';
+            var titleH1 = document.getElementById('map-info').parentElement.getElementsByTagName('h1')[0];
+
             for (var content in feature.properties){
-              d.innerHTML += content + ': ' + feature.properties[content] + '<br>';
+              if(content === 'image'){
+                siteImg = "<p class='siteInfos'>" + feature.properties[content] + '</p>';
+              } else if(content === 'description'){
+                siteInfos += "<p class='siteInfos'><span> Taches à accomplire sur le site : </span>" + feature.properties[content] + '</p>';
+              } else if(content === 'ID'){
+                siteNum += "<p class='siteInfos'><span> Numéro du site : </span>" + feature.properties[content] + '</p>';
+              } else if(content === 'nom'){
+                titleH1.innerHTML = feature.properties[content];
+              } else{
+                siteInfos += "<p class='siteInfos'><span>" + content + ': </span>' + feature.properties[content] + '</p>';
+              }
             }
+            d.innerHTML = siteNum + siteImg + siteInfos;
           }
         });
       },
       pointToLayer: function (feature, latlng) {
         var arbre = feature.geometry.type;
-        var leaf_icon = L.icon({
-            iconUrl: 'modules/core/client/img/icons/arbre.png',
-            shadowUrl: 'modules/core/client/img/icons/arbre_ombre.png',
-            iconSize: [16, 22],
-            shadowSize: [16, 22]
-          });
-
-        if (arbre === 'Point') {
-          return L.marker(latlng, { icon: leaf_icon } );
-        }
+        // var leaf_icon = L.icon({
+        //     iconUrl: 'modules/core/client/img/icons/arbre.png',
+        //     shadowUrl: 'modules/core/client/img/icons/arbre_ombre.png',
+        //     iconSize: [16, 22],
+        //     shadowSize: [16, 22]
+        //   });
+        //
+        // if (arbre === 'Point') {
+        //   return L.marker(latlng, { icon: leaf_icon } );
+        // }
       }
     };
   });
