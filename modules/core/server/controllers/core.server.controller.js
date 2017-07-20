@@ -1,16 +1,26 @@
 'use strict';
-
+var chalk = require('chalk');
 /**
 * Render the main application page
 */
-exports.renderIndex = function (req, res, next) {
+exports.renderIndex = function (req, res) {
   // if (req.session.authenticated) {
-    // console.log('MessageServer: "core server controller status": "CONNECTER"');
+  //   console.log('MessageServer: "-core-server-controller-status": "-> CONNECTER"');
+  //   res.render('modules/core/server/views/index', {
+  //     user: req.user
+  //   });
+  // } else {
+  //   console.log('MessageServer: "-core-server-controller-status": "-> DECONNECTER"');
+  //   res.redirect('/authentication/signin');
+  //   return;
+  // }
+  // if (req.isAuthenticated ()) {
+    // console.log(chalk.green('The user is logged in'));
     res.render('modules/core/server/views/index', {
       user: req.user
     });
   // } else {
-  //   console.log('MessageServer: "core server controller status": "DECONNECTER" -> Veuillez vous conecté conncté conec cone con co... c.... TA G@l&/ P/%t@&#');
+  //   console.log (chalk.red('The user is not logged in'));
   //   res.redirect('/authentication/signin');
   // }
 };
