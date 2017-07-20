@@ -3,8 +3,7 @@
 /**
  * Module dependencies
  */
-var path = require('path'),
-  employesPolicy = require('../policies/employes.server.policy'),
+var employesPolicy = require('../policies/employes.server.policy'),
   employes = require('../controllers/employes.server.controller');
 
 module.exports = function(app) {

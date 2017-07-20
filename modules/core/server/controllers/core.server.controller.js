@@ -3,14 +3,31 @@
 /**
 * Render the main application page
 */
-exports.renderIndex = function (req, res) {
-  // if (!req.user.isAuthenticated())
-  //   // res.redirect('/authentication/signin');
-  //   res.redirect('modules/core/server/views/404');
-  // else
+exports.renderIndex = function (req, res, next) {
+  // if (req.isAuthenticated()) {
+  //   console.log('L\'utilisateur est connecté');
   res.render('modules/core/server/views/index', {
     user: req.user
   });
+  // } else {
+  //   console.log('L\'utilisateur n\'est pas connecté');
+  //   res.redirect('/authentication/signin');
+  // }
+
+  // if user is authenticated in the session, carry on
+  // if (req.isAuthenticated())
+  // return next();
+  // // if they aren't redirect them to the home page
+  // if(req.route.path !== '/authentication/login')
+  // res.redirect('/authentication/login');
+  //
+  // next();
+
+  // if (!req.session.authenticated && req.url !== '/authentication/signin') {
+  //   res.redirect('/authentication/signin');
+  //   return;
+  // }
+  // next();
 };
 
 /**

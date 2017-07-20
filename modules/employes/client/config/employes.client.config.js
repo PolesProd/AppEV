@@ -5,8 +5,7 @@ function (Menus) {
   Menus.addMenuItem('topbar', {
     title: 'Employés',
     state: 'employes',
-    type: 'dropdown',
-    roles: ['*']
+    type: 'dropdown'
   });
 
   Menus.addSubMenuItem('topbar', 'employes', {

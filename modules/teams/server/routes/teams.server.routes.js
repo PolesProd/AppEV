@@ -3,8 +3,7 @@
 /**
 * Module dependencies
 */
-var path = require('path'),
-  teamsPolicy = require('../policies/teams.server.policy'),
+var teamsPolicy = require('../policies/teams.server.policy'),
   teams = require('../controllers/teams.server.controller');
 
 module.exports = function(app) {
