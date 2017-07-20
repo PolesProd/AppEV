@@ -1,9 +1,12 @@
 'use strict';
 
-angular.module('core').controller('HomeController', ['$scope', '$http', 'Authentication', 'leafletData',
-function ($scope, $http, Authentication, leafletData) {
+angular.module('core').controller('HomeController', ['$scope', '$http', 'Authentication', 'leafletData', 'LotsService',
+function ($scope, $http, Authentication, leafletData, LotsService) {
   // Cela fournit un contexte d'authentification.
   $scope.authentication = Authentication;
+
+  // On récupère la liste des sites
+  $scope.lots = LotsService.query();
 
   // On récupère les données geo des sites depuis un fichier json
   $http.get('modules/core/client/json/sites.json').then(function (response) {
@@ -24,15 +27,15 @@ function ($scope, $http, Authentication, leafletData) {
 
             for (var content in feature.properties){
               if(content === 'image'){
-                siteImg = "<p class='siteInfos'>" + feature.properties[content] + '</p>';
+                siteImg = '<p class="siteInfos">' + feature.properties[content] + '</p>';
               } else if(content === 'description'){
-                siteInfos += "<p class='siteInfos'><span> Taches à accomplire sur le site : </span>" + feature.properties[content] + '</p>';
+                siteInfos += '<p class="siteInfos"><span> Taches à accomplire sur le site : </span>' + feature.properties[content] + '</p>';
               } else if(content === 'ID'){
-                siteNum += "<p class='siteInfos'><span> Numéro du site : </span>" + feature.properties[content] + '</p>';
+                siteNum += '<p class="siteInfos"><span> Numéro du site : </span>' + feature.properties[content] + '</p>';
               } else if(content === 'nom'){
                 titleH1.innerHTML = feature.properties[content];
               } else{
-                siteInfos += "<p class='siteInfos'><span>" + content + ': </span>' + feature.properties[content] + '</p>';
+                siteInfos += '<p class="siteInfos"><span>' + content + ': </span>' + feature.properties[content] + '</p>';
               }
             }
             d.innerHTML = siteNum + siteImg + siteInfos;

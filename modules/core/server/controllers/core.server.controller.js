@@ -4,30 +4,15 @@
 * Render the main application page
 */
 exports.renderIndex = function (req, res, next) {
-  // if (req.isAuthenticated()) {
-  //   console.log('L\'utilisateur est connecté');
-  res.render('modules/core/server/views/index', {
-    user: req.user
-  });
+  // if (req.session.authenticated) {
+    // console.log('MessageServer: "core server controller status": "CONNECTER"');
+    res.render('modules/core/server/views/index', {
+      user: req.user
+    });
   // } else {
-  //   console.log('L\'utilisateur n\'est pas connecté');
+  //   console.log('MessageServer: "core server controller status": "DECONNECTER" -> Veuillez vous conecté conncté conec cone con co... c.... TA G@l&/ P/%t@&#');
   //   res.redirect('/authentication/signin');
   // }
-
-  // if user is authenticated in the session, carry on
-  // if (req.isAuthenticated())
-  // return next();
-  // // if they aren't redirect them to the home page
-  // if(req.route.path !== '/authentication/login')
-  // res.redirect('/authentication/login');
-  //
-  // next();
-
-  // if (!req.session.authenticated && req.url !== '/authentication/signin') {
-  //   res.redirect('/authentication/signin');
-  //   return;
-  // }
-  // next();
 };
 
 /**
