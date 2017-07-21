@@ -7,9 +7,9 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
   $scope.authentication = Authentication;
 
   // On récupère la liste des sites
-  /*vm.lot = LotsService.query();
-
-  $scope.lots = vm.lot;
+  vm.lot = LotsService.query();
+  console.log(vm.lots);
+  /*$scope.lots = vm.lot;
   $scope.lots.$promise.then(function(resourceArray){
     $scope.item = resourceArray[0];
     console.log($scope.lots);

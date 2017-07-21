@@ -1,5 +1,5 @@
 'use strict';
-
+var chalk = require('chalk');
 /**
 * Render the main application page
 */
