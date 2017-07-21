@@ -2,11 +2,18 @@
 
 angular.module('core').controller('HomeController', ['$scope', '$http', 'Authentication', 'leafletData', 'LotsService',
 function ($scope, $http, Authentication, leafletData, LotsService) {
+  var vm = this;
   // Cela fournit un contexte d'authentification.
   $scope.authentication = Authentication;
 
   // On récupère la liste des sites
-  $scope.lots = LotsService.query();
+  /*vm.lot = LotsService.query();
+
+  $scope.lots = vm.lot;
+  $scope.lots.$promise.then(function(resourceArray){
+    $scope.item = resourceArray[0];
+    console.log($scope.lots);
+  });*/
 
   // On récupère les données geo des sites depuis un fichier json
   $http.get('modules/core/client/json/sites.json').then(function (response) {

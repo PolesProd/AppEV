@@ -20,6 +20,6 @@ var LotSchema = new Schema({
   surface: { type: String, default: '', trim: true, required: '' },
   created: { type: Date, default: Date.now },
   user: { type: Schema.ObjectId, ref: 'User' }
-});
+}, { collection: 'lots' });
 
-mongoose.model('Lot', LotSchema);
+module.exports = mongoose.model('Lot', LotSchema);

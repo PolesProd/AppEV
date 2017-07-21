@@ -2,7 +2,7 @@
   -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
 .content {
-  margin-top: 50px;
+  margin: 0;
 }
 .undecorated-link:hover {
   text-decoration: none;

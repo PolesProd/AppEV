@@ -8,19 +8,20 @@ function (Menu) {
     title: 'Plannings',
     state: 'plannings',
     type: 'dropdown',
-    roles: ['*']
+    roles: ['user', 'admin']
   });
 
   // Add the dropdown list item
   Menu.addSubMenuItem('topbar', 'plannings', {
     title: 'Plannings',
-    state: 'plannings.list'
+    state: 'plannings.list',
+    roles: ['user', 'admin']
   });
 
   // Add the dropdown create item
   Menu.addSubMenuItem('topbar', 'plannings', {
     title: 'Crée Planning',
     state: 'plannings.create',
-    roles: ['user']
+    roles: ['user', 'admin']
   });
 }]);

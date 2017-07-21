@@ -1,14 +1,19 @@
 /*Layout*/
 header.navbar.navbar-inverse.ng-scope{
-  width:100%;
+  display: block;
+  width:48%;
+  float: right;
 }
-/* .container{
+.container{
   max-width: 100%;
-} */
+}
 .map{
+  float: left;
+  width: 60%;
+}
+.content{
   width: 100%;
 }
-
 
 /* User Interface */
 .navbar-inverse{
@@ -21,60 +26,68 @@ header.navbar.navbar-inverse.ng-scope{
 .navbar-nav {
   float: none;
 }
-
+@media (min-width: 768px){
+  .navbar-nav {
+      float: none;
+  }
+}
 /* Affichage de chaques sites */
 
 .displayHome{
   max-height: 80vh;
   overflow: hidden;
 }
-.siteInfos{
 
-  }
-  .siteInfos span {
-    font-weight: bold;
-  }
-  .siteInfos img{
-    width:100%;
-  }
+.siteInfos span {
+  font-weight: bold;
+}
+
+.siteInfos img{
+  width:100%;
+}
+
 #map-info{
   padding-right: 8px;
-  width: 100%;
+  width: 103%;
   max-height: 70vh;
   overflow-y: scroll;
 }
 
+/* Homepage structure */
 .columnsContainer{
   position: relative;
-  margin-top: -6%;
 }
 
 .leftColumn, .rightColumn{
-  padding: 1.25em;
+  padding: 10px;
+}
+
+.rightColumn{
+  width: 53%;
+  float: right;
+  position: relative;
+  bottom: 48em;
+  left: 4em;
 }
 
 .leftColumn {
-  margin-bottom: .5em;
-  width: 60%;
+  width: 100%;
+  position: relative;
+  right: 75px;
+  bottom: 120px;
 }
 
-/* MEDIA QUERIES */
-@media screen and (min-width: 47.5em ) {
+MEDIA QUERIES
+@media screen and (min-width: 760px) {
+  header.navbar.navbar-inverse.ng-scope{
+    width: 50%;
+  }
+
   .leftColumn {
     margin-right: 19.5em;
   }
 
   .rightColumn {
     position: absolute;
-    top: 0;
-    right: 0;
-    left: 60%;
-    width: 36.75em;
-  }  
-}
-
-@media (min-width: 768px){
-  .navbar-nav {
-      float: none;
   }
 }

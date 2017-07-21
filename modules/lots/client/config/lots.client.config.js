@@ -7,6 +7,6 @@ function (Menus) {
     title: 'Sites',
     state: 'lots.list',
     type: 'items',
-    roles: ['*']
+    roles: ['user', 'admin']
   });
 }]);

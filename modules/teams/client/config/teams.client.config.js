@@ -7,19 +7,20 @@ function (Menus) {
     title: 'Equipes',
     state: 'teams',
     type: 'dropdown',
-    roles: ['*']
+    roles: ['user', 'admin']
   });
 
   // Add the dropdown list item
   Menus.addSubMenuItem('topbar', 'teams', {
     title: 'Liste équipe',
-    state: 'teams.list'
+    state: 'teams.list',
+    roles: ['user', 'admin']
   });
 
   // Add the dropdown create item
   Menus.addSubMenuItem('topbar', 'teams', {
     title: 'Crée équipe',
     state: 'teams.create',
-    roles: ['user']
+    roles: ['user', 'admin']
   });
 }]);
