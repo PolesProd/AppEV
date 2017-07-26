@@ -8,12 +8,12 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
 
   // On récupère la liste des sites
   vm.lot = LotsService.query();
-  console.log(vm.lots);
-  /*$scope.lots = vm.lot;
+  
+  $scope.lots = vm.lot;
   $scope.lots.$promise.then(function(resourceArray){
     $scope.item = resourceArray[0];
     console.log($scope.lots);
-  });*/
+  });
 
   // On récupère les données geo des sites depuis un fichier json
   $http.get('modules/core/client/json/sites.json').then(function (response) {

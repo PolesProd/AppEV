@@ -341,7 +341,7 @@
       "ID": 9,
       "nom": "VOIE PROMENADE SUD-CENTRE)",
       "surface": "XX m²",
-      "image": "<img src='modules/core/client/img/photoSite/voix-promenade.jpg' alt='voie promenade centre et sud' class='image'/>",
+      "image": "<img src='modules/core/client/img/photoSite/voie-promenade.jpg' alt='voie promenade centre et sud' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tontes des pelouses (prestige)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes et de plantes vivaces</li></ul></div>"
     },
     "geometry": {
@@ -379,7 +379,7 @@
       "ID": 10,
       "nom": "VOIE PROMENADE NORD",
       "surface": "XX m²",
-      "image": "<img src='modules/core/client/img/photoSite/voix-promenade-nord.jpg' alt='voie promenade nord' class='image'/>",
+      "image": "<img src='modules/core/client/img/photoSite/voie-promenade-nord.jpg' alt='voie promenade nord' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige)</li><li class='tache'>Taille des arbustes</li><li class='tache'> Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes et vivaces</li></ul></div>"
     },
     "geometry": {
