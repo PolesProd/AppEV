@@ -20,4 +20,7 @@
   <div class="alert alert-warning text-center" ng-if="vm.plannings.$resolved && !vm.plannings.length">
     No Plannings yet, why don't you <a ui-sref="plannings.create">create one</a>?
   </div>
+
+  <div ui-calendar ng-model="eventSources"></div>
+
 </section>

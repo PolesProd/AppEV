@@ -12,12 +12,4 @@ module.exports = function (app) {
 
   // Define application route
   app.route('/*').get(core.renderIndex);
-
-  app.get('/images/:givenImageName', function (req, res, next) {
-  	fs.files.findOne({name:req.params.givenImageName}, function (err, image) {
-  		if (err) return next(err);
-  			res.contentType(image.contentType);
-  			res.send(image.data);
-  	});
-  });
 };

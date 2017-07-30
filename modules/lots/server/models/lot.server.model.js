@@ -10,10 +10,11 @@ var mongoose = require('mongoose'),
  * Lot Schema
  */
 var LotSchema = new Schema({
-  name: { type: String, default: '', required: '', trim: true },
   number: { type: Number, required: '' },
+  name: { type: String, default: '', required: '', trim: true },
+  image: { type: Buffer, contentType: String },
   description: { type: String, default: '', trim: true, required: '' },
-  location: { type: Object, required: '' },
+  /*location: { type: Object, required: '' },*/
   nature: { type: String, default: '', trim: true, required: '' },
   frequence: { type: Number, required: '' },
   finition: { type: String, default: '', trim: true, required: '' },

@@ -12,7 +12,7 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
   $scope.lots = vm.lot;
   $scope.lots.$promise.then(function(resourceArray){
     $scope.item = resourceArray[0];
-    console.log($scope.lots);
+    /*console.log($scope.lots);*/
   });
 
   // On récupère les données geo des sites depuis un fichier json
@@ -29,7 +29,7 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
         layer.on({
           click: function showResultsInDiv() {
             var d = document.getElementById('map-info');
-            var siteImg ,siteInfos, siteTitle, siteNum = '';
+            var siteImg, siteInfos, siteTitle, siteNum = '';
             var titleH1 = document.getElementById('map-info').parentElement.getElementsByTagName('h1')[0];
 
             for (var content in feature.properties){
