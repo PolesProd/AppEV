@@ -1,7 +1,5 @@
 /*Layout*/
-header.navbar.navbar-inverse.ng-scope{
-  display: block;
-  width:48%;
+.navbar {
   float: right;
 }
 .container{
@@ -11,9 +9,9 @@ header.navbar.navbar-inverse.ng-scope{
   float: left;
   width: 60%;
 }
-.content{
+/*.content{
   width: 100%;
-}
+}*/
 
 /* User Interface */
 .navbar-inverse{
