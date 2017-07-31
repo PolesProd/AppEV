@@ -63,18 +63,18 @@ header.navbar.navbar-inverse.ng-scope{
 }
 
 .rightColumn{
-  width: 53%;
+  width: 60%;
   float: right;
   position: relative;
-  bottom: 45em;
-  left: 4em;
+  bottom: 60em;
+  left: 7em;
 }
 
 .leftColumn {
   width: 100%;
   position: relative;
-  right: 75px;
-  bottom: 120px;
+  right: 10em;
+  bottom: 50px;
 }
 
 MEDIA QUERIES

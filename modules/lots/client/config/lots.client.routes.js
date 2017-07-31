@@ -12,7 +12,10 @@
       .state('lots', {
         abstract: true,
         url: '/lots',
-        template: '<ui-view/>'
+        template: '<ui-view/>',
+        data: {
+          roles: ['user', 'admin']
+        }
       })
       .state('lots.list', {
         url: '',
@@ -20,6 +23,7 @@
         controller: 'LotsListController',
         controllerAs: 'vm',
         data: {
+          roles: ['user', 'admin'],
           pageTitle: 'Lots List'
         }
       })
@@ -58,6 +62,7 @@
           lotResolve: getLot
         },
         data: {
+          roles: ['user', 'admin'],
           pageTitle: 'Lot {{ lotResolve.name }}'
         }
       });

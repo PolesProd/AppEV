@@ -20,6 +20,7 @@
         controller: 'PlanningsListController',
         controllerAs: 'vm',
         data: {
+          roles: ['user', 'admin'],
           pageTitle: 'Plannings List'
         }
       })
@@ -58,6 +59,7 @@
           planningResolve: getPlanning
         },
         data: {
+          roles: ['user', 'admin'],
           pageTitle: 'Planning {{ planningResolve.name }}'
         }
       });

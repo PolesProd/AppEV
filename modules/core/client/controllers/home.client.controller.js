@@ -8,7 +8,7 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
 
   // On récupère la liste des sites
   vm.lot = LotsService.query();
-  
+
   $scope.lots = vm.lot;
   $scope.lots.$promise.then(function(resourceArray){
     $scope.item = resourceArray[0];
@@ -51,16 +51,16 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
       },
       pointToLayer: function (feature, latlng) {
         var arbre = feature.geometry.type;
-        // var leaf_icon = L.icon({
-        //     iconUrl: 'modules/core/client/img/icons/arbre.png',
-        //     shadowUrl: 'modules/core/client/img/icons/arbre_ombre.png',
-        //     iconSize: [16, 22],
-        //     shadowSize: [16, 22]
-        //   });
-        //
-        // if (arbre === 'Point') {
-        //   return L.marker(latlng, { icon: leaf_icon } );
-        // }
+        var leaf_icon = L.icon({
+            iconUrl: 'modules/core/client/img/icons/arbre.png',
+            shadowUrl: 'modules/core/client/img/icons/arbre_ombre.png',
+            iconSize: [16, 22],
+            shadowSize: [16, 22]
+          });
+
+        if (arbre === 'Point') {
+          return L.marker(latlng, { icon: leaf_icon } );
+        }
       }
     };
   });
@@ -69,10 +69,10 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
     center: {
       lat: 48.934070,
       lng: 2.327557,
-      zoom: 16,
+      zoom: 15,
     },
     defaults: {
-      scrollWheelZoom: true
+      scrollWheelZoom: false
     },
     tiles: {
       Name: 'Espaces Verts Villeneuve la garenne',
