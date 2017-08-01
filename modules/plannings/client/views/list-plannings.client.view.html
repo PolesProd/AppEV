@@ -4,27 +4,32 @@
   </div>
   <div class="list-group">
     <a ng-repeat="planning in vm.plannings"
-       ui-sref="plannings.view({ planningId: planning._id })"
-       class="list-group-item">
-      <small class="list-group-item-text">
-        Posted on
-        <span ng-bind="planning.created | date:'mediumDate'"></span>
-        by
-        <span ng-if="planning.user" ng-bind="planning.user.displayName"></span>
-        <span ng-if="!planning.user">Deleted User</span>
-      </small>
-      <!-- ng-bind="vm.planning.name" -->
-      <h4 class="list-group-item-heading">{{ planning.name }}</h4>
-    </a>
-  </div>
-  <div class="alert alert-warning text-center" ng-if="vm.plannings.$resolved && !vm.plannings.length">
-    No Plannings yet, why don't you <a ui-sref="plannings.create">create one</a>?
-  </div>
-  <!-- Boutons du calendrier -->
-  <button class="btn btn-primary" mwl-date-modifier date="viewDate" decrement="calendarView"> Previous</button>
-  <button class="btn btn-default" mwl-date-modifier date="viewDate" set-to-today> Today</button>
-  <button class="btn btn-primary" mwl-date-modifier date="viewDate" increment="calendarView"> Next</button>
-  <!-- Structure du calendrier -->
-  <mwl-calendar view="calendarView" view-date="viewDate" events="events" view-title="calendarTitle" on-event-click="eventClicked(calendarEvent)" on-event-times-changed="calendarEvent.startsAt = calendarNewEventStart; calendarEvent.endsAt = calendarNewEventEnd" cell-is-open="true"></mwl-calendar>
-
+    ui-sref="plannings.view({ planningId: planning._id })"
+    class="list-group-item">
+    <small class="list-group-item-text">
+      Posted on
+      <span ng-bind="planning.created | date:'mediumDate'"></span>
+      by
+      <span ng-if="planning.user" ng-bind="planning.user.displayName"></span>
+      <span ng-if="!planning.user">Deleted User</span>
+    </small>
+    <!-- ng-bind="vm.planning.name" -->
+    <h4 class="list-group-item-heading">{{ planning.name }}</h4>
+  </a>
+</div>
+<div class="alert alert-warning text-center" ng-if="vm.plannings.$resolved && !vm.plannings.length">
+  No Plannings yet, why don't you <a ui-sref="plannings.create">create one</a>?
+</div>
+<!-- Boutons du calendrier -->
+<button class="btn btn-primary" mwl-date-modifier date="viewDate" decrement="calendarView"> Previous</button>
+<button class="btn btn-default" mwl-date-modifier date="viewDate" set-to-today> Today</button>
+<button class="btn btn-primary" mwl-date-modifier date="viewDate" increment="calendarView"> Next</button>
+<div class="btn-group">
+  <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'year'">Year</label>
+  <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'month'">Month</label>
+  <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'week'">Week</label>
+  <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'day'">Day</label>
+</div>
+<!-- Structure du calendrier -->
+<mwl-calendar view="vm.calendarView" view-date="vm.viewDate" events="events" view-title="vm.calendarTitle" on-event-click="eventClicked(calendarEvent)" on-event-times-changed="calendarEvent.startsAt = calendarNewEventStart; calendarEvent.endsAt = calendarNewEventEnd" cell-is-open="true"></mwl-calendar>
 </section>
