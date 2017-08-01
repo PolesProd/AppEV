@@ -18,7 +18,8 @@
     "angular-leaflet-directive": "^0.10.0",
     "isteven-angular-multiselect": "^4.0.0",
     "angular-ui-calendar": "latest",
-    "angular-bootstrap-calendar": "^0.29.3"
+    "angular-bootstrap-calendar": "^0.29.3",
+    "interactjs": "^1.2.9"
   },
   "resolutions": {
     "angular": "~1.3"

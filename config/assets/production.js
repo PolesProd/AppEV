@@ -13,7 +13,7 @@ module.exports = {
         'public/lib/moment/min/moment-with-locales.min.js',
         'public/lib/angular/angular.js',
         'public/lib/jquery/dist/jquery.min.js',
-        'public/lib/angular/angular-locales.fr.js',
+        'public/lib/angular/angular-locales_fr-fr.js',
         'public/lib/angular-resource/angular-resource.js',
         'public/lib/angular-animate/angular-animate.js',
         'public/lib/angular-messages/angular-messages.js',
