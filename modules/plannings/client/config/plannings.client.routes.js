@@ -65,6 +65,18 @@
           roles: ['user', 'admin'],
           pageTitle: 'Planning {{ planningResolve.name }}'
         }
+      })
+      .state('plannings.calendar', {
+        url: '/calendar',
+        templateUrl: 'modules/plannings/client/views/planning-calendar.client.view.html',
+        controller: 'PlanningsCalendarController',
+        controllerAs: 'vm',
+        resolve: {
+          planningResolve: getPlanning
+        },
+        data: {
+          roles: ['user', 'admin']
+        }
       });
   }
 

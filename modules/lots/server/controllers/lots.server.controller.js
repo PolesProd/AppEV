@@ -13,7 +13,14 @@ var path = require('path'),
  * Create a Lot
  */
 exports.create = function(req, res) {
-  var lot = new Lot(req.body);
+  var lot = new Lot({
+    name: req.body.name,
+    number: req.body.number,
+    surface: req.body.surface,
+    image: req.body.image,
+    description: req.body.description,
+    comments: req.body.comments
+  });
   lot.user = req.user;
 
   lot.save(function(err) {

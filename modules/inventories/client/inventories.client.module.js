@@ -1,5 +1,6 @@
-(function (app) {
-  'use strict';
+'use strict';
 
-  app.registerModule('inventories');
-}(ApplicationConfiguration));
+// Use Applicaion configuration module to register a new module
+ApplicationConfiguration.registerModule('inventories', ['smart-table']);
+ApplicationConfiguration.registerModule('inventories.admin', ['inventories']);
+ApplicationConfiguration.registerModule('inventories.admin.routes', ['ui.router']);
