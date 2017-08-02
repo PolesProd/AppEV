@@ -19,7 +19,8 @@
     "isteven-angular-multiselect": "^4.0.0",
     "angular-ui-calendar": "latest",
     "angular-bootstrap-calendar": "^0.29.3",
-    "interactjs": "^1.2.9"
+    "interactjs": "^1.2.9",
+    "angular-smart-table": "^2.1.8"
   },
   "resolutions": {
     "angular": "~1.3"
