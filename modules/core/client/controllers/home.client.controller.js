@@ -15,6 +15,8 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
     /*console.log($scope.lots);*/
   });
 
+  
+
   // On récupère les données geo des sites depuis un fichier json
   $http.get('modules/core/client/json/sites.json').then(function (response) {
     $scope.geojson = {

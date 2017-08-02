@@ -5,11 +5,13 @@
   .module('employes')
   .controller('EmployesController', EmployesController);
 
-  EmployesController.$inject= ['$scope', '$state', '$window', 'Authentication', 'employeResolve', 'TeamsService', 'LotsService'];
+  EmployesController.$inject= ['$scope', '$state', '$location', '$window', 'Authentication', 'employeResolve', 'TeamsService', 'LotsService'];
 
-  function EmployesController ($scope, $state, $window, Authentication, employe, TeamsService, LotsService) {
+  function EmployesController ($scope, $state, $window, $location, Authentication, employe, TeamsService, LotsService) {
 
     var vm= this;
+
+    $scope.location = $location.path();
 
     vm.authentication= Authentication;
     vm.employe= employe;
