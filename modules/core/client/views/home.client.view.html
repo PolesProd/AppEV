@@ -22,26 +22,5 @@
       </a>
     </div>
   </div>
-
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>N°</th>
-        <th>Nom</th>
-        <th>Surface(m²)</th>
-        <th>Image</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr ng-repeat="lot in lots">
-        <td>{{ lot.properties.ID }}</td>
-        <td>{{ lot.properties.nom }}</td>
-        <td>{{ lot.properties.surface }}</td>
-        <td>{{ lot.properties.image }}</td>
-        <td>{{ lot.properties.description }}</td>
-      </tr>
-    </tbody>
   </table>
 </div>

@@ -11,8 +11,8 @@ var mongoose = require('mongoose'),
 */
 var PlanningSchema = new Schema({
   name: { type: String, default: '', required: 'Nom requis', trim: true },
-  startAt: { type: Date, default: '', required: 'Date requise' },
-  endAt: { type: Date, default: '', required: 'Date requise' },
+  start: { type: Date, default: '', required: 'Date requise' },
+  end: { type: Date, default: '', required: 'Date requise' },
   team: { type: String, default: 'Par Défaut', required: 'Equipe requise' },
   site: { type: String, default: 'Lot', required: 'Site requise' },
   tasks: { type: String, default: '', required: 'Tâches requise' },

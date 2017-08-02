@@ -12,7 +12,10 @@
       .state('teams', {
         abstract: true,
         url: '/teams',
-        template: '<ui-view/>'
+        template: '<ui-view/>',
+        data: {
+          roles: ['user', 'admin']
+        }
       })
       .state('teams.list', {
         url: '',
@@ -20,6 +23,7 @@
         controller: 'TeamsListController',
         controllerAs: 'vm',
         data: {
+          roles: ['user', 'admin'],
           pageTitle: 'Teams List'
         }
       })
@@ -58,6 +62,7 @@
           teamResolve: getTeam
         },
         data: {
+          roles: ['user', 'admin'],
           pageTitle: 'Team {{ teamResolve.name }}'
         }
       });

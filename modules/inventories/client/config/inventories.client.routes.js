@@ -12,7 +12,10 @@
       .state('inventories', {
         abstract: true,
         url: '/inventories',
-        template: '<ui-view/>'
+        template: '<ui-view/>',
+        data: {
+          roles: ['user', 'admin']
+        }
       })
       .state('inventories.list', {
         url: '',
@@ -20,6 +23,7 @@
         controller: 'InventoriesListController',
         controllerAs: 'vm',
         data: {
+          roles: ['user', 'admin'],
           pageTitle: 'Inventories List'
         }
       })
@@ -58,6 +62,7 @@
           inventoryResolve: getInventory
         },
         data: {
+          roles: ['user', 'admin'],
           pageTitle: 'Inventory {{ inventoryResolve.name }}'
         }
       });

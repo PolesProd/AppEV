@@ -23,6 +23,7 @@
         controller: 'EmployesListController',
         controllerAs: 'vm',
         data: {
+          roles: ['user', 'admin'],
           pageTitle: 'Employes List'
         }
       })
@@ -61,6 +62,7 @@
           employeResolve: getEmploye
         },
         data: {
+          roles: ['user', 'admin'],
           pageTitle: 'Employe {{ employeResolve.name }}'
         }
       });

@@ -12,7 +12,10 @@
       .state('plannings', {
         abstract: true,
         url: '/plannings',
-        template: '<ui-view/>'
+        template: '<ui-view/>',
+        data: {
+          roles: ['user', 'admin']
+        }
       })
       .state('plannings.list', {
         url: '',
@@ -20,6 +23,7 @@
         controller: 'PlanningsListController',
         controllerAs: 'vm',
         data: {
+          roles: ['user', 'admin'],
           pageTitle: 'Plannings List'
         }
       })
@@ -58,6 +62,7 @@
           planningResolve: getPlanning
         },
         data: {
+          roles: ['user', 'admin'],
           pageTitle: 'Planning {{ planningResolve.name }}'
         }
       });
