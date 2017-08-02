@@ -36,9 +36,11 @@
 </head>
 
 <body class="ng-cloak row">
-  <section class="container-fluid">
-    <header ng-include="'/modules/core/client/views/header.client.view.html'" class="navbar navbar-inverse col-md-5 col-xs-12"></header>
+  <section class="container-fluid" ng-controller="HeaderController">
+
+    <header ng-show="authentication.user" ng-include="'/modules/core/client/views/header.client.view.html'" class="navbar navbar-inverse col-md-5 col-xs-12"></header>
       {% block content %}{% endblock %}
+
   </section>
 
 

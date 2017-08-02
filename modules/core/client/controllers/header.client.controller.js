@@ -19,5 +19,12 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
     $scope.$on('$stateChangeSuccess', function () {
       $scope.isCollapsed = false;
     });
+
+    // if( !$scope.authentication.user ){
+    //   $scope.headerClass = "col-md-12"
+    // } else {
+    //   $scope.headerClass = "col-md-5"
+    // }
+
   }
 ]);
