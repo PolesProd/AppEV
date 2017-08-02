@@ -23,10 +23,10 @@
   <table st-table="displayedCollection" st-safe-src="rowCollection" class="table table-striped">
 			<thead>
 			<tr>
-				<th st-sort="firstName">first name</th>
-				<th st-sort="lastName">last name</th>
-				<th st-sort="birthDate">birth date</th>
-				<th st-sort="balance">balance</th>
+        <th st-sort="getters.firstName">first name</th>
+    		<th st-sort="lastName">last name</th>
+    		<th st-sort="birthDate">birth date</th>
+    		<th st-sort="balance" st-skip-natural="true" >balance</th>
 			</tr>
 			<tr>
 				<th colspan="5"><input st-search="" class="form-control" placeholder="global search ..." type="text"/></th>

@@ -34,6 +34,10 @@
     }
 
     $scope.rowCollection = [];
+    $scope.testing = vm.inventories;
+    $scope.testing.$promise.then(function (resourceArray) {
+      $scope.item = resourceArray[0];
+    });
 
     for (id; id < 5; id++) {
       $scope.rowCollection.push(generateRandomItem(id));
