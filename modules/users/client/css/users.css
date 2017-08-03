@@ -64,7 +64,10 @@ body{
   left: 0;
   right: 0;
   top: 50vh;
-
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
+  -o-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
 }
 .connect a{
   color:white;
