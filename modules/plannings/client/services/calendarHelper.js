@@ -2,10 +2,10 @@
 
 angular
   .module('plannings')
-  .factory('alert', function($uibModal) {
-
+  .factory('alert', function($modal) {
     function show(action, event) {
-      return $uibModal.open({
+      console.log('calendarHelper s\'execute');
+      return $modal.open({
         templateUrl: 'modules/plannings/client/views/planning-calendar-modal.client.view.html',
         controller: function() {
           var vm = this;

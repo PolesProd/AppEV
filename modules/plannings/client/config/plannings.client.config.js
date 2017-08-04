@@ -24,10 +24,4 @@ function (Menu) {
     state: 'plannings.create',
     roles: ['user', 'admin']
   });
-
-  Menu.addSubMenuItem('topbar', 'plannings', {
-    title: 'Calendrier',
-    state: 'plannings.calendar',
-    roles: ['user', 'admin']
-  });
 }]);

@@ -2,12 +2,12 @@
   'use strict';
 
   angular
-    .module('lots')
-    .controller('LotsListController', LotsListController);
+  .module('lots')
+  .controller('LotsListController', LotsListController);
 
-  LotsListController.$inject = ['LotsService'];
+  LotsListController.$inject = ['$scope', '$http', 'LotsService'];
 
-  function LotsListController(LotsService) {
+  function LotsListController($scope, $http, LotsService) {
     var vm = this;
 
     vm.lots = LotsService.query();

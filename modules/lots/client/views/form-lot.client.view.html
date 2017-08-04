@@ -31,40 +31,6 @@
         </div>
 
         <div class="form-group" show-errors>
-          <label class="control-label" for="location">Lieu:</label>
-            <select name="location" ng-model="vm.lot.location" ng-options="opt.id as opt.name for opt in sites" class="form-control" placeholder="Lieu" required>
-              <!-- <input name="location" type="number" ng-model="vm.lot.location" id="location" class="form-control" placeholder="Lieu" required> -->
-              <div ng-messages="vm.form.lotForm.location.$error" role="alert">
-                <p class="help-block error-text" ng-message="required">La localisation du lot est requise.</p>
-              </div>
-            </select>
-        </div>
-
-        <div class="form-group" show-errors>
-          <label class="control-label" for="nature">Nature de l'intervention:</label>
-          <input name="nature" type="text" ng-model="vm.lot.nature" id="nature" class="form-control" placeholder="Ex: Tonte, Désherbage" required>
-          <div ng-messages="vm.form.lotForm.nature.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">La nature de l'intervention est requise.</p>
-          </div>
-        </div>
-
-        <div class="form-group" show-errors>
-          <label class="control-label" for="frequence">Fréquence de l'intervention</label>
-          <input name="frequence" type="number" ng-model="vm.lot.frequence" id="frequence" class="form-control" placeholder="Name" required>
-          <div ng-messages="vm.form.lotForm.frequence.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">La fréquence de l'intervention est requise.</p>
-          </div>
-        </div>
-
-        <div class="form-group" show-errors>
-          <label class="control-label" for="finition">Type de finition:</label>
-          <input name="finition" type="text" ng-model="vm.lot.finition" id="finition" class="form-control" placeholder="Name" required>
-          <div ng-messages="vm.form.lotForm.finition.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Le type de finition est requis.</p>
-          </div>
-        </div>
-
-        <div class="form-group" show-errors>
           <label class="control-label" for="surface">Type de surface:</label>
           <input name="surface" type="text" ng-model="vm.lot.surface" id="surface" class="form-control" placeholder="Name" required>
           <div ng-messages="vm.form.lotForm.surface.$error" role="alert">

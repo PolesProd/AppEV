@@ -6,27 +6,9 @@
         <div class="col-md-6 text-center">
           <div class="btn-group">
 
-            <button
-              class="btn btn-primary"
-              mwl-date-modifier
-              date="vm.viewDate"
-              decrement="vm.calendarView">
-              Previous
-            </button>
-            <button
-              class="btn btn-default"
-              mwl-date-modifier
-              date="vm.viewDate"
-              set-to-today>
-              Today
-            </button>
-            <button
-              class="btn btn-primary"
-              mwl-date-modifier
-              date="vm.viewDate"
-              increment="vm.calendarView">
-              Next
-            </button>
+            <button class="btn btn-primary" mwl-date-modifier date="vm.viewDate" decrement="vm.calendarView">Préc.</button>
+            <button class="btn btn-default" mwl-date-modifier date="vm.viewDate" set-to-today>Aujour'hui</button>
+            <button class="btn btn-primary" mwl-date-modifier date="vm.viewDate" increment="vm.calendarView">Suiv.</button>
           </div>
         </div>
 
@@ -34,17 +16,17 @@
 
         <div class="col-md-6 text-center">
       <div class="btn-group">
-        <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'year'" ng-click="vm.cellIsOpen = false">Year</label>
-        <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'month'" ng-click="vm.cellIsOpen = false">Month</label>
-        <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'week'" ng-click="vm.cellIsOpen = false">Week</label>
-        <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'day'" ng-click="vm.cellIsOpen = false">Day</label>
+        <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'year'" ng-click="vm.cellIsOpen = false">Année</label>
+        <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'month'" ng-click="vm.cellIsOpen = false">Mois</label>
+        <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'week'" ng-click="vm.cellIsOpen = false">Semaine</label>
+        <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'day'" ng-click="vm.cellIsOpen = false">Jour</label>
       </div>
     </div>
 
       </div>
 
   <mwl-calendar
-    events="vm.events"
+    events="vm.planningView"
     view="vm.calendarView"
     view-title="vm.calendarTitle"
     view-date="vm.viewDate"
@@ -58,8 +40,6 @@
     cell-auto-open-disabled="true"
     on-timespan-click="vm.timespanClicked(calendarDate, calendarCell)">
   </mwl-calendar>
-
-  <br><br><br>
 
   <h3 id="event-editor">
     Edit events

@@ -5,12 +5,13 @@
     .module('plannings')
     .controller('PlanningsListController', PlanningsListController);
 
-  PlanningsListController.$inject = ['$scope', 'PlanningsService', 'calendarConfig'];
+  PlanningsListController.$inject = ['$scope', 'PlanningsService', 'alert', 'calendarConfig'];
 
   function PlanningsListController($scope, PlanningsService, alert, calendarConfig) {
     var vm = this;
 
     vm.plannings = PlanningsService.query();
+
 
     //These variables MUST be set as a minimum for the calendar to work
     vm.calendarView = 'month';
@@ -26,34 +27,55 @@
         alert.show('Deleted', args.calendarEvent);
       }
     }];
-    vm.events = [
-      {
-        title: 'An event',
-        // color: calendarConfig.colorTypes.warning,
-        startsAt: moment().startOf('week').subtract(2, 'days').add(8, 'hours').toDate(),
-        endsAt: moment().startOf('week').add(1, 'week').add(9, 'hours').toDate(),
-        draggable: true,
-        resizable: true,
-        actions: actions
-      }, {
-        title: '<i class="glyphicon glyphicon-asterisk"></i> <span class="text-primary">Another event</span>, with a <i>html</i> title',
-        // color: calendarConfig.colorTypes.info,
-        startsAt: moment().subtract(1, 'day').toDate(),
-        endsAt: moment().add(5, 'days').toDate(),
-        draggable: true,
-        resizable: true,
-        actions: actions
-      }, {
-        title: 'This is a really long event title that occurs on every year',
-        // color: calendarConfig.colorTypes.important,
-        startsAt: moment().startOf('day').add(7, 'hours').toDate(),
-        endsAt: moment().startOf('day').add(19, 'hours').toDate(),
-        recursOn: 'year',
-        draggable: true,
-        resizable: true,
-        actions: actions
-      }
-    ];
+
+    vm.planningCalendar = vm.plannings;
+    vm.planningCalendar.$promise.then(function (response) {
+
+      var start = new Date(response[0].start);
+      var end = new Date(response[0].end);
+
+
+      vm.planningView = [
+        {
+          title: response[0].name,
+          color: calendarConfig.colorTypes.warning,
+          startsAt: moment().startOf('year')/*.add(8, 'hours')*/.toDate(),
+          // startsAt: moment().month(month).date(day)/*.hours(0).minutes(0).seconds(0).milliseconds(0)*/,
+          // endsAt: moment().month(month).date(day)/*.hours(0).minutes(0).seconds(0).milliseconds(0)*/,
+          endsAt: moment().startOf('year')/*.add(9, 'hours')*/.toDate(),
+          team: response[0].team,
+          site: response[0].site,
+          tasks: response[0].tasks,
+          draggable: true,
+          resizable: true,
+          actions: actions
+        }
+      ];
+
+      // console.log(start);
+      // console.log(end);
+      // console.log(vm.planningView);
+    });
+
+    // vm.events = [
+    //   {
+    //     title: 'An event',
+    //     color: calendarConfig.colorTypes.warning,
+    //     startsAt: moment().startOf('week').subtract(2, 'days').add(8, 'hours').toDate(),
+    //     endsAt: moment().startOf('week').add(1, 'week').add(9, 'hours').toDate(),
+    //     draggable: true,
+    //     resizable: true,
+    //     actions: actions
+    //   }, {
+    //     title: 'Another event, with a html title',
+    //     color: calendarConfig.colorTypes.info,
+    //     startsAt: moment().add(1, 'day').toDate(),
+    //     endsAt: moment().add(1, 'days').toDate(),
+    //     draggable: true,
+    //     resizable: true,
+    //     actions: actions
+    //   }
+    // ];
 
     vm.cellIsOpen = true;
 
@@ -62,7 +84,7 @@
         title: 'New event',
         startsAt: moment().startOf('day').toDate(),
         endsAt: moment().endOf('day').toDate(),
-        // color: calendarConfig.colorTypes.important,
+        color: calendarConfig.colorTypes.important,
         draggable: true,
         resizable: true
       });

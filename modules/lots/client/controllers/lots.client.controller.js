@@ -6,10 +6,11 @@
   .module('lots')
   .controller('LotsController', LotsController);
 
-  LotsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'lotResolve'];
+  LotsController.$inject = ['$scope', '$state', '$http', '$window', '$location', 'Authentication', 'lotResolve'];
 
-  function LotsController ($scope, $state, $window, Authentication, lot) {
+  function LotsController ($scope, $state, $http, $window, $location, Authentication, lot) {
     var vm = this;
+    var location = $location.$$url.slice(6, 30);
 
     vm.authentication = Authentication;
     vm.lot = lot;
@@ -18,7 +19,48 @@
     vm.remove = remove;
     vm.save = save;
 
-    
+    console.log(location);
+    $http.get('modules/lots/client/json/sites.json').success(function (response) {
+      // Initialise mon tableau
+      $scope.siteInfo = [];
+
+      // Injecte les données provenant de modules/lots/client/json/sites.json
+      $scope.siteInfo = response.features;
+
+      angular.forEach($scope.siteInfo, function (data) {
+        // récupère le type de données(Point, Polygon, MultiPolygon)
+        var type = data.geometry.type;
+
+        // Récupères tous les ids
+        var ids = data.properties.ID;
+        // console.log(ids);
+        // Vérifie que les données corespondent bien au sites(Polygon, MultiPolygon)
+        if (type !== 'Point' && ids === location) {
+          console.log('Je suis celui que tu cherche !!!');
+          var d = document.getElementById('infos');
+          var siteNum, siteTitle, siteImg, siteInfos = '';
+
+          for (var content in data.properties){
+            if(content === 'image'){
+              siteImg = '<p class="siteInfos">' + data.properties[content] + '</p>';
+            } else if(content === 'description'){
+              siteInfos += '<p class="siteInfos"><span> Taches à accomplire sur le site : </span>' + data.properties[content] + '</p>';
+            } else if(content === 'ID'){
+              siteNum += '<p class="siteInfos"><span> Numéro du site : </span>' + data.properties[content] + '</p>';
+            } else if(content === 'nom'){
+              // titleH1.innerHTML = data.properties[content];
+            } else{
+              siteInfos += '<p class="siteInfos"><span>' + content + ': </span>' + data.properties[content] + '</p>';
+            }
+          }
+          d.innerHTML = siteNum + siteImg + siteInfos;
+        } else {
+          console.log('Erreur');
+        }
+      });
+
+      return response;
+    });
 
     // Remove existing Lot
     function remove() {
@@ -51,42 +93,5 @@
         vm.error = res.data.message;
       }
     }
-
-    $scope.sites = [
-      { name: 'La Coulée Verte', id: 1 },
-      { name: 'Avenue De Verdun(Square Emmaüs)', id: 2 },
-      { name: 'Avenue De Verdun', id: 3 },
-      { name: 'Allée Du Chemin Vert', id: 4 },
-      { name: 'Madame de Nanteuil', id: 5 },
-      { name: 'Boulevard Charles De Gaule - Avenue Maréchal Leclerc', id: 6 },
-      { name: 'Quai Du Moulin De Cage', id: 7 },
-      { name: 'Rue Jean Jaurès', id: 8 },
-      { name: 'Voie Promenade(Sud/Centre)', id: 9 },
-      { name: 'Voie Promenade(Nord)', id: 10 },
-      { name: 'Square Abbé Pierre', id: 11 },
-      { name: 'Fond De La Noue', id: 12 },
-      { name: 'Boulevard Gallieni', id: 13 },
-      { name: 'Rue Des Augustins', id: 14 },
-      { name: 'Rue Du Haut De La Noue', id: 15 },
-      { name: 'Square De La Rue Pasteur', id: 16 },
-      { name: 'Mail Roger Prévot', id: 17 },
-      { name: 'Rue Du Ponant - Rue Paul Signac', id: 18 },
-      { name: 'Fosse Aux Astres', id: 19 },
-      { name: 'Square Sainte Marie', id: 20 },
-      { name: 'Cimetière', id: 21 },
-      { name: 'Nouveau Cimetière', id: 22 },
-      { name: 'Rue Nelson Mandela', id: 23 },
-      { name: 'Chemin Des Reniers', id: 24 },
-      { name: 'Vieux Chemin De Saint-Denis', id: 25 },
-      { name: 'Square Madiesse - Rue Noël Le Dudal', id: 26 },
-      { name: 'Quai Sisley', id: 27 },
-      { name: 'Quai D\'Asnières', id: 28 },
-      { name: 'Chantiers Navals', id: 29 },
-      { name: 'Passage De "La Mef"', id: 30 },
-      { name: 'Parking De La Piscine', id: 31 },
-      { name: 'Rue Du 8 Mai 1945', id: 32 },
-      { name: 'Chemmin Du Bucher', id: 33 },
-      { name: 'Rue Royer', id: 34 }
-    ];
   }
 }());

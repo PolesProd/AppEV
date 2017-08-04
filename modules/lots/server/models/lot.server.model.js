@@ -20,4 +20,10 @@ var LotSchema = new Schema({
   user: { type: Schema.ObjectId, ref: 'User' }
 }, { collection: 'lots' });
 
+var CommentSchema = new mongoose.Schema({
+  body: { type: String, default: '', required: 'Please fill Comment name', trim: true },
+  user: { type: Schema.ObjectId, ref: 'User' },
+  site: { type: mongoose.Schema.Types.ObjectId, ref: 'lot' }
+});
+
 module.exports = mongoose.model('Lot', LotSchema);

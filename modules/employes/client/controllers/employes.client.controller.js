@@ -11,8 +11,6 @@
 
     var vm= this;
 
-    $scope.location = $location.path();
-
     vm.authentication= Authentication;
     vm.employe= employe;
     vm.error= null;

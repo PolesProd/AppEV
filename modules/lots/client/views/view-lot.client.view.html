@@ -15,23 +15,14 @@
 
   <small>
     <em class="text-muted">
-      Posted on
+      Créé
       <span ng-bind="vm.lot.created | date:'mediumDate'"></span>
-      by
+      par
       <span ng-if="vm.lot.user"
       ng-bind="vm.lot.user.displayName"></span>
       <span ng-if="!vm.lot.user">Deleted User</span>
     </em>
   </small>
 
-  <div class="lot-infos">
-    <p class="lead" ng-bind="vm.lot.properties.description"></p>
-    <img src="{{vm.lot.properties.image}}" alt="">
-    <p class="lead" ng-bind="vm.lot.properties.surface"></p>
-    <p class="lead" ng-bind="vm.lot.comments"></p>
-  </div>
-
-  <div class="comments">
-    <textarea name="comments" data-ng-model="vm.lot.comments" id="comments" class="lead" cols="100" rows="5" placeholder="Ici mon commentaire"></textarea>
-  </div>
+  <div id="infos"></div>
 </section>

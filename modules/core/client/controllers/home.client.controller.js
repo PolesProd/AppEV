@@ -15,7 +15,11 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
     /*console.log($scope.lots);*/
   });
 
-  
+  $scope.azerty = vm.lot;
+  $scope.azerty.$promise.then(function (resourceArray) {
+    $scope.item = resourceArray[0];
+    // console.log($scope.azerty);
+  });
 
   // On récupère les données geo des sites depuis un fichier json
   $http.get('modules/core/client/json/sites.json').then(function (response) {
@@ -54,11 +58,11 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
       pointToLayer: function (feature, latlng) {
         var arbre = feature.geometry.type;
         var leaf_icon = L.icon({
-            iconUrl: 'modules/core/client/img/icons/arbre.png',
-            shadowUrl: 'modules/core/client/img/icons/arbre_ombre.png',
-            iconSize: [16, 22],
-            shadowSize: [16, 22]
-          });
+          iconUrl: 'modules/core/client/img/icons/arbre.png',
+          shadowUrl: 'modules/core/client/img/icons/arbre_ombre.png',
+          iconSize: [16, 22],
+          shadowSize: [16, 22]
+        });
 
         if (arbre === 'Point') {
           return L.marker(latlng, { icon: leaf_icon } );
