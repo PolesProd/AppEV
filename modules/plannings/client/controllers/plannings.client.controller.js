@@ -40,7 +40,7 @@
       $scope.outputList = [
         { icon: '<img src="../modules/plannings/client/img/tondeuse.jpg"/>', name: resourceArray[0].properties.nom, ticked: true }
       ];
-      console.log($scope.sitesList[0].properties.description);
+      // console.log($scope.sitesList[0].properties.description);
     });
 
     $scope.tasksList = [
@@ -93,7 +93,6 @@
         $state.go('plannings.view', {
           planningId: res._id
         });
-        console.log(res);
       }
 
       function errorCallback(res) {

@@ -19,7 +19,6 @@
     vm.remove = remove;
     vm.save = save;
 
-    console.log(location);
     $http.get('modules/core/client/json/sites.json').success(function (response) {
       // Initialise mon tableau
       $scope.siteInfo = [];
@@ -36,7 +35,7 @@
         // console.log(ids);
         // Vérifie que les données corespondent bien au sites(Polygon, MultiPolygon)
         if (type !== 'Point' && ids === location) {
-          console.log('Je suis celui que tu cherche !!!');
+          // console.log('Je suis celui que tu cherche !!!');
           var d = document.getElementById('infos');
           var siteNum, siteTitle, siteImg, siteInfos = '';
 

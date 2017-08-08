@@ -12,10 +12,21 @@
 
     vm.plannings = PlanningsService.query();
 
+    // Format locale
+    moment.locale('fr_fr', {
+      week : {
+        dow : 1 // Monday is the first day of the week
+      }
+    });
 
-    //These variables MUST be set as a minimum for the calendar to work
+    // Ces variables au minimum DOIVENT être définies pour que le calendrier fonctionne
+    // Vue par défaut du calendrier(Réglages: year, month, week, day)
     vm.calendarView = 'month';
+
+    // Instancie les dates
     vm.viewDate = new Date();
+
+    // Créer les icones d'actions'
     var actions = [{
       label: '<i class=\'glyphicon glyphicon-pencil\'></i>',
       onClick: function(args) {
@@ -28,54 +39,50 @@
       }
     }];
 
+    // Récupère les plannings depuis la base de donnée
     vm.planningCalendar = vm.plannings;
     vm.planningCalendar.$promise.then(function (resourceArray) {
 
-      var start = new Date(resourceArray[0].start);
-      var end = new Date(resourceArray[0].end);
+      // Crée un array vide pour y stocker les plannings
+      $scope.allPlannings = [];
+      $scope.allPlannings = resourceArray;
 
-      var startToString = start.toString();
-      var endToString = end.toString();
+      angular.forEach($scope.allPlannings, function (data) {
+        // Récupère les dates des plannings
+        var start = new Date(data.start);
+        var end = new Date(data.end);
 
-      var monthStart = startToString.slice(4,7);
-      var dateStart = startToString.slice(8,10);
+        // Parse les dates au format string
+        var startToString = start.toString();
+        var endToString = end.toString();
 
-      var monthEnd = endToString.slice(4,7);
-      var dateEnd = endToString.slice(8,10);
+        // Récupère la date & le mois des plannings
+        var monthStart = startToString.slice(4,7);
+        var dateStart = startToString.slice(8,10);
+        var monthEnd = endToString.slice(4,7);
+        var dateEnd = endToString.slice(8,10);
 
-      // $scope.allPlannings = [];
-      // $scope.allPlannings = resourceArray;
-      //
-      // vm.planningView = [
-      //   {
-      //     title: resourceArray.name,
-      //     color: calendarConfig.colorTypes.warning,
-      //     startsAt: moment().startOf('year').month(monthStart).date(dateStart),
-      //     endsAt: moment().startOf('year').month(monthEnd).date(dateEnd),
-      //     team: resourceArray[0].team,
-      //     site: resourceArray[0].site,
-      //     tasks: resourceArray[0].tasks,
-      //     draggable: true,
-      //     resizable: true,
-      //     actions: actions
-      //   }
-      // ];
-
-      console.log(resourceArray);
+        // Crée une vue des plannings dans le calendrier
+        vm.planningView = [
+          {
+            title: data.name,
+            color: calendarConfig.colorTypes.warning,
+            startsAt: moment().startOf('year').month(monthStart).date(dateStart),
+            endsAt: moment().startOf('year').month(monthEnd).date(dateEnd),
+            team: data.team,
+            site: data.site,
+            tasks: data.tasks,
+            draggable: true,
+            resizable: true,
+            actions: actions
+          }
+        ];
+        console.log(vm.planningView);
+      });
     });
 
-    vm.cellIsOpen = true;
-
-    // vm.addEvent = function() {
-    //   vm.events.push({
-    //     title: 'New event',
-    //     startsAt: moment().startOf('day').toDate(),
-    //     endsAt: moment().endOf('day').toDate(),
-    //     color: calendarConfig.colorTypes.important,
-    //     draggable: true,
-    //     resizable: true
-    //   });
-    // };
+    // Définit si la cellue d'info est ouverte ou pas
+    vm.cellIsOpen = false;
 
     vm.eventClicked = function(event) {
       alert.show('Clicked', event);
