@@ -9,8 +9,6 @@ var mongoose = require('mongoose'),
 /**
  * Employe Schema
  */
-var contrat = ['CDI', 'CDD', 'CDDI', 'Renouvelé', 'Licencié'];
-
 var EmployeSchema = new Schema({
   lastname: { type: String, default: '', required: 'Nom requis', trim: true },
   firstname: { type: String, default: '', required: 'Prénom requis' },
@@ -18,7 +16,7 @@ var EmployeSchema = new Schema({
   number: { type: String, default: 'Aucun', required: 'Numéro requis' },
   team: { type: String, default: 'Par Défaut', required: 'Equipe requise' },
   formation: { type: String, default: 'Aucune', requuired: 'Formation requise' },
-  contract: { type: [String], enum: contrat, required: '' },
+  contrat: { type: String, default: 'CDD', required: 'Type de contrat requis' },
   start_date: { type: Date, default: Date.now, required: 'Date requise' },
   end_date: { type: Date, default: Date.now, required: 'Date requise' },
   renew: { type: Date, default: Date.now },

@@ -25,34 +25,15 @@
 
       </div>
 
-  <mwl-calendar
-    events="vm.planningView"
-    view="vm.calendarView"
-    view-title="vm.calendarTitle"
-    view-date="vm.viewDate"
-    on-event-click="vm.eventClicked(calendarEvent)"
-    on-event-times-changed="vm.eventTimesChanged(calendarEvent); calendarEvent.startsAt = calendarNewEventStart; calendarEvent.endsAt = calendarNewEventEnd"
-    cell-is-open="vm.cellIsOpen"
-    day-view-start="06:00"
-    day-view-end="22:59"
-    day-view-split="30"
-    cell-modifier="vm.modifyCell(calendarCell)"
-    cell-auto-open-disabled="true"
-    on-timespan-click="vm.timespanClicked(calendarDate, calendarCell)">
-  </mwl-calendar>
+  <mwl-calendar events="vm.planningView" view="vm.calendarView" view-title="vm.calendarTitle" view-date="vm.viewDate" on-event-click="vm.eventClicked(calendarEvent)" on-event-times-changed="vm.eventTimesChanged(calendarEvent); calendarEvent.startsAt = calendarNewEventStart; calendarEvent.endsAt = calendarNewEventEnd" cell-is-open="vm.cellIsOpen" day-view-start="06:00" day-view-end="22:59" day-view-split="30" cell-modifier="vm.modifyCell(calendarCell)" cell-auto-open-disabled="true" on-timespan-click="vm.timespanClicked(calendarDate, calendarCell)"></mwl-calendar>
 
-  <h3 id="event-editor">
+  <!-- <h3 id="event-editor">
     Edit events
-    <button
-      class="btn btn-primary pull-right"
-      ng-click="vm.events.push({title: 'New event', type: 'important', draggable: true, resizable: true})">
-      Add new
-    </button>
+    <button class="btn btn-primary pull-right" ng-click="vm.events.push({title: 'New event', type: 'important', draggable: true, resizable: true})">Ajouter</button>
     <div class="clearfix"></div>
-  </h3>
+  </h3> -->
 
-  <table class="table table-bordered">
-
+  <!-- <table class="table table-bordered">
     <thead>
       <tr>
         <th>Title</th>
@@ -143,4 +124,4 @@
       </tr>
     </tbody>
   </div>
-  </table>
+  </table> -->

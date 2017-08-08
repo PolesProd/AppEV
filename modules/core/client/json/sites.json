@@ -218,7 +218,7 @@
     "type": "Feature",
     "properties": {
       "ID": "596de7f1e6d22a243a8cfa40",
-      "nom": "DE GAULE-LECLERC",
+      "nom": "Boulevard De Gaule-Avenue Leclerc",
       "surface": "XX m²",
       "image": "<img src='modules/core/client/img/photoSite/boulevard-charles-de-gaulle.jpg' alt='boulevard charles de gaule' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige, rustique et naturel)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes</li></ul></div>"
@@ -598,7 +598,7 @@
       "ID": "596de90be6d22a243a8cfa4a",
       "nom": "Square Rue Pasteur",
       "surface": "XX m²",
-      "image": "<img src='modules/core/client/img/photoSite/.jpg' alt='coulée verte' class='image'/>",
+      "image": "<img src='modules/core/client/img/photoSite/coulee-verte.jpg' alt='coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige)</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes et vivaces</li><li class='tache'>Désherbage des massifs d’arbustes, vivaces et pieds des arbres</li></ul></div>"
     },
     "geometry": {
@@ -972,7 +972,7 @@
     "type": "Feature",
     "properties": {
       "ID": "596de989e6d22a243a8cfa55",
-      "nom": "Quai sisley",
+      "nom": "Quai Sisley",
       "surface": "XX m²",
       "image": "<img src='modules/core/client/img/photoSite/quai-sisley.jpg' alt='quai sisley' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses(prestige, rustique et naturel)</li><li class='tache'>Taille des arbustes</li><li class='tache'>Taille des haies</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Désherbage des massifs d’arbustes, vivaces et pieds des arbres et des parties minérales</li></ul></div>"
@@ -1026,7 +1026,7 @@
     "type": "Feature",
     "properties": {
       "ID": "596de995e6d22a243a8cfa56",
-      "nom": "QUAI D\"ASNIERES",
+      "nom": "Quai D'Asnières",
       "surface": "XX m²",
       "image": "<img src='modules/core/client/img/photoSite/quai-asnieres.jpg' alt='quai d'asnières' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses(prestige, rustique et naturel)</li><li class='tache'>Taille des arbustes</li><li class='tache'>Taille des haies</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Désherbage des massifs d’arbustes, vivaces et pieds des arbres et des parties minérales</li></ul></div>"
@@ -1066,9 +1066,9 @@
     "properties": {
 
       "ID": "596de99fe6d22a243a8cfa57",
-      "nom": "CHANTIERS NAVALS",
+      "nom": "Chantiers Navals",
       "surface": "XX m²",
-      "image": "<img src='modules/core/client/img/couleeverte.jpg' alt='coulée verte' class='image'/>",
+      "image": "<img src='modules/core/client/img/photoSite/chantiers-navals.jpg' alt='coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Désherbage physique sans utilisation de produits phytosanitaires de synthèse des massifs d’arbustes et des parties minérales</li></ul></div>"
     },
     "geometry": {
@@ -1092,7 +1092,7 @@
     "type": "Feature",
     "properties": {
         "ID": "596de9c5e6d22a243a8cfa58",
-        "nom": "PASSAGE DE LA MEF",
+        "nom": "Passage De La Mef",
         "surface": "XX m²",
         "image": "<img src='modules/core/client/img/photoSite/passage-de-la-mef-rue-henri-barbusse-quai-sisley.jpg' alt='coulée verte' class='image'/>",
         "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des branches et brindilles</li><li class='tache'>Désherbage physique sans utilisation de produits phytosanitaires de synthèse des massifs d’arbustes et des parties minérales</li></ul></div>"
@@ -1112,9 +1112,9 @@
     "type": "Feature",
     "properties": {
       "ID": "596de9cee6d22a243a8cfa59",
-      "nom": "PISCINE",
+      "nom": "Parking De La Piscine",
       "surface": "XX m²",
-      "image": "<img src='modules/core/client/img/photoSite/.jpg' alt='coulée verte' class='image'/>",
+      "image": "<img src='modules/core/client/img/photoSite/coulee-verte.jpg' alt='coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses(prestige, rustique et naturel)</li><li class='tache'>Taille des haies (ces haies sont progressivement supprimées)</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Désherbage des massifs d’arbustes et des parties minérales</li></ul></div>"
     },
     "geometry": {
@@ -1207,7 +1207,7 @@
     "type": "Feature",
     "properties": {
       "ID": "596de9eae6d22a243a8cfa5b",
-      "nom": "BERTANE-BONGARDE",
+      "nom": "Avenue De La Longue Bertrane-Bongarde",
       "surface": "XX m²",
       "image": "<img src='modules/core/client/img/photoSite/avenue-de-la-longue-bertrane.jpg' alt='avenue de la longue bertrane' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses(prestige et rustique)</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Désherbage des massifs d’arbustes, vivaces et pieds des arbres</li></ul></div>"

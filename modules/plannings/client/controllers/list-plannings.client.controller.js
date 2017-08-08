@@ -29,69 +29,55 @@
     }];
 
     vm.planningCalendar = vm.plannings;
-    vm.planningCalendar.$promise.then(function (response) {
+    vm.planningCalendar.$promise.then(function (resourceArray) {
 
-      var start = new Date(response[0].start);
-      var end = new Date(response[0].end);
+      var start = new Date(resourceArray[0].start);
+      var end = new Date(resourceArray[0].end);
 
+      var startToString = start.toString();
+      var endToString = end.toString();
 
-      vm.planningView = [
-        {
-          title: response[0].name,
-          color: calendarConfig.colorTypes.warning,
-          startsAt: moment().startOf('year')/*.add(8, 'hours')*/.toDate(),
-          // startsAt: moment().month(month).date(day)/*.hours(0).minutes(0).seconds(0).milliseconds(0)*/,
-          // endsAt: moment().month(month).date(day)/*.hours(0).minutes(0).seconds(0).milliseconds(0)*/,
-          endsAt: moment().startOf('year')/*.add(9, 'hours')*/.toDate(),
-          team: response[0].team,
-          site: response[0].site,
-          tasks: response[0].tasks,
-          draggable: true,
-          resizable: true,
-          actions: actions
-        }
-      ];
+      var monthStart = startToString.slice(4,7);
+      var dateStart = startToString.slice(8,10);
 
-      // console.log(start);
-      // console.log(end);
-      // console.log(vm.planningView);
+      var monthEnd = endToString.slice(4,7);
+      var dateEnd = endToString.slice(8,10);
+
+      // $scope.allPlannings = [];
+      // $scope.allPlannings = resourceArray;
+      //
+      // vm.planningView = [
+      //   {
+      //     title: resourceArray.name,
+      //     color: calendarConfig.colorTypes.warning,
+      //     startsAt: moment().startOf('year').month(monthStart).date(dateStart),
+      //     endsAt: moment().startOf('year').month(monthEnd).date(dateEnd),
+      //     team: resourceArray[0].team,
+      //     site: resourceArray[0].site,
+      //     tasks: resourceArray[0].tasks,
+      //     draggable: true,
+      //     resizable: true,
+      //     actions: actions
+      //   }
+      // ];
+
+      console.log(resourceArray);
     });
-
-    // vm.events = [
-    //   {
-    //     title: 'An event',
-    //     color: calendarConfig.colorTypes.warning,
-    //     startsAt: moment().startOf('week').subtract(2, 'days').add(8, 'hours').toDate(),
-    //     endsAt: moment().startOf('week').add(1, 'week').add(9, 'hours').toDate(),
-    //     draggable: true,
-    //     resizable: true,
-    //     actions: actions
-    //   }, {
-    //     title: 'Another event, with a html title',
-    //     color: calendarConfig.colorTypes.info,
-    //     startsAt: moment().add(1, 'day').toDate(),
-    //     endsAt: moment().add(1, 'days').toDate(),
-    //     draggable: true,
-    //     resizable: true,
-    //     actions: actions
-    //   }
-    // ];
 
     vm.cellIsOpen = true;
 
-    vm.addEvent = function() {
-      vm.events.push({
-        title: 'New event',
-        startsAt: moment().startOf('day').toDate(),
-        endsAt: moment().endOf('day').toDate(),
-        color: calendarConfig.colorTypes.important,
-        draggable: true,
-        resizable: true
-      });
-    };
+    // vm.addEvent = function() {
+    //   vm.events.push({
+    //     title: 'New event',
+    //     startsAt: moment().startOf('day').toDate(),
+    //     endsAt: moment().endOf('day').toDate(),
+    //     color: calendarConfig.colorTypes.important,
+    //     draggable: true,
+    //     resizable: true
+    //   });
+    // };
 
     vm.eventClicked = function(event) {
-      console.log(event);
       alert.show('Clicked', event);
     };
 

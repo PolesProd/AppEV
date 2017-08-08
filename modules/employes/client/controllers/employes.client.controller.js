@@ -9,23 +9,34 @@
 
   function EmployesController ($scope, $state, $window, $location, Authentication, employe, TeamsService, LotsService) {
 
-    var vm= this;
+    var vm = this;
 
-    vm.authentication= Authentication;
-    vm.employe= employe;
-    vm.error= null;
-    vm.form= {};
-    vm.remove= remove;
-    vm.save= save;
-    vm.team= TeamsService.query();
+    vm.authentication = Authentication;
+    vm.employe = employe;
+    vm.error = null;
+    vm.form = {};
+    vm.remove = remove;
+    vm.save = save;
+    vm.team = TeamsService.query();
 
-    $scope.teams= vm.team;
+    $scope.teams = vm.team;
     $scope.teams.$promise.then(function (resourceArray) {
-      $scope.item= [
+      $scope.item = [
         { icon: '<img src="https://www.iconfinder.com/data/icons/social-messaging-productivity-1-1/128/gender-male2-128.png"/>', name: resourceArray[0].name, ticked: false }
       ];
-      console.log($scope.item);
+      // console.log($scope.item);
     });
+
+    $scope.contrats = [
+      { name: 'CDI', value: false },
+      { name: 'CDD', value: false },
+      { name: 'CDDI', value: false },
+      { name: 'Renouvelé', value: false },
+      { name: 'Licencié', value: false }
+    ];
+
+
+
 
     // Remove existing employe
     function remove() {

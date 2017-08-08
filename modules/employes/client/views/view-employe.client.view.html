@@ -38,16 +38,16 @@
   <p class="lead" ng-bind="vm.employe.team"></p>
 
   <label for="">Contrat:</label>
-  <p class="lead" ng-bind="vm.employe.contract"></p>
+  <p class="lead" ng-bind="vm.employe.contrat"></p>
 
   <label for="">Début contrat:</label>
-  <p class="lead" ng-bind="vm.employe.start_date"></p>
+  <p class="lead" ng-bind="vm.employe.start_date | date: 'dd MMM yyyy'"></p>
 
   <label for="">Fin contrat</label>
-  <p class="lead" ng-bind="vm.employe.end_date"></p>
+  <p class="lead" ng-bind="vm.employe.end_date | date: 'dd MMM yyyy'"></p>
 
   <label for="">Renouvelement</label>
-  <p class="lead" ng-bind="vm.employe.renew"></p>
+  <p class="lead" ng-bind="vm.employe.renew | date: 'dd MMM yyyy'"></p>
 
   <label for="">Formation(s):</label>
   <p class="lead" ng-bind="vm.employe.formation"></p>

@@ -15,12 +15,6 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
     /*console.log($scope.lots);*/
   });
 
-  $scope.azerty = vm.lot;
-  $scope.azerty.$promise.then(function (resourceArray) {
-    $scope.item = resourceArray[0];
-    // console.log($scope.azerty);
-  });
-
   // On récupère les données geo des sites depuis un fichier json
   $http.get('modules/core/client/json/sites.json').then(function (response) {
     $scope.geojson = {
@@ -65,7 +59,7 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
         });
 
         if (arbre === 'Point') {
-          return L.marker(latlng, { icon: leaf_icon } );
+          return L.marker(latlng, { icon: leaf_icon });
         }
       }
     };

@@ -13,7 +13,18 @@ var path = require('path'),
  * Create a Employe
  */
 exports.create = function(req, res) {
-  var employe = new Employe(req.body);
+  var employe = new Employe({
+    lastname: req.body.lastname,
+    firstname: req.body.firstname,
+    email: req.body.email,
+    number: req.body.number,
+    team: req.body.team,
+    formation: req.body.formation,
+    contrat: req.body.contract,
+    start_date: req.body.start_date,
+    end_date: req.body.end_date,
+    renew: req.body.renew
+  });
   employe.user = req.user;
 
   employe.save(function(err) {
@@ -31,6 +42,7 @@ exports.create = function(req, res) {
  * Show the current Employe
  */
 exports.read = function(req, res) {
+  console.log(Employe);
   // convert mongoose document to JSON
   var employe = req.employe ? req.employe.toJSON() : {};
 

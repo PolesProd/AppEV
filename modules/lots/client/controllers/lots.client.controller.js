@@ -20,7 +20,7 @@
     vm.save = save;
 
     console.log(location);
-    $http.get('modules/lots/client/json/sites.json').success(function (response) {
+    $http.get('modules/core/client/json/sites.json').success(function (response) {
       // Initialise mon tableau
       $scope.siteInfo = [];
 
@@ -54,8 +54,6 @@
             }
           }
           d.innerHTML = siteNum + siteImg + siteInfos;
-        } else {
-          console.log('Erreur');
         }
       });
 
