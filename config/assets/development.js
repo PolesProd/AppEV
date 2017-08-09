@@ -7,7 +7,8 @@ module.exports = {
         'public/lib/bootstrap/dist/css/bootstrap.css',
         'public/lib/bootstrap/dist/css/bootstrap-theme.css',
         'public/lib/isteven-angular-multiselect/isteven-multi-select.css',
-        'public/lib/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css'
+        'public/lib/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css',
+        'public/lib/leaflet.modal/dist/leaflet.modal.min.css',
       ],
       js: [
         'public/lib/moment/min/moment.min.js',
@@ -45,7 +46,8 @@ module.exports = {
       'modules/core/client/app/init.js',
       'modules/*/client/*.js',
       'modules/*/client/**/*.js',
-      'https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.js'
+      'https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.js',
+      'public/lib/leaflet.modal/dist/Leaflet.Modal.min.js'
     ],
     views: ['modules/*/client/views/**/*.html'],
     templates: ['build/templates.js']

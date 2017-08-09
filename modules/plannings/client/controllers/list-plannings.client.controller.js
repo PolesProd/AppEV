@@ -48,27 +48,15 @@
       $scope.allPlannings = resourceArray;
 
       angular.forEach($scope.allPlannings, function (data) {
-        // Récupère les dates des plannings
-        var start = new Date(data.start);
-        var end = new Date(data.end);
-
-        // Parse les dates au format string
-        var startToString = start.toString();
-        var endToString = end.toString();
-
-        // Récupère la date & le mois des plannings
-        var monthStart = startToString.slice(4,7);
-        var dateStart = startToString.slice(8,10);
-        var monthEnd = endToString.slice(4,7);
-        var dateEnd = endToString.slice(8,10);
+        // for
 
         // Crée une vue des plannings dans le calendrier
-        vm.planningView = [
+        $scope.planningView = [
           {
             title: data.name,
             color: calendarConfig.colorTypes.warning,
-            startsAt: moment().startOf('year').month(monthStart).date(dateStart),
-            endsAt: moment().startOf('year').month(monthEnd).date(dateEnd),
+            startsAt: moment(new Date(data.start))/*.startOf('year').month(monthStart).date(dateStart)*/,
+            endsAt: moment(new Date(data.end))/*.startOf('year').month(monthEnd).date(dateEnd)*/,
             team: data.team,
             site: data.site,
             tasks: data.tasks,
@@ -77,7 +65,7 @@
             actions: actions
           }
         ];
-        // console.log(vm.planningView);
+        console.log($scope.planningView);
       });
     });
 
