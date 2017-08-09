@@ -11,13 +11,13 @@ angular.module('inventories').run(['Menus',
     Menus.addSubMenuItem('topbar', 'inventories', {
       title: 'Liste',
       state: 'inventories.list',
-      roles: ['user', 'admin']
+      roles: ['admin']
     });
 
     Menus.addSubMenuItem('topbar', 'inventories', {
       title: 'Ajouter',
       state: 'inventories.create',
-      roles: ['user', 'admin']
+      roles: ['admin']
     });
   }
 ]);

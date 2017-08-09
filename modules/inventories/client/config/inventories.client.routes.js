@@ -14,7 +14,7 @@
         url: '/inventories',
         template: '<ui-view/>',
         data: {
-          roles: ['user', 'admin']
+          roles: ['admin']
         }
       })
       .state('inventories.list', {
@@ -23,7 +23,7 @@
         controller: 'InventoriesListController',
         controllerAs: 'vm',
         data: {
-          roles: ['user', 'admin'],
+          roles: ['admin'],
           pageTitle: 'Inventories List'
         }
       })
@@ -36,7 +36,7 @@
           inventoryResolve: newInventory
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['admin'],
           pageTitle: 'Inventories Create'
         }
       })
@@ -49,7 +49,7 @@
           inventoryResolve: getInventory
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['admin'],
           pageTitle: 'Edit Inventory {{ inventoryResolve.name }}'
         }
       })
@@ -62,7 +62,7 @@
           inventoryResolve: getInventory
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['admin'],
           pageTitle: 'Inventory {{ inventoryResolve.name }}'
         }
       });
