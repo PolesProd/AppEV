@@ -598,7 +598,7 @@
       "ID": "596f34ad734d1d6202a67527",
       "nom": "Square Rue Pasteur",
       "surface": "XX m²",
-      "image": "<img src='modules/core/client/img/photoSite/coulee-verte.jpg' alt='coulée verte' class='image'/>",
+      "image": "<img src='modules/core/client/img/photoSite/passage-nelson-mandela-rue-pasteur.jpg' alt='coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige)</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes et vivaces</li><li class='tache'>Désherbage des massifs d’arbustes, vivaces et pieds des arbres</li></ul></div>"
     },
     "geometry": {

@@ -12,7 +12,7 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
   $scope.lots = vm.lot;
   $scope.lots.$promise.then(function(resourceArray){
     $scope.item = resourceArray[0];
-    /*console.log($scope.lots);*/
+    // console.log($scope.lots);
   });
 
   // On récupère les données geo des sites depuis un fichier json

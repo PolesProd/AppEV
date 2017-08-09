@@ -17,7 +17,7 @@
     </div>
 
     <div class="homelist">
-      <a ng-repeat="lot in lots" ui-sref="lots.view({ lotId: lot._id })" class="list-group-item">
+      <a ng-repeat="lot in lots" ng-click="siteHome()" class="list-group-item">
         <h4 class="list-group-item-heading" ng-bind="lot.properties.nom"></h4>
       </a>
     </div>

@@ -6,9 +6,9 @@
     .module('plannings')
     .controller('PlanningsController', PlanningsController);
 
-  PlanningsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'planningResolve', 'TeamsService', 'LotsService'];
+  PlanningsController.$inject = ['$scope', '$state', '$window', '$location', 'Authentication', 'planningResolve', 'TeamsService', 'LotsService'];
 
-  function PlanningsController ($scope, $state, $window, Authentication, planning, TeamsService, LotsService) {
+  function PlanningsController ($scope, $state, $window, $location, Authentication, planning, TeamsService, LotsService) {
     var vm = this;
 
     vm.authentication = Authentication;
@@ -22,25 +22,19 @@
 
     $scope.teamsList = vm.team;
     $scope.teamsList.$promise.then(function (resourceArray) {
-      // $scope.item = resourceArray[0];
       $scope.team = [{
         name: resourceArray[0].name, ticked: false
       }];
-      // return $scope.team.save();
-      // console.log($scope.team);
     });
 
     $scope.sitesList = vm.site;
     $scope.sitesList.$promise.then(function (resourceArray) {
-      // $scope.item = resourceArray[0];
-      // console.log($scope.item);
       $scope.site = [
         { icon: '<img src="../modules/plannings/client/img/tondeuse.jpg"/>', name: resourceArray[0].properties.nom, ticked: false }
       ];
       $scope.outputList = [
         { icon: '<img src="../modules/plannings/client/img/tondeuse.jpg"/>', name: resourceArray[0].properties.nom, ticked: true }
       ];
-      // console.log($scope.sitesList[0].properties.description);
     });
 
     $scope.tasksList = [

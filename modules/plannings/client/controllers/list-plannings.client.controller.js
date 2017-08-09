@@ -2,8 +2,8 @@
   'use strict';
 
   angular
-    .module('plannings')
-    .controller('PlanningsListController', PlanningsListController);
+  .module('plannings')
+  .controller('PlanningsListController', PlanningsListController);
 
   PlanningsListController.$inject = ['$scope', 'PlanningsService', 'alert', 'calendarConfig'];
 
@@ -15,7 +15,7 @@
     // Format locale
     moment.locale('fr_fr', {
       week : {
-        dow : 1 // Monday is the first day of the week
+        dow : 1 // Le lundi est le premier jour de la semaine
       }
     });
 
@@ -30,12 +30,12 @@
     var actions = [{
       label: '<i class=\'glyphicon glyphicon-pencil\'></i>',
       onClick: function(args) {
-        alert.show('Edited', args.calendarEvent);
+        alert.show('Mis à jour', args.calendarEvent);
       }
     }, {
       label: '<i class=\'glyphicon glyphicon-remove\'></i>',
       onClick: function(args) {
-        alert.show('Deleted', args.calendarEvent);
+        alert.show('Supprimer', args.calendarEvent);
       }
     }];
 
@@ -77,7 +77,7 @@
             actions: actions
           }
         ];
-        console.log(vm.planningView);
+        // console.log(vm.planningView);
       });
     });
 
@@ -85,19 +85,19 @@
     vm.cellIsOpen = false;
 
     vm.eventClicked = function(event) {
-      alert.show('Clicked', event);
+      alert.show('Clique', event);
     };
 
     vm.eventEdited = function(event) {
-      alert.show('Edited', event);
+      alert.show('Mis à jojur', event);
     };
 
     vm.eventDeleted = function(event) {
-      alert.show('Deleted', event);
+      alert.show('Supprimer', event);
     };
 
     vm.eventTimesChanged = function(event) {
-      alert.show('Dropped or resized', event);
+      alert.show('Déplacer ou Redimensionner', event);
     };
 
     vm.toggle = function($event, field, event) {
