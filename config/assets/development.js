@@ -18,7 +18,7 @@ module.exports = {
         'public/lib/angular-resource/angular-resource.js',
         'public/lib/angular-animate/angular-animate.js',
         'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
-        'public/lib/angular/angular-locale_fr-fr.js',
+        'public/lib/angular-i18n/angular-locale_fr-fr.js',
         'public/lib/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js',
         'public/lib/jquery/dist/jquery.min.js',
         'public/lib/angular-smart-table/dist/smart-table.min.js',

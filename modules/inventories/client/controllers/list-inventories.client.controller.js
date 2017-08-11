@@ -12,49 +12,14 @@
 
     vm.inventories = InventoriesService.query();
 
-    var firstnames = ['Laurent', 'Blandine', 'Olivier', 'Max'];
-    var lastnames = ['Renard', 'Faivre', 'Frere', 'Eponge'];
-    var dates = ['1987-05-21', '1987-04-25', '1955-08-27', '1966-06-06'];
-    var id = 1;
-
-    function generateRandomItem(id) {
-
-      var firstname = firstnames[Math.floor(Math.random() * 3)];
-      var lastname = lastnames[Math.floor(Math.random() * 3)];
-      var birthdate = dates[Math.floor(Math.random() * 3)];
-      var balance = Math.floor(Math.random() * 2000);
-
-      return {
-        id: id,
-        firstName: firstname,
-        lastName: lastname,
-        birthDate: new Date(birthdate),
-        balance: balance
-      };
-    }
-
     $scope.rowCollection = [];
-    $scope.testing = vm.inventories;
-    $scope.testing.$promise.then(function (resourceArray) {
-      $scope.item = resourceArray[0];
+    $scope.rowCollection = vm.inventories;
+    $scope.rowCollection.$promise.then(function(resourceArray) {
+      $scope.item = [
+        { filter: resourceArray[0].filter, name: resourceArray[0].name, model: resourceArray[0].model, quantity: resourceArray[0].quantity }
+      ];
     });
-
-    for (id; id < 5; id++) {
-      $scope.rowCollection.push(generateRandomItem(id));
-    }
-
-    //add to the real data holder
-    $scope.addRandomItem = function addRandomItem() {
-      $scope.rowCollection.push(generateRandomItem(id));
-      id++;
-    };
-
-    //remove to the real data holder
-    $scope.removeItem = function removeItem(row) {
-      var index = $scope.rowCollection.indexOf(row);
-      if (index !== -1) {
-        $scope.rowCollection.splice(index, 1);
-      }
-    };
+    
+    console.log($scope.rowCollection);
   }
 }());

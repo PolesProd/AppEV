@@ -11,19 +11,24 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
 
   $scope.lots = vm.lot;
   $scope.lots.$promise.then(function(resourceArray){
-    $scope.item = resourceArray[0];
+    $scope.item = [
+      { name: resourceArray[0].name, surface: resourceArray[0].surface, tasks: resourceArray[0].tasks }
+    ];
     // console.log($scope.lots);
   });
+  
 
   // On récupère les données geo des sites depuis un fichier json
   $http.get('modules/core/client/json/sites.json').then(function (response) {
     $scope.geojson = {
       data: response.data,
       style: {
-        'fillColor': '#ff0000',
-        'fillOpacity': 0.5,
-        'color': '#000000',
-        'opacity': 0.2
+        fillColor: '#00FF00',
+        weight: 2,
+        opacity: 1,
+        color: 'white',
+        dashArray: '1',
+        fillOpacity: 0.7
       },
       onEachFeature: function (feature, layer){
         layer.on({

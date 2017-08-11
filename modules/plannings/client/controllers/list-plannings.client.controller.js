@@ -53,9 +53,9 @@
         // Crée une vue des plannings dans le calendrier
         $scope.planningView.push({
           title: data.name,
-          color: calendarConfig.colorTypes.warning,
-          startsAt: moment(new Date(data.start))/*.startOf('year').month(monthStart).date(dateStart)*/,
-          endsAt: moment(new Date(data.end))/*.startOf('year').month(monthEnd).date(dateEnd)*/,
+          color: calendarConfig.colorTypes.important,
+          startsAt: moment(new Date(data.start)),
+          endsAt: moment(new Date(data.end)),
           team: data.team,
           site: data.site,
           tasks: data.tasks,
