@@ -9,7 +9,7 @@ module.exports = {
   port: process.env.PORT || 8443,
   sessionSecret: process.env.SESSION_SECRET || '|-*^%|vb=t.726t4WSk^%57w+839%b3a~|-V49cG',
   db: {
-    uri: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://mean:mean@ds119598.mlab.com:19598/mean',
+    uri: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://samba:Samba@92vlg@ds047955.mlab.com:47955/greenspace',
     options: {
       user: '',
       pass: ''
