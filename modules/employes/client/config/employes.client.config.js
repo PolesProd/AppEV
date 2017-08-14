@@ -16,6 +16,6 @@ function (Menus) {
   Menus.addSubMenuItem('topbar', 'employes', {
     title: 'Ajouter employés',
     state: 'employes.create',
-    roles: ['user', 'admin']
+    roles: ['admin']
   });
 }]);

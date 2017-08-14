@@ -36,7 +36,7 @@
           employeResolve: newEmploye
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['admin'],
           pageTitle: 'Employes Create'
         }
       })
@@ -49,7 +49,7 @@
           employeResolve: getEmploye
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['admin'],
           pageTitle: 'Edit Employe {{ employeResolve.name }}'
         }
       })

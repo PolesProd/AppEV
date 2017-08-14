@@ -33,6 +33,6 @@ function ($scope, $state, $location, Authentication, Menus) {
   } else if (url === '/plannings') {
     headerStyle.style.width = '100%';
   }
-  console.log(url);
+  // console.log(url);
 }
 ]);

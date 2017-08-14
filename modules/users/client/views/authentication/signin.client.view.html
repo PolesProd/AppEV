@@ -13,14 +13,14 @@
         <fieldset>
           <div class="form-group" show-errors>
             <label for="username">Nom d'utilisateur</label>
-            <input type="text" id="username" name="username" class="form-control" ng-model="credentials.username" placeholder="Username" lowercase required>
+            <input type="text" id="username" name="username" class="form-control" ng-model="credentials.username" placeholder="Nom d'utilisateur" lowercase required>
             <div ng-messages="userForm.username.$error" role="alert">
               <p class="help-block error-text" ng-message="required">Veuillez rentrer votre nom d'utilisateur.</p>
             </div>
           </div>
           <div class="form-group" show-errors>
             <label for="password">Mot de passe</label>
-            <input type="password" id="password" name="password" class="form-control" ng-model="credentials.password" placeholder="Password" required>
+            <input type="password" id="password" name="password" class="form-control" ng-model="credentials.password" placeholder="Mot de passe" required>
             <div ng-messages="userForm.password.$error" role="alert">
               <p class="help-block error-text" ng-message="required">Veuillez rentrer votre mot de passe.</p>
             </div>

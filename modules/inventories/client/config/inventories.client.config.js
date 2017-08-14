@@ -11,7 +11,7 @@ angular.module('inventories').run(['Menus',
     Menus.addSubMenuItem('topbar', 'inventories', {
       title: 'Liste',
       state: 'inventories.list',
-      roles: ['admin']
+      roles: ['user', 'admin']
     });
 
     Menus.addSubMenuItem('topbar', 'inventories', {
