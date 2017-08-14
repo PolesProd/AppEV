@@ -18,6 +18,11 @@
     vm.remove = remove;
     vm.save = save;
 
+    $scope.filters = [
+      { name: 'Equipements' },
+      { name: 'Inventaires' }
+    ];
+
     // Remove existing Inventory
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {

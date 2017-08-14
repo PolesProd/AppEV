@@ -36,7 +36,7 @@
           inventoryResolve: newInventory
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['admin'],
           pageTitle: 'Inventories Create'
         }
       })
@@ -49,7 +49,7 @@
           inventoryResolve: getInventory
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['admin'],
           pageTitle: 'Edit Inventory {{ inventoryResolve.name }}'
         }
       })
@@ -62,7 +62,7 @@
           inventoryResolve: getInventory
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['admin'],
           pageTitle: 'Inventory {{ inventoryResolve.name }}'
         }
       });

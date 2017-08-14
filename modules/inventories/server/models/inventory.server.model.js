@@ -10,7 +10,10 @@ var mongoose = require('mongoose'),
  * Inventory Schema
  */
 var InventorySchema = new Schema({
-  name: { type: String, default: '', required: 'Please fill Inventory name', trim: true },
+  filter: { type: String, default: '', required: 'Type requis' },
+  name: { type: String, default: '', required: 'Nom requis', trim: true },
+  model: { type: String, default: '', required: 'Modèle requis' },
+  quantity: { type: Number, default: '', required: '' },
   created: { type: Date, default: Date.now },
   user: { type: Schema.ObjectId, ref: 'User' }
 });

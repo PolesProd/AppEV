@@ -17,7 +17,7 @@ angular.module('inventories').run(['Menus',
     Menus.addSubMenuItem('topbar', 'inventories', {
       title: 'Ajouter',
       state: 'inventories.create',
-      roles: ['user', 'admin']
+      roles: ['admin']
     });
   }
 ]);
