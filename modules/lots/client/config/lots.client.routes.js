@@ -64,6 +64,11 @@
         data: {
           roles: ['user', 'admin'],
           pageTitle: 'Lot {{ lotResolve.name }}'
+        },
+        'replies@lots.view': {
+          templateUrl: 'modules/replies/client/views/list-replies.client.view.html',
+          controller: 'RepliesController',
+          controllerAs: 'vm'
         }
       });
   }
