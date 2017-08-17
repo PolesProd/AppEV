@@ -21,6 +21,6 @@ function (Menus) {
   Menus.addSubMenuItem('topbar', 'teams', {
     title: 'Crée équipe',
     state: 'teams.create',
-    roles: ['user', 'admin']
+    roles: ['admin']
   });
 }]);

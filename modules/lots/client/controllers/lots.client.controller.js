@@ -40,7 +40,7 @@
           var siteNum, siteTitle, siteImg, siteInfos = '';
 
           for (var content in data.properties){
-            if(content === 'image'){
+            if(content === 'image1' && 'image2' && 'image3' && 'image4' && 'image5'){
               siteImg = '<p class="siteInfos">' + data.properties[content] + '</p>';
             } else if(content === 'description'){
               siteInfos += '<p class="siteInfos"><span> Taches à accomplire sur le site : </span>' + data.properties[content] + '</p>';

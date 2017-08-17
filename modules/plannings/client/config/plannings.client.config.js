@@ -22,6 +22,6 @@ function (Menu) {
   Menu.addSubMenuItem('topbar', 'plannings', {
     title: 'Crée Planning',
     state: 'plannings.create',
-    roles: ['user', 'admin']
+    roles: ['admin']
   });
 }]);

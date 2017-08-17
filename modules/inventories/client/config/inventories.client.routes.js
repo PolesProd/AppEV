@@ -14,7 +14,7 @@
         url: '/inventories',
         template: '<ui-view/>',
         data: {
-          roles: ['admin']
+          roles: ['user', 'admin']
         }
       })
       .state('inventories.list', {
@@ -23,7 +23,7 @@
         controller: 'InventoriesListController',
         controllerAs: 'vm',
         data: {
-          roles: ['admin'],
+          roles: ['user', 'admin'],
           pageTitle: 'Inventories List'
         }
       })

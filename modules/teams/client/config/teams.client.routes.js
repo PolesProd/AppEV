@@ -36,7 +36,7 @@
           teamResolve: newTeam
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['admin'],
           pageTitle: 'Teams Create'
         }
       })
@@ -49,7 +49,7 @@
           teamResolve: getTeam
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['admin'],
           pageTitle: 'Edit Team {{ teamResolve.name }}'
         }
       })

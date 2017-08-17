@@ -36,7 +36,7 @@
           planningResolve: newPlanning
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['admin'],
           pageTitle: 'Plannings Create'
         }
       })
@@ -49,7 +49,7 @@
           planningResolve: getPlanning
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['admin'],
           pageTitle: 'Edit Planning {{ planningResolve.name }}'
         }
       })
