@@ -26,11 +26,11 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', '$loc
 
     var headerStyle = document.getElementById('header');
 
-    if (url === '/employes') {
+    if (url === '/employes/') {
       headerStyle.style.width = '100%';
-    } else if (url === '/inventories') {
+    } else if (url === '/inventories/') {
       headerStyle.style.width = '100%';
-    } else if (url === '/plannings') {
+    } else if (url === '/plannings/') {
       headerStyle.style.width = '100%';
     }
   }

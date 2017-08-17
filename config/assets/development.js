@@ -8,6 +8,7 @@ module.exports = {
         'public/lib/bootstrap/dist/css/bootstrap-theme.css',
         'public/lib/isteven-angular-multiselect/isteven-multi-select.css',
         'public/lib/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css',
+        'public/lib/owl.carousel/dist/assets/owl.carousel.min.css',
         'public/lib/leaflet.modal/dist/leaflet.modal.min.css',
       ],
       js: [
@@ -17,6 +18,7 @@ module.exports = {
         'public/lib/angular-messages/angular-messages.js',
         'public/lib/angular-moment/angular-moment.min.js',
         'public/lib/angular-sanitize/angular-sanitize.min.js',
+        'public/lib/angular-cookies/angular-cookies.min.js',
         'public/lib/angular-ui-router/release/angular-ui-router.js',
         'public/lib/angular-resource/angular-resource.js',
         'public/lib/angular-animate/angular-animate.js',
@@ -25,6 +27,7 @@ module.exports = {
         'public/lib/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js',
         'public/lib/angular/angular-locale_fr-fr.js',
         'public/lib/jquery/dist/jquery.min.js',
+        'public/lib/owl.carousel/dist/owl.carousel.min.js',
         'public/lib/angular-smart-table/dist/smart-table.min.js',
         'public/lib/angular-ui-utils/ui-utils.js',
         'public/lib/angular-file-upload/angular-file-upload.js',
