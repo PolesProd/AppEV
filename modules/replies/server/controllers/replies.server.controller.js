@@ -17,7 +17,7 @@ exports.create = function (req, res) {
   // When a new reply is created, two things have to happen:
   // 1) The reply must be created and get an Object ID
   // 2) The object ID must be inserted into the replies array of whatever
-  // you are replying to, whether it is another reply or an lot itself
+  // you are replying to, whether it is another reply or an article itself
 
   var reply = new Reply(req.body);
   reply.user = req.user;
@@ -34,7 +34,7 @@ exports.create = function (req, res) {
         });
       } else {
         // If replyTo is not null, this is a reply to a reply and must be added to the
-        // reply array of replies. If replyTo is null, this is a top level reply to a lot
+        // reply array of replies. If replyTo is null, this is a top level reply to a article
         if (reply.replyTo) {
           Reply.findByIdAndUpdate(req.body.replyTo,
             { $push: { 'replies': reply._id } },
@@ -113,7 +113,7 @@ exports.delete = function (req, res) {
   var reply = req.reply;
   // first we gotta pop it out of the array it was in
   // if replyTo is not null, it was attached to a reply
-  // if replyTo is null, it was attached to a Lot
+  // if replyTo is null, it was attached to a Article
   if (reply.replyTo) {
     Reply.findByIdAndUpdate(reply.replyTo,
       { $pull: { 'replies': reply._id } },
@@ -177,10 +177,10 @@ exports.delete = function (req, res) {
  */
  // TODO: decide if filtering will happen here or only in the UI
 exports.list = function (req, res) {
-  // This may seem counterintuitive, but we're actually going to find the lot that matches
-  // the currently viewed lot, populate its array of replies, then send back the array of replies
+  // This may seem counterintuitive, but we're actually going to find the article that matches
+  // the currently viewed article, populate its array of replies, then send back the array of replies
   // I did it this way for speed. You could also search all of the replies in the replies collection
-  // for the appropriate lot id. I figured that would be slower.
+  // for the appropriate article id. I figured that would be slower.
   var sortOps = { sort: { 'created' : -1 } };
 
   Lot.findById(req.query.lot)
