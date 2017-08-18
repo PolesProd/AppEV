@@ -40,32 +40,42 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
   $scope.lots = vm.lot;
   $scope.lots.$promise.then(function(resourceArray){
     $scope.item = [
-      { name: resourceArray[0].name, surface: resourceArray[0].surface, tasks: resourceArray[0].tasks }
+      { name: resourceArray[0].nom, surface: resourceArray[0].surface, tasks: resourceArray[0].tasks }
     ];
   });
 
   // Paramétrage du carousel
   $('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:3
-        },
-        1000:{
-            items:5
-        }
+    loop: true,
+    margin: 10,
+    nav: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 3
+      },
+      1000: {
+        items: 5
+      }
     },
-    autoplay:true,
-    autoplayTimeout:1000,
-    autoplayHoverPause:true
-  })
+    autoplay: true,
+    autoplayTimeout: 1000,
+    autoplayHoverPause: true
+  });
 
-
+  $(document).ready(function() {
+    $('.collapse.in').prev('.panel-heading').addClass('active');
+    $('#accordion, #bs-collapse')
+      .on('show.bs.collapse', function(a) {
+        $(a.target).prev('.panel-heading').addClass('active');
+      })
+      .on('hide.bs.collapse', function(a) {
+        $(a.target).prev('.panel-heading').removeClass('active');
+      });
+  });
+    
   // On récupère les données geo des sites depuis un fichier json
   $http.get('modules/core/client/json/sites.json').then(function (response) {
 
@@ -83,12 +93,6 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
       // Explore le tableau des sites
       onEachFeature: function (feature, layer){
         layer.on({
-          style: function (feature) {
-            if (feature.geometry.type === 'Polygon') {
-              fillColor: '#000'
-            }
-          },
-
           click: function showResultsInDiv() {
             var d = document.getElementById('map-info');
             var siteImg, siteInfos, siteTitle, siteNum = '';
@@ -96,7 +100,7 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
 
             for (var content in feature.properties){
               if(content === 'image'){
-                siteImg = '<div class="owl-carousel owl-theme"><div class="item"><img src="' + feature.properties[content] + '"/></div></div>';
+                siteImg = '<p class="siteInfos">' + feature.properties[content] + '</p>';
               } else if(content === 'description'){
                 siteInfos += '<p class="siteInfos"><span> Taches à accomplire sur le site : </span>' + feature.properties[content] + '</p>';
               } else if(content === 'ID'){
@@ -107,7 +111,7 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
                 siteInfos += '<p class="siteInfos"><span>' + content + ': </span>' + feature.properties[content] + '</p>';
               }
             }
-            d.innerHTML = siteNum + siteImg + siteInfos;
+            d.innerHML = siteNum + siteImg + siteInfos;
 
             // Mise en surbrillance du site au clique
             function lotsHighlighting () {
@@ -116,19 +120,18 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
                   fillColor:'#2ABB0B',
                   dashArray: '3'
                 });
-                console.log(layer);
               } else if(layer.feature.geometry.type === 'MultiPolygon'){
                 layer.setStyle({
                   fillColor:'#2ABB0B',
                   dashArray: '3'
                 });
-                console.log(layer.feature.geometry.type)
               }
             }
             lotsHighlighting();
           }
         });
       },
+      
       pointToLayer: function (feature, latlng) {
         var arbre = feature.geometry.type;
         var leaf_icon = L.icon({

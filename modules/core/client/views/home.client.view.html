@@ -1,31 +1,47 @@
-<!-- <div class="columnsContainer" ng-controller="HomeController"> -->
 <div class="" ng-controller="HomeController">
-  <!-- <div class="leftColumn"> -->
   <div class="col-md-7 col-xs-12">
     <div class="row">
       <leaflet center="center" geojson="geojson" controls="controls" markers="markers" defaults="defaults" legend="legend" url-hash-center="yes" tiles ="tiles" width="100%" height="93vh"></leaflet>
     </div>
-
-    <div class="owl-carousel owl-theme">
-      <div class="item"><img src='modules/core/client/img/photoSite/la-coulee-verte-1.jpg' alt='la coulée verte' class='image'/></div>
-      <div class="item"><img src='modules/core/client/img/photoSite/avenue-verdun.jpg' alt='la coulée verte' class='image'/></div>
-      <div class="item"><img src='modules/core/client/img/photoSite/chantiers-navals.jpg' alt='la coulée verte' class='image'/></div>
-    </div>
   </div>
 
-  <!-- <div class="rightColumn"> -->
   <div class="col-md-5 col-xs-12">
-    <h1>Accueil</h1>
+    <h1></h1>
     <div id="map-info" class="displayHome">
       <script type="text/javascript">
-      showResultsInDiv();
+        showResultsInDiv();
       </script>
     </div>
 
-    <div class="homelist">
-      <a ng-repeat="lot in lots" ng-click="siteHome()" class="list-group-item">
-        <h4 class="list-group-item-heading" ng-bind="lot.properties.nom"></h4>
-      </a>
+    <div class="panel-group wrap" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel" ng-repeat="lot in lots">
+        <div class="panel-heading" role="tab" id="headingOne">
+          <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{lot.properties.ID}}" aria-expanded="false" aria-controls="collapseOne" class="collapsed">{{ lot.properties.nom }}</a>
+          </h4>
+        </div>
+        <div id="{{lot.properties.ID}}" class="panel-collapse collapse" aria-expanded="false" style="height: 0;" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            <div class="owl-carousel owl-theme">
+              <div class="item"><img src="{{ lot.properties.image1 }}" alt=""></div>
+              <div class="item"><img src="{{ lot.properties.image2 }}" alt=""></div>
+              <div class="item"><img src="{{ lot.properties.image3 }}" alt=""></div>
+              <div class="item"><img src="{{ lot.properties.image4 }}" alt=""></div>
+              <div class="item"><img src="{{ lot.properties.image5 }}" alt=""></div>
+            </div>
+
+            <p class="siteInfos"><img src="{{ lot.properties.image1 }}" alt=""/></p>
+            <p class="siteInfos"><img src="{{ lot.properties.image2 }}" alt=""/></p>
+            <p class="siteInfos"><img src="{{ lot.properties.image3 }}" alt=""/></p>
+            <p class="siteInfos"><img src="{{ lot.properties.image4 }}" alt=""/></p>
+            <p class="siteInfos"><img src="{{ lot.properties.image5 }}" alt=""/></p>
+            <p class="siteInfos">{{ lot.properties.description }}</p>
+            <br>
+            <p class="siteInfos">{{ lot.properties.taches }}</p>
+          </div>
+        </div>
+      </div>
+      <!-- end of panel -->
     </div>
   </div>
 </div>
