@@ -19,6 +19,14 @@
   float: none;
 }
 
+.nav-tabs > li > a{
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-top: 0.5px solid #FFE001;
+  border-left: 0.5px solid #FFE001;
+  border-right: 0.5px solid #FFE001;
+}
+
 .navbar-nav {
   float: none;
 }
@@ -89,7 +97,7 @@ MEDIA QUERIES
     position: absolute;
   }
 }
-/*====================================================================*/
+/* Accordeon des sites */
 div[class*='col-'] {
   padding: 0 30px;
 }

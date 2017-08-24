@@ -22,7 +22,7 @@
     $scope.teams = vm.team;
     $scope.teams.$promise.then(function (resourceArray) {
       $scope.item = [
-        { icon: '<img src="https://www.iconfinder.com/data/icons/social-messaging-productivity-1-1/128/gender-male2-128.png"/>', name: resourceArray[0].name, ticked: false }
+        { name: resourceArray[0].name, ticked: false }
       ];
       // console.log($scope.item);
     });
@@ -35,7 +35,11 @@
       { name: 'Licencié', value: false }
     ];
 
-
+    $scope.status = [
+      { name: 'Encadrant', value: false },
+      { name: 'Chef d\'équipe', value: false },
+      { name: 'Ouvrier', value: false }
+    ];
 
 
     // Remove existing employe

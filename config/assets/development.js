@@ -10,8 +10,9 @@ module.exports = {
         'public/lib/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css',
         'public/lib/owl.carousel/dist/assets/owl.carousel.min.css',
         'public/lib/leaflet.modal/dist/leaflet.modal.min.css',
+        'public/lib/bootstrap-multiselect/dist/css/bootstrap-multiselect.css',
         'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700',
-        "https://fonts.googleapis.com/icon?family=Material+Icons"
+        'https://fonts.googleapis.com/icon?family=Material+Icons'
       ],
       js: [
         'public/lib/moment/min/moment.min.js',
@@ -30,13 +31,13 @@ module.exports = {
         'public/lib/angular/angular-locale_fr-fr.js',
         'public/lib/jquery/dist/jquery.min.js',
         'public/lib/bootstrap/dist/js/bootstrap.js',
+        'public/lib/bootstrap-multiselect/dist/js/bootstrap-multiselect.js',
         'public/lib/owl.carousel/dist/owl.carousel.min.js',
         'public/lib/angular-smart-table/dist/smart-table.min.js',
         'public/lib/angular-ui-utils/ui-utils.js',
         'public/lib/angular-file-upload/angular-file-upload.js',
         'public/lib/angular-leaflet-directive/dist/angular-leaflet-directive.min.js',
-        'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
-        'public/lib/isteven-angular-multiselect/isteven-multi-select.js'
+        'public/lib/owasp-password-strength-test/owasp-password-strength-test.js'
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },

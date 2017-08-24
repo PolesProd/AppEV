@@ -111,7 +111,7 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
                 siteInfos += '<p class="siteInfos"><span>' + content + ': </span>' + feature.properties[content] + '</p>';
               }
             }
-            d.innerHML = siteNum + siteImg + siteInfos;
+            d.innerHTML = siteNum + siteImg + siteInfos;
 
             // Mise en surbrillance du site au clique
             function lotsHighlighting () {
