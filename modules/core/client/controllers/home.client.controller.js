@@ -40,32 +40,42 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
   $scope.lots = vm.lot;
   $scope.lots.$promise.then(function(resourceArray){
     $scope.item = [
-      { name: resourceArray[0].name, surface: resourceArray[0].surface, tasks: resourceArray[0].tasks }
+      { name: resourceArray[0].nom, surface: resourceArray[0].surface, tasks: resourceArray[0].tasks }
     ];
   });
 
   // Paramétrage du carousel
   $('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:3
-        },
-        1000:{
-            items:5
-        }
+    loop: true,
+    margin: 10,
+    nav: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 3
+      },
+      1000: {
+        items: 5
+      }
     },
-    autoplay:true,
-    autoplayTimeout:1000,
-    autoplayHoverPause:true
-  })
+    autoplay: true,
+    autoplayTimeout: 1000,
+    autoplayHoverPause: true
+  });
 
-
+  $(document).ready(function() {
+    $('.collapse.in').prev('.panel-heading').addClass('active');
+    $('#accordion, #bs-collapse')
+      .on('show.bs.collapse', function(a) {
+        $(a.target).prev('.panel-heading').addClass('active');
+      })
+      .on('hide.bs.collapse', function(a) {
+        $(a.target).prev('.panel-heading').removeClass('active');
+      });
+  });
+    
   // On récupère les données geo des sites depuis un fichier json
   $http.get('modules/core/client/json/sites.json').then(function (response) {
 
@@ -116,19 +126,18 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
                   fillColor:'#2ABB0B',
                   dashArray: '3'
                 });
-                console.log(layer);
               } else if(layer.feature.geometry.type === 'MultiPolygon'){
                 layer.setStyle({
                   fillColor:'#2ABB0B',
                   dashArray: '3'
                 });
-                console.log(layer.feature.geometry.type)
               }
             }
             lotsHighlighting();
           }
         });
       },
+      
       pointToLayer: function (feature, latlng) {
         var arbre = feature.geometry.type;
         var leaf_icon = L.icon({

@@ -35,7 +35,6 @@
                 {{ team.name }}
             </option>
           </select>
-          <!-- <isteven-multi-select input-model="teamsList" output-model="outputList" ng-model="vm.planning.team" name="team" id="team" value="team._id" button-label="  icon name" item-label="icon name" selection-mode="single" translation="localLang" directive-id="team" tick-property="ticked"></isteven-multi-select> -->
 
           <div ng-messages="vm.form.employeForm.team.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Equipe requise.</p>
@@ -44,14 +43,12 @@
 
         <div class="form-group" show-errors>
           <label class="control-label" for="sites">Site:</label>
-          <!-- <input name="sites" type="text" ng-model="vm.team.sites" id="sites" class="form-control" placeholder="Ex: La Coulée Verte" required> -->
           <select name="site" ng-model="vm.planning.site" id="site" class="form-control">
             <option value="" disabled selected>Choisissez un Site</option>
             <option value="{{ site.properties.nom }}" ng-repeat="site in sitesList">
                 {{ site.properties.nom }}
             </option>
           </select>
-          <!-- <isteven-multi-select input-model="sitesList" output-model="outputList" ng-model="vm.planning.site" name="site" id="site" button-label="icon name" item-label="icon name" max-label="3" translation="localLang" tick-property="ticked"></isteven-multi-select> -->
           <div ng-messages="vm.form.teamForm.sites.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Site requis.</p>
           </div>
@@ -64,7 +61,6 @@
             <p class="help-block error-text" ng-message="required">Ajouter des tâches.</p>
           </div>
         </div>
-        <!-- <isteven-multi-select input-model="tasksList" output-model="outputList" ng-model="vm.planning.tasks" name="tasks" id="task" button-label="icon name frequence" item-label="icon name frequence" translation="localLang" tick-property="ticked"></isteven-multi-select> -->
 
         <div class="form-group">
           <button type="submit" class="btn btn-default">{{vm.planning._id ? 'Mettre à jour' : 'Créer'}}</button>

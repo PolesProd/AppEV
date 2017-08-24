@@ -26,25 +26,28 @@
 
   <div id="infos"></div>
   <div class="row" ui-view="replies"></div>
+
   <section ng-controller="RepliesController as vm" ng-init="vm.find()">
   <div class="container">
-      <div>
-        <h4>Avis</h4>
-      </div>
+    <div>
+      <h4>Avis</h4>
+    </div>
 
-      <!-- Top Level Reply form - only shows after reply clicked -->
-      <div class="row">
-        <div ng-if="vm.topReplyAvailable" class="col-md-8">
-          <div ng-show="vm.topReplyCollapsed">
-            <button class="btn btn-primary btn-sm" ng-click="vm.topReplyCollapsed = !vm.topReplyCollapsed">
-              Répondre
-            </button>
+    <!-- Top Level Reply form - only shows after reply clicked -->
+    <div class="row">
+      <div ng-if="vm.topReplyAvailable" class="col-md-8">
+        <div ng-show="vm.topReplyCollapsed">
+          <button class="btn btn-primary btn-sm" ng-click="vm.topReplyCollapsed = !vm.topReplyCollapsed">
+            Répondre
+          </button>
+        </div>
+
+        <div uib-collapse="vm.topReplyCollapsed">
+          <div class="form-group">
+            <label for="topReply">Entrez votre avis sur ce Lot:</label>
+            <textarea name="topReply" ng-model="vm.topReply.content" class="form-control" rows="3"></textarea>
           </div>
-          <div uib-collapse="vm.topReplyCollapsed">
-            <div class="form-group">
-              <label for="topReply">Entrez votre avis sur ce Lot:</label>
-              <textarea name="topReply" ng-model="vm.topReply.content" class="form-control" rows="3"></textarea>
-            </div>
+          
             <button type="submit" class="btn btn-primary btn-sm" ng-click="vm.createTop()">Envoyer</button>
             <button class="btn btn-default btn-sm" ng-click="vm.topReplyCollapsed=true;vm.cancelTopReply();">Annuler</button>
             <div ng-show="vm.topReply.error" class="text-danger">

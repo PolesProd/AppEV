@@ -20,32 +20,25 @@
     vm.employe = EmployesService.query();
     vm.site = LotsService.query();
 
-    $scope.memberList = vm.employe;
-    $scope.memberList.$promise.then(function (resourceArray) {
+    $scope.members = vm.employe;
+    $scope.members.$promise.then(function (resourceArray) {
       $scope.item = [{
         icon: '<img src="../modules/plannings/client/img/tondeuse.jpg"/>', firstname: resourceArray[0].firstname, lastname: resourceArray[0].lastname, email: resourceArray[0].email, number: resourceArray[0].number, team: resourceArray[0].team, formation: resourceArray[0].formation, contract: resourceArray[0].contract, ticked: false
       }];
-      // $scope.item = resourceArray[0];
-      // console.log($scope.item);
-      // console.log($scope.outputList);
     });
-
-    // $scope.localLang = {
-    //   selectAll: 'Tous séléctionné',
-    //   selectNone: 'Déselectionné',
-    //   reset: 'Reset',
-    //   search: 'Chercher',
-    //   nothingSelected: 'Selectionner'
-    // };
 
     $scope.sites = vm.site;
     $scope.sites.$promise.then(function (resourceArray) {
-      $scope.item = resourceArray[0];
+      $scope.item = [{
+        id: resourceArray[0].properties.ID, label: resourceArray[0].properties.nom
+      }];
+
+      console.log($scope.item);
     });
 
-    // angular.forEach($scope.outputList, function (key, value) {
-    //   console.log($scope.outputList);
-    // });
+    /*$(document).ready(function() {
+      $('#site').multiselect();
+    });*/
 
     // Remove existing Team
     function remove() {

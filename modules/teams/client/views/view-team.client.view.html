@@ -12,7 +12,7 @@
       <i class="glyphicon glyphicon-trash"></i>
     </a>
   </div>
-  <small>
+  <!-- <small>
     <em class="text-muted">
       Posted on
       <span ng-bind="vm.team.created | date:'mediumDate'"></span>
@@ -21,10 +21,13 @@
             ng-bind="vm.team.user.displayName"></span>
       <span ng-if="!vm.team.user">Deleted User</span>
     </em>
-  </small>
-  <p class="lead">Site:</p>
-  <p class="lead" ng-bind="vm.team.site">N° Site</p>
+  </small> -->
+  <span><p class="siteInfos">Site:</p></span>
+  <p class="lead" ng-bind="vm.team.site"></p>
 
-  <p class="lead">Salarié:</p>
-  <p class="lead" ng-bind="vm.team.member">ID Membre</p>
+  <span><p class="siteInfos">Responsable:</p></span>
+  <p class="lead" ng-bind="vm.team.manager"></p>
+
+  <span><p class="siteInfos">Salarié:</p></span>
+  <p class="lead" ng-bind="vm.team.member"></p>
 </section>

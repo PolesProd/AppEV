@@ -30,14 +30,11 @@
     $scope.sitesList = vm.site;
     $scope.sitesList.$promise.then(function (resourceArray) {
       $scope.site = [
-        { icon: '<img src="../modules/plannings/client/img/tondeuse.jpg"/>', name: resourceArray[0].properties.nom, ticked: false }
-      ];
-      $scope.outputList = [
-        { icon: '<img src="../modules/plannings/client/img/tondeuse.jpg"/>', name: resourceArray[0].properties.nom, ticked: true }
+        { name: resourceArray[0].properties.nom, ticked: false }
       ];
     });
 
-    $scope.tasksList = [
+    /*$scope.tasksList = [
       { icon: '<img src="../modules/plannings/client/img/tondeuse.jpg"/>', name: 'Tonte(rustique)', frequence: 1, ticked: false },
       { icon: '<img src="../modules/plannings/client/img/tondeuse.jpg"/>', name: 'Tonte(medium)', frequence: 2, ticked: false },
       { icon: '<img src="../modules/plannings/client/img/tondeuse.jpg"/>', name: 'Tonte(prestige)', frequence: 3, ticked: false },
@@ -60,7 +57,7 @@
       reset: 'Reset',
       search: 'Chercher',
       nothingSelected: 'Selectionner'
-    };
+    };*/
 
     // Remove existing Planning
     function remove() {

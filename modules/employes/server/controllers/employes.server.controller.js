@@ -19,8 +19,9 @@ exports.create = function(req, res) {
     email: req.body.email,
     number: req.body.number,
     team: req.body.team,
+    status: req.body.status,
     formation: req.body.formation,
-    contrat: req.body.contract,
+    contrat: req.body.contrat,
     start_date: req.body.start_date,
     end_date: req.body.end_date,
     renew: req.body.renew

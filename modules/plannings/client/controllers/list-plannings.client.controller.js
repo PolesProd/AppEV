@@ -111,7 +111,6 @@
           vm.viewDate = date;
         }
       }
-
     };
   }
 }());
