@@ -1,4 +1,4 @@
-/*(function () {
+(function () {
   'use strict';
 
   angular
@@ -87,4 +87,3 @@
     return new LotsService();
   }
 }());
-*/

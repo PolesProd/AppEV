@@ -1,4 +1,4 @@
-/*'use strict';
+'use strict';
 
 angular.module('lots').run(['Menus',
 function (Menus) {
@@ -10,4 +10,3 @@ function (Menus) {
     roles: ['user', 'admin']
   });
 }]);
-*/
