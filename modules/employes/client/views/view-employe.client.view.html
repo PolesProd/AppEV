@@ -12,7 +12,7 @@
       <i class="glyphicon glyphicon-trash"></i>
     </a>
   </div>
-  <small>
+  <!-- <small>
     <em class="text-muted">
       Publié le
       <span ng-bind="vm.employe.created | date:'mediumDate'"></span>
@@ -21,34 +21,34 @@
             ng-bind="vm.employe.user.displayName"></span>
       <span ng-if="!vm.employe.user">Deleted User</span>
     </em>
-  </small>
-  <label for="">Prénom:</label>
-  <p class="lead" ng-bind="vm.employe.lastname"></p>
+  </small> -->
+  <label for="lastname">Nom:</label>
+  <p class="lead" name="" ng-bind="vm.employe.lastname"></p>
 
-  <label for="">Nom:</label>
-  <p class="lead" ng-bind="vm.employe.firstname"></p>
+  <label for="firstname">Prénom:</label>
+  <p class="lead" name="" ng-bind="vm.employe.firstname"></p>
 
-  <label for="">Email:</label>
-  <p class="lead" ng-bind="vm.employe.email"></p>
+  <label for="email">Email:</label>
+  <p class="lead" name="" ng-bind="vm.employe.email"></p>
 
-  <label for="">N° Tél:</label>
-  <p class="lead" ng-bind="vm.employe.number"></p>
+  <label for="number">N° Tél:</label>
+  <p class="lead" name="" ng-bind="vm.employe.number"></p>
 
-  <label for="">Equipe:</label>
-  <p class="lead" ng-bind="vm.employe.team"></p>
+  <label for="team">Equipe:</label>
+  <p class="lead" name="" ng-bind="vm.employe.team"></p>
 
-  <label for="">Contrat:</label>
-  <p class="lead" ng-bind="vm.employe.contrat"></p>
+  <label for="contrat">Contrat:</label>
+  <p class="lead" name="" ng-bind="vm.employe.contrat"></p>
 
-  <label for="">Début contrat:</label>
-  <p class="lead" ng-bind="vm.employe.start_date | date: 'dd MMM yyyy'"></p>
+  <label for="start_date">Début contrat:</label>
+  <p class="lead" name="" ng-bind="vm.employe.start_date | date: 'dd MMM yyyy'"></p>
 
-  <label for="">Fin contrat</label>
-  <p class="lead" ng-bind="vm.employe.end_date | date: 'dd MMM yyyy'"></p>
+  <label for="end_date">Fin contrat</label>
+  <p class="lead" name="" ng-bind="vm.employe.end_date | date: 'dd MMM yyyy'"></p>
 
-  <label for="">Renouvelement</label>
-  <p class="lead" ng-bind="vm.employe.renew | date: 'dd MMM yyyy'"></p>
+  <label for="renew">Renouvelement</label>
+  <p class="lead" name="" ng-bind="vm.employe.renew | date: 'dd MMM yyyy'"></p>
 
-  <label for="">Formation(s):</label>
-  <p class="lead" ng-bind="vm.employe.formation"></p>
+  <label for="formation">Formation(s):</label>
+  <p class="lead" name="" ng-bind="vm.employe.formation"></p>
 </section>

@@ -6,9 +6,9 @@
   .module('teams')
   .controller('TeamsController', TeamsController);
 
-  TeamsController.$inject = ['$scope', '$state', '$window', '$log', 'Authentication', 'teamResolve', 'EmployesService', 'LotsService'];
+  TeamsController.$inject = ['$scope', '$state', '$http', '$sce', '$window', '$log', 'Authentication', 'teamResolve', 'EmployesService', 'LotsService'];
 
-  function TeamsController ($scope, $state, $window, $log, Authentication, team, EmployesService, LotsService) {
+  function TeamsController ($scope, $state, $http, $sce, $window, $log, Authentication, team, EmployesService, LotsService) {
     var vm = this;
 
     vm.authentication = Authentication;
@@ -22,23 +22,36 @@
 
     $scope.members = vm.employe;
     $scope.members.$promise.then(function (resourceArray) {
-      $scope.item = [{
-        icon: '<img src="../modules/plannings/client/img/tondeuse.jpg"/>', firstname: resourceArray[0].firstname, lastname: resourceArray[0].lastname, email: resourceArray[0].email, number: resourceArray[0].number, team: resourceArray[0].team, formation: resourceArray[0].formation, contract: resourceArray[0].contract, ticked: false
-      }];
+      $scope.items = [];
+      angular.forEach($scope.members, function(data) {
+        $scope.items.push({
+          id: data._id,
+          nom: data.lastname,
+          prenom: data.firstname
+        });
+      });
     });
 
     $scope.sites = vm.site;
     $scope.sites.$promise.then(function (resourceArray) {
-      $scope.item = [{
-        id: resourceArray[0].properties.ID, label: resourceArray[0].properties.nom
-      }];
-
-      console.log($scope.item);
+      $scope.options = [];
+      angular.forEach($scope.sites, function(data) {
+        $scope.options.push(
+          {
+            id: data.properties.ID,
+            name: data.properties.nom
+          }
+        );
+      });
     });
 
-    /*$(document).ready(function() {
-      $('#site').multiselect();
-    });*/
+    $scope.labels = {
+      itemsSelected: 'sélectionné(s)',
+      search: 'Chercher...',
+      select: 'Sélectionner',
+      selectAll: 'Tout sélectionner',
+      unselectAll: 'Tout déselectionner'
+    };
 
     // Remove existing Team
     function remove() {

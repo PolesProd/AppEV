@@ -16,7 +16,6 @@
     "angular-messages": "~1.3.17",
     "owasp-password-strength-test": "~1.3.0",
     "angular-leaflet-directive": "^0.10.0",
-    "isteven-angular-multiselect": "^4.0.0",
     "angular-ui-calendar": "latest",
     "angular-bootstrap-calendar": "^0.29.3",
     "interactjs": "^1.2.9",
@@ -24,12 +23,12 @@
     "angular-moment": "^1.0.1",
     "angular-sanitize": "^1.6.5",
     "angular-cookies": "^1.6.5",
-    "owl.carousel": "^2.2.1",
-    "angularjs-dropdown-multiselect": "^1.11.8",
-    "bootstrap-multiselect": "^0.9.13"
+    "owl.carousel": "^2.2.1"
   },
   "resolutions": {
     "angular": "~1.3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "angular-bootstrap-multiselect": "https://github.com/bentorfs/angular-bootstrap-multiselect.git#^1.1.10"
+  }
 }
