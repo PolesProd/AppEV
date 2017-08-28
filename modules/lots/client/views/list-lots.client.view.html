@@ -1,30 +1,16 @@
 <section>
-  <!-- <div class="page-header">
-    <h1>Tous les sites</h1>
-  </div> -->
-
-  <!-- <div class="columnsContainer" ng-controller="HomeController"> -->
   <div class="" ng-controller="HomeController">
-    <!-- <div class="leftColumn"> -->
     <div class="col-md-7 col-xs-12">
       <div class="row">
         <leaflet center="center" geojson="geojson" controls="controls" markers="markers" defaults="defaults" legend="legend" url-hash-center="yes" tiles ="tiles" width="100%" height="93vh"></leaflet>
       </div>
     </div>
 
-    <!-- <div class="rightColumn"> -->
     <div class="col-md-5 col-xs-12">
       <div class="list-group">
         <a ng-repeat="lot in vm.lots"
            ui-sref="lots.view({ lotId: lot._id })"
            class="list-group-item">
-          <small class="list-group-item-text">
-            Mis à jour le
-            <span ng-bind="lot.created | date:'mediumDate'"></span>
-            par
-            <span ng-if="lot.user" ng-bind="lot.user.displayName"></span>
-            <span ng-if="!lot.user">Deleted User</span>
-          </small>
           <h4 class="list-group-item-heading" ng-bind="lot.properties.nom"></h4>
         </a>
       </div>

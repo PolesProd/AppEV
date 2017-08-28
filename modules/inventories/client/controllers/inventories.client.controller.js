@@ -19,9 +19,18 @@
     vm.save = save;
 
     $scope.filters = [
-      { name: 'Equipements' },
-      { name: 'Inventaires' }
+      { name: 'Équipements' },
+      { name: 'Outillages' },
+      { name: 'Véhicules' }
     ];
+
+    //remove to the real data holder
+    $scope.removeItem = function removeItem(row) {
+      var index = $scope.rowCollection.indexOf(row);
+      if (index !== -1) {
+        $scope.rowCollection.splice(index, 1);
+      }
+    };
 
     // Remove existing Inventory
     function remove() {
@@ -45,7 +54,7 @@
       }
 
       function successCallback(res) {
-        $state.go('inventories.view', {
+        $state.go('inventories.list', {
           inventoryId: res._id
         });
       }

@@ -16,40 +16,31 @@
 
         <div class="form-group" show-errors>
           <label class="control-label" for="manager">Responsable:</label>
-          <select name="manager" ng-model="vm.team.manager" id="manager" class="form-control">
+          <!-- <select name="manager" ng-model="vm.team.manager" id="manager" class="form-control">
             <option value="" disabled selected>Choisissez un manager</option>
-            <option value="{{ member.firstname}}{{member.lastname}}" ng-repeat="member in members">
+            <option value="{{ member.firstname}} {{member.lastname}}" ng-repeat="member in members">
               {{member.lastname}} {{ member.firstname }}
             </option>
-          </select>
-          <div ng-messages="vm.form.teamForm.sites.$error" role="alert">
+          </select> -->
+          <multiselect name="member" ng-model="vm.team.member" options="items" show-select-all="true" show-unselect-all="true" selection-limit="1" id-prop="id" display-prop="nom" show-search="true" search-limit="10" labels="labels"></multiselect>
+          <div ng-messages="vm.form.teamForm.manager.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Site requis.</p>
           </div>
         </div>
 
-        <!-- <div class="form-group" show-errors>
-          <label class="control-label" for="sites">Site:</label>
-          <select name="site" ng-model="vm.team.site" id="site" class="form-control">
-            <option value="" disabled selected>Choisissez un Site</option>
-            <option value="{{site.properties.nom}}" ng-repeat="site in sites">
-                {{ site.properties.nom }}
-            </option>
-          </select>
-          <div ng-messages="vm.form.teamForm.sites.$error" role="alert">
+        <div class="form-group" show-errors>
+          <label class="control-label" for="site">Site:</label>
+          <multiselect name="site" ng-model="vm.team.site" options="options" show-select-all="true" show-unselect-all="true" selection-limit="4" id-prop="id" display-prop="name" show-search="true" search-limit="10" labels="labels"></multiselect>
+          <div ng-messages="vm.form.teamForm.site.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Site requis.</p>
           </div>
-        </div> -->
+        </div>
 
         <div class="form-group" show-errors>
-          <label class="control-label" for="member">Salarié(e)s:</label>
-          <select name="member" ng-model="vm.team.member" id="member" class="form-control">
-            <option value="" disabled selected>Choisissez salarié(e)s</option>
-            <option value="{{ member.firstname}}{{member.lastname}}" ng-repeat="member in members">
-                {{member.lastname}} {{ member.firstname }}
-            </option>
-          </select>
-          <div ng-messages="vm.form.teamForm.team.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Equipe requise.</p>
+          <label class="control-label" for="member">Membres:</label>
+          <multiselect name="member" ng-model="vm.team.member" options="items" show-select-all="true" show-unselect-all="true" selection-limit="5" id-prop="id" display-prop="nom" show-search="true" search-limit="10" labels="labels"></multiselect>
+          <div ng-messages="vm.form.teamForm.member.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Membre requise.</p>
           </div>
         </div>
 
@@ -59,16 +50,6 @@
         <div ng-show="vm.error" class="text-danger">
           <strong ng-bind="vm.error"></strong>
         </div>
-
-
-
-        <!-- Build your select: -->
-        <select name="site" ng-model="vm.team.site" id="site" class="form-control" multiple="multiple">
-            <option value="" disabled selected>Choisissez un Site</option>
-            <option value="{{site.properties.nom}}" ng-repeat="site in sites">
-                {{ site.properties.nom }}
-            </option>
-          </select>
 
       </fieldset>
     </form>

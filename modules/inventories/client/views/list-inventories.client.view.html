@@ -43,6 +43,13 @@
 					<i class="glyphicon glyphicon-remove-circle">
 					</i>
 				</button>
+          <a class="btn btn-primary"
+             ui-sref="inventories.edit({ inventoryId: vm.inventory._id })">
+            <i class="glyphicon glyphicon-edit"></i>
+          </a>
+          <a class="btn btn-primary" ng-click="vm.remove()">
+            <i class="glyphicon glyphicon-trash"></i>
+          </a>
 				</td>
 			</tr>
 			</tbody>

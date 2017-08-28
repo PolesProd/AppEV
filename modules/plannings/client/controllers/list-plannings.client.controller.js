@@ -63,9 +63,7 @@
           resizable: true,
           actions: actions
         });
-
-
-        console.log($scope.planningView);
+        /*console.log($scope.planningView);*/
       });
     });
 
