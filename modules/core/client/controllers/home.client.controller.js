@@ -100,6 +100,9 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
           },
 
           click: function showResultsInDiv() {
+            console.log( document.getElementsByClassName('panel-collapse') );
+
+
             var d = document.getElementById('map-info');
             var siteImg, siteInfos, siteTitle, siteNum = '';
             var titleH1 = document.getElementById('map-info').parentElement.getElementsByTagName('h1')[0];
@@ -120,17 +123,16 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
             d.innerHTML = siteNum + siteImg + siteInfos;
 
             // Mise en surbrillance du site au clique
-            function lotsHighlighting () {
-              if (layer.feature.geometry.type === 'Polygon') {
-                layer.setStyle({
-                  fillColor:'#2ABB0B',
-                  dashArray: '3'
-                });
-              } else if(layer.feature.geometry.type === 'MultiPolygon'){
-                layer.setStyle({
-                  fillColor:'#2ABB0B',
-                  dashArray: '3'
-                });
+            function lotsHighlighting (e) {
+              var selected;
+
+              if (layer.feature.geometry.type === 'Polygon' || 'MultiPolygon') {
+                if (selected) {
+                  layer.setStyle({
+                    fillColor:'#2ABB0B',
+                    dashArray: '3'
+                  });
+                }
               }
             }
             lotsHighlighting();

@@ -6,12 +6,12 @@ module.exports = {
       css: [
         'public/lib/bootstrap/dist/css/bootstrap.css',
         'public/lib/bootstrap/dist/css/bootstrap-theme.css',
-        'public/lib/isteven-angular-multiselect/isteven-multi-select.css',
         'public/lib/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css',
         'public/lib/owl.carousel/dist/assets/owl.carousel.min.css',
         'public/lib/leaflet.modal/dist/leaflet.modal.min.css',
         'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700',
-        'https://fonts.googleapis.com/icon?family=Material+Icons'
+        'https://fonts.googleapis.com/icon?family=Material+Icons',
+        'public/lib/angular-material/angular-material.min.css'
       ],
       js: [
         'public/lib/moment/min/moment.min.js',
@@ -24,6 +24,8 @@ module.exports = {
         'public/lib/angular-ui-router/release/angular-ui-router.js',
         'public/lib/angular-resource/angular-resource.js',
         'public/lib/angular-animate/angular-animate.js',
+        'public/lib/angular-aria/angular-aria.min.js',
+        'public/lib/angular-material/angular-material.min.js',
         'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
         'public/lib/angular-bootstrap-multiselect/dist/angular-bootstrap-multiselect.min.js',
         'public/lib/angular-i18n/angular-locale_fr-fr.js',

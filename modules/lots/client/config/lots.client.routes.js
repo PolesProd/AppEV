@@ -66,7 +66,7 @@
           pageTitle: 'Lot {{ lotResolve.name }}'
         },
         'replies@lots.view': {
-          templateUrl: 'modules/replies/client/views/list-replies.client.view.html',
+          templateUrl: 'modules/mean-replies/client/views/list-replies.client.view.html',
           controller: 'RepliesController',
           controllerAs: 'vm'
         }

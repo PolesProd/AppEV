@@ -41,6 +41,13 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
       data: {
         ignoreState: true
       }
+    })
+    .state('/contact', {
+      url: '/contact',
+      templateUrl: 'modules/core/client/views/contact-form.client.view.html',
+      data: {
+        roles: ['admin', 'user']
+      }
     });
   }
 ]);
