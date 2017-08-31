@@ -22,14 +22,6 @@
         </div>
         <div id="{{ lot.properties.ID }}" class="panel-collapse collapse" aria-expanded="false" style="height: 0;" role="tabpanel" aria-labelledby="headingOne">
           <div class="panel-body">
-            <!-- <div class="owl-carousel owl-theme">
-              <div class="item"><img src="{{ lot.properties.image1 }}" alt=""></div>
-              <div class="item"><img src="{{ lot.properties.image2 }}" alt=""></div>
-              <div class="item"><img src="{{ lot.properties.image3 }}" alt=""></div>
-              <div class="item"><img src="{{ lot.properties.image4 }}" alt=""></div>
-              <div class="item"><img src="{{ lot.properties.image5 }}" alt=""></div>
-            </div> -->
-
             <p class="siteInfos"><img src="{{ lot.properties.image1 }}" alt=""/></p>
             <p class="siteInfos"><img src="{{ lot.properties.image2 }}" alt=""/></p>
             <p class="siteInfos"><img src="{{ lot.properties.image3 }}" alt=""/></p>
@@ -38,6 +30,32 @@
             <p class="siteInfos">{{ lot.properties.description }}</p>
             <br>
             <p class="siteInfos">{{ lot.properties.taches }}</p>
+            <br>
+            <div data-ng-controller="ContactFormController as vm">
+              <div flex-sm="100" flex-gt-sm="90" flex-gt-md="70" flex-gt-lg="50" class="md-whiteframe-z2">
+                <md-content class="md-padding">
+                  <form name="contactForm" data-ng-submit="vm.sendMail()">
+                    <md-input-container>
+                      <label for="name">Nom:</label>
+                      <input type="text" name="name" placeholder="Nom" data-ng-model="vm.contactName">
+                    </md-input-container>
+
+                    <md-input-container>
+                      <label for="email">Email:</label>
+                      <input type="email" name="email" placeholder="azerty@test.fr" data-ng-model="vm.contactEmail">
+                    </md-input-container>
+
+                    <md-input-container>
+                      <label for="message">Message:</label>
+                      <textarea name="message" columns="1" required data-ng-model="vm.contactMsg"></textarea>
+                    </md-input-container>
+
+                    <md-button type="submit" class="md-primary" ng-class="{'md-raised md-hue-1':(contactForm.$dirty && contactForm.$valid)}">Envoyer</md-button>
+                  </form>
+                </md-content>
+              </div>
+            </div>
+            </form>
           </div>
         </div>
       </div>

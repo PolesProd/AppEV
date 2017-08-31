@@ -1,5 +1,8 @@
 'use strict';
-var chalk = require('chalk');
+var chalk = require('chalk'),
+  nodemailer = require('nodemailer'),
+  transporter = nodemailer.createTransport();
+
 /**
 * Render the main application page
 */
@@ -39,4 +42,20 @@ exports.renderNotFound = function (req, res) {
       res.send('Path not found');
     }
   });
+};
+
+/**
+* Envoi un email 
+*/
+exports.sendMail = function (req, res) {
+  var data = req.body;
+
+  transporter.sendMail({
+    from: data.contactEmail,
+    to: 'samba4292@gmail.com',
+    subject: 'Message de: ' + data.contactName,
+    text: data.contactMsg
+  });
+
+  res.json(data);
 };
