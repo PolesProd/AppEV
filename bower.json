@@ -24,7 +24,8 @@
     "angular-sanitize": "^1.6.5",
     "angular-cookies": "^1.6.5",
     "owl.carousel": "^2.2.1",
-    "angular-material": "^1.1.4"
+    "angular-material": "^1.1.4",
+    "angular-aria": "^1.6.6"
   },
   "resolutions": {
     "angular": "~1.3"
