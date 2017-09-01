@@ -40,8 +40,9 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
   $scope.lots = vm.lot;
   $scope.lots.$promise.then(function(resourceArray){
     $scope.item = [
-      { name: resourceArray[0].nom, surface: resourceArray[0].surface, tasks: resourceArray[0].tasks }
+      { id: resourceArray[0].properties.ID, name: resourceArray[0].properties.nom, surface: resourceArray[0].properties.surface, tasks: resourceArray[0].properties.tasks }
     ];
+    console.log($scope.item)
   });
 
   // Paramétrage du carousel
@@ -69,6 +70,7 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
     $('.collapse.in').prev('.panel-heading').addClass('active');
     $('#accordion, #bs-collapse')
       .on('show.bs.collapse', function(a) {
+        console.log(a.target)
         $(a.target).prev('.panel-heading').addClass('active');
       })
       .on('hide.bs.collapse', function(a) {
@@ -99,13 +101,17 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
             }
           },
 
-          click: function showResultsInDiv() {
-            console.log( document.getElementsByClassName('panel-collapse') );
-
-
+          click: function showResultsInDiv() {           
+            var polygon = feature.properties.ID;
+            var div = document.getElementsByClassName('panel-collapse');
+            console.log(polygon);
+            console.log(div[0].id);
+            console.log(div);
             var d = document.getElementById('map-info');
+
+
             var siteImg, siteInfos, siteTitle, siteNum = '';
-            var titleH1 = document.getElementById('map-info').parentElement.getElementsByTagName('h1')[0];
+            // var titleH1 = document.getElementById('map-info').parentElement.getElementsByTagName('h1')[0];
 
             for (var content in feature.properties){
               if(content === 'image'){
@@ -114,9 +120,7 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
                 siteInfos += '<p class="siteInfos"><span> Taches à accomplire sur le site : </span>' + feature.properties[content] + '</p>';
               } else if(content === 'ID'){
                 siteNum += '<p class="siteInfos"><span> Numéro du site : </span>' + feature.properties[content] + '</p>';
-              } else if(content === 'nom'){
-                titleH1.innerHTML = feature.properties[content];
-              } else{
+              }  else{
                 siteInfos += '<p class="siteInfos"><span>' + content + ': </span>' + feature.properties[content] + '</p>';
               }
             }
