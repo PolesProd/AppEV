@@ -21,6 +21,7 @@ var EmployeSchema = new Schema({
   start_date: { type: Date, default: Date.now, required: 'Date requise' },
   end_date: { type: Date, default: '' },
   renew: { type: Date, default: Date.now },
+  displayName: { type: String, trim: true },
   created: { type: Date, default: Date.now },
   user: { type: Schema.ObjectId, ref: 'User' }
 }, { collection: 'employees' });

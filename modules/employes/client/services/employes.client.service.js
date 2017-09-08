@@ -1,13 +1,7 @@
 // Employes service used to communicate Employes REST endpoints
-(function () {
-  'use strict';
+'use strict';
 
-  angular
-    .module('employes')
-    .factory('EmployesService', EmployesService);
-
-  EmployesService.$inject = ['$resource'];
-
+angular.module('employes').factory('EmployesService', ['$resource',
   function EmployesService($resource) {
     return $resource('/api/employes/:employeId', {
       employeId: '@_id'
@@ -21,4 +15,20 @@
       }
     });
   }
-}());
+]);
+
+angular.module('employes.admin').factory('Admin', ['$resource',
+  function Admin($resource) {
+    return $resource('api/employes/:employeId', {
+      employeId: '@_id'
+    }, {
+      update: {
+        method: 'PUT'
+      },
+      query: {
+        method: 'GET',
+        isArray: true
+      }
+    });
+  }
+]);

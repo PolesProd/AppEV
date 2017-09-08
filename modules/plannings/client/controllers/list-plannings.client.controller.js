@@ -28,15 +28,7 @@
 
     // Créer les icones d'actions'
     var actions = [{
-      label: '<i class=\'glyphicon glyphicon-pencil\'></i>',
-      onClick: function(args) {
-        alert.show('Mis à jour', args.calendarEvent);
-      }
-    }, {
-      label: '<i class=\'glyphicon glyphicon-remove\'></i>',
-      onClick: function(args) {
-        alert.show('Supprimer', args.calendarEvent);
-      }
+      
     }];
 
     // Récupère les plannings depuis la base de donnée
