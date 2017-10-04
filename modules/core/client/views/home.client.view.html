@@ -22,9 +22,6 @@
         </div>
         <div id="{{ lot.properties.ID }}" class="panel-collapse collapse" aria-expanded="false" style="height: 0;" role="tabpanel" aria-labelledby="headingOne">
           <div class="panel-body">
-            <script type="text/javascript">
-              showResultsInDiv();
-            </script>
             <p class="siteInfos"><img src="{{ lot.properties.image1 }}" alt=""/></p>
             <p class="siteInfos"><img src="{{ lot.properties.image2 }}" alt=""/></p>
             <p class="siteInfos"><img src="{{ lot.properties.image3 }}" alt=""/></p>
@@ -59,10 +56,9 @@
               </div>
             </div>
             </form>
-          </div>
-        </div>
-      </div>
-      <!-- end of panel -->
-    </div>
-  </div>
-</div>
+          </div><!-- end of div panel-body -->
+        </div><!-- end of div {{ lot.properties.ID }} -->
+      </div><!-- end of div panel -->
+    </div><!-- end of div panel-group wrap -->
+  </div><!-- end of div col-md-5 col-xs-12 -->
+</div><!-- end of div HomeController -->

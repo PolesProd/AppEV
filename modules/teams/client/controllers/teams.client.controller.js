@@ -27,7 +27,8 @@
         $scope.items.push({
           id: data._id,
           nom: data.lastname,
-          prenom: data.firstname
+          prenom: data.firstname,
+          numero: data.number
         });
       });
     });
@@ -44,14 +45,6 @@
         );
       });
     });
-
-    $scope.labels = {
-      itemsSelected: 'sélectionné(s)',
-      search: 'Chercher...',
-      select: 'Sélectionner',
-      selectAll: 'Tout sélectionner',
-      unselectAll: 'Tout déselectionner'
-    };
 
     // Remove existing Team
     function remove() {

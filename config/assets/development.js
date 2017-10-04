@@ -27,7 +27,6 @@ module.exports = {
         'public/lib/angular-aria/angular-aria.min.js',
         'public/lib/angular-material/angular-material.min.js',
         'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
-        'public/lib/angular-bootstrap-multiselect/dist/angular-bootstrap-multiselect.min.js',
         'public/lib/angular-i18n/angular-locale_fr-fr.js',
         'public/lib/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js',
         'public/lib/angular/angular-locale_fr-fr.js',

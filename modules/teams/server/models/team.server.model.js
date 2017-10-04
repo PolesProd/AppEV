@@ -11,9 +11,9 @@ var mongoose = require('mongoose'),
  */
 var TeamSchema = new Schema({
   name: { type: String, default: '', required: 'Nom requis', trim: true },
-  manager: { type: Object, default: '', required: '' },
-  site: { type: Object, default: 'Lot', required: 'Site requis' },
-  member: { type: Object, default: 'John Doe', required: 'Salarié(es) requis' },
+  manager: { type: String, default: '', required: '' },
+  site: { type: String, default: 'Lot', required: 'Site requis' },
+  member: { type: String, default: 'John Doe', required: 'Salarié(es) requis' },
   created: { type: Date, default: Date.now },
   user: { type: Schema.ObjectId, ref: 'User' }
 }, { collection: 'teams' });
