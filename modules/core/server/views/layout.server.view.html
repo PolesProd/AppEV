@@ -35,9 +35,10 @@
   {% for cssFile in cssFiles %}<link rel="stylesheet" href="{{cssFile}}">{% endfor %}
 </head>
 
-<body class="ng-cloak row">
-  <section class="container-fluid" ng-controller="HomeController">
-    <header id="header" ng-include="'/modules/core/client/views/header.client.view.html'" class="navbar nav-tabs col-md-5 col-xs-12" ng-show="authentication.user"></header>
+<body class="ng-cloak">
+  <!-- container-fluid -->
+  <section class="" ng-controller="HomeController">
+    <header id="header" ng-include="'/modules/core/client/views/header.client.view.html'" class="navbar nav-tabs col-xs-12" ng-show="authentication.user"></header>
       {% block content %}{% endblock %}
   </section>
 

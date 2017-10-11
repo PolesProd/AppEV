@@ -1,10 +1,45 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+body{
+  width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans', sans-serif;
+}
+#header{
+  background: rgb(1,152,181);
+  background: -moz-linear-gradient(top, rgba(1,152,181,1) 0%, rgba(0,101,97,1) 100%);
+  background: -webkit-linear-gradient(top, rgba(1,152,181,1) 0%,rgba(0,101,97,1) 100%);
+  background: linear-gradient(to bottom, rgba(1,152,181,1) 0%,rgba(0,101,97,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0198b5', endColorstr='#006561',GradientType=0 );
+  color: white;
+}
+.nav-link a, .user-header-dropdown-toggle span {
+  color: white;
+}
+#header h1{
+  text-transform: uppercase;
+  margin-top: 4%;
+  color: white;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+}
 /*Layout*/
 .navbar {
   float: right;
-  font-family: 'Merriweather', serif;
+  /*font-family: 'PT Sans', sans-serif;*/
+  margin-bottom: 10px;
 }
+.navbar-brand{
+  float: right;
 
+}
+.navbar-brand img{
+  width: 100%;
+}
 .container{
   max-width: 100%;
 }
@@ -18,15 +53,46 @@
 .navbar-header{
   float: none;
 }
-
-.nav-tabs > li > a{
-  border-top-left-radius: 50%;
-  border-top-right-radius: 50%;
-  border-top: 0.5px solid #FFE001;
-  border-left: 0.5px solid #FFE001;
-  border-right: 0.5px solid #FFE001;
+.navbar-collapse{
+  padding-left: 0;
 }
-
+.nav-tabs{
+  border-bottom: none;
+}
+.nav-tabs > li > a{
+  text-transform: uppercase;
+  border: 4px solid #af8f5c;
+}
+.nav-tabs > li.open > a{
+  color: #af8f5c;
+  border: 4px solid #af8f5c;
+  border-bottom: white;
+}
+.nav-tabs > li.active > a{
+  border-bottom: white;
+}
+.nav-tabs > li.open:hover > a{
+  color: #af8f5c;
+  border: 4px solid #af8f5c;
+  border-bottom: white;
+}
+h2.text-center.ng-binding{
+  margin-top: 0;
+}
+/* Hover state */
+#header .nav-tabs > li > a:hover{
+  color: #af8f5c;
+}
+.nav-tabs > li > a:hover{
+  color: #af8f5c;
+  background-color: #fff;
+  border: 4px solid #af8f5c;
+}
+.user-header-dropdown-toggle span{
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2em;
+}
 .navbar-nav {
   float: none;
 }
@@ -82,8 +148,7 @@
   right: 10em;
   bottom: 50px;
 }
-
-MEDIA QUERIES
+/* MEDIA QUERIES */
 @media screen and (min-width: 760px) {
   header.navbar.navbar-inverse.ng-scope{
     width: 50%;
@@ -98,13 +163,15 @@ MEDIA QUERIES
   }
 }
 /* Accordeon des sites */
-div[class*='col-'] {
+/*div[class*='col-'] {
   padding: 0 30px;
-}
+}*/
 
 .wrap {
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
+  /*box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;*/
+  overflow-y: scroll;
+  max-height: 83vh;
 }
 
 a:focus,
@@ -125,7 +192,9 @@ a:active {
 .panel:last-child {
   border-bottom: none;
 }
-
+.panel-group{
+  margin-bottom: 0;
+}
 .panel-group > .panel:first-child .panel-heading {
   border-radius: 4px 4px 0 0;
 }
@@ -224,3 +293,12 @@ a:active {
   transform: rotate(0deg);
   transition: all 0.5s;
 }
+#map-container{
+  padding-left: 30px;
+}
+/*#map-container {
+  position: fixed;
+}
+#map-container h1{
+  font-size: 25px;
+}*/

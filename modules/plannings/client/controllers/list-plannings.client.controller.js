@@ -28,7 +28,7 @@
 
     // Créer les icones d'actions'
     var actions = [{
-      
+
     }];
 
     // Récupère les plannings depuis la base de donnée
