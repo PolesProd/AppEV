@@ -10,8 +10,7 @@ module.exports = {
         'public/lib/leaflet.modal/dist/leaflet.modal.min.css',
         'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700',
         'https://fonts.googleapis.com/icon?family=Material+Icons',
-        'public/lib/angular-material/angular-material.min.css',
-        'public/lib/ng-table/ng-table.min.css'
+        'public/lib/angular-material/angular-material.min.css'
       ],
       js: [
         'public/lib/moment/min/moment.min.js',
@@ -31,6 +30,7 @@ module.exports = {
         'public/lib/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js',
         'public/lib/angular/angular-locale_fr-fr.js',
         'public/lib/jquery/dist/jquery.min.js',
+        'public/lib/angular-smart-table/dist/smart-table.min.js',
         'public/lib/bootstrap/dist/js/bootstrap.js',
         'public/lib/angular-ui-utils/ui-utils.js',
         'public/lib/angular-file-upload/angular-file-upload.js',

@@ -22,21 +22,12 @@
     "angular-moment": "^1.0.1",
     "angular-sanitize": "^1.6.5",
     "angular-cookies": "^1.6.5",
-    "owl.carousel": "^2.2.1",
     "angular-material": "^1.1.4",
     "angular-aria": "^1.6.6",
-    "eonasdan-bootstrap-datetimepicker": "^4.17.47",
-    "ngtouch": "^1.0.2",
-    "ng-table": "^4.0.0",
-    "angular-formly": "^8.4.1",
-    "angular-formly-templates-bootstrap": "^6.3.2",
-    "api-check": "^7.5.5",
-    "angular-route": "^1.6.6"
+    "angular-smart-table": "^2.1.8"
   },
   "resolutions": {
     "angular": "~1.3"
   },
-  "devDependencies": {
-    "angular-bootstrap-multiselect": "https://github.com/bentorfs/angular-bootstrap-multiselect.git#^1.1.10"
-  }
+  "devDependencies": {}
 }
