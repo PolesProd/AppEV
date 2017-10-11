@@ -47,25 +47,25 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
   });
 
   // Paramétrage du carousel
-  $('.owl-carousel').owlCarousel({
-    loop: true,
-    margin: 10,
-    nav: true,
-    responsive: {
-      0: {
-        items: 1
-      },
-      600: {
-        items: 3
-      },
-      1000: {
-        items: 5
-      }
-    },
-    autoplay: true,
-    autoplayTimeout: 1000,
-    autoplayHoverPause: true
-  });
+  // $('.owl-carousel').owlCarousel({
+  //   loop: true,
+  //   margin: 10,
+  //   nav: true,
+  //   responsive: {
+  //     0: {
+  //       items: 1
+  //     },
+  //     600: {
+  //       items: 3
+  //     },
+  //     1000: {
+  //       items: 5
+  //     }
+  //   },
+  //   autoplay: true,
+  //   autoplayTimeout: 1000,
+  //   autoplayHoverPause: true
+  // });
 
   /*$(document).ready(function() {
     $('.collapse.in').prev('.panel-heading').addClass('active');
@@ -77,7 +77,7 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
         $(a.target).prev('.panel-heading').removeClass('active');
       });
   });*/
-    
+
   // On récupère les données geo des sites depuis un fichier json
   $http.get('modules/core/client/json/sites.json').then(function (response) {
 
@@ -94,48 +94,55 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
 
       // Explore le tableau des sites
       onEachFeature: function (feature, layer){
-        layer.on({
-          click: function showResultsInDiv() {
-            console.log( document.getElementsByClassName('panel-collapse') );
+        // layer.on({
+        //   click: function showResultsInDiv(){
+        //     var zoneMap = feature.properties.ID
+        //     zoneMap = document.getElementById(zoneMap);
+        //     zoneMap.previousElementSibling.classList.add('active');
+        //     zoneMap.classList.add('collapsing');
 
-
-            var d = document.getElementById('map-info');
-            var siteImg, siteInfos, siteTitle, siteNum = '';
-            var titleH1 = document.getElementById('map-info').parentElement.getElementsByTagName('h1')[0];
-
-            for (var content in feature.properties){
-              if(content === 'image'){
-                siteImg = '<p class="siteInfos">' + feature.properties[content] + '</p>';
-              } else if(content === 'description'){
-                siteInfos += '<p class="siteInfos"><span> Taches à accomplire sur le site : </span>' + feature.properties[content] + '</p>';
-              } else if(content === 'ID'){
-                siteNum += '<p class="siteInfos"><span> Numéro du site : </span>' + feature.properties[content] + '</p>';
-              } else if(content === 'nom'){
-                titleH1.innerHTML = feature.properties[content];
-              } else{
-                siteInfos += '<p class="siteInfos"><span>' + content + ': </span>' + feature.properties[content] + '</p>';
-              }
-            }
-            d.innerHTML = siteNum + siteImg + siteInfos;
-
-            // Mise en surbrillance du site au clique
-            function lotsHighlighting (e) {
-              var selected;
-
-              if (layer.feature.geometry.type === 'Polygon' || 'MultiPolygon') {
-                if (selected) {
-                  layer.setStyle({
-                    fillColor:'#2ABB0B',
-                    dashArray: '3'
-                  });
-                }
-              }
-            }
-            lotsHighlighting();
-          }
-        });
+        //     setTimeout(function() {
+        //        zoneMap.classList.remove('collapsing');
+        //        zoneMap.classList.add('in');
+        //       }, 500);
+        //       console.log([zoneMap]);
+        //     var d = document.getElementById('map-info');
+        //     var siteImg, siteInfos, siteTitle, siteNum = '';
+        //     var titleH1 = document.getElementById('map-info').parentElement.getElementsByTagName('h1')[0];
+        //
+        //     for (var content in feature.properties){
+        //       if(content === 'image'){
+        //         siteImg = '<p class="siteInfos">' + feature.properties[content] + '</p>';
+        //       } else if(content === 'description'){
+        //         siteInfos += '<p class="siteInfos"><span> Taches à accomplire sur le site : </span>' + feature.properties[content] + '</p>';
+        //       } else if(content === 'ID'){
+        //         siteNum += '<p class="siteInfos"><span> Numéro du site : </span>' + feature.properties[content] + '</p>';
+        //       } else if(content === 'nom'){
+        //         titleH1.innerHTML = feature.properties[content];
+        //       } else{
+        //         siteInfos += '<p class="siteInfos"><span>' + content + ': </span>' + feature.properties[content] + '</p>';
+        //       }
+        //     }
+        //     d.innerHTML = siteNum + siteImg + siteInfos;
+        //
+        //     // Mise en surbrillance du site au clique
+        //     function lotsHighlighting (e) {
+        //       var selected;
+        //
+        //       if (layer.feature.geometry.type === 'Polygon' || 'MultiPolygon') {
+        //         if (selected) {
+        //           layer.setStyle({
+        //             fillColor:'#2ABB0B',
+        //             dashArray: '3'
+        //           });
+        //         }
+        //       }
+        //     }
+        //     lotsHighlighting();
+        //   }
+        // });
       },
-      
+
       pointToLayer: function (feature, latlng) {
         var arbre = feature.geometry.type;
         var leaf_icon = L.icon({

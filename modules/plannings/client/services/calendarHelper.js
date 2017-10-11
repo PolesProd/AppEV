@@ -4,7 +4,6 @@ angular
   .module('plannings')
   .factory('alert', function($modal) {
     function show(action, event) {
-      console.log('calendarHelper s\'execute');
       return $modal.open({
         templateUrl: 'modules/plannings/client/views/planning-calendar-modal.client.view.html',
         controller: function() {

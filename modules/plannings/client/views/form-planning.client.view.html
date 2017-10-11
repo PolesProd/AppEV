@@ -7,9 +7,9 @@
       <fieldset>
         <div class="form-group" show-errors>
           <label class="control-label" for="week">Nom:</label>
-          <input name="name" type="text" class="form-control" id="name" ng-model="vm.planning.name" id="name" required>
+          <input name="name" type="text" class="form-control" ng-model="vm.planning.name" id="name" required>
           <div ng-messages="vm.form.planningForm.name.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Ajouter un nom.</p>
+            <p class="help-block error-text" ng-message="required">requis.</p>
           </div>
         </div>
 
@@ -17,13 +17,13 @@
           <label class="control-label" for="week">Début:</label>
           <input name="start" type="date" class="form-control" id="start" ng-model="vm.planning.start" id="start" required>
           <div ng-messages="vm.form.planningForm.start.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Ajouter une semaine.</p>
+            <p class="help-block error-text" ng-message="required">requis.</p>
           </div>
 
           <label class="control-label" for="week">Fin:</label>
           <input name="end" type="date" class="form-control" id="end" ng-model="vm.planning.end" id="end" required>
           <div ng-messages="vm.form.planningForm.end.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Ajouter une semaine.</p>
+            <p class="help-block error-text" ng-message="required">requis.</p>
           </div>
         </div>
 
@@ -36,21 +36,21 @@
             </option>
           </select>
 
-          <div ng-messages="vm.form.employeForm.team.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Equipe requise.</p>
+          <div ng-messages="vm.form.planningForm.team.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">requis.</p>
           </div>
         </div>
 
         <div class="form-group" show-errors>
-          <label class="control-label" for="sites">Site:</label>
+          <label class="control-label" for="site">Site:</label>
           <select name="site" ng-model="vm.planning.site" id="site" class="form-control">
             <option value="" disabled selected>Choisissez un Site</option>
             <option value="{{ site.properties.nom }}" ng-repeat="site in sitesList">
                 {{ site.properties.nom }}
             </option>
           </select>
-          <div ng-messages="vm.form.teamForm.sites.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Site requis.</p>
+          <div ng-messages="vm.form.planningForm.site.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">requis.</p>
           </div>
         </div>
 
@@ -58,7 +58,7 @@
           <label class="control-label" for="tasks">Tâches à réaliser:</label>
           <input name="tasks" type="text" ng-model="vm.planning.tasks" id="tasks" class="form-control" placeholder="Ex: Désherbage..." required>
           <div ng-messages="vm.form.planningForm.tasks.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Ajouter des tâches.</p>
+            <p class="help-block error-text" ng-message="required">requis.</p>
           </div>
         </div>
 

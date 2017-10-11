@@ -7,16 +7,16 @@ module.exports = {
         'public/lib/bootstrap/dist/css/bootstrap.css',
         'public/lib/bootstrap/dist/css/bootstrap-theme.css',
         'public/lib/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css',
-        'public/lib/owl.carousel/dist/assets/owl.carousel.min.css',
         'public/lib/leaflet.modal/dist/leaflet.modal.min.css',
         'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700',
         'https://fonts.googleapis.com/icon?family=Material+Icons',
-        'public/lib/angular-material/angular-material.min.css'
+        'public/lib/angular-material/angular-material.min.css',
+        'public/lib/ng-table/ng-table.min.css'
       ],
       js: [
         'public/lib/moment/min/moment.min.js',
         'public/lib/interactjs/dist/interact.min.js',
-        'public/lib/angular/angular.js',
+        'public/lib/angular/angular.min.js',
         'public/lib/angular-messages/angular-messages.js',
         'public/lib/angular-moment/angular-moment.min.js',
         'public/lib/angular-sanitize/angular-sanitize.min.js',
@@ -32,8 +32,6 @@ module.exports = {
         'public/lib/angular/angular-locale_fr-fr.js',
         'public/lib/jquery/dist/jquery.min.js',
         'public/lib/bootstrap/dist/js/bootstrap.js',
-        'public/lib/owl.carousel/dist/owl.carousel.min.js',
-        'public/lib/angular-smart-table/dist/smart-table.min.js',
         'public/lib/angular-ui-utils/ui-utils.js',
         'public/lib/angular-file-upload/angular-file-upload.js',
         'public/lib/angular-leaflet-directive/dist/angular-leaflet-directive.min.js',

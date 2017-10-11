@@ -2,11 +2,11 @@
   <h3 class="modal-title">{{vm.event.title}}</h3>
 </div>
 <div class="modal-body">
-  <p class="planningInfos">{{ vm.event.startsAt }}</p>
-  <p class="planningInfos">{{ vm.event.endsAt }}</p>
-  <p class="planningInfos">{{ vm.event.team }}</p>
-  <p class="planningInfos">{{ vm.event.site }}</p>
-  <p class="planningInfos">{{ vm.event.tasks }}</p>
+  <p class="planningInfos" ng-bind="vm.event.startsAt | date: 'yyyy-MM-dd'"></p>
+  <p class="planningInfos" ng-bind="vm.event.endsAt | date: 'yyyy-MM-dd'"></p>
+  <p class="planningInfos" ng-bind="vm.event.team"></p>
+  <p class="planningInfos" ng-bind="vm.event.site"></p>
+  <p class="planningInfos" ng-bind="vm.event.tasks"></p>
 </div>
 <div class="modal-footer">
   <button class="btn btn-primary" ng-click="$close()">OK</button>

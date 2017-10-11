@@ -34,7 +34,6 @@ module.exports = {
         'public/lib/jquery/dist/jquery.min.js',
         'public/lib/bootstrap/dist/js/bootstrap.js',
         'public/lib/owl.carousel/dist/owl.carousel.min.js',
-        'public/lib/angular-smart-table/dist/smart-table.min.js',
         'public/lib/angular-ui-utils/ui-utils.js',
         'public/lib/angular-file-upload/angular-file-upload.js',
         'public/lib/angular-leaflet-directive/dist/angular-leaflet-directive.min.js',

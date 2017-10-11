@@ -12,6 +12,7 @@ var mongoose = require('mongoose'),
 var EmployeSchema = new Schema({
   lastname: { type: String, default: '', required: 'Nom requis', trim: true },
   firstname: { type: String, default: '', required: 'Prénom requis' },
+  profileImageURL: { type: String, default: 'modules/users/client/img/profile/default.png' },
   email: { type: String, default: '', required: 'Email requis' },
   number: { type: String, default: 'Aucun', required: 'Numéro requis' },
   team: { type: String, default: 'Par Défaut' },

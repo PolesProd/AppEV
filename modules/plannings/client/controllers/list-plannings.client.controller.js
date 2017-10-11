@@ -28,7 +28,7 @@
 
     // Créer les icones d'actions'
     var actions = [{
-      
+
     }];
 
     // Récupère les plannings depuis la base de donnée
@@ -62,19 +62,19 @@
     vm.cellIsOpen = false;
 
     vm.eventClicked = function(event) {
-      alert.show('Clique', event);
+      alert.show('', event);
     };
 
     vm.eventEdited = function(event) {
-      alert.show('Mis à jojur', event);
+      alert.show('', event);
     };
 
     vm.eventDeleted = function(event) {
-      alert.show('Supprimer', event);
+      alert.show('', event);
     };
 
     vm.eventTimesChanged = function(event) {
-      alert.show('Déplacer ou Redimensionner', event);
+      alert.show('', event);
     };
 
     vm.toggle = function($event, field, event) {
