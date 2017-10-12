@@ -29,8 +29,8 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
     },
     legend: {
       position: 'bottomright',
-      colors: [ '#ff0000', '#28c9ff', '#0000ff', '#ecf386' ],
-      labels: [ 'Légende 1', 'Légende 2', 'Légende 3', 'Légende 4' ]
+      colors: [ '#2F8E25', '#28c9ff' ],
+      labels: [ 'Site ordinaire', 'Gestion' ]
     }
   });
 
