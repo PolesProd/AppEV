@@ -1,4 +1,4 @@
-'use strict';
+/*'use strict';
 
 // Configuration du module employé
 angular
@@ -10,4 +10,4 @@ angular
 				state: 'admin.employes'
 			});
 		}
-	]);
+	]);*/
