@@ -12,6 +12,12 @@ exports.renderIndex = function (req, res, next) {
   });
 };
 
+exports.renderEcocert = function (req, res, next) {
+  res.render('modules/core/client/views/ecocert', {
+    user: req.user
+  });
+};
+
 /**
 * Render the server error page
 */
@@ -52,7 +58,7 @@ exports.sendMail = function (req, res) {
 
   transporter.sendMail({
     from: data.contactEmail,
-    to: 'samba4292@gmail.com',
+    to: 'abdoulaye.diarra@lepoles.com',
     subject: 'Message de: ' + data.contactName,
     text: data.contactMsg
   });

@@ -1,4 +1,4 @@
-'use strict';
+/*'use strict';
 
 angular.module('inventories').run(['Menus',
   function (Menus) {
@@ -21,3 +21,4 @@ angular.module('inventories').run(['Menus',
     });
   }
 ]);
+*/

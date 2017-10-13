@@ -21,6 +21,14 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         roles: ['user', 'admin']
       }
     })
+    .state('ecocert', {
+      url: '/ecocert',
+      templateUrl: 'modules/core/client/views/ecocert.client.view.html',
+      authRequired: true,
+      data: {
+        roles: ['user', 'admin']
+      }
+    })
     .state('not-found', {
       url: '/not-found',
       templateUrl: 'modules/core/client/views/404.client.view.html',

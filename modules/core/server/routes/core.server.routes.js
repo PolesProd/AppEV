@@ -12,5 +12,6 @@ module.exports = function (app) {
 
   // Define application route
   app.route('/*').get(core.renderIndex);
+  app.route('/ecocert').get(core.renderEcocert);
   app.route('/*').post(core.sendMail);
 };

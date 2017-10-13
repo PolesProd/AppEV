@@ -10,7 +10,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/la-coulee-verte-2.jpg' alt='la coulée verte' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/la-coulee-verte-3.jpg' alt='la coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige, rustique et naturel)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes et rosiers</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "ecocert"
     },
     "geometry": {
       "type": "Polygon",
@@ -70,7 +71,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/avenue-verdun-emmaus-2.jpg' alt='verdun emmaüs' class='image'/>",
       "image2": "<img src='modules/core/client/img/photoSite/avenue-verdun-emmaus-3.jpg' alt='verdun emmaüs' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige, rustique et naturel)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes et vivaces</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type": "Polygon",
@@ -94,7 +96,8 @@
       "image1": "<img src='modules/core/client/img/photoSite/avenue-verdun-2.jpg' alt='avenue de verdun'class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/avenue-verdun.jpg' alt='avenue de verdun' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses(prestige)</li><li class='tache'>Binage du pied des arbres(jusqu’à des aménagements à réaliser)</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes et vivaces</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type": "Polygon",
@@ -117,7 +120,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/allee-du-chemin-vert.jpg' alt='la coulée verte' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/avenue-verdun.jpg' alt='la coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type": "Polygon",
@@ -207,7 +211,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/allee-du-chemin-vert.jpg' alt='la coulée verte' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/avenue-verdun.jpg' alt='la coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige et rustique)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type": "Polygon",
@@ -238,7 +243,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/allee-du-chemin-vert.jpg' alt='la coulée verte' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/avenue-verdun.jpg' alt='la coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige, rustique et naturel)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type": "Polygon",
@@ -303,7 +309,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/allee-du-chemin-vert.jpg' alt='la coulée verte' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/avenue-verdun.jpg' alt='la coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige et rustique)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Désherbage des massifs d’arbustes, vivaces et pieds des arbres</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type": "Polygon",
@@ -333,7 +340,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/allee-du-chemin-vert.jpg' alt='la coulée verte' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/avenue-verdun.jpg' alt='la coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type":"MultiPolygon",
@@ -368,7 +376,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/allee-du-chemin-vert.jpg' alt='la coulée verte' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/avenue-verdun.jpg' alt='la coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tontes des pelouses (prestige)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes et de plantes vivaces</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type":"MultiPolygon",
@@ -409,7 +418,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/allee-du-chemin-vert.jpg' alt='la coulée verte' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/avenue-verdun.jpg' alt='la coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige)</li><li class='tache'>Taille des arbustes</li><li class='tache'> Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes et vivaces</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type": "Polygon",
@@ -439,7 +449,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/square-abbe-pierre-normandie-2.jpg' alt='square Abbé Pierre' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/square-abbe-pierre-normandie-3.jpg' alt='square Abbé Pierre' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes et vivaces</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "ecocert"
     },
     "geometry": {
       "type": "Polygon",
@@ -466,7 +477,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/allee-du-chemin-vert.jpg' alt='la coulée verte' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/avenue-verdun.jpg' alt='la coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes et vivaces</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type": "Polygon",
@@ -499,7 +511,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/allee-du-chemin-vert.jpg' alt='la coulée verte' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/avenue-verdun.jpg' alt='la coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige et rustique)</li><li class='tache'>Taille des arbustes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Nettoyage des aires stabilisées </li><li class='tache'>Désherbage des massifs d’arbustes, vivaces et pieds des arbres</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type": "Polygon",
@@ -527,7 +540,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/allee-du-chemin-vert.jpg' alt='la coulée verte' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/avenue-verdun.jpg' alt='la coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes</li><li class='tache'>Désherbage des massifs d’arbustes, vivaces et pieds des arbres</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type": "Polygon",
@@ -575,7 +589,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/rue-du-haut-de-la-noue-2.jpg' alt='rue du haut de la noue' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/rue-du-haut-de-la-noue-3.jpg' alt='rue du haut de la noue' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige)</li><li class='tache'>Binage du pied des arbres</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes et vivaces</li><li class='tache'>Désherbage des massifs d’arbustes, vivaces et pieds des arbres</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type": "Polygon",
@@ -625,7 +640,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/square-pasteur-2.jpg' alt='square pasteur' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/square-pasteur-3.jpg' alt='square pasteur' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige)</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes et vivaces</li><li class='tache'>Désherbage des massifs d’arbustes, vivaces et pieds des arbres</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type": "Polygon",
@@ -659,7 +675,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/allee-du-chemin-vert.jpg' alt='la coulée verte' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/avenue-verdun.jpg' alt='la coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige, rustique et naturel)</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type": "Polygon",
@@ -714,7 +731,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/allee-du-chemin-vert.jpg' alt='la coulée verte' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/avenue-verdun.jpg' alt='la coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige et rustique)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Désherbage des massifs d’arbustes</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type":"MultiPolygon",
@@ -799,7 +817,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/allee-du-chemin-vert.jpg' alt='la coulée verte' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/avenue-verdun.jpg' alt='la coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des aires stabilisées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type": "Polygon",
@@ -824,7 +843,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/allee-du-chemin-vert.jpg' alt='la coulée verte' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/avenue-verdun.jpg' alt='la coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type":"MultiPolygon",
@@ -851,7 +871,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/allee-du-chemin-vert.jpg' alt='la coulée verte' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/avenue-verdun.jpg' alt='la coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses (prestige)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes et vivaces</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type":"Polygon",
@@ -879,7 +900,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/allee-du-chemin-vert.jpg' alt='la coulée verte' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/avenue-verdun.jpg' alt='la coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Nettoyage des feuilles et déchets divers dans les allées</li><li class='tache'>Désherbage des allées</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type": "Polygon",
@@ -910,7 +932,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/allee-du-chemin-vert.jpg' alt='la coulée verte' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/avenue-verdun.jpg' alt='la coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Entretien des massifs de plantes vivaces (au niveau de la chaussée)</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes, vivaces et couvre sol</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type": "Polygon",
@@ -941,7 +964,8 @@
       "image4": "<img src='modules/core/client/img/photoSite/chemin-des-reniers-4.jpg' alt='chemin des reniers' class='image'/>",
       "image5": "<img src='modules/core/client/img/photoSite/chemin-des-reniers-5.jpg' alt='chemin des reniers' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses(rustique et naturel)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Entretien des massifs d’arbustes</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type": "Polygon",
@@ -974,7 +998,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/vieux-chemin-de-saint-denis-2.jpg' alt='vieux chemin de saint-denis' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/vieux-chemin-de-saint-denis-3.jpg' alt='vieux chemin de saint-denis' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses(rustique et naturel)</li><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Désherbage physique sans utilisation de produits phytosanitaires de synthèse des massifs d’arbustes et des parties minérales</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type": "Polygon",
@@ -1013,7 +1038,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/square-madiesse-2.jpg' alt='square madiesse' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/square-madiesse-3.jpg' alt='square madiesse' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Désherbage physique sans utilisation de produits phytosanitaires de synthèse des massifs d’arbustes et des parties minérales</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type": "Polygon",
@@ -1036,7 +1062,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/allee-du-chemin-vert.jpg' alt='la coulée verte' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/avenue-verdun.jpg' alt='la coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses(prestige, rustique et naturel)</li><li class='tache'>Taille des arbustes</li><li class='tache'>Taille des haies</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Désherbage des massifs d’arbustes, vivaces et pieds des arbres et des parties minérales</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type": "Polygon",
@@ -1093,7 +1120,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/allee-du-chemin-vert.jpg' alt='la coulée verte' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/avenue-verdun.jpg' alt='la coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses(prestige, rustique et naturel)</li><li class='tache'>Taille des arbustes</li><li class='tache'>Taille des haies</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Désherbage des massifs d’arbustes, vivaces et pieds des arbres et des parties minérales</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type": "Polygon",
@@ -1136,7 +1164,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/allee-du-chemin-vert.jpg' alt='la coulée verte' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/avenue-verdun.jpg' alt='la coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Désherbage physique sans utilisation de produits phytosanitaires de synthèse des massifs d’arbustes et des parties minérales</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type": "Polygon",
@@ -1165,7 +1194,8 @@
         "image2": "<img src='modules/core/client/img/photoSite/allee-du-chemin-vert.jpg' alt='la coulée verte' class='image'/>",
         "image3": "<img src='modules/core/client/img/photoSite/avenue-verdun.jpg' alt='la coulée verte' class='image'/>",
         "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Taille des haies</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des branches et brindilles</li><li class='tache'>Désherbage physique sans utilisation de produits phytosanitaires de synthèse des massifs d’arbustes et des parties minérales</li></ul></div>"
- ,       "*": "<p>Les valeurs sont approximatives."
+ ,       "*": "<p>Les valeurs sont approximatives.",
+ "gestion": "normal"
       },
       "geometry": {
         "type": "Polygon",
@@ -1188,7 +1218,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/allee-du-chemin-vert.jpg' alt='la coulée verte' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/avenue-verdun.jpg' alt='la coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses(prestige, rustique et naturel)</li><li class='tache'>Taille des haies (ces haies sont progressivement supprimées)</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Désherbage des massifs d’arbustes et des parties minérales</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type": "Polygon",
@@ -1228,7 +1259,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/allee-du-chemin-vert.jpg' alt='la coulée verte' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/avenue-verdun.jpg' alt='la coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses(prestige et rustique)</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Désherbage des massifs d’arbustes et des parties minérales</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type": "MultiPolygon",
@@ -1289,7 +1321,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/allee-du-chemin-vert.jpg' alt='la coulée verte' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/avenue-verdun.jpg' alt='la coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses(prestige et rustique)</li><li class='tache'>Taille des arbustes</li><li class='tache'>Nettoyage des fleurs fanées, plantes vivaces et branches mortes</li><li class='tache'>Ramassage des feuilles, branches et brindilles</li><li class='tache'>Désherbage des massifs d’arbustes, vivaces et pieds des arbres</li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type":"MultiPolygon",
@@ -1315,7 +1348,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/allee-du-chemin-vert.jpg' alt='la coulée verte' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/avenue-verdun.jpg' alt='la coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses(prestige et rustique)</li><li class='tache'>Taille des arbustes</li><li class='tache'>Ramassage des branches et brindilles</li>Entretien des massifs d’arbustes, vivaces et pieds des arbres<li class='tache'></li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type": "Polygon",
@@ -1357,7 +1391,8 @@
       "image2": "<img src='modules/core/client/img/photoSite/allee-du-chemin-vert.jpg' alt='la coulée verte' class='image'/>",
       "image3": "<img src='modules/core/client/img/photoSite/avenue-verdun.jpg' alt='la coulée verte' class='image'/>",
       "description": "<div class='siteInfo'><ul class='listTache'><li class='tache'>Tonte des pelouses(prestige et rustique)</li><li class='tache'>Taille des arbustes</li><li class='tache'>Ramassage des branches et brindilles</li>Entretien des massifs d’arbustes, vivaces et pieds des arbres<li class='tache'></li></ul></div>",
-      "*": "<p>Les valeurs sont approximatives."
+      "*": "<p>Les valeurs sont approximatives.",
+      "gestion": "normal"
     },
     "geometry": {
       "type": "Polygon",

@@ -22,10 +22,13 @@ angular
 
 			this.sendMail = function() {
 				var data = ({
+					contactSite: this.contactSite,
 					contactName: this.contactName,
 					contactEmail: this.contactEmail,
 					contactMsg: this.contactMsg
 				});
+
+				console.log(data);
 
 				// Demande POST(transmission de données):
 				$http.post('/contact', data).success(function(data, status, headers, config) {
@@ -46,3 +49,4 @@ angular
 			};
 		}
 	]);
+	

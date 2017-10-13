@@ -1,4 +1,4 @@
-'use strict';
+/*'use strict';
 
 angular.module('employes').run(['Menus',
 function (Menus) {
@@ -19,3 +19,4 @@ function (Menus) {
     roles: ['admin']
   });
 }]);
+*/
