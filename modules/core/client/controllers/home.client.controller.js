@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('core').controller('HomeController', ['$scope', '$http', 'Authentication', 'leafletData', 'LotsService',
-function ($scope, $http, Authentication, leafletData, LotsService) {
+angular.module('core').controller('HomeController', ['$scope', '$http', 'Authentication', 'leafletData', 'LotsService', '$timeout',
+function ($scope, $http, Authentication, leafletData, LotsService, $timeout) {
   var vm = this;
   // Cela fournit un contexte d'authentification.
   $scope.authentication = Authentication;
@@ -91,49 +91,57 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
         dashArray: '1',
         fillOpacity: 0.7
       },
-
+      /* angular.element('#myselector').triggerHandler('click') */
       // Explore le tableau des sites
       onEachFeature: function (feature, layer){
-        // layer.on({
-        //   click: function showResultsInDiv(){
-        //     console.log( document.getElementsByClassName('panel-collapse') );
-        //
-        //
-        //     var d = document.getElementById('map-info');
-        //     var siteImg, siteInfos, siteTitle, siteNum = '';
-        //     var titleH1 = document.getElementById('map-info').parentElement.getElementsByTagName('h1')[0];
-        //
-        //     for (var content in feature.properties){
-        //       if(content === 'image'){
-        //         siteImg = '<p class="siteInfos">' + feature.properties[content] + '</p>';
-        //       } else if(content === 'description'){
-        //         siteInfos += '<p class="siteInfos"><span> Taches à accomplire sur le site : </span>' + feature.properties[content] + '</p>';
-        //       } else if(content === 'ID'){
-        //         siteNum += '<p class="siteInfos"><span> Numéro du site : </span>' + feature.properties[content] + '</p>';
-        //       } else if(content === 'nom'){
-        //         titleH1.innerHTML = feature.properties[content];
-        //       } else{
-        //         siteInfos += '<p class="siteInfos"><span>' + content + ': </span>' + feature.properties[content] + '</p>';
-        //       }
-        //     }
-        //     d.innerHTML = siteNum + siteImg + siteInfos;
-        //
-        //     // Mise en surbrillance du site au clique
-        //     function lotsHighlighting (e) {
-        //       var selected;
-        //
-        //       if (layer.feature.geometry.type === 'Polygon' || 'MultiPolygon') {
-        //         if (selected) {
-        //           layer.setStyle({
-        //             fillColor:'#2ABB0B',
-        //             dashArray: '3'
-        //           });
-        //         }
-        //       }
-        //     }
-        //     lotsHighlighting();
-        //   }
-        // });
+
+        layer.on({
+          click: function showResultsInDiv(){
+            var zoneMap = feature.properties.ID
+            zoneMap = document.getElementById(zoneMap);
+
+            if( zoneMap.attributes[2].nodeValue == 'false' ){
+              // fermeture de tous les elements ouverts si il y en a
+              var pan = document.getElementsByClassName('panel-collapse')
+              for(var i = 0; i<pan.length; i++){
+                if(pan[i].attributes[2].nodeValue == 'true')
+
+                pan[i].previousElementSibling.classList.remove('active')
+                pan[i].classList.remove('in');
+                pan[i].attributes[2].nodeValue = 'false'
+              }
+              // Scroll to element in div
+              $('#accordion').animate({
+                scrollTop: $('#'+feature.properties.ID).prev()[0].offsetTop
+              }, 500);
+
+              // ouverture de la div de la zone selectionné
+              zoneMap.previousElementSibling.classList.add('active');
+              zoneMap.classList.add('collapsing');
+              zoneMap.style.height = '';
+              zoneMap.attributes[2].nodeValue = 'true';
+
+
+              setTimeout(function() {
+                zoneMap.classList.remove('collapsing');
+                zoneMap.classList.add('in');
+              }, 500);
+
+            } else {
+              // Si on reclique sur sur la meme div fermeture de la cible.
+              var pan = document.getElementsByClassName('panel-collapse')
+              for(var i = 0; i<pan.length; i++){
+                if(pan[i].attributes[2].nodeValue == 'true')
+
+                pan[i].previousElementSibling.classList.remove('active')
+                pan[i].classList.remove('in');
+                pan[i].attributes[2].nodeValue = 'false'
+              }
+            }
+
+            console.log('#'+zoneMap);
+          }
+        });
       },
 
       pointToLayer: function (feature, latlng) {

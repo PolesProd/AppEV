@@ -16,7 +16,9 @@ module.exports = {
       js: [
         'public/lib/moment/min/moment.min.js',
         'public/lib/interactjs/dist/interact.min.js',
+        'public/lib/jquery/dist/jquery.min.js',
         'public/lib/angular/angular.js',
+        'public/lib/angular-jquery/dist/angular-jquery.min.js',
         'public/lib/angular-messages/angular-messages.js',
         'public/lib/angular-moment/angular-moment.min.js',
         'public/lib/angular-sanitize/angular-sanitize.min.js',
@@ -30,7 +32,6 @@ module.exports = {
         'public/lib/angular-i18n/angular-locale_fr-fr.js',
         'public/lib/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js',
         'public/lib/angular/angular-locale_fr-fr.js',
-        'public/lib/jquery/dist/jquery.min.js',
         'public/lib/bootstrap/dist/js/bootstrap.js',
         'public/lib/owl.carousel/dist/owl.carousel.min.js',
         'public/lib/angular-smart-table/dist/smart-table.min.js',
