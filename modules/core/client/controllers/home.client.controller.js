@@ -71,16 +71,49 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
         layer.on({
           click: function showResultsInDiv(){
 
-            var zoneMap = feature.properties.ID;
+            var zoneMap = feature.properties.ID
             zoneMap = document.getElementById(zoneMap);
-            zoneMap.previousElementSibling.classList.add('active');
-            zoneMap.classList.add('collapsing');
 
-            setTimeout(function() {
-               zoneMap.classList.remove('collapsing');
-               zoneMap.classList.add('in');
+            if( zoneMap.attributes[2].nodeValue == 'false' ){
+              // fermeture de tous les elements ouverts si il y en a
+              var pan = document.getElementsByClassName('panel-collapse')
+              for(var i = 0; i<pan.length; i++){
+                if(pan[i].attributes[2].nodeValue == 'true')
+
+                pan[i].previousElementSibling.classList.remove('active')
+                pan[i].classList.remove('in');
+                pan[i].attributes[2].nodeValue = 'false'
+              }
+              // Scroll to element in div
+              $('#accordion').animate({
+                scrollTop: $('#' + feature.properties.ID).prev()[0].offsetTop
               }, 500);
-              console.log([zoneMap]);
+
+              // ouverture de la div de la zone selectionné
+              zoneMap.previousElementSibling.classList.add('active');
+              zoneMap.classList.add('collapsing');
+              zoneMap.style.height = '';
+              zoneMap.attributes[2].nodeValue = 'true';
+
+
+              setTimeout(function() {
+                zoneMap.classList.remove('collapsing');
+                zoneMap.classList.add('in');
+              }, 500);
+
+            } else {
+              // Si on reclique sur sur la meme div fermeture de la cible.
+              var pan = document.getElementsByClassName('panel-collapse')
+              for(var i = 0; i<pan.length; i++){
+                if(pan[i].attributes[2].nodeValue == 'true')
+
+                pan[i].previousElementSibling.classList.remove('active')
+                pan[i].classList.remove('in');
+                pan[i].attributes[2].nodeValue = 'false'
+              }
+            }
+
+            console.log('#' + zoneMap);
           }
         });
 
