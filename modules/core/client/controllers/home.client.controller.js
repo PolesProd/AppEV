@@ -112,8 +112,6 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
                 pan[i].attributes[2].nodeValue = 'false'
               }
             }
-
-            console.log('#' + zoneMap);
           }
         });
 
