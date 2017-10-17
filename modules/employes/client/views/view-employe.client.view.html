@@ -1,7 +1,4 @@
 <section>
-  <div class="page-header">
-    <h1 ng-bind="vm.employe.name"></h1>
-  </div>
   <div class="pull-right"
        ng-show="vm.employe.isCurrentUserOwner">
     <a class="btn btn-primary"
@@ -12,7 +9,7 @@
       <i class="glyphicon glyphicon-trash"></i>
     </a>
   </div>
-  <!-- <small>
+  <small>
     <em class="text-muted">
       Publié le
       <span ng-bind="vm.employe.created | date:'mediumDate'"></span>
@@ -21,7 +18,7 @@
             ng-bind="vm.employe.user.displayName"></span>
       <span ng-if="!vm.employe.user">Deleted User</span>
     </em>
-  </small> -->
+  </small>
   <label for="lastname">Nom:</label>
   <p class="lead" name="" ng-bind="vm.employe.lastname"></p>
 

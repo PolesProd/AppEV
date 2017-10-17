@@ -5,9 +5,9 @@
   .module('plannings')
   .controller('PlanningsListController', PlanningsListController);
 
-  PlanningsListController.$inject = ['$scope', 'PlanningsService', 'alert', 'calendarConfig'];
+  PlanningsListController.$inject = ['$scope', '$window', '$state', '$location', 'PlanningsService', 'alert', 'calendarConfig'];
 
-  function PlanningsListController($scope, PlanningsService, alert, calendarConfig) {
+  function PlanningsListController($scope, $window, $state, $location, PlanningsService, alert, calendarConfig) {
     var vm = this;
 
     vm.plannings = PlanningsService.query();
@@ -28,7 +28,17 @@
 
     // Créer les icones d'actions'
     var actions = [{
-
+      label: '<i class=\'glyphicon glyphicon-pencil\'></i>',
+        onClick: function(args) {
+          var id = args.calendarEvent.id;
+          $location.path('/plannings/' + id + '/edit')
+        }
+      }, {
+        label: '<i class=\'glyphicon glyphicon-remove\'></i>',
+        onClick: function(args) {
+          args.calendarEvent.remove();
+          $location.path('/plannings');
+        }
     }];
 
     // Récupère les plannings depuis la base de donnée
@@ -44,6 +54,7 @@
 
         // Crée une vue des plannings dans le calendrier
         $scope.planningView.push({
+          id: data._id,
           title: data.name,
           color: calendarConfig.colorTypes.important,
           startsAt: moment(new Date(data.start)),
@@ -61,17 +72,19 @@
     // Définit si la cellue d'info est ouverte ou pas
     vm.cellIsOpen = false;
 
-    vm.eventClicked = function(event) {
+    /*vm.eventClicked = function(event) {
       alert.show('', event);
     };
 
     vm.eventEdited = function(event) {
       alert.show('', event);
+
+      console.log(id);
     };
 
     vm.eventDeleted = function(event) {
       alert.show('', event);
-    };
+    };*/
 
     vm.eventTimesChanged = function(event) {
       alert.show('', event);

@@ -14,12 +14,17 @@
 
     $scope.rowCollection = [];
     $scope.rowCollection = vm.inventories;
-    $scope.rowCollection.$promise.then(function(resourceArray) {
-      $scope.item = [
-        { filter: resourceArray[0].filter, name: resourceArray[0].name, model: resourceArray[0].model, quantity: resourceArray[0].quantity }
-      ];
+    $scope.rowCollection.$promise.then(function() {
+      var test = angular.forEach($scope.allPlannings, function(data) {
+        $scope.item = [{
+          id: data._id,
+          filter: data.filter,
+          name: data.name,
+          model: data.model,
+          quantity: data.quantity
+        }];
+      });
+      console.log(test);
     });
-    
-    console.log($scope.rowCollection);
   }
 }());

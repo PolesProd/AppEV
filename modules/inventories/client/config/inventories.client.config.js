@@ -1,14 +1,15 @@
-/*'use strict';
+'use strict';
 
 angular.module('inventories').run(['Menus',
   function (Menus) {
     Menus.addMenuItem('topbar', {
       title: 'Inventaire',
       state: 'inventories',
-      type: 'dropdown'
+      type: 'item',
+      roles: ['user', 'admin']
     });
 
-    Menus.addSubMenuItem('topbar', 'inventories', {
+    /*Menus.addSubMenuItem('topbar', 'inventories', {
       title: 'Liste',
       state: 'inventories.list',
       roles: ['user', 'admin']
@@ -18,7 +19,6 @@ angular.module('inventories').run(['Menus',
       title: 'Ajouter',
       state: 'inventories.create',
       roles: ['admin']
-    });
+    });*/
   }
 ]);
-*/
