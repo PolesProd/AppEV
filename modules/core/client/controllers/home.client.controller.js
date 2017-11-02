@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('core').controller('HomeController', ['$scope', '$http', 'Authentication', 'leafletData', 'LotsService',
-function ($scope, $http, Authentication, leafletData, LotsService) {
+angular.module('core').controller('HomeController', ['$scope', '$http', '$location', 'Authentication', 'leafletData', 'LotsService',
+function ($scope, $http, $location, Authentication, leafletData, LotsService) {
   var vm = this;
   // Cela fournit un contexte d'authentification.
   $scope.authentication = Authentication;
@@ -70,19 +70,23 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
         
         layer.on({
           click: function showResultsInDiv(){
+            var url = $location.url();
+            if (url !== '/') {
+              $location.path('');
+            }
 
-            var zoneMap = feature.properties.ID
+            var zoneMap = feature.properties.ID;
             zoneMap = document.getElementById(zoneMap);
 
-            if( zoneMap.attributes[2].nodeValue == 'false' ){
+            if( zoneMap.attributes[2].nodeValue === 'false' ){
               // fermeture de tous les elements ouverts si il y en a
               var pan = document.getElementsByClassName('panel-collapse')
               for(var i = 0; i<pan.length; i++){
-                if(pan[i].attributes[2].nodeValue == 'true')
+                if(pan[i].attributes[2].nodeValue === 'true')
 
-                pan[i].previousElementSibling.classList.remove('active')
+                pan[i].previousElementSibling.classList.remove('active');
                 pan[i].classList.remove('in');
-                pan[i].attributes[2].nodeValue = 'false'
+                pan[i].attributes[2].nodeValue = 'false';
               }
               // Scroll to element in div
               $('#accordion').animate({
@@ -103,13 +107,13 @@ function ($scope, $http, Authentication, leafletData, LotsService) {
 
             } else {
               // Si on reclique sur sur la meme div fermeture de la cible.
-              var pan = document.getElementsByClassName('panel-collapse')
+              var pan = document.getElementsByClassName('panel-collapse');
               for(var i = 0; i<pan.length; i++){
-                if(pan[i].attributes[2].nodeValue == 'true')
+                if(pan[i].attributes[2].nodeValue == 'true');
 
-                pan[i].previousElementSibling.classList.remove('active')
+                pan[i].previousElementSibling.classList.remove('active');
                 pan[i].classList.remove('in');
-                pan[i].attributes[2].nodeValue = 'false'
+                pan[i].attributes[2].nodeValue = 'false';
               }
             }
           }

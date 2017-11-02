@@ -73,50 +73,6 @@ exports.update = function(req, res) {
   });
 };
 
-exports.changeProfilePicture = function (req, res) {
-  var employe = req.employe;
-  var message = null;
-  var multer = require('multer');
-  var config = require(path.resolve('./config/config'));
-  var upload = multer(config.uploads.profileUpload).single('newProfilePicture');
-  var profileUploadFileFilter = require(path.resolve('./config/lib/multer')).profileUploadFileFilter;
-  
-  // Filtering to upload only images
-  upload.fileFilter = profileUploadFileFilter;
-
-  if (employe) {
-    upload(req, res, function (uploadError) {
-      if(uploadError) {
-        return res.status(400).send({
-          message: 'Error occurred while uploading profile picture'
-        });
-      } else {
-        employe.profileImageURL = config.uploads.profileUpload.dest + req.file.filename;
-
-        employe.save(function (saveError) {
-          if (saveError) {
-            return res.status(400).send({
-              message: errorHandler.getErrorMessage(saveError)
-            });
-          } else {
-            req.login(employe, function (err) {
-              if (err) {
-                res.status(400).send(err);
-              } else {
-                res.json(employe);
-              }
-            });
-          }
-        });
-      }
-    });
-  } else {
-    res.status(400).send({
-      message: 'User is not signed in'
-    });
-  }
-};
-
 /**
  * Delete an Employe
  */

@@ -1,7 +1,5 @@
 <section>
-  <div class="page-header">
-    <h1>{{vm.team._id ? 'Modifier équipe' : 'Ajouter équipe'}}</h1>
-  </div>
+  <h1>{{vm.team._id ? 'Modifier équipe' : 'Ajouter équipe'}}</h1>
 
   <div class="col-md-12">
     <form name="vm.form.teamForm" class="form-horizontal" ng-submit="vm.save(vm.form.teamForm.$valid)" novalidate>

@@ -17,10 +17,10 @@ angular.module('employes').factory('EmployesService', ['$resource',
   }
 ]);
 
-angular.module('employes.admin').factory('Admin', ['$resource',
-  function Admin($resource) {
-    return $resource('api/employes/:employeId', {
-      employeId: '@_id'
+angular.module('employes').factory('SignaturesService', ['$resource',
+  function SignaturesService($resource) {
+    return $resource('/api/employes/signatures', {
+      signatureId: '@_id'
     }, {
       update: {
         method: 'PUT'

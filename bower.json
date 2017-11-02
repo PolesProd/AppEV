@@ -25,7 +25,11 @@
     "angular-material": "^1.1.4",
     "angular-aria": "^1.6.6",
     "angular-smart-table": "^2.1.8",
-    "angular-i18n": "^1.6.6"
+    "angular-i18n": "^1.6.6",
+    "angular-formly": "^8.4.1",
+    "angular-formly-templates-bootstrap": "^6.3.2",
+    "ng-table": "^4.0.0",
+    "angular-touch": "^1.6.6"
   },
   "devDependencies": {},
   "resolutions": {

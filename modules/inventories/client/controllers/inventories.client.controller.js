@@ -18,19 +18,49 @@
     vm.remove = remove;
     vm.save = save;
 
-    $scope.filters = [
-      { name: 'Équipements' },
-      { name: 'Outillages' },
-      { name: 'Véhicules' }
-    ];
+    // Formulaire
+    // Input Lock
+    /*$('textarea').blur(function () {
+        $('#hire textarea').each(function () {
+            $this = $(this);
+            if ( this.value != '' ) {
+              $this.addClass('focused');
+              $('textarea + label + span').css({'opacity': 1});
+            }
+            else {
+              $this.removeClass('focused');
+              $('textarea + label + span').css({'opacity': 0});
+            }
+        });
+    });*/
 
-    //remove to the real data holder
-    $scope.removeItem = function removeItem(row) {
-      var index = $scope.rowCollection.indexOf(row);
-      if (index !== -1) {
-        $scope.rowCollection.splice(index, 1);
-      }
-    };
+    // $('#hire .field:first-child input').blur(function () {
+    //     $('#hire .field:first-child input').each(function () {
+    //         $this = $(this);
+    //         if ( this.value != '' ) {
+    //           $this.addClass('focused');
+    //           $('.field:first-child input + label + span').css({'opacity': 1});
+    //         }
+    //         else {
+    //           $this.removeClass('focused');
+    //           $('.field:first-child input + label + span').css({'opacity': 0});
+    //         }
+    //     });
+    // });
+
+    // $('#hire .field:nth-child(2) input').blur(function () {
+    //     $('#hire .field:nth-child(2) input').each(function () {
+    //         $this = $(this);
+    //         if ( this.value != '' ) {
+    //           $this.addClass('focused');
+    //           $('.field:nth-child(2) input + label + span').css({'opacity': 1});
+    //         }
+    //         else {
+    //           $this.removeClass('focused');
+    //           $('.field:nth-child(2) input + label + span').css({'opacity': 0});
+    //         }
+    //     });
+    // });
 
     // Remove existing Inventory
     function remove() {
@@ -54,7 +84,7 @@
       }
 
       function successCallback(res) {
-        $state.go('inventories.list', {
+        $state.go('inventories.view', {
           inventoryId: res._id
         });
       }

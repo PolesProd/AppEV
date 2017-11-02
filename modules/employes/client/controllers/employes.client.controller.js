@@ -22,9 +22,8 @@
     $scope.teams = vm.team;
     $scope.teams.$promise.then(function (resourceArray) {
       $scope.item = [
-        { name: resourceArray[0].name, ticked: false }
+        { name: resourceArray[0].name }
       ];
-      // console.log($scope.item);
     });
 
     $scope.contrats = [

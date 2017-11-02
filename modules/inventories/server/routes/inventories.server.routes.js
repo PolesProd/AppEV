@@ -16,7 +16,7 @@ module.exports = function(app) {
     .get(inventories.read)
     .put(inventories.update)
     .delete(inventories.delete);
-
+    
   // Finish by binding the Inventory middleware
   app.param('inventoryId', inventories.inventoryByID);
 };

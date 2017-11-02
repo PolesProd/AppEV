@@ -1,51 +1,74 @@
 <section>
-  <div class="page-header">
-    <h1>{{vm.inventory._id ? 'Editer' : 'Ajouter'}}</h1>
-  </div>
+    <h1>{{vm.inventory._id ? 'Edit Inventory' : 'New Inventory'}}</h1>
   <div class="col-md-12">
     <form name="vm.form.inventoryForm" class="form-horizontal" ng-submit="vm.save(vm.form.inventoryForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
-          <label class="control-label" for="filter">Type</label>
-          <select name="filter" ng-model="vm.inventory.filter" id="filter" class="form-control">
-            <option value="" disabled selected>Choisissez un type</option>
-            <option value="{{filter.name}}" ng-repeat="filter in filters">
-                {{ filter.name }}
-            </option>
-          </select>
-          <div ng-messages="vm.form.inventoryForm.filter.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Inventory filter is required.</p>
+          <label class="control-label" for="name">Nom</label>
+          <input name="name" type="text" ng-model="vm.inventory.name" id="name" class="form-control" placeholder="Name" required>
+          <div ng-messages="vm.form.inventoryForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Requis.</p>
           </div>
         </div>
 
         <div class="form-group" show-errors>
-          <label class="control-label" for="name">Nom</label>
-          <input name="name" type="text" ng-model="vm.inventory.name" id="name" class="form-control" placeholder="Name" required>
-          <div ng-messages="vm.form.inventoryForm.name.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Inventory name is required.</p>
+          <label class="control-label" for="purchase_date">Date d'achat</label>
+          <input name="purchase_date" type="date" ng-model="vm.inventory.purchase_date" id="purchase_date" class="form-control" placeholder="Name" required>
+          <div ng-messages="vm.form.inventoryForm.purchase_date.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Requis.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="place_of_purchase">Lieu d'achat</label>
+          <input name="place_of_purchase" type="text" ng-model="vm.inventory.place_of_purchase" id="place_of_purchase" class="form-control" placeholder="Name" required>
+          <div ng-messages="vm.form.inventoryForm.place_of_purchase.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Requis.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="serial_number">N° série</label>
+          <input name="serial_number" type="number" ng-model="vm.inventory.serial_number" id="serial_number" class="form-control" placeholder="Name" required>
+          <div ng-messages="vm.form.inventoryForm.serial_number.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Requis.</p>
           </div>
         </div>
 
         <div class="form-group" show-errors>
           <label class="control-label" for="model">Modèle</label>
-          <input name="model" type="text" ng-model="vm.inventory.model" id="model" class="form-control" placeholder="model" required>
+          <input name="model" type="text" ng-model="vm.inventory.model" id="model" class="form-control" placeholder="Name" required>
           <div ng-messages="vm.form.inventoryForm.model.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Inventory model is required.</p>
+            <p class="help-block error-text" ng-message="required">Requis.</p>
           </div>
         </div>
 
         <div class="form-group" show-errors>
-          <label class="control-label" for="quantity">Quantité</label>
-          <input name="quantity" type="text" ng-model="vm.inventory.quantity" id="quantity" class="form-control" placeholder="Name" required>
-          <div ng-messages="vm.form.inventoryForm.quantity.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Inventory quantity is required.</p>
+          <label class="control-label" for="category">Catégorie</label>
+          <input name="category" type="text" ng-model="vm.inventory.category" id="category" class="form-control" placeholder="Name" required>
+          <div ng-messages="vm.form.inventoryForm.category.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Requis.</p>
           </div>
         </div>
 
-        <div class="form-group">
-          <button type="submit" class="btn btn-default">{{vm.inventory._id ? 'Modifier' : 'Créer'}}</button>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="quatntity">Quantité</label>
+          <input name="quatntity" type="number" ng-model="vm.inventory.quatntity" id="quatntity" class="form-control" placeholder="Name" required>
+          <div ng-messages="vm.form.inventoryForm.quatntity.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Requis.</p>
+          </div>
         </div>
 
+        <div class="form-group" show-errors>
+          <label class="control-label" for="warenty">Garantie</label>
+          <input name="warenty" type="text" ng-model="vm.inventory.warenty" id="warenty" class="form-control" placeholder="Name" required>
+          <div ng-messages="vm.form.inventoryForm.warenty.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Requis.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.inventory._id ? 'Update' : 'Create'}}</button>
+        </div>
         <div ng-show="vm.error" class="text-danger">
           <strong ng-bind="vm.error"></strong>
         </div>

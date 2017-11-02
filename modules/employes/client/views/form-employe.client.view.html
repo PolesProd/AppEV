@@ -1,7 +1,5 @@
 <section>
-  <div class="page-header">
-    <h1>{{vm.employe._id ? 'Modifier Employé' : 'Ajouter Employé'}}</h1>
-  </div>
+  <h1>{{vm.employe._id ? 'Modifier Employé' : 'Ajouter Employé'}}</h1>
   <div class="col-md-12">
     <form name="vm.form.employeForm" class="form-horizontal" ng-submit="vm.save(vm.form.employeForm.$valid)" novalidate>
       <fieldset>
@@ -9,7 +7,7 @@
           <label class="control-label" for="lastname">Nom:</label>
           <input name="lastname" type="text" ng-model="vm.employe.lastname" id="lastname" class="form-control" placeholder="Nom" required>
           <div ng-messages="vm.form.employeForm.lastname.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Nom requis.</p>
+            <p class="help-block error-text" ng-message="required">requis.</p>
           </div>
         </div>
 
@@ -17,11 +15,11 @@
           <label class="control-label" for="firstname">Prénom:</label>
           <input name="firstname" type="text" ng-model="vm.employe.firstname" id="firstname" class="form-control" placeholder="Prénom" required>
           <div ng-messages="vm.form.employeForm.firstname.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Prénom requis.</p>
+            <p class="help-block error-text" ng-message="required">requis.</p>
           </div>
         </div>
 
-        <div class="text-center form-group" ng-hide="uploader.queue.length">
+        <!-- <div class="text-center form-group" ng-hide="uploader.queue.length">
           <span class="btn btn-default btn-file">
               Select Image <input type="file" nv-file-select uploader="uploader">
           </span>
@@ -35,13 +33,13 @@
         </div>
         <div ng-show="error" class="text-center text-danger">
           <strong ng-bind="error"></strong>
-        </div>
+        </div> -->
 
         <div class="form-group" show-errors>
           <label class="control-label" for="email">Email:</label>
           <input name="email" type="text" ng-model="vm.employe.email" id="email" class="form-control" placeholder="Ex: example@example.com" required>
           <div ng-messages="vm.form.employeForm.email.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Email requis.</p>
+            <p class="help-block error-text" ng-message="required">requis.</p>
           </div>
         </div>
 
@@ -49,48 +47,46 @@
           <label class="control-label" for="number">Numéro:</label>
           <input name="number" type="text" ng-model="vm.employe.number" id="number" class="form-control" placeholder="Ex: 0102030405" required>
           <div ng-messages="vm.form.employeForm.number.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Email requis.</p>
+            <p class="help-block error-text" ng-message="required">requis.</p>
           </div>
         </div>
 
         <div class="form-group" show-errors>
           <label class="control-label" for="status">Status:</label>
           <select name="status" ng-model="vm.employe.status" id="status" class="form-control">
-            <option value="" disabled selected>Choisissez une Equipe</option>
+            <option value="" disabled selected>Status</option>
             <option value="{{ status.name }}" ng-repeat="status in status">
                 {{status.name}}
             </option>
           </select>
           <div ng-messages="vm.form.employeForm.team.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Equipe requise.</p>
+            <p class="help-block error-text" ng-message="required">requis.</p>
           </div>
         </div>
 
         <div class="form-group" show-errors>
-          <label class="control-label" for="team">Equipe:</label>
+          <label class="control-label" for="team">Équipe:</label>
           <select name="team" ng-model="vm.employe.team" id="team" class="form-control">
-            <option value="" disabled selected>Choisissez une Equipe</option>
+            <option value="" disabled selected>Équipe</option>
             <option value="{{ team.name }}" ng-repeat="team in teams">
                 {{team.name}}
             </option>
           </select>
-          <!-- <div isteven-multi-select name="team" ng-model="vm.employe.team" input-model="teams" output-model="outputBrowsers" button-label="icon name" item-label="icon name" tick-property="ticked"></div> -->
           <div ng-messages="vm.form.employeForm.team.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Equipe requise.</p>
+            <p class="help-block error-text" ng-message="required">requis.</p>
           </div>
         </div>
         
         <div class="form-group" show-errors>
           <label class="control-label" for="contrat">Contrat:</label>
           <select name="contrat" ng-model="vm.employe.contrat" id="contrat" class="form-control">
-            <option value="" disabled selected>Type de contrat</option>
+            <option value="" disabled selected>Contrat</option>
             <option value="{{ contrat.name }}" ng-repeat="contrat in contrats">
                 {{contrat.name}}
             </option>
           </select>
-          <!-- <div isteven-multi-select name="contrat" ng-model="vm.employe.contrat" input-model="contrats" output-model="outputBrowsers" button-label="icon name" item-label="icon name" tick-property="ticked"></div> -->
           <div ng-messages="vm.form.employeForm.contrat.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Equipe requise.</p>
+            <p class="help-block error-text" ng-message="required">requise.</p>
           </div>
         </div>
 
@@ -113,7 +109,7 @@
           <label class="control-label" for="name">Formation:</label>
           <input name="formation" type="text" ng-model="vm.employe.formation" id="formation" class="form-control" placeholder="Formation" required>
           <div ng-messages="vm.form.employeForm.formation.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Formation est requis.</p>
+            <p class="help-block error-text" ng-message="required">requis.</p>
           </div>
         </div>
 

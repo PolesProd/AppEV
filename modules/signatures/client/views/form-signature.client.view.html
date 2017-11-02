@@ -1,0 +1,103 @@
+<!-- <section>
+  <h1>{{vm.signature._id ? 'Editer' : 'Nouvelle Feuille'}}</h1>
+  <div class="col-md-12">
+    <form name="vm.form.signatureForm" class="form-horizontal" ng-submit="vm.save(vm.form.signatureForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Nom</label>
+          <input name="name" type="text" ng-model="vm.signature.name" id="name" class="form-control" placeholder="Name" required>
+          <div ng-messages="vm.form.signatureForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Signature name is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.signature._id ? 'Mettre à jour' : 'Créer'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section> -->
+<!-- <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>emargement</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="e in employe">
+      <td>{{ $index + 1 }}</td>
+      <td>{{ e.firstname }}</td>
+      <td>{{ e.lastname }}</td>
+      <td>
+        <form name="vm.form.signatureForm" class="form-horizontal" ng-submit="vm.save(vm.form.signatureForm.$valid)" novalidate>
+          <fieldset>
+            <div class="form-group" show-errors>
+              <label class="control-label" for="name">Nom</label>
+              <input name="name" type="text" ng-model="vm.signature.name" id="name" class="form-control" placeholder="Name" required>
+              <div ng-messages="vm.form.signatureForm.name.$error" role="alert">
+                <p class="help-block error-text" ng-message="required">Signature name is required.</p>
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn">{{vm.signature._id ? 'Mettre à jour' : 'Créer'}}</button>
+            </div>
+            <div ng-show="vm.error" class="text-danger">
+              <strong ng-bind="vm.error"></strong>
+            </div>
+          </fieldset>
+        </form>
+      </td>
+    </tr>
+  </tbody>
+</table> -->
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nom</th>
+      <th>Prénom</th>
+      <th>Date</th>
+      <th>Horaires</th>
+      <th>Présent</th>
+      <th>Absent</th>
+      <th>C</th>
+      <th>F</th>
+      <th>R</th>
+      <th>ANJ</th>
+      <th>AJ</th>
+      <th>AM</th>
+      <th>AT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="e in employe">
+      <td>{{ $index + 1 }}</td>
+      <td>{{ e.lastname }}</td>
+      <td>{{ e.firstname }}</td>
+      <td><input type="date" ng-model="vm.signature.date"></td>
+      <td>
+        <span>De:<input type="time" ng-model="vm.signature.time"></span>
+        <span>A:<input type="time" ng-model="vm.signature.time"></span>
+      </td>
+      <td><input type="checkbox" ng-model="e.cb1" value="Présent"></td>
+      <td><input type="checkbox" ng-model="e.cb2" value="Absent"></td>
+      <td><input type="checkbox" ng-model="e.cb3" value="En Congé"></td>
+      <td><input type="checkbox" ng-model="e.cb4" value="En Formation"></td>
+      <td><input type="checkbox" ng-model="e.cb5" value="En Récupération"></td>
+      <td><input type="checkbox" ng-model="e.cb6" value="Abscence Non Justifiée"></td>
+      <td><input type="checkbox" ng-model="e.cb7" value="Abscence Justifiée"></td>
+      <td><input type="checkbox" ng-model="e.cb8" value="Arrêt Maladie"></td>
+      <td><input type="checkbox" ng-model="e.cb9" value="Accident de Travail"></td>
+      <td><input type="text" ng-model="vm.signature.observations" placeholder="AZERTYUIOP"></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+list of checked items: {{checkedItems()}}

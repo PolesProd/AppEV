@@ -50,7 +50,6 @@
       $scope.allPlannings = resourceArray;
 
       angular.forEach($scope.allPlannings, function (data) {
-        // for
 
         // Crée une vue des plannings dans le calendrier
         $scope.planningView.push({
@@ -72,11 +71,11 @@
     // Définit si la cellue d'info est ouverte ou pas
     vm.cellIsOpen = false;
 
-    /*vm.eventClicked = function(event) {
+    vm.eventClicked = function(event) {
       alert.show('', event);
     };
 
-    vm.eventEdited = function(event) {
+    /*vm.eventEdited = function(event) {
       alert.show('', event);
 
       console.log(id);

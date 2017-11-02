@@ -20,6 +20,9 @@ exports.invokeRolesPolicies = function () {
     }, {
       resources: '/api/employes/:employeId',
       permissions: '*'
+    }, {
+      resources: '/api/employes/signatures',
+      permissions: '*'
     }]
   }, {
     roles: ['user'],
@@ -29,6 +32,9 @@ exports.invokeRolesPolicies = function () {
     }, {
       resources: '/api/employes/:employeId',
       permissions: ['get']
+    }, {
+      resources: '/api/employes/signatures',
+      permissions: ['get', 'post']
     }]
   }, {
     roles: ['guest'],
@@ -38,6 +44,9 @@ exports.invokeRolesPolicies = function () {
     }, {
       resources: '/api/employes/:employeId',
       permissions: ['get']
+    }, {
+      resources: '/api/employes/signatures',
+      permissions: ['get', 'post']
     }]
   }]);
 };

@@ -7,6 +7,9 @@ var path = require('path'),
   mongoose = require('mongoose'),
   Inventory = mongoose.model('Inventory'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
+  fs = require('fs'),
+  multer = require('multer'),
+  config = require(path.resolve('./config/config')),
   _ = require('lodash');
 
 /**

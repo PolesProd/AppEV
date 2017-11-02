@@ -7,7 +7,7 @@ angular.module('users').controller('ChangeProfilePictureController', ['$scope', 
 
     // Create file uploader instance
     $scope.uploader = new FileUploader({
-      url: 'api/employes/:employeId/edit',
+      url: 'api/users/picture',
       alias: 'newProfilePicture'
     });
 
