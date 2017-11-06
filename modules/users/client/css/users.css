@@ -42,7 +42,7 @@ body{
   position:relative;
 }
 .bgSplash{
-  background-image : url('../img/background/bg-SplashScscreen.jpg');
+  background-image : url('../img/background/bg-SplashScreen.jpg');
   background-size: cover;
   background-position: center;
   height:100vh;

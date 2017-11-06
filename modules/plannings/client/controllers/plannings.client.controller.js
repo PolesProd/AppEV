@@ -34,6 +34,28 @@
       ];
     });
 
+    $scope.taskList = [
+      { name: 'Tonte des pelouses' },
+      { name: 'Taille des arbustes' },
+      { name: 'Nettoyage des aires stabiisées' },
+      { name: 'Ramassage des feuilles, branches et brindilles' },
+      { name: 'Entretien des massifs d\'arbustes et vivaces' },
+      { name: 'Désherbage des massifs d\'arbustes, vivaces et pieds des arbres' },
+      { name: 'Taille des haies' },
+      { name: 'Nettoyage des fleurs fanées, plantes vivaces et branches morte' },
+      { name: 'Désherbage des massifs d\'arbustes, vivaces, pieds des arbres et des parties minérales' }
+    ];
+
+    $scope.finition = [
+      { name: 'Rustique' },
+      { name: 'Naturel' },
+      { name: 'Prestige' }
+    ];
+
+    $scope.frequence = [
+      
+    ];
+
     // Remove existing Planning
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {

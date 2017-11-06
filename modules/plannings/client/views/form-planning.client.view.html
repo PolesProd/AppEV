@@ -41,7 +41,7 @@
 
         <div class="form-group" show-errors>
           <label class="control-label" for="site">Site:</label>
-          <select name="site" ng-model="vm.planning.site" id="site" class="form-control">
+          <select name="site" ng-model="vm.planning.site" id="site" class="form-control" multiple="multiple">
             <option value="" disabled selected>Choisissez un Site</option>
             <option value="{{ site.properties.nom }}" ng-repeat="site in sitesList">
                 {{ site.properties.nom }}
@@ -54,7 +54,12 @@
 
         <div class="form-group" show-errors>
           <label class="control-label" for="tasks">Tâches à réaliser:</label>
-          <input name="tasks" type="text" ng-model="vm.planning.tasks" id="tasks" class="form-control" placeholder="Ex: Désherbage..." required>
+          <select name="tasks" ng-model="vm.planning.tasks" id="tasks" class="form-control" multiple="multiple">
+            <option value="" disabled selected>Tâches</option>
+            <option value="{{ task.name }}" ng-repeat="task in taskList">
+                {{ task.name }}
+            </option>
+          </select>
           <div ng-messages="vm.form.planningForm.tasks.$error" role="alert">
             <p class="help-block error-text" ng-message="required">requis.</p>
           </div>

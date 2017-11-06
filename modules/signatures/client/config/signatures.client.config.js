@@ -1,4 +1,4 @@
-/*'use strict';
+'use strict';
 
 angular.module('signatures').run(['Menus',
   function (Menus) {
@@ -24,4 +24,4 @@ angular.module('signatures').run(['Menus',
       roles: ['admin']
     });
   }
-]);*/
+]);
