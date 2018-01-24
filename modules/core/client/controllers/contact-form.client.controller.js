@@ -1,3 +1,4 @@
+/*
 'use strict';
 
 angular
@@ -49,4 +50,4 @@ angular
 			};
 		}
 	]);
-	
+	*/
