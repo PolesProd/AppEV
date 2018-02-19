@@ -46,10 +46,11 @@
       Authentication = _Authentication_;
       PlanningsService = _PlanningsService_;
 
-      // create mock Planning
+      // create mock planning
       mockPlanning = new PlanningsService({
         _id: '525a8422f6d0f87f0e407a33',
-        name: 'Planning Name'
+        title: 'An Planning about MEAN',
+        content: 'MEAN rocks!'
       });
 
       // Mock logged in user
@@ -66,105 +67,5 @@
       // Spy on state go
       spyOn($state, 'go');
     }));
-
-    describe('vm.save() as create', function () {
-      var samplePlanningPostData;
-
-      beforeEach(function () {
-        // Create a sample Planning object
-        samplePlanningPostData = new PlanningsService({
-          name: 'Planning Name'
-        });
-
-        $scope.vm.planning = samplePlanningPostData;
-      });
-
-      it('should send a POST request with the form input values and then locate to new object URL', inject(function (PlanningsService) {
-        // Set POST response
-        $httpBackend.expectPOST('api/plannings', samplePlanningPostData).respond(mockPlanning);
-
-        // Run controller functionality
-        $scope.vm.save(true);
-        $httpBackend.flush();
-
-        // Test URL redirection after the Planning was created
-        expect($state.go).toHaveBeenCalledWith('plannings.view', {
-          planningId: mockPlanning._id
-        });
-      }));
-
-      it('should set $scope.vm.error if error', function () {
-        var errorMessage = 'this is an error message';
-        $httpBackend.expectPOST('api/plannings', samplePlanningPostData).respond(400, {
-          message: errorMessage
-        });
-
-        $scope.vm.save(true);
-        $httpBackend.flush();
-
-        expect($scope.vm.error).toBe(errorMessage);
-      });
-    });
-
-    describe('vm.save() as update', function () {
-      beforeEach(function () {
-        // Mock Planning in $scope
-        $scope.vm.planning = mockPlanning;
-      });
-
-      it('should update a valid Planning', inject(function (PlanningsService) {
-        // Set PUT response
-        $httpBackend.expectPUT(/api\/plannings\/([0-9a-fA-F]{24})$/).respond();
-
-        // Run controller functionality
-        $scope.vm.save(true);
-        $httpBackend.flush();
-
-        // Test URL location to new object
-        expect($state.go).toHaveBeenCalledWith('plannings.view', {
-          planningId: mockPlanning._id
-        });
-      }));
-
-      it('should set $scope.vm.error if error', inject(function (PlanningsService) {
-        var errorMessage = 'error';
-        $httpBackend.expectPUT(/api\/plannings\/([0-9a-fA-F]{24})$/).respond(400, {
-          message: errorMessage
-        });
-
-        $scope.vm.save(true);
-        $httpBackend.flush();
-
-        expect($scope.vm.error).toBe(errorMessage);
-      }));
-    });
-
-    describe('vm.remove()', function () {
-      beforeEach(function () {
-        // Setup Plannings
-        $scope.vm.planning = mockPlanning;
-      });
-
-      it('should delete the Planning and redirect to Plannings', function () {
-        // Return true on confirm message
-        spyOn(window, 'confirm').and.returnValue(true);
-
-        $httpBackend.expectDELETE(/api\/plannings\/([0-9a-fA-F]{24})$/).respond(204);
-
-        $scope.vm.remove();
-        $httpBackend.flush();
-
-        expect($state.go).toHaveBeenCalledWith('plannings.list');
-      });
-
-      it('should should not delete the Planning and not redirect', function () {
-        // Return false on confirm message
-        spyOn(window, 'confirm').and.returnValue(false);
-
-        $scope.vm.remove();
-
-        expect($state.go).not.toHaveBeenCalled();
-      });
-    });
   });
 }());

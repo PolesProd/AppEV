@@ -1,0 +1,110 @@
+<div class="page-header">
+  <h1>{{vm.planning._id ? 'Editer planning' : 'Nouveau planning'}}</h1>
+</div>
+
+<div class="pull-right">
+  <a ng-show="vm.planning._id" class="btn btn-primary" ng-click="vm.remove()">
+    <i class="glyphicon glyphicon-trash"></i>
+  </a>
+</div>
+
+<form name="vm.form.planningForm" class="form-horizontal" ng-submit="vm.save(vm.form.planningForm.$valid)" novalidate>
+  <fieldset>
+    <div class="form-row">
+      <div class="col-md-4">
+        <label class="control-label" for="nom">Nom</label>
+        <input name="nom" type="text" ng-model="vm.planning.nom" id="nom" class="form-control" placeholder="Nom" required>
+        <div ng-messages="vm.form.planningForm.nom.$error" role="alert">
+          <p class="help-block error-text" ng-message="required">Nom requis.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <md-input-container class="md-block">
+          <label class="control-label" for="du">Du</label>
+          <input name="du" mdc-datetime-picker="" date="true" time="true" id="du" placeholder="Date" show-todays-date="" minutes="true" min-date="date" show-icon="true" ng-model="vm.planning.du" class=" dtp-no-msclear dtp-input md-input" type="text">
+          <!-- <md-datepicker name="du" type="date" ng-model="vm.planning.du" ng-value="dates" id="du" md-placeholder="Enter date" required></md-datepicker> -->
+          <div ng-messages="vm.form.planningForm.du.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Date requise.</p>
+          </div>
+        </md-input-container>
+      </div>
+
+      <div class="col-md-4">
+        <md-input-container class="md-block">
+          <label class="control-label" for="au">Au</label>
+          <input name="au" mdc-datetime-picker="" date="true" time="true" id="au" placeholder="Date" show-todays-date="" minutes="true" min-date="date" show-icon="true" ng-model="vm.planning.au" class=" dtp-no-msclear dtp-input md-input" type="text">
+          <!-- <md-datepicker name="au" type="date" ng-model="vm.planning.au" ng-value="dates" id="au" md-placeholder="Enter date" required></md-datepicker> -->
+          <div ng-messages="vm.form.planningForm.au.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Date requise.</p>
+          </div>
+        </md-input-container>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-12">
+        <md-input-container class="md-block">
+          <label for="taches">Tâche(s) à réaliser</label>
+          <md-select ng-model="vm.planning.taches" md-on-close="clearSearchTerm()" data-md-container-class="selectdemoSelectHeader" multiple>
+            <md-select-header class="demo-select-header">
+              <input ng-model="searchTerm" type="search" placeholder="Chercher un taches..." class="demo-header-searchbox md-text">
+            </md-select-header>
+
+            <md-optgroup label="taches">
+              <md-option ng-value="tache" ng-repeat="tache in taches | filter:searchTerm">{{tache}}</md-option>
+            </md-optgroup>
+          </md-select>
+          <div ng-messages="vm.form.planningForm.taches.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Tâche(s) à réaliser requis.</p>
+          </div>
+        </md-input-container>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-6">
+        <md-input-container class="md-block">
+          <label for="equipe">Équipe(s)</label>
+          <md-select ng-model="vm.planning.equipe" md-on-close="clearSearchTerm()" data-md-container-class="selectdemoSelectHeader" multiple>
+            <md-select-header class="demo-select-header">
+              <input ng-model="searchTerm" type="search" placeholder="Chercher un equipe..." class="demo-header-searchbox md-text">
+            </md-select-header>
+
+            <md-optgroup label="equipe">
+              <md-option ng-value="equipe.nom" ng-repeat="equipe in equipes | filter:searchTerm">{{equipe.nom}}</md-option>
+            </md-optgroup>
+          </md-select>
+          <div ng-messages="vm.form.planningForm.site.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Équipe(s) requis.</p>
+          </div>
+        </md-input-container>
+      </div>
+
+      <div class="col-md-6">
+        <md-input-container class="md-block">
+          <label for="site">Site</label>
+          <md-select ng-model="vm.planning.site" md-on-close="clearSearchTerm()" data-md-container-class="selectdemoSelectHeader" multiple>
+            <md-select-header class="demo-select-header">
+              <input ng-model="searchTerm" type="search" placeholder="Chercher un site..." class="demo-header-searchbox md-text">
+            </md-select-header>
+
+            <md-optgroup label="site">
+              <md-option ng-value="site.properties.nom" ng-repeat="site in sites | filter:searchTerm">{{site.properties.nom}}</md-option>
+            </md-optgroup>
+          </md-select>
+          <div ng-messages="vm.form.planningForm.site.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Site requis.</p>
+          </div>
+        </md-input-container>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-12">
+        <button type="submit" class="btn btn-default">{{vm.planning._id ? 'Mettre à jour' : 'Créer'}}</button>
+      </div>
+    </div>
+    </div>
+  </fieldset>
+</form>

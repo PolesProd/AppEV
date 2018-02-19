@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('plannings')
+    .module('plannings.routes')
     .config(routeConfig);
 
   routeConfig.$inject = ['$stateProvider'];
@@ -12,58 +12,24 @@
       .state('plannings', {
         abstract: true,
         url: '/plannings',
-        template: '<ui-view/>',
-        data: {
-          roles: ['user', 'admin']
-        }
+        template: '<ui-view/>'
       })
       .state('plannings.list', {
         url: '',
-        templateUrl: 'modules/plannings/client/views/list-plannings.client.view.html',
+        templateUrl: '/modules/plannings/client/views/list-plannings.client.view.html',
         controller: 'PlanningsListController',
-        controllerAs: 'vm',
-        data: {
-          roles: ['user', 'admin'],
-          pageTitle: 'Plannings List'
-        }
-      })
-      .state('plannings.create', {
-        url: '/create',
-        templateUrl: 'modules/plannings/client/views/form-planning.client.view.html',
-        controller: 'PlanningsController',
-        controllerAs: 'vm',
-        resolve: {
-          planningResolve: newPlanning
-        },
-        data: {
-          roles: ['admin'],
-          pageTitle: 'Plannings Create'
-        }
-      })
-      .state('plannings.edit', {
-        url: '/:planningId/edit',
-        templateUrl: 'modules/plannings/client/views/form-planning.client.view.html',
-        controller: 'PlanningsController',
-        controllerAs: 'vm',
-        resolve: {
-          planningResolve: getPlanning
-        },
-        data: {
-          roles: ['admin'],
-          pageTitle: 'Edit Planning {{ planningResolve.name }}'
-        }
+        controllerAs: 'vm'
       })
       .state('plannings.view', {
-        url: '/:planningId',
-        templateUrl: 'modules/plannings/client/views/view-planning.client.view.html',
+        url: '/:planningsId',
+        templateUrl: '/modules/plannings/client/views/view-plannings.client.view.html',
         controller: 'PlanningsController',
         controllerAs: 'vm',
         resolve: {
-          planningResolve: getPlanning
+          planningsResolve: getPlanning
         },
         data: {
-          roles: ['user', 'admin'],
-          pageTitle: 'Planning {{ planningResolve.name }}'
+          pageTitle: '{{ planningsResolve.title }}'
         }
       });
   }
@@ -72,13 +38,7 @@
 
   function getPlanning($stateParams, PlanningsService) {
     return PlanningsService.get({
-      planningId: $stateParams.planningId
+      planningsId: $stateParams.planningsId
     }).$promise;
-  }
-
-  newPlanning.$inject = ['PlanningsService'];
-
-  function newPlanning(PlanningsService) {
-    return new PlanningsService();
   }
 }());

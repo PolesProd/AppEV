@@ -1,0 +1,13 @@
+<div class="modal-header" alert>
+  <h3 class="modal-title">{{vm.event.title}}</h3>
+</div>
+<div class="modal-body">
+  <p class="planningInfos">{{ vm.event.startsAt | date:'dd/MM/yyyy - H:mm' }}</p>
+  <p class="planningInfos">{{ vm.event.endsAt | date:'dd/MM/yyyy - H:mm' }}</p>
+  <p class="planningInfos">{{ vm.event.team }}</p>
+  <p class="planningInfos">{{ vm.event.site }}</p>
+  <p class="planningInfos">{{ vm.event.tasks }}</p>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" ng-click="$close()">OK</button>
+</div>

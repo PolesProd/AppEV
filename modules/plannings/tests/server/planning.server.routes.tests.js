@@ -24,7 +24,7 @@ describe('Planning CRUD tests', function () {
 
   before(function (done) {
     // Get application
-    app = express.init(mongoose);
+    app = express.init(mongoose.connection.db);
     agent = request.agent(app);
 
     done();
@@ -33,7 +33,7 @@ describe('Planning CRUD tests', function () {
   beforeEach(function (done) {
     // Create user credentials
     credentials = {
-      username: 'username',
+      usernameOrEmail: 'username',
       password: 'M3@n.jsI$Aw3$0m3'
     };
 
@@ -43,22 +43,25 @@ describe('Planning CRUD tests', function () {
       lastName: 'Name',
       displayName: 'Full Name',
       email: 'test@test.com',
-      username: credentials.username,
+      username: credentials.usernameOrEmail,
       password: credentials.password,
       provider: 'local'
     });
 
-    // Save a user to the test db and create new Planning
-    user.save(function () {
-      planning = {
-        name: 'Planning name'
-      };
+    // Save a user to the test db and create new planning
+    user.save()
+      .then(function () {
+        planning = {
+          title: 'Planning Title',
+          content: 'Planning Content'
+        };
 
-      done();
-    });
+        done();
+      })
+      .catch(done);
   });
 
-  it('should be able to save a Planning if logged in', function (done) {
+  it('should not be able to save an planning if logged in without the "admin" role', function (done) {
     agent.post('/api/auth/signin')
       .send(credentials)
       .expect(200)
@@ -68,42 +71,18 @@ describe('Planning CRUD tests', function () {
           return done(signinErr);
         }
 
-        // Get the userId
-        var userId = user.id;
-
-        // Save a new Planning
         agent.post('/api/plannings')
           .send(planning)
-          .expect(200)
+          .expect(403)
           .end(function (planningSaveErr, planningSaveRes) {
-            // Handle Planning save error
-            if (planningSaveErr) {
-              return done(planningSaveErr);
-            }
-
-            // Get a list of Plannings
-            agent.get('/api/plannings')
-              .end(function (planningsGetErr, planningsGetRes) {
-                // Handle Plannings save error
-                if (planningsGetErr) {
-                  return done(planningsGetErr);
-                }
-
-                // Get Plannings list
-                var plannings = planningsGetRes.body;
-
-                // Set assertions
-                (plannings[0].user._id).should.equal(userId);
-                (plannings[0].name).should.match('Planning name');
-
-                // Call the assertion callback
-                done();
-              });
+            // Call the assertion callback
+            done(planningSaveErr);
           });
+
       });
   });
 
-  it('should not be able to save an Planning if not logged in', function (done) {
+  it('should not be able to save an planning if not logged in', function (done) {
     agent.post('/api/plannings')
       .send(planning)
       .expect(403)
@@ -113,10 +92,7 @@ describe('Planning CRUD tests', function () {
       });
   });
 
-  it('should not be able to save an Planning if no name is provided', function (done) {
-    // Invalidate name field
-    planning.name = '';
-
+  it('should not be able to update an planning if signed in without the "admin" role', function (done) {
     agent.post('/api/auth/signin')
       .send(credentials)
       .expect(200)
@@ -126,78 +102,24 @@ describe('Planning CRUD tests', function () {
           return done(signinErr);
         }
 
-        // Get the userId
-        var userId = user.id;
-
-        // Save a new Planning
         agent.post('/api/plannings')
           .send(planning)
-          .expect(400)
+          .expect(403)
           .end(function (planningSaveErr, planningSaveRes) {
-            // Set message assertion
-            (planningSaveRes.body.message).should.match('Please fill Planning name');
-
-            // Handle Planning save error
+            // Call the assertion callback
             done(planningSaveErr);
           });
       });
   });
 
-  it('should be able to update an Planning if signed in', function (done) {
-    agent.post('/api/auth/signin')
-      .send(credentials)
-      .expect(200)
-      .end(function (signinErr, signinRes) {
-        // Handle signin error
-        if (signinErr) {
-          return done(signinErr);
-        }
-
-        // Get the userId
-        var userId = user.id;
-
-        // Save a new Planning
-        agent.post('/api/plannings')
-          .send(planning)
-          .expect(200)
-          .end(function (planningSaveErr, planningSaveRes) {
-            // Handle Planning save error
-            if (planningSaveErr) {
-              return done(planningSaveErr);
-            }
-
-            // Update Planning name
-            planning.name = 'WHY YOU GOTTA BE SO MEAN?';
-
-            // Update an existing Planning
-            agent.put('/api/plannings/' + planningSaveRes.body._id)
-              .send(planning)
-              .expect(200)
-              .end(function (planningUpdateErr, planningUpdateRes) {
-                // Handle Planning update error
-                if (planningUpdateErr) {
-                  return done(planningUpdateErr);
-                }
-
-                // Set assertions
-                (planningUpdateRes.body._id).should.equal(planningSaveRes.body._id);
-                (planningUpdateRes.body.name).should.match('WHY YOU GOTTA BE SO MEAN?');
-
-                // Call the assertion callback
-                done();
-              });
-          });
-      });
-  });
-
-  it('should be able to get a list of Plannings if not signed in', function (done) {
-    // Create new Planning model instance
+  it('should be able to get a list of plannings if not signed in', function (done) {
+    // Create new planning model instance
     var planningObj = new Planning(planning);
 
     // Save the planning
     planningObj.save(function () {
-      // Request Plannings
-      request(app).get('/api/plannings')
+      // Request plannings
+      agent.get('/api/plannings')
         .end(function (req, res) {
           // Set assertion
           res.body.should.be.instanceof(Array).and.have.lengthOf(1);
@@ -209,16 +131,16 @@ describe('Planning CRUD tests', function () {
     });
   });
 
-  it('should be able to get a single Planning if not signed in', function (done) {
-    // Create new Planning model instance
+  it('should be able to get a single planning if not signed in', function (done) {
+    // Create new planning model instance
     var planningObj = new Planning(planning);
 
-    // Save the Planning
+    // Save the planning
     planningObj.save(function () {
-      request(app).get('/api/plannings/' + planningObj._id)
+      agent.get('/api/plannings/' + planningObj._id)
         .end(function (req, res) {
           // Set assertion
-          res.body.should.be.instanceof(Object).and.have.property('name', planning.name);
+          res.body.should.be.instanceof(Object).and.have.property('title', planning.title);
 
           // Call the assertion callback
           done();
@@ -226,9 +148,9 @@ describe('Planning CRUD tests', function () {
     });
   });
 
-  it('should return proper error for single Planning with an invalid Id, if not signed in', function (done) {
+  it('should return proper error for single planning with an invalid Id, if not signed in', function (done) {
     // test is not a valid mongoose Id
-    request(app).get('/api/plannings/test')
+    agent.get('/api/plannings/test')
       .end(function (req, res) {
         // Set assertion
         res.body.should.be.instanceof(Object).and.have.property('message', 'Planning is invalid');
@@ -238,19 +160,19 @@ describe('Planning CRUD tests', function () {
       });
   });
 
-  it('should return proper error for single Planning which doesnt exist, if not signed in', function (done) {
-    // This is a valid mongoose Id but a non-existent Planning
-    request(app).get('/api/plannings/559e9cd815f80b4c256a8f41')
+  it('should return proper error for single planning which doesnt exist, if not signed in', function (done) {
+    // This is a valid mongoose Id but a non-existent planning
+    agent.get('/api/plannings/559e9cd815f80b4c256a8f41')
       .end(function (req, res) {
         // Set assertion
-        res.body.should.be.instanceof(Object).and.have.property('message', 'No Planning with that identifier has been found');
+        res.body.should.be.instanceof(Object).and.have.property('message', 'No planning with that identifier has been found');
 
         // Call the assertion callback
         done();
       });
   });
 
-  it('should be able to delete an Planning if signed in', function (done) {
+  it('should not be able to delete an planning if signed in without the "admin" role', function (done) {
     agent.post('/api/auth/signin')
       .send(credentials)
       .expect(200)
@@ -260,66 +182,43 @@ describe('Planning CRUD tests', function () {
           return done(signinErr);
         }
 
-        // Get the userId
-        var userId = user.id;
-
-        // Save a new Planning
         agent.post('/api/plannings')
           .send(planning)
-          .expect(200)
+          .expect(403)
           .end(function (planningSaveErr, planningSaveRes) {
-            // Handle Planning save error
-            if (planningSaveErr) {
-              return done(planningSaveErr);
-            }
-
-            // Delete an existing Planning
-            agent.delete('/api/plannings/' + planningSaveRes.body._id)
-              .send(planning)
-              .expect(200)
-              .end(function (planningDeleteErr, planningDeleteRes) {
-                // Handle planning error error
-                if (planningDeleteErr) {
-                  return done(planningDeleteErr);
-                }
-
-                // Set assertions
-                (planningDeleteRes.body._id).should.equal(planningSaveRes.body._id);
-
-                // Call the assertion callback
-                done();
-              });
+            // Call the assertion callback
+            done(planningSaveErr);
           });
       });
   });
 
-  it('should not be able to delete an Planning if not signed in', function (done) {
-    // Set Planning user
+  it('should not be able to delete an planning if not signed in', function (done) {
+    // Set planning user
     planning.user = user;
 
-    // Create new Planning model instance
+    // Create new planning model instance
     var planningObj = new Planning(planning);
 
-    // Save the Planning
+    // Save the planning
     planningObj.save(function () {
-      // Try deleting Planning
-      request(app).delete('/api/plannings/' + planningObj._id)
+      // Try deleting planning
+      agent.delete('/api/plannings/' + planningObj._id)
         .expect(403)
         .end(function (planningDeleteErr, planningDeleteRes) {
           // Set message assertion
           (planningDeleteRes.body.message).should.match('User is not authorized');
 
-          // Handle Planning error error
+          // Handle planning error error
           done(planningDeleteErr);
         });
 
     });
   });
 
-  it('should be able to get a single Planning that has an orphaned user reference', function (done) {
+  it('should be able to get a single planning that has an orphaned user reference', function (done) {
     // Create orphan user creds
     var _creds = {
-      username: 'orphan',
+      usernameOrEmail: 'orphan',
       password: 'M3@n.jsI$Aw3$0m3'
     };
 
@@ -329,9 +228,10 @@ describe('Planning CRUD tests', function () {
       lastName: 'Name',
       displayName: 'Full Name',
       email: 'orphan@test.com',
-      username: _creds.username,
+      username: _creds.usernameOrEmail,
       password: _creds.password,
-      provider: 'local'
+      provider: 'local',
+      roles: ['admin']
     });
 
     _orphan.save(function (err, orphan) {
@@ -352,22 +252,22 @@ describe('Planning CRUD tests', function () {
           // Get the userId
           var orphanId = orphan._id;
 
-          // Save a new Planning
+          // Save a new planning
           agent.post('/api/plannings')
             .send(planning)
             .expect(200)
             .end(function (planningSaveErr, planningSaveRes) {
-              // Handle Planning save error
+              // Handle planning save error
               if (planningSaveErr) {
                 return done(planningSaveErr);
               }
 
-              // Set assertions on new Planning
-              (planningSaveRes.body.name).should.equal(planning.name);
+              // Set assertions on new planning
+              (planningSaveRes.body.title).should.equal(planning.title);
               should.exist(planningSaveRes.body.user);
               should.equal(planningSaveRes.body.user._id, orphanId);
 
-              // force the Planning to have an orphaned user reference
+              // force the planning to have an orphaned user reference
               orphan.remove(function () {
                 // now signin with valid user
                 agent.post('/api/auth/signin')
@@ -379,18 +279,18 @@ describe('Planning CRUD tests', function () {
                       return done(err);
                     }
 
-                    // Get the Planning
+                    // Get the planning
                     agent.get('/api/plannings/' + planningSaveRes.body._id)
                       .expect(200)
                       .end(function (planningInfoErr, planningInfoRes) {
-                        // Handle Planning error
+                        // Handle planning error
                         if (planningInfoErr) {
                           return done(planningInfoErr);
                         }
 
                         // Set assertions
                         (planningInfoRes.body._id).should.equal(planningSaveRes.body._id);
-                        (planningInfoRes.body.name).should.equal(planning.name);
+                        (planningInfoRes.body.title).should.equal(planning.title);
                         should.equal(planningInfoRes.body.user, undefined);
 
                         // Call the assertion callback
@@ -403,9 +303,118 @@ describe('Planning CRUD tests', function () {
     });
   });
 
-  afterEach(function (done) {
-    User.remove().exec(function () {
-      Planning.remove().exec(done);
+  it('should be able to get a single planning if not signed in and verify the custom "isCurrentUserOwner" field is set to "false"', function (done) {
+    // Create new planning model instance
+    var planningObj = new Planning(planning);
+
+    // Save the planning
+    planningObj.save(function (err) {
+      if (err) {
+        return done(err);
+      }
+      agent.get('/api/plannings/' + planningObj._id)
+        .end(function (req, res) {
+          // Set assertion
+          res.body.should.be.instanceof(Object).and.have.property('title', planning.title);
+          // Assert the custom field "isCurrentUserOwner" is set to false for the un-authenticated User
+          res.body.should.be.instanceof(Object).and.have.property('isCurrentUserOwner', false);
+          // Call the assertion callback
+          done();
+        });
     });
+  });
+
+  it('should be able to get single planning, that a different user created, if logged in & verify the "isCurrentUserOwner" field is set to "false"', function (done) {
+    // Create temporary user creds
+    var _creds = {
+      usernameOrEmail: 'planningowner',
+      password: 'M3@n.jsI$Aw3$0m3'
+    };
+
+    // Create user that will create the Planning
+    var _planningOwner = new User({
+      firstName: 'Full',
+      lastName: 'Name',
+      displayName: 'Full Name',
+      email: 'temp@test.com',
+      username: _creds.usernameOrEmail,
+      password: _creds.password,
+      provider: 'local',
+      roles: ['admin', 'user']
+    });
+
+    _planningOwner.save(function (err, _user) {
+      // Handle save error
+      if (err) {
+        return done(err);
+      }
+
+      // Sign in with the user that will create the Planning
+      agent.post('/api/auth/signin')
+        .send(_creds)
+        .expect(200)
+        .end(function (signinErr, signinRes) {
+          // Handle signin error
+          if (signinErr) {
+            return done(signinErr);
+          }
+
+          // Get the userId
+          var userId = _user._id;
+
+          // Save a new planning
+          agent.post('/api/plannings')
+            .send(planning)
+            .expect(200)
+            .end(function (planningSaveErr, planningSaveRes) {
+              // Handle planning save error
+              if (planningSaveErr) {
+                return done(planningSaveErr);
+              }
+
+              // Set assertions on new planning
+              (planningSaveRes.body.title).should.equal(planning.title);
+              should.exist(planningSaveRes.body.user);
+              should.equal(planningSaveRes.body.user._id, userId);
+
+              // now signin with the test suite user
+              agent.post('/api/auth/signin')
+                .send(credentials)
+                .expect(200)
+                .end(function (err, res) {
+                  // Handle signin error
+                  if (err) {
+                    return done(err);
+                  }
+
+                  // Get the planning
+                  agent.get('/api/plannings/' + planningSaveRes.body._id)
+                    .expect(200)
+                    .end(function (planningInfoErr, planningInfoRes) {
+                      // Handle planning error
+                      if (planningInfoErr) {
+                        return done(planningInfoErr);
+                      }
+
+                      // Set assertions
+                      (planningInfoRes.body._id).should.equal(planningSaveRes.body._id);
+                      (planningInfoRes.body.title).should.equal(planning.title);
+                      // Assert that the custom field "isCurrentUserOwner" is set to false since the current User didn't create it
+                      (planningInfoRes.body.isCurrentUserOwner).should.equal(false);
+
+                      // Call the assertion callback
+                      done();
+                    });
+                });
+            });
+        });
+    });
+  });
+
+  afterEach(function (done) {
+    Planning.remove().exec()
+      .then(User.remove().exec())
+      .then(done())
+      .catch(done);
   });
 });

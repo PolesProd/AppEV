@@ -17,51 +17,55 @@ var user,
 /**
  * Unit tests
  */
-describe('Employe Model Unit Tests:', function() {
-  beforeEach(function(done) {
+describe('Employe Model Unit Tests:', function () {
+
+  beforeEach(function (done) {
     user = new User({
       firstName: 'Full',
       lastName: 'Name',
       displayName: 'Full Name',
       email: 'test@test.com',
       username: 'username',
-      password: 'password'
+      password: 'M3@n.jsI$Aw3$0m3',
+      provider: 'local'
     });
 
-    user.save(function() {
-      employe = new Employe({
-        name: 'Employe Name',
-        user: user
-      });
+    user.save()
+      .then(function () {
+        employe = new Employe({
+          title: 'Employe Title',
+          content: 'Employe Content',
+          user: user
+        });
 
-      done();
-    });
+        done();
+      })
+      .catch(done);
   });
 
-  describe('Method Save', function() {
-    it('should be able to save without problems', function(done) {
-      this.timeout(0);
-      return employe.save(function(err) {
+  describe('Method Save', function () {
+    it('should be able to save without problems', function (done) {
+      this.timeout(10000);
+      employe.save(function (err) {
         should.not.exist(err);
-        done();
+        return done();
       });
     });
 
-    it('should be able to show an error when try to save without name', function(done) {
-      employe.name = '';
+    it('should be able to show an error when try to save without title', function (done) {
+      employe.title = '';
 
-      return employe.save(function(err) {
+      employe.save(function (err) {
         should.exist(err);
-        done();
+        return done();
       });
     });
   });
 
-  afterEach(function(done) {
-    Employe.remove().exec(function() {
-      User.remove().exec(function() {
-        done();
-      });
-    });
+  afterEach(function (done) {
+    Employe.remove().exec()
+      .then(User.remove().exec())
+      .then(done())
+      .catch(done);
   });
 });

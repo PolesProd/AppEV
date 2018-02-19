@@ -38,6 +38,25 @@
         });
       });
 
+      describe('List Route', function () {
+        var liststate;
+        beforeEach(inject(function ($state) {
+          liststate = $state.get('employes.list');
+        }));
+
+        it('Should have the correct URL', function () {
+          expect(liststate.url).toEqual('');
+        });
+
+        it('Should not be abstract', function () {
+          expect(liststate.abstract).toBe(undefined);
+        });
+
+        it('Should have templateUrl', function () {
+          expect(liststate.templateUrl).toBe('/modules/employes/client/views/list-employes.client.view.html');
+        });
+      });
+
       describe('View Route', function () {
         var viewstate,
           EmployesController,
@@ -45,12 +64,13 @@
 
         beforeEach(inject(function ($controller, $state, $templateCache) {
           viewstate = $state.get('employes.view');
-          $templateCache.put('modules/employes/client/views/view-employe.client.view.html', '');
+          $templateCache.put('/modules/employes/client/views/view-employe.client.view.html', '');
 
-          // create mock Employe
+          // create mock employe
           mockEmploye = new EmployesService({
             _id: '525a8422f6d0f87f0e407a33',
-            name: 'Employe Name'
+            title: 'An Employe about MEAN',
+            content: 'MEAN rocks!'
           });
 
           // Initialize Controller
@@ -75,7 +95,7 @@
           })).toEqual('/employes/1');
         }));
 
-        it('should attach an Employe to the controller scope', function () {
+        it('should attach an employe to the controller scope', function () {
           expect($scope.vm.employe._id).toBe(mockEmploye._id);
         });
 
@@ -84,110 +104,26 @@
         });
 
         it('Should have templateUrl', function () {
-          expect(viewstate.templateUrl).toBe('modules/employes/client/views/view-employe.client.view.html');
+          expect(viewstate.templateUrl).toBe('/modules/employes/client/views/view-employe.client.view.html');
         });
       });
 
-      describe('Create Route', function () {
-        var createstate,
-          EmployesController,
-          mockEmploye;
+      describe('Handle Trailing Slash', function () {
+        beforeEach(inject(function ($state, $rootScope, $templateCache) {
+          $templateCache.put('/modules/employes/client/views/list-employes.client.view.html', '');
 
-        beforeEach(inject(function ($controller, $state, $templateCache) {
-          createstate = $state.get('employes.create');
-          $templateCache.put('modules/employes/client/views/form-employe.client.view.html', '');
-
-          // create mock Employe
-          mockEmploye = new EmployesService();
-
-          // Initialize Controller
-          EmployesController = $controller('EmployesController as vm', {
-            $scope: $scope,
-            employeResolve: mockEmploye
-          });
+          $state.go('employes.list');
+          $rootScope.$digest();
         }));
 
-        it('Should have the correct URL', function () {
-          expect(createstate.url).toEqual('/create');
-        });
+        it('Should remove trailing slash', inject(function ($state, $location, $rootScope) {
+          $location.path('employes/');
+          $rootScope.$digest();
 
-        it('Should have a resolve function', function () {
-          expect(typeof createstate.resolve).toEqual('object');
-          expect(typeof createstate.resolve.employeResolve).toEqual('function');
-        });
-
-        it('should respond to URL', inject(function ($state) {
-          expect($state.href(createstate)).toEqual('/employes/create');
+          expect($location.path()).toBe('/employes');
+          expect($state.current.templateUrl).toBe('/modules/employes/client/views/list-employes.client.view.html');
         }));
-
-        it('should attach an Employe to the controller scope', function () {
-          expect($scope.vm.employe._id).toBe(mockEmploye._id);
-          expect($scope.vm.employe._id).toBe(undefined);
-        });
-
-        it('Should not be abstract', function () {
-          expect(createstate.abstract).toBe(undefined);
-        });
-
-        it('Should have templateUrl', function () {
-          expect(createstate.templateUrl).toBe('modules/employes/client/views/form-employe.client.view.html');
-        });
       });
-
-      describe('Edit Route', function () {
-        var editstate,
-          EmployesController,
-          mockEmploye;
-
-        beforeEach(inject(function ($controller, $state, $templateCache) {
-          editstate = $state.get('employes.edit');
-          $templateCache.put('modules/employes/client/views/form-employe.client.view.html', '');
-
-          // create mock Employe
-          mockEmploye = new EmployesService({
-            _id: '525a8422f6d0f87f0e407a33',
-            name: 'Employe Name'
-          });
-
-          // Initialize Controller
-          EmployesController = $controller('EmployesController as vm', {
-            $scope: $scope,
-            employeResolve: mockEmploye
-          });
-        }));
-
-        it('Should have the correct URL', function () {
-          expect(editstate.url).toEqual('/:employeId/edit');
-        });
-
-        it('Should have a resolve function', function () {
-          expect(typeof editstate.resolve).toEqual('object');
-          expect(typeof editstate.resolve.employeResolve).toEqual('function');
-        });
-
-        it('should respond to URL', inject(function ($state) {
-          expect($state.href(editstate, {
-            employeId: 1
-          })).toEqual('/employes/1/edit');
-        }));
-
-        it('should attach an Employe to the controller scope', function () {
-          expect($scope.vm.employe._id).toBe(mockEmploye._id);
-        });
-
-        it('Should not be abstract', function () {
-          expect(editstate.abstract).toBe(undefined);
-        });
-
-        it('Should have templateUrl', function () {
-          expect(editstate.templateUrl).toBe('modules/employes/client/views/form-employe.client.view.html');
-        });
-
-        xit('Should go to unauthorized route', function () {
-
-        });
-      });
-
     });
   });
 }());

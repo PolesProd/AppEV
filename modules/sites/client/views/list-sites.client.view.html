@@ -1,0 +1,19 @@
+<section>
+  <div class="page-header">
+    <h1>Liste des sites</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="site in vm.sites" ui-sref="sites.view({ siteId: site._id })" class="list-group-item">
+      <h4 class="list-group-item-heading">{{site.properties.nom}}</h4>
+      <img src="{{site.properties.image1}}" class="img-thumbnail photo" alt="">
+      <p class="list-group-item-text" ng-bind="site.properties.description"></p>
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="site.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="site.user" ng-bind="site.user.displayName"></span>
+        <span ng-if="!site.user">Deleted User</span>
+      </small>
+    </a>
+  </div>
+</section>

@@ -9,7 +9,7 @@ var acl = require('acl');
 acl = new acl(new acl.memoryBackend());
 
 /**
- * Invoke Plannings Permissions
+ * Invoke Articles Permissions
  */
 exports.invokeRolesPolicies = function () {
   acl.allow([{
@@ -25,7 +25,7 @@ exports.invokeRolesPolicies = function () {
     roles: ['user'],
     allows: [{
       resources: '/api/plannings',
-      permissions: ['get', 'post']
+      permissions: ['get']
     }, {
       resources: '/api/plannings/:planningId',
       permissions: ['get']
@@ -43,12 +43,12 @@ exports.invokeRolesPolicies = function () {
 };
 
 /**
- * Check If Plannings Policy Allows
+ * Check If Articles Policy Allows
  */
 exports.isAllowed = function (req, res, next) {
   var roles = (req.user) ? req.user.roles : ['guest'];
 
-  // If an Planning is being processed and the current user created it then allow any manipulation
+  // If an planning is being processed and the current user created it then allow any manipulation
   if (req.planning && req.user && req.planning.user && req.planning.user.id === req.user.id) {
     return next();
   }

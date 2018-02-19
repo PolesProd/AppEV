@@ -17,51 +17,55 @@ var user,
 /**
  * Unit tests
  */
-describe('Planning Model Unit Tests:', function() {
-  beforeEach(function(done) {
+describe('Planning Model Unit Tests:', function () {
+
+  beforeEach(function (done) {
     user = new User({
       firstName: 'Full',
       lastName: 'Name',
       displayName: 'Full Name',
       email: 'test@test.com',
       username: 'username',
-      password: 'password'
+      password: 'M3@n.jsI$Aw3$0m3',
+      provider: 'local'
     });
 
-    user.save(function() {
-      planning = new Planning({
-        name: 'Planning Name',
-        user: user
-      });
+    user.save()
+      .then(function () {
+        planning = new Planning({
+          title: 'Planning Title',
+          content: 'Planning Content',
+          user: user
+        });
 
-      done();
-    });
+        done();
+      })
+      .catch(done);
   });
 
-  describe('Method Save', function() {
-    it('should be able to save without problems', function(done) {
-      this.timeout(0);
-      return planning.save(function(err) {
+  describe('Method Save', function () {
+    it('should be able to save without problems', function (done) {
+      this.timeout(10000);
+      planning.save(function (err) {
         should.not.exist(err);
-        done();
+        return done();
       });
     });
 
-    it('should be able to show an error when try to save without name', function(done) {
-      planning.name = '';
+    it('should be able to show an error when try to save without title', function (done) {
+      planning.title = '';
 
-      return planning.save(function(err) {
+      planning.save(function (err) {
         should.exist(err);
-        done();
+        return done();
       });
     });
   });
 
-  afterEach(function(done) {
-    Planning.remove().exec(function() {
-      User.remove().exec(function() {
-        done();
-      });
-    });
+  afterEach(function (done) {
+    Planning.remove().exec()
+      .then(User.remove().exec())
+      .then(done())
+      .catch(done);
   });
 });

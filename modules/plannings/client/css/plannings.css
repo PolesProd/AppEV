@@ -1,0 +1,11 @@
+ul.dropdown-menu li {
+	cursor: pointer;
+}
+
+ul.dropdown-menu li span.red {
+	color: red;
+}
+
+ul.dropdown-menu li span.green {
+	color: green;
+}

@@ -1,76 +1,36 @@
-// (function () {
-//   'use strict';
-//   // employes controller
-//   angular
-//   .module('employes')
-//   .controller('EmployesController', EmployesController);
-//
-//   EmployesController.$inject = ['$scope', '$state', '$location', '$window', 'Authentication', 'employeResolve', 'TeamsService', 'LotsService'];
-//
-//   function EmployesController ($scope, $state, $window, $location, Authentication, employe, TeamsService, LotsService) {
-//
-//     var vm = this;
-//
-//     vm.authentication = Authentication;
-//     vm.employe = employe;
-//     vm.error = null;
-//     vm.form = {};
-//     vm.remove = remove;
-//     vm.save = save;
-//     vm.team = TeamsService.query();
-//
-//     $scope.teams = vm.team;
-//     $scope.teams.$promise.then(function (resourceArray) {
-//       $scope.item = [
-//         { name: resourceArray[0].name }
-//       ];
-//     });
-//
-//     $scope.contrats = [
-//       { name: 'CDI', value: false },
-//       { name: 'CDD', value: false },
-//       { name: 'CDDI', value: false },
-//       { name: 'Renouvelé', value: false },
-//       { name: 'Licencié', value: false }
-//     ];
-//
-//     $scope.status = [
-//       { name: 'Encadrant', value: false },
-//       { name: 'Chef d\'équipe', value: false },
-//       { name: 'Ouvrier', value: false }
-//     ];
-//
-//
-//     // Remove existing employe
-//     function remove() {
-//       if ($window.confirm('Are you sure you want to delete?')) {
-//         vm.employe.$remove($state.go('employes.list'));
-//       }
-//     }
-//
-//     // Save employe
-//     function save(isValid) {
-//       if (!isValid) {
-//         $scope.$broadcast('show-errors-check-validity', 'vm.form.employeForm');
-//         return false;
-//       }
-//
-//       // TODO: move create/update logic to service
-//       if (vm.employe._id) {
-//         vm.employe.$update(successCallback, errorCallback);
-//       } else {
-//         vm.employe.$save(successCallback, errorCallback);
-//       }
-//
-//       function successCallback(res) {
-//         $state.go('employes.view', {
-//           employeId: res._id,
-//         });
-//       }
-//
-//       function errorCallback(res) {
-//         vm.error= res.data.message;
-//       }
-//     }
-//   }
-// }());
+(function () {
+  'use strict';
+
+  angular
+    .module('employes')
+    .controller('EmployesController', EmployesController);
+
+  EmployesController.$inject = ['$scope', 'employeResolve', 'Authentication'];
+
+  function EmployesController($scope, employe, Authentication) {
+    var vm = this;
+
+    vm.employe = employe;
+    vm.authentication = Authentication;
+
+    vm.disabled = undefined;
+
+    vm.disable = function() {
+      vm.disabled = true;
+    };
+
+    $scope.types = [
+      { name: 'CDI', value: false },
+      { name: 'CDD', value: false },
+      { name: 'CDDI', value: false },
+      { name: 'Renouvelé', value: false },
+      { name: 'Licencié', value: false }
+    ];
+
+    $scope.responsables = [
+      { name: 'Hamid MOUHOUB' },
+      { name: 'Marie DEMARSAC' },
+      { name: 'Mustafa MALKI' }
+    ];
+  }
+}());

@@ -1,0 +1,26 @@
+﻿<section>
+  <div class="page-header">
+    <h1>
+      Articles
+      <a class="btn btn-primary pull-right" data-ui-sref="admin.sites.create">
+        <i class="glyphicon glyphicon-plus"></i>
+      </a>
+    </h1>
+  </div>
+  <div class="list-group">
+    <a data-ng-repeat="site in vm.sites" data-ui-sref="admin.sites.edit({siteId: site._id})" class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span data-ng-bind="site.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="site.user" ng-bind="site.user.displayName"></span>
+        <span ng-if="!site.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" data-ng-bind="site.title"></h4>
+      <p class="list-group-item-text" data-ng-bind="site.content"></p>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" data-ng-if="vm.sites.$resolved && !vm.sites.length">
+    No sites yet, why don't you <a data-ui-sref="admin.sites.create">create one</a>?
+  </div>
+</section>

@@ -24,7 +24,7 @@ describe('Employe CRUD tests', function () {
 
   before(function (done) {
     // Get application
-    app = express.init(mongoose);
+    app = express.init(mongoose.connection.db);
     agent = request.agent(app);
 
     done();
@@ -33,7 +33,7 @@ describe('Employe CRUD tests', function () {
   beforeEach(function (done) {
     // Create user credentials
     credentials = {
-      username: 'username',
+      usernameOrEmail: 'username',
       password: 'M3@n.jsI$Aw3$0m3'
     };
 
@@ -43,22 +43,25 @@ describe('Employe CRUD tests', function () {
       lastName: 'Name',
       displayName: 'Full Name',
       email: 'test@test.com',
-      username: credentials.username,
+      username: credentials.usernameOrEmail,
       password: credentials.password,
       provider: 'local'
     });
 
-    // Save a user to the test db and create new Employe
-    user.save(function () {
-      employe = {
-        name: 'Employe name'
-      };
+    // Save a user to the test db and create new employe
+    user.save()
+      .then(function () {
+        employe = {
+          title: 'Employe Title',
+          content: 'Employe Content'
+        };
 
-      done();
-    });
+        done();
+      })
+      .catch(done);
   });
 
-  it('should be able to save a Employe if logged in', function (done) {
+  it('should not be able to save an employe if logged in without the "admin" role', function (done) {
     agent.post('/api/auth/signin')
       .send(credentials)
       .expect(200)
@@ -68,42 +71,18 @@ describe('Employe CRUD tests', function () {
           return done(signinErr);
         }
 
-        // Get the userId
-        var userId = user.id;
-
-        // Save a new Employe
         agent.post('/api/employes')
           .send(employe)
-          .expect(200)
+          .expect(403)
           .end(function (employeSaveErr, employeSaveRes) {
-            // Handle Employe save error
-            if (employeSaveErr) {
-              return done(employeSaveErr);
-            }
-
-            // Get a list of Employes
-            agent.get('/api/employes')
-              .end(function (employesGetErr, employesGetRes) {
-                // Handle Employes save error
-                if (employesGetErr) {
-                  return done(employesGetErr);
-                }
-
-                // Get Employes list
-                var employes = employesGetRes.body;
-
-                // Set assertions
-                (employes[0].user._id).should.equal(userId);
-                (employes[0].name).should.match('Employe name');
-
-                // Call the assertion callback
-                done();
-              });
+            // Call the assertion callback
+            done(employeSaveErr);
           });
+
       });
   });
 
-  it('should not be able to save an Employe if not logged in', function (done) {
+  it('should not be able to save an employe if not logged in', function (done) {
     agent.post('/api/employes')
       .send(employe)
       .expect(403)
@@ -113,10 +92,7 @@ describe('Employe CRUD tests', function () {
       });
   });
 
-  it('should not be able to save an Employe if no name is provided', function (done) {
-    // Invalidate name field
-    employe.name = '';
-
+  it('should not be able to update an employe if signed in without the "admin" role', function (done) {
     agent.post('/api/auth/signin')
       .send(credentials)
       .expect(200)
@@ -126,78 +102,24 @@ describe('Employe CRUD tests', function () {
           return done(signinErr);
         }
 
-        // Get the userId
-        var userId = user.id;
-
-        // Save a new Employe
         agent.post('/api/employes')
           .send(employe)
-          .expect(400)
+          .expect(403)
           .end(function (employeSaveErr, employeSaveRes) {
-            // Set message assertion
-            (employeSaveRes.body.message).should.match('Please fill Employe name');
-
-            // Handle Employe save error
+            // Call the assertion callback
             done(employeSaveErr);
           });
       });
   });
 
-  it('should be able to update an Employe if signed in', function (done) {
-    agent.post('/api/auth/signin')
-      .send(credentials)
-      .expect(200)
-      .end(function (signinErr, signinRes) {
-        // Handle signin error
-        if (signinErr) {
-          return done(signinErr);
-        }
-
-        // Get the userId
-        var userId = user.id;
-
-        // Save a new Employe
-        agent.post('/api/employes')
-          .send(employe)
-          .expect(200)
-          .end(function (employeSaveErr, employeSaveRes) {
-            // Handle Employe save error
-            if (employeSaveErr) {
-              return done(employeSaveErr);
-            }
-
-            // Update Employe name
-            employe.name = 'WHY YOU GOTTA BE SO MEAN?';
-
-            // Update an existing Employe
-            agent.put('/api/employes/' + employeSaveRes.body._id)
-              .send(employe)
-              .expect(200)
-              .end(function (employeUpdateErr, employeUpdateRes) {
-                // Handle Employe update error
-                if (employeUpdateErr) {
-                  return done(employeUpdateErr);
-                }
-
-                // Set assertions
-                (employeUpdateRes.body._id).should.equal(employeSaveRes.body._id);
-                (employeUpdateRes.body.name).should.match('WHY YOU GOTTA BE SO MEAN?');
-
-                // Call the assertion callback
-                done();
-              });
-          });
-      });
-  });
-
-  it('should be able to get a list of Employes if not signed in', function (done) {
-    // Create new Employe model instance
+  it('should be able to get a list of employes if not signed in', function (done) {
+    // Create new employe model instance
     var employeObj = new Employe(employe);
 
     // Save the employe
     employeObj.save(function () {
-      // Request Employes
-      request(app).get('/api/employes')
+      // Request employes
+      agent.get('/api/employes')
         .end(function (req, res) {
           // Set assertion
           res.body.should.be.instanceof(Array).and.have.lengthOf(1);
@@ -209,16 +131,16 @@ describe('Employe CRUD tests', function () {
     });
   });
 
-  it('should be able to get a single Employe if not signed in', function (done) {
-    // Create new Employe model instance
+  it('should be able to get a single employe if not signed in', function (done) {
+    // Create new employe model instance
     var employeObj = new Employe(employe);
 
-    // Save the Employe
+    // Save the employe
     employeObj.save(function () {
-      request(app).get('/api/employes/' + employeObj._id)
+      agent.get('/api/employes/' + employeObj._id)
         .end(function (req, res) {
           // Set assertion
-          res.body.should.be.instanceof(Object).and.have.property('name', employe.name);
+          res.body.should.be.instanceof(Object).and.have.property('title', employe.title);
 
           // Call the assertion callback
           done();
@@ -226,9 +148,9 @@ describe('Employe CRUD tests', function () {
     });
   });
 
-  it('should return proper error for single Employe with an invalid Id, if not signed in', function (done) {
+  it('should return proper error for single employe with an invalid Id, if not signed in', function (done) {
     // test is not a valid mongoose Id
-    request(app).get('/api/employes/test')
+    agent.get('/api/employes/test')
       .end(function (req, res) {
         // Set assertion
         res.body.should.be.instanceof(Object).and.have.property('message', 'Employe is invalid');
@@ -238,19 +160,19 @@ describe('Employe CRUD tests', function () {
       });
   });
 
-  it('should return proper error for single Employe which doesnt exist, if not signed in', function (done) {
-    // This is a valid mongoose Id but a non-existent Employe
-    request(app).get('/api/employes/559e9cd815f80b4c256a8f41')
+  it('should return proper error for single employe which doesnt exist, if not signed in', function (done) {
+    // This is a valid mongoose Id but a non-existent employe
+    agent.get('/api/employes/559e9cd815f80b4c256a8f41')
       .end(function (req, res) {
         // Set assertion
-        res.body.should.be.instanceof(Object).and.have.property('message', 'No Employe with that identifier has been found');
+        res.body.should.be.instanceof(Object).and.have.property('message', 'No employe with that identifier has been found');
 
         // Call the assertion callback
         done();
       });
   });
 
-  it('should be able to delete an Employe if signed in', function (done) {
+  it('should not be able to delete an employe if signed in without the "admin" role', function (done) {
     agent.post('/api/auth/signin')
       .send(credentials)
       .expect(200)
@@ -260,66 +182,43 @@ describe('Employe CRUD tests', function () {
           return done(signinErr);
         }
 
-        // Get the userId
-        var userId = user.id;
-
-        // Save a new Employe
         agent.post('/api/employes')
           .send(employe)
-          .expect(200)
+          .expect(403)
           .end(function (employeSaveErr, employeSaveRes) {
-            // Handle Employe save error
-            if (employeSaveErr) {
-              return done(employeSaveErr);
-            }
-
-            // Delete an existing Employe
-            agent.delete('/api/employes/' + employeSaveRes.body._id)
-              .send(employe)
-              .expect(200)
-              .end(function (employeDeleteErr, employeDeleteRes) {
-                // Handle employe error error
-                if (employeDeleteErr) {
-                  return done(employeDeleteErr);
-                }
-
-                // Set assertions
-                (employeDeleteRes.body._id).should.equal(employeSaveRes.body._id);
-
-                // Call the assertion callback
-                done();
-              });
+            // Call the assertion callback
+            done(employeSaveErr);
           });
       });
   });
 
-  it('should not be able to delete an Employe if not signed in', function (done) {
-    // Set Employe user
+  it('should not be able to delete an employe if not signed in', function (done) {
+    // Set employe user
     employe.user = user;
 
-    // Create new Employe model instance
+    // Create new employe model instance
     var employeObj = new Employe(employe);
 
-    // Save the Employe
+    // Save the employe
     employeObj.save(function () {
-      // Try deleting Employe
-      request(app).delete('/api/employes/' + employeObj._id)
+      // Try deleting employe
+      agent.delete('/api/employes/' + employeObj._id)
         .expect(403)
         .end(function (employeDeleteErr, employeDeleteRes) {
           // Set message assertion
           (employeDeleteRes.body.message).should.match('User is not authorized');
 
-          // Handle Employe error error
+          // Handle employe error error
           done(employeDeleteErr);
         });
 
     });
   });
 
-  it('should be able to get a single Employe that has an orphaned user reference', function (done) {
+  it('should be able to get a single employe that has an orphaned user reference', function (done) {
     // Create orphan user creds
     var _creds = {
-      username: 'orphan',
+      usernameOrEmail: 'orphan',
       password: 'M3@n.jsI$Aw3$0m3'
     };
 
@@ -329,9 +228,10 @@ describe('Employe CRUD tests', function () {
       lastName: 'Name',
       displayName: 'Full Name',
       email: 'orphan@test.com',
-      username: _creds.username,
+      username: _creds.usernameOrEmail,
       password: _creds.password,
-      provider: 'local'
+      provider: 'local',
+      roles: ['admin']
     });
 
     _orphan.save(function (err, orphan) {
@@ -352,22 +252,22 @@ describe('Employe CRUD tests', function () {
           // Get the userId
           var orphanId = orphan._id;
 
-          // Save a new Employe
+          // Save a new employe
           agent.post('/api/employes')
             .send(employe)
             .expect(200)
             .end(function (employeSaveErr, employeSaveRes) {
-              // Handle Employe save error
+              // Handle employe save error
               if (employeSaveErr) {
                 return done(employeSaveErr);
               }
 
-              // Set assertions on new Employe
-              (employeSaveRes.body.name).should.equal(employe.name);
+              // Set assertions on new employe
+              (employeSaveRes.body.title).should.equal(employe.title);
               should.exist(employeSaveRes.body.user);
               should.equal(employeSaveRes.body.user._id, orphanId);
 
-              // force the Employe to have an orphaned user reference
+              // force the employe to have an orphaned user reference
               orphan.remove(function () {
                 // now signin with valid user
                 agent.post('/api/auth/signin')
@@ -379,18 +279,18 @@ describe('Employe CRUD tests', function () {
                       return done(err);
                     }
 
-                    // Get the Employe
+                    // Get the employe
                     agent.get('/api/employes/' + employeSaveRes.body._id)
                       .expect(200)
                       .end(function (employeInfoErr, employeInfoRes) {
-                        // Handle Employe error
+                        // Handle employe error
                         if (employeInfoErr) {
                           return done(employeInfoErr);
                         }
 
                         // Set assertions
                         (employeInfoRes.body._id).should.equal(employeSaveRes.body._id);
-                        (employeInfoRes.body.name).should.equal(employe.name);
+                        (employeInfoRes.body.title).should.equal(employe.title);
                         should.equal(employeInfoRes.body.user, undefined);
 
                         // Call the assertion callback
@@ -403,9 +303,118 @@ describe('Employe CRUD tests', function () {
     });
   });
 
-  afterEach(function (done) {
-    User.remove().exec(function () {
-      Employe.remove().exec(done);
+  it('should be able to get a single employe if not signed in and verify the custom "isCurrentUserOwner" field is set to "false"', function (done) {
+    // Create new employe model instance
+    var employeObj = new Employe(employe);
+
+    // Save the employe
+    employeObj.save(function (err) {
+      if (err) {
+        return done(err);
+      }
+      agent.get('/api/employes/' + employeObj._id)
+        .end(function (req, res) {
+          // Set assertion
+          res.body.should.be.instanceof(Object).and.have.property('title', employe.title);
+          // Assert the custom field "isCurrentUserOwner" is set to false for the un-authenticated User
+          res.body.should.be.instanceof(Object).and.have.property('isCurrentUserOwner', false);
+          // Call the assertion callback
+          done();
+        });
     });
+  });
+
+  it('should be able to get single employe, that a different user created, if logged in & verify the "isCurrentUserOwner" field is set to "false"', function (done) {
+    // Create temporary user creds
+    var _creds = {
+      usernameOrEmail: 'employeowner',
+      password: 'M3@n.jsI$Aw3$0m3'
+    };
+
+    // Create user that will create the Employe
+    var _employeOwner = new User({
+      firstName: 'Full',
+      lastName: 'Name',
+      displayName: 'Full Name',
+      email: 'temp@test.com',
+      username: _creds.usernameOrEmail,
+      password: _creds.password,
+      provider: 'local',
+      roles: ['admin', 'user']
+    });
+
+    _employeOwner.save(function (err, _user) {
+      // Handle save error
+      if (err) {
+        return done(err);
+      }
+
+      // Sign in with the user that will create the Employe
+      agent.post('/api/auth/signin')
+        .send(_creds)
+        .expect(200)
+        .end(function (signinErr, signinRes) {
+          // Handle signin error
+          if (signinErr) {
+            return done(signinErr);
+          }
+
+          // Get the userId
+          var userId = _user._id;
+
+          // Save a new employe
+          agent.post('/api/employes')
+            .send(employe)
+            .expect(200)
+            .end(function (employeSaveErr, employeSaveRes) {
+              // Handle employe save error
+              if (employeSaveErr) {
+                return done(employeSaveErr);
+              }
+
+              // Set assertions on new employe
+              (employeSaveRes.body.title).should.equal(employe.title);
+              should.exist(employeSaveRes.body.user);
+              should.equal(employeSaveRes.body.user._id, userId);
+
+              // now signin with the test suite user
+              agent.post('/api/auth/signin')
+                .send(credentials)
+                .expect(200)
+                .end(function (err, res) {
+                  // Handle signin error
+                  if (err) {
+                    return done(err);
+                  }
+
+                  // Get the employe
+                  agent.get('/api/employes/' + employeSaveRes.body._id)
+                    .expect(200)
+                    .end(function (employeInfoErr, employeInfoRes) {
+                      // Handle employe error
+                      if (employeInfoErr) {
+                        return done(employeInfoErr);
+                      }
+
+                      // Set assertions
+                      (employeInfoRes.body._id).should.equal(employeSaveRes.body._id);
+                      (employeInfoRes.body.title).should.equal(employe.title);
+                      // Assert that the custom field "isCurrentUserOwner" is set to false since the current User didn't create it
+                      (employeInfoRes.body.isCurrentUserOwner).should.equal(false);
+
+                      // Call the assertion callback
+                      done();
+                    });
+                });
+            });
+        });
+    });
+  });
+
+  afterEach(function (done) {
+    Employe.remove().exec()
+      .then(User.remove().exec())
+      .then(done())
+      .catch(done);
   });
 });

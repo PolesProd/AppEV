@@ -1,36 +1,51 @@
 'use strict';
-var chalk = require('chalk'),
+
+var validator = require('validator'),
+  path = require('path'),
+  config = require(path.resolve('./config/config')),
   nodemailer = require('nodemailer'),
-  transporter = nodemailer.createTransport();
+  smtpTransport = nodemailer.createTransport(config.mailer.options);
+
 
 /**
-* Render the main application page
-*/
-exports.renderIndex = function (req, res, next) {
+ * Render the main application page
+ */
+exports.renderIndex = function (req, res) {
+  var safeUserObject = null;
+  if (req.user) {
+    safeUserObject = {
+      displayName: validator.escape(req.user.displayName),
+      provider: validator.escape(req.user.provider),
+      username: validator.escape(req.user.username),
+      created: req.user.created.toString(),
+      roles: req.user.roles,
+      profileImageURL: req.user.profileImageURL,
+      email: validator.escape(req.user.email),
+      lastName: validator.escape(req.user.lastName),
+      firstName: validator.escape(req.user.firstName),
+      additionalProvidersData: req.user.additionalProvidersData
+    };
+  }
+
   res.render('modules/core/server/views/index', {
-    user: req.user
-  });
-};
-
-exports.renderEcocert = function (req, res, next) {
-  res.render('modules/core/client/views/ecocert', {
-    user: req.user
+    user: JSON.stringify(safeUserObject),
+    sharedConfig: JSON.stringify(config.shared)
   });
 };
 
 /**
-* Render the server error page
-*/
+ * Render the server error page
+ */
 exports.renderServerError = function (req, res) {
   res.status(500).render('modules/core/server/views/500', {
-    error: 'It looks like the server does not want to work...'
+    error: 'Oops! Something went wrong...'
   });
 };
 
 /**
-* Render the server not found responses
-* Performs content-negotiation on the Accept HTTP header
-*/
+ * Render the server not found responses
+ * Performs content-negotiation on the Accept HTTP header
+ */
 exports.renderNotFound = function (req, res) {
 
   res.status(404).format({
@@ -51,17 +66,26 @@ exports.renderNotFound = function (req, res) {
 };
 
 /**
-* Envoi un email 
-*/
-exports.sendMail = function (req, res) {
-  var data = req.body;
+ * Envoi du mail
+ */
+exports.sendMail = function (emailHTML, user, done) {
+  var mailOptions = {
+    to: user.email,
+    from: config.mailer.from,
+    subject: 'Password Reset',
+    html: emailHTML
+  };
+  smtpTransport.sendMail(mailOptions, function (err) {
+    if (!err) {
+      res.send({
+        message: 'An email has been sent to the provided email with further instructions.'
+      });
+    } else {
+      return res.status(400).send({
+        message: 'Failure sending email'
+      });
+    }
 
-  transporter.sendMail({
-    from: data.contactEmail,
-    to: 'abdoulaye.diarra@lepoles.com',
-    subject: 'Message de: ' + data.contactName,
-    text: data.contactMsg
+    done(err);
   });
-
-  res.json(data);
 };

@@ -1,91 +1,78 @@
 'use strict';
 
 /**
- * Module dependencies.
+ * Module dependencies
  */
 var path = require('path'),
   mongoose = require('mongoose'),
   Employe = mongoose.model('Employe'),
-  errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
-  _ = require('lodash');
+  errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
 
 /**
- * Create a Employe
+ * Create an employe
  */
-exports.create = function(req, res) {
-  var employe = new Employe({
-    lastname: req.body.lastname,
-    firstname: req.body.firstname,
-    email: req.body.email,
-    number: req.body.number,
-    team: req.body.team,
-    status: req.body.status,
-    formation: req.body.formation,
-    contrat: req.body.contrat,
-    start_date: req.body.start_date,
-    end_date: req.body.end_date,
-    renew: req.body.renew
-  });
+exports.create = function (req, res) {
+  var employe = new Employe(req.body);
   employe.user = req.user;
 
-  employe.save(function(err) {
+  employe.save(function (err) {
     if (err) {
-      return res.status(400).send({
+      return res.status(422).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(employe);
+      res.json(employe);
     }
   });
 };
 
 /**
- * Show the current Employe
+ * Show the current employe
  */
-exports.read = function(req, res) {
-  console.log(Employe);
+exports.read = function (req, res) {
   // convert mongoose document to JSON
   var employe = req.employe ? req.employe.toJSON() : {};
 
-  // Add a custom field to the Article, for determining if the current User is the "owner".
-  // NOTE: This field is NOT persisted to the database, since it doesn't exist in the Article model.
-  employe.isCurrentUserOwner = req.user && employe.user && employe.user._id.toString() === req.user._id.toString();
+  // Add a custom field to the Employe, for determining if the current User is the "owner".
+  // NOTE: This field is NOT persisted to the database, since it doesn't exist in the Employe model.
+  employe.isCurrentUserOwner = !!(req.user && employe.user && employe.user._id.toString() === req.user._id.toString());
 
-  res.jsonp(employe);
+  res.json(employe);
 };
 
 /**
- * Update a Employe
+ * Update an employe
  */
-exports.update = function(req, res) {
+exports.update = function (req, res) {
   var employe = req.employe;
 
-  employe = _.extend(employe, req.body);
+  employe.title = req.body.title;
+  employe.content = req.body.content;
 
-  employe.save(function(err) {
+  employe.save(function (err) {
     if (err) {
-      return res.status(400).send({
+      return res.status(422).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(employe);
+      res.json(employe);
     }
   });
 };
 
 /**
- * Delete an Employe
+ * Delete an employe
  */
-exports.delete = function(req, res) {
+exports.delete = function (req, res) {
   var employe = req.employe;
 
-  employe.remove(function(err) {
+  employe.remove(function (err) {
     if (err) {
-      return res.status(400).send({
+      return res.status(422).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(employe);
+      res.json(employe);
     }
   });
 };
@@ -93,14 +80,14 @@ exports.delete = function(req, res) {
 /**
  * List of Employes
  */
-exports.list = function(req, res) {
-  Employe.find().sort('-created').populate('user', 'displayName').exec(function(err, employes) {
+exports.list = function (req, res) {
+  Employe.find().sort('-created').populate('user', 'displayName').exec(function (err, employes) {
     if (err) {
-      return res.status(400).send({
+      return res.status(422).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(employes);
+      res.json(employes);
     }
   });
 };
@@ -108,7 +95,7 @@ exports.list = function(req, res) {
 /**
  * Employe middleware
  */
-exports.employeByID = function(req, res, next, id) {
+exports.employeByID = function (req, res, next, id) {
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(400).send({
@@ -121,7 +108,7 @@ exports.employeByID = function(req, res, next, id) {
       return next(err);
     } else if (!employe) {
       return res.status(404).send({
-        message: 'No Employe with that identifier has been found'
+        message: 'No employe with that identifier has been found'
       });
     }
     req.employe = employe;

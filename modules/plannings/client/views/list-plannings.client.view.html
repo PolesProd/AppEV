@@ -1,32 +1,39 @@
-<div ng-controller="PlanningsListController">
-  <h2 class="text-center">{{ vm.calendarTitle }}</h2>
+<section>
+  <div class="page-header">
+    <h2 class="text-center">{{ vm.calendarTitle }}</h2>
+  </div>
 
   <div class="row">
 
     <div class="col-md-6 text-center">
       <div class="btn-group">
 
-        <button class="btn btn-primary" mwl-date-modifier date="vm.viewDate" decrement="vm.calendarView">Préc.</button>
-        <button class="btn btn-default" mwl-date-modifier date="vm.viewDate" set-to-today>Aujour'hui</button>
-        <button class="btn btn-primary" mwl-date-modifier date="vm.viewDate" increment="vm.calendarView">Suiv.</button>
+        <button class="btn btn-primary" mwl-date-modifier date="vm.viewDate" decrement="vm.calendarView" ng-click="vm.cellIsOpen = false">
+          Préc.
+        </button>
+        <button class="btn btn-default" mwl-date-modifier date="vm.viewDate" set-to-today ng-click="vm.cellIsOpen = false">
+          Aujourd'hui
+        </button>
+        <button class="btn btn-primary" mwl-date-modifier date="vm.viewDate" increment="vm.calendarView" ng-click="vm.cellIsOpen = false">
+          Suiv.
+        </button>
       </div>
     </div>
 
-    <button class="btn btn-primary" ui-sref="plannings.create">Nouveau</button>
+    <br class="visible-xs visible-sm">
+
+    <div class="col-md-6 text-center">
+      <div class="btn-group">
+        <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'year'" ng-click="vm.cellIsOpen = false">Année</label>
+        <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'month'" ng-click="vm.cellIsOpen = false">Mois</label>
+        <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'week'" ng-click="vm.cellIsOpen = false">Semaine</label>
+        <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'day'" ng-click="vm.cellIsOpen = false">Jours</label>
+      </div>
+    </div>
+
   </div>
 
-  <mwl-calendar
-    events="planningView"
-    view="vm.calendarView"
-    view-title="vm.calendarTitle"
-    view-date="vm.viewDate"
-    on-event-click="vm.eventClicked(calendarEvent)"
-    on-event-times-changed="vm.eventTimesChanged(calendarEvent); calendarEvent.startsAt = calendarNewEventStart; calendarEvent.endsAt = calendarNewEventEnd"
-    cell-is-open="vm.cellIsOpen"
-    day-view-start="06:00"
-    day-view-end="22:59"
-    day-view-split="30"
-    cell-modifier="vm.modifyCell(calendarCell)"
-    cell-auto-open-disabled="true"
-    on-timespan-click="vm.timespanClicked(calendarDate, calendarCell)">
-  </mwl-calendar>
+  <br>
+
+  <mwl-calendar events="vm.planningView" view="vm.calendarView" view-title="vm.calendarTitle" view-date="vm.viewDate" on-event-click="vm.eventClicked(calendarEvent)" on-event-times-changed="vm.eventTimesChanged(calendarEvent); calendarEvent.startsAt = calendarNewEventStart; calendarEvent.endsAt = calendarNewEventEnd" cell-is-open="vm.cellIsOpen" day-view-start="06:00" day-view-end="22:59" day-view-split="30" cell-modifier="vm.modifyCell(calendarCell)" cell-auto-open-disabled="true" on-timespan-click="vm.timespanClicked(calendarDate, calendarCell)"></mwl-calendar>
+</section>
