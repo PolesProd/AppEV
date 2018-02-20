@@ -54,7 +54,7 @@
     // });
 
     // Ajout des site sur la carte
-    $http.get('modules/core/client/data/sites.json').then(function (res) {
+    $http.get('modules/core/client/data/map.geojson').then(function (res) {
       $scope.geojson = {
         data: res.data,
         style: {
