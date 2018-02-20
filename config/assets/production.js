@@ -10,7 +10,7 @@ module.exports = {
         'public/lib/bootstrap/dist/css/bootstrap.css',
         'public/lib/bootstrap/dist/css/bootstrap-theme.css',
         'public/lib/angular-ui-notification/dist/angular-ui-notification.css',
-        'node_modules/leaflet/dist/leaflet.css',
+        'public/lib/leaflet/dist/leaflet.css',
         'public/lib/angular-material/angular-material.min.css',
         'public/lib/ng-material-datetimepicker/dist/material-datetimepicker.min.css',
         'public/lib/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css',
@@ -23,7 +23,7 @@ module.exports = {
       js: [
         // bower:js
         'public/lib/jquery/dist/jquery.min.js',
-        'node_modules/leaflet/dist/leaflet.js',
+        'public/lib/leaflet/dist/leaflet.js',
         'public/lib/angular/angular.js',
         'public/lib/moment/min/moment-with-locales.min.js',
         'public/lib/moment/locale/fr.js',
@@ -46,7 +46,7 @@ module.exports = {
         'public/lib/angular-ui-notification/dist/angular-ui-notification.js',
         'public/lib/angular-ui-router/release/angular-ui-router.js',
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
-        'node_modules/angular-leaflet-directive/dist/angular-leaflet-directive.min.js'
+        'public/lib/angular-leaflet-directive/dist/angular-leaflet-directive.min.js'
         // endbower
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
