@@ -13,7 +13,7 @@ module.exports = {
   // Binding to 127.0.0.1 is safer in production.
   host: process.env.HOST || '0.0.0.0',
   db: {
-    uri: process.env.MONGOHQ_URL || process.env.MONGODB_URI || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/mean',
+    uri: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://sam:oAorXYaSp_X=0nb@ds047955.mlab.com:47955/greenspace',
     options: {
       /**
       * Uncomment to enable ssl certificate based authentication to mongodb
@@ -105,5 +105,6 @@ module.exports = {
         }
       }]
     }]
-  }
+  },
+  sessionSecret: process.env.SESSION_SECRET || '3zYoBa0icjYzhis1#@wqfz396PXC23'
 };
