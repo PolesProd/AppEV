@@ -27,8 +27,7 @@
     "ng-material-datetimepicker": "^1.13.0",
     "angular-bootstrap-calendar": "^1.0.0",
     "angular-bootstrap-colorpicker": "^3.0.32",
-    "angular-i18n": "^1.6.9",
-    "leaflet": "~0.7.7"
+    "angular-i18n": "^1.6.9"
   },
   "overrides": {
     "bootstrap": {
