@@ -1,22 +1,18 @@
 <section>
-  <div class="" ng-controller="HomeController">
-    <div class="col-md-7 col-xs-12">
-      <div class="row">
-        <leaflet center="center" geojson="geojson" controls="controls" markers="markers" defaults="defaults" legend="legend" url-hash-center="yes" tiles ="tiles" width="100%" height="93vh"></leaflet>
-      </div>
-    </div>
-
-    <div class="col-md-5 col-xs-12">
-      <div class="list-group">
-        <a ng-repeat="employe in vm.employes"
-        ui-sref="employes.view({ employeId: employe._id })"
-        class="list-group-item">
-        <h4 class="list-group-item-heading">{{ employe.lastname }}</h4>
-        <h4 class="list-group-item-heading">{{ employe.firstname }}</h4>
-      </a>
-    </div>
-    <div class="alert alert-warning text-center" ng-if="vm.employes.$resolved && !vm.employes.length">
-      No Employes yet, why don't you <a ui-sref="employes.create">create one</a>?
-    </div>
+  <div class="page-header">
+    <h1>Liste des employés</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="employe in vm.employes" ui-sref="employes.view({ employeId: employe._id })" class="list-group-item">
+      <h4 class="list-group-item-heading">{{employe.nom}} {{employe.prenom}}</h4>
+      <p class="list-group-item-text" ng-bind="employe.content"></p>
+      <small class="list-group-item-text">
+        Créé le
+        <span ng-bind="employe.created | date:'mediumDate'"></span>
+        par
+        <span ng-if="employe.user" ng-bind="employe.user.displayName"></span>
+        <span ng-if="!employe.user">Utilisateur supprimé</span>
+      </small>
+    </a>
   </div>
 </section>

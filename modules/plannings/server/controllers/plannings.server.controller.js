@@ -1,90 +1,78 @@
 'use strict';
 
 /**
- * Module dependencies.
+ * Module dependencies
  */
 var path = require('path'),
   mongoose = require('mongoose'),
   Planning = mongoose.model('Planning'),
-  errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
-  _ = require('lodash');
+  errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
 
 /**
- * Create a Planning
+ * Create an planning
  */
-exports.create = function(req, res) {
-  var planning = new Planning(
-    {
-      name: req.body.name,
-      start: req.body.start,
-      end: req.body.end,
-      team: req.body.team,
-      site: req.body.site,
-      tasks: req.body.tasks,
-      created: req.body.created,
-      user: req.body.user
-    }
-  );
+exports.create = function (req, res) {
+  var planning = new Planning(req.body);
   planning.user = req.user;
 
-  planning.save(function(err) {
+  planning.save(function (err) {
     if (err) {
-      return res.status(400).send({
+      return res.status(422).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(planning);
-      console.log(planning);
+      res.json(planning);
     }
   });
 };
 
 /**
- * Show the current Planning
+ * Show the current planning
  */
-exports.read = function(req, res) {
+exports.read = function (req, res) {
   // convert mongoose document to JSON
   var planning = req.planning ? req.planning.toJSON() : {};
 
-  // Add a custom field to the Article, for determining if the current User is the "owner".
-  // NOTE: This field is NOT persisted to the database, since it doesn't exist in the Article model.
-  planning.isCurrentUserOwner = req.user && planning.user && planning.user._id.toString() === req.user._id.toString();
+  // Add a custom field to the Planning, for determining if the current User is the "owner".
+  // NOTE: This field is NOT persisted to the database, since it doesn't exist in the Planning model.
+  planning.isCurrentUserOwner = !!(req.user && planning.user && planning.user._id.toString() === req.user._id.toString());
 
-  res.jsonp(planning);
+  res.json(planning);
 };
 
 /**
- * Update a Planning
+ * Update an planning
  */
-exports.update = function(req, res) {
+exports.update = function (req, res) {
   var planning = req.planning;
 
-  planning = _.extend(planning, req.body);
+  planning.title = req.body.title;
+  planning.content = req.body.content;
 
-  planning.save(function(err) {
+  planning.save(function (err) {
     if (err) {
-      return res.status(400).send({
+      return res.status(422).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(planning);
+      res.json(planning);
     }
   });
 };
 
 /**
- * Delete an Planning
+ * Delete an planning
  */
-exports.delete = function(req, res) {
+exports.delete = function (req, res) {
   var planning = req.planning;
 
-  planning.remove(function(err) {
+  planning.remove(function (err) {
     if (err) {
-      return res.status(400).send({
+      return res.status(422).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(planning);
+      res.json(planning);
     }
   });
 };
@@ -92,14 +80,14 @@ exports.delete = function(req, res) {
 /**
  * List of Plannings
  */
-exports.list = function(req, res) {
-  Planning.find().sort('-created').populate('user', 'displayName').exec(function(err, plannings) {
+exports.list = function (req, res) {
+  Planning.find().sort('-created').populate('user', 'displayName').exec(function (err, plannings) {
     if (err) {
-      return res.status(400).send({
+      return res.status(422).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(plannings);
+      res.json(plannings);
     }
   });
 };
@@ -107,7 +95,7 @@ exports.list = function(req, res) {
 /**
  * Planning middleware
  */
-exports.planningByID = function(req, res, next, id) {
+exports.planningByID = function (req, res, next, id) {
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(400).send({
@@ -120,7 +108,7 @@ exports.planningByID = function(req, res, next, id) {
       return next(err);
     } else if (!planning) {
       return res.status(404).send({
-        message: 'No Planning with that identifier has been found'
+        message: 'No planning with that identifier has been found'
       });
     }
     req.planning = planning;

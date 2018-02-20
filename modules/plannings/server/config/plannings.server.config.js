@@ -7,8 +7,8 @@ var path = require('path'),
   config = require(path.resolve('./config/config'));
 
 /**
- * Plannings module init function.
+ * Module init function.
  */
-module.exports = function (app, db) {
+module.exports = function (app) {
 
 };

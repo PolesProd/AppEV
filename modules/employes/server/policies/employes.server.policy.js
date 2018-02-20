@@ -9,7 +9,7 @@ var acl = require('acl');
 acl = new acl(new acl.memoryBackend());
 
 /**
- * Invoke Employes Permissions
+ * Invoke Articles Permissions
  */
 exports.invokeRolesPolicies = function () {
   acl.allow([{
@@ -20,21 +20,15 @@ exports.invokeRolesPolicies = function () {
     }, {
       resources: '/api/employes/:employeId',
       permissions: '*'
-    }, {
-      resources: '/api/employes/signatures',
-      permissions: '*'
     }]
   }, {
     roles: ['user'],
     allows: [{
       resources: '/api/employes',
-      permissions: ['get', 'post']
+      permissions: ['get']
     }, {
       resources: '/api/employes/:employeId',
       permissions: ['get']
-    }, {
-      resources: '/api/employes/signatures',
-      permissions: ['get', 'post']
     }]
   }, {
     roles: ['guest'],
@@ -44,20 +38,17 @@ exports.invokeRolesPolicies = function () {
     }, {
       resources: '/api/employes/:employeId',
       permissions: ['get']
-    }, {
-      resources: '/api/employes/signatures',
-      permissions: ['get', 'post']
     }]
   }]);
 };
 
 /**
- * Check If Employes Policy Allows
+ * Check If Articles Policy Allows
  */
 exports.isAllowed = function (req, res, next) {
   var roles = (req.user) ? req.user.roles : ['guest'];
 
-  // If an Employe is being processed and the current user created it then allow any manipulation
+  // If an employe is being processed and the current user created it then allow any manipulation
   if (req.employe && req.user && req.employe.user && req.employe.user.id === req.user.id) {
     return next();
   }

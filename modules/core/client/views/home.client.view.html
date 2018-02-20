@@ -1,40 +1,30 @@
 <div class="" ng-controller="HomeController">
-  <div id="map-container" class="col-md-7 col-xs-12">
+  <div id="map-container" class="col-md-8 col-xs-12">
     <div class="row">
-      <leaflet center="center" geojson="geojson" controls="controls" markers="markers" defaults="defaults" legend="legend" url-hash-center="yes" tiles ="tiles" width="100%" height="83vh"></leaflet>
+      <leaflet center="center" geojson="geojson" controls="controls" markers="markers" defaults="defaults" legend="legend" url-hash-center="yes" tiles ="tiles" width="62vw" height="83vh"></leaflet>
     </div>
   </div>
 
-  <div class="col-md-5 col-xs-12">
-
+  <div class="col-md-4 col-xs-12">
     <div class="panel-group wrap" id="accordion" role="tablist" aria-multiselectable="true">
-      <div class="panel" ng-repeat="lot in lots">
+      <div class="panel" ng-repeat="site in vm.sites">
         <div class="panel-heading" role="tab" id="headingOne">
           <h4 class="panel-title">
-          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{ lot.properties.ID }}" aria-expanded="false" aria-controls="collapseOne" class="collapsed">{{ lot.properties.nom }}</a>
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{ site.properties.ID }}" aria-expanded="false" aria-controls="collapseOne" class="collapsed">{{ site.properties.nom }}</a>
           </h4>
         </div>
-        <div id="{{ lot.properties.ID }}" class="panel-collapse collapse" aria-expanded="false" style="height: 0;" role="tabpanel" aria-labelledby="headingOne">
+        <div id="{{ site.properties.ID }}" class="panel-collapse collapse" aria-expanded="false" style="height: 0;" role="tabpanel" aria-labelledby="headingOne">
           <div class="panel-body">
-            <p class="siteInfos"><img src="{{ lot.properties.image1 }}" alt=""/></p>
-            <p class="siteInfos"><img src="{{ lot.properties.image2 }}" alt=""/></p>
-            <p class="siteInfos">{{ lot.properties.description }}</p>
-            <p class="siteInfos">{{ lot.properties.gestion }}</p>
+            <p class="siteInfos"><img src="{{ site.properties.image1 }}" alt=""/></p>
+            <p class="siteInfos"><img src="{{ site.properties.image2 }}" alt=""/></p>
+            <p class="siteInfos">{{ site.properties.description }}</p>
             <br>
-            <p class="siteInfos">{{ lot.properties.taches }}</p>
-            <br>
-            <div class="message">
-              <p ng-bind="vm.contactSite">{{ vm.contactSite }}</p>
-              <p ng-bind="vm.contactName">{{ vm.contactName }}</p>
-              <p ng-bind="vm.contactEmail">{{ vm.contactEmail }}</p>
-              <p ng-bind="vm.contactMsg">{{ vm.contactMsg }}</p>
-            </div>
+            <p class="siteInfos">{{ site.properties.taches }}</p>
             <br>
             <div data-ng-controller="ContactFormController as vm">
-              <div flex-sm="100" flex-gt-sm="90" flex-gt-md="70" flex-gt-lg="50" class="md-whiteframe-z2">
+              <div flex-sm="100" flex-gt-sm="90" flex-gt-md="100" flex-gt-lg="50" class="md-whiteframe-z2">
                 <md-content class="md-padding">
                   <form name="contactForm" data-ng-submit="vm.sendMail()">
-                    <p data-ng-model="vm.contactSite">{{ lot.properties.nom }}</p>
                     <md-input-container>
                       <label for="name">Nom:</label>
                       <input type="text" name="name" placeholder="Azerty" data-ng-model="vm.contactName">
@@ -57,7 +47,7 @@
             </div>
             </form>
           </div><!-- end of div panel-body -->
-        </div><!-- end of div {{ lot.properties.ID }} -->
+        </div><!-- end of div {{ site.properties.ID }} -->
       </div><!-- end of div panel -->
     </div><!-- end of div panel-group wrap -->
   </div><!-- end of div col-md-5 col-xs-12 -->
