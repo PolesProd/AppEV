@@ -1,0 +1,183 @@
+<div class="page-header">
+  <h1>{{vm.employe._id ? 'Editer employé(e)' : 'Noouvel employé(e)'}}</h1>
+</div>
+
+<div class="pull-right">
+  <a ng-show="vm.employe._id" class="btn btn-primary" ng-click="vm.remove()">
+    <i class="glyphicon glyphicon-trash"></i>
+  </a>
+</div>
+
+<form name="vm.form.employeForm" class="form-horizontal" ng-submit="vm.save(vm.form.employeForm.$valid)" novalidate>
+  <fieldset>
+    <div class="form-row">
+      <div class="col-md-4">
+        <md-input-container class="md-block">
+          <!-- Use floating label instead of placeholder -->
+          <label class="control-label" for="nom">Nom</label>
+          <input name="nom" type="text" ng-model="vm.employe.nom" id="nom" class="form-control" placeholder="Nom" required>
+          <div ng-messages="vm.form.employeForm.nom.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Nom requis.</p>
+          </div>
+        </md-input-container>
+      </div>
+
+      <div class="col-md-4">
+        <md-input-container class="md-block">
+          <label class="control-label" for="prenom">Prénom</label>
+          <input name="prenom" type="text" ng-model="vm.employe.prenom" id="prenom" class="form-control" placeholder="Prénom" required>
+          <div ng-messages="vm.form.employeForm.prenom.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Prénom requis.</p>
+          </div>
+        </md-input-container>
+      </div>
+
+      <div class="col-md-4">
+        <md-input-container class="md-block">
+          <label for="responsable">Responsable</label>
+          <md-select ng-model="vm.employe.responsable" md-on-close="clearSearchTerm()" data-md-container-class="selectdemoSelectHeader" multiple>
+            <md-select-header class="demo-select-header">
+              <input ng-model="searchTerm" type="search" placeholder="Chercher un responsable..." class="demo-header-searchbox md-text">
+            </md-select-header>
+
+            <md-optgroup label="responsable">
+              <md-option ng-value="responsable" ng-repeat="responsable in responsables | filter:searchTerm">{{responsable}}</md-option>
+            </md-optgroup>
+          </md-select>
+        </md-input-container>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-5">
+        <md-input-container class="md-block">
+          <label class="control-label" for="adresse">Adresse</label>
+          <input name="adresse" type="text" ng-model="vm.employe.adresse" id="adresse" class="form-control" placeholder="123 rue du rien du tous" required>
+          <div ng-messages="vm.form.employeForm.adresse.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Adresse requise.</p>
+          </div>
+        </md-input-container>
+      </div>
+
+      <div class="col-md-5">
+        <md-input-container class="md-block">
+          <label class="control-label" for="ville">Ville</label>
+          <input name="ville" type="text" ng-model="vm.employe.ville" id="ville" class="form-control" placeholder="Villeneuve-la-garenne" required>
+          <div ng-messages="vm.form.employeForm.ville.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Ville requise</p>
+          </div>
+        </md-input-container>
+      </div>
+
+      <div class="col-md-2">
+        <md-input-container class="md-block">
+          <label class="control-label" for="code_postal">Code postal</label>
+          <input name="code_postal" type="number" ng-model="vm.employe.code_postal" id="code_postal" class="form-control" placeholder="92390" required>
+          <div ng-messages="vm.form.employeForm.code_postal.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Code postal requis</p>
+          </div>
+        </md-input-container>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-4">
+        <md-input-container class="md-block">
+          <label class="control-label" for="profil">Photo</label>
+          <input name="profil" type="text" ng-model="vm.employe.profil" id="profil" class="form-control" placeholder="123 rue du rien du tous">
+          <div ng-messages="vm.form.employeForm.profil.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Photo requise.</p>
+          </div>
+        </md-input-container>
+      </div>
+
+      <div class="col-md-4">
+        <md-input-container class="md-block">
+          <label class="control-label" for="email">Email</label>
+          <input name="email" type="email" ng-model="vm.employe.email" id="email" class="form-control" placeholder="92390">
+          <div ng-messages="vm.form.employeForm.email.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Email requis</p>
+          </div>
+        </md-input-container>
+      </div>
+
+      <div class="col-md-4">
+        <md-input-container class="md-block">
+          <label class="control-label" for="telephone">Téléphone</label>
+          <input name="telephone" type="text" ng-model="vm.employe.telephone" id="telephone" class="form-control" placeholder="Villeneuve-la-garenne" required>
+          <div ng-messages="vm.form.employeForm.telephone.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Ville requise</p>
+          </div>
+        </md-input-container>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-2">
+        <md-input-container class="md-block">
+          <label class="control-label" for="type">Type de contrat</label>
+          <md-input-container class="md-block">
+          <label for="type">Contrat</label>
+          <md-select ng-model="vm.employe.type" md-on-close="clearSearchTerm()" data-md-container-class="selectdemoSelectHeader" multiple>
+          <md-select-header class="demo-select-header">
+            <input ng-model="searchTerm" type="search" placeholder="Chercher un type..." class="demo-header-searchbox md-text">
+          </md-select-header>
+          <md-optgroup label="type">
+            <md-option ng-value="type" ng-repeat="type in types | filter:searchTerm">{{type}}</md-option>
+          </md-optgroup>
+        </md-select>
+        </md-input-container>
+          <div ng-messages="vm.form.employeForm.type.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Type de contrat requis.</p>
+          </div>
+        </md-input-container>
+      </div>
+
+      <div class="col-md-2">
+        <md-input-container class="md-block">
+          <label class="control-label" for="debutContrat">Du</label>
+          <md-datepicker name="debutContrat" type="date" ng-model="vm.employe.debutContrat" ng-value="dates" id="debutContrat" md-placeholder="Enter date" required></md-datepicker>
+          <div ng-messages="vm.form.employeForm.debutContrat.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Date requise.</p>
+          </div>
+        </md-input-container>
+      </div>
+
+      <div class="col-md-2">
+        <md-input-container class="md-block">
+          <label class="control-label" for="finContrat">Au</label>
+          <md-datepicker name="finContrat" type="date" ng-model="vm.employe.finContrat" ng-value="dates" id="finContrat" md-placeholder="Enter date"></md-datepicker>
+          <div ng-messages="vm.form.employeForm.finContrat.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Date requise</p>
+          </div>
+        </md-input-container>
+      </div>
+
+      <div class="col-md-2">
+        <md-input-container class="md-block">
+          <label class="control-label" for="renouvContrat">Renouvelé du</label>
+          <md-datepicker name="renouvContrat" type="date" ng-model="vm.employe.renouvContrat" ng-value="dates" id="renouvContrat" md-placeholder="Enter date"></md-datepicker>
+          <div ng-messages="vm.form.employeForm.renouvContrat.$error" role="alert">
+            <p class="help-block error-text" ng-message="required"></p>
+          </div>
+        </md-input-container>
+      </div>
+
+      <div class="col-md-2">
+        <md-input-container class="md-block">
+          <label class="control-label" for="finRenouvContrat">Au</label>
+          <md-datepicker name="finRenouvContrat" type="date" ng-model="vm.employe.finRenouvContrat" ng-value="dates" id="finRenouvContrat" md-placeholder="Enter date"></md-datepicker>
+          <div ng-messages="vm.form.employeForm.finRenouvContrat.$error" role="alert">
+            <p class="help-block error-text" ng-message="required"></p>
+          </div>
+        </md-input-container>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-12">
+        <md-button type="submit" class="md-raised md-primary">{{vm.employe._id ? 'Mettre à jour' : 'Créer'}}</md-button>
+      </div>
+    </div>
+  </fieldset>
+</form>

@@ -1,0 +1,90 @@
+<div class="page-header">
+  <h1>{{vm.equipe._id ? 'Editer équipe' : 'Nouvel équipe'}}</h1>
+</div>
+
+<div class="pull-right">
+  <a ng-show="vm.equipe._id" class="btn btn-primary" ng-click="vm.remove()">
+    <i class="glyphicon glyphicon-trash"></i>
+  </a>
+</div>
+
+<form name="vm.form.equipeForm" class="form-horizontal" ng-submit="vm.save(vm.form.equipeForm.$valid)" novalidate>
+  <fieldset>
+    <div class="form-row">
+      <div class="col-md-6">
+        <md-input-container class="md-block" flex-gt-sm="">
+        <label class="control-label" for="nom">Nom</label>
+        <input name="nom" type="text" ng-model="vm.equipe.nom" id="nom" class="form-control" placeholder="Nom" required>
+        <div ng-messages="vm.form.equipeForm.nom.$error" role="alert">
+          <p class="help-block error-text" ng-message="required">Nom requis.</p>
+        </div>
+      </md-input-container>
+      </div>
+
+      <div class="col-md-6">
+        <md-input-container class="md-block">
+          <label for="site">Site</label>
+          <md-select ng-model="vm.equipe.site" md-on-close="clearSearchTerm()" data-md-container-class="selectdemoSelectHeader" multiple>
+            <md-select-header class="demo-select-header">
+              <input ng-model="searchTerm" type="search" placeholder="Chercher un site..." class="demo-header-searchbox md-text">
+            </md-select-header>
+
+            <md-optgroup label="site">
+              <md-option ng-value="site.properties.nom" ng-repeat="site in sites | filter:searchTerm">{{site.properties.nom}}</md-option>
+            </md-optgroup>
+          </md-select>
+          <div ng-messages="vm.form.equipeForm.site.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Site requis.</p>
+          </div>
+        </md-input-container>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-12">
+        <md-input-container class="md-block">
+          <label for="responsable">Responsable</label>
+          <md-select ng-model="vm.equipe.responsable" md-on-close="clearSearchTerm()" data-md-container-class="selectdemoSelectHeader" multiple>
+            <md-select-header class="demo-select-header">
+              <input ng-model="searchTerm" type="search" placeholder="Chercher un responsable..." class="demo-header-searchbox md-text">
+            </md-select-header>
+
+            <md-optgroup label="responsable">
+              <md-option ng-value="responsable" ng-repeat="responsable in responsables | filter:searchTerm">{{responsable}}</md-option>
+            </md-optgroup>
+          </md-select>
+          <div ng-messages="vm.form.equipeForm.responsable.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Responsable requis.</p>
+          </div>
+        </md-input-container>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-12">
+        <md-input-container class="md-block">
+          <label for="membre">Membres</label>
+          <md-select ng-model="vm.equipe.membre" md-on-close="clearSearchTerm()" data-md-container-class="selectdemoSelectHeader" multiple>
+            <md-select-header class="demo-select-header">
+              <input ng-model="searchTerm" type="search" placeholder="Chercher un membre..." class="demo-header-searchbox md-text">
+            </md-select-header>
+
+            <md-optgroup label="membre">
+              <md-option ng-value="employe" ng-repeat="employe in employes | filter:searchTerm">{{employe.nom}} {{employe.prenom}}</md-option>
+            </md-optgroup>
+          </md-select>
+          <div ng-messages="vm.form.equipeForm.membre.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Au moins 3 membres requis.</p>
+          </div>
+        </md-input-container>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-12">
+        <md-button type="submit" class="md-raised md-primary">{{vm.equipe._id ? 'Mettre à jour' : 'Créer'}}</md-button>
+      </div>
+    </div>
+    </div>
+  </fieldset>
+</form>

@@ -1,0 +1,15 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.inventaire.lastname}} {{vm.inventaire.firstname}}</h1>
+  </div>
+  <small>
+    <em class="text-muted">
+      Posted on
+      <span ng-bind="vm.inventaire.created | date:'mediumDate'"></span>
+      by
+      <span ng-if="vm.inventaire.user" ng-bind="vm.inventaire.user.displayName"></span>
+      <span ng-if="!vm.inventaire.user">Deleted User</span>
+    </em>
+  </small>
+  <p class="lead" ng-bind="vm.inventaire.content"></p>
+</section>
