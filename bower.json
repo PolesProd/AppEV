@@ -37,6 +37,9 @@
     },
     "jquery": {
       "main": []
+    },
+    "resolutions": {
+      "angular": "~1.5.0"
     }
   }
 }
