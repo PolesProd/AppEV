@@ -45,13 +45,13 @@
     vm.sites = SitesService.query();
 
     $scope.sites = vm.sites;
-    $scope.sites.$promise.then(function(resourceArray){
-      angular.forEach($scope.sites, function(data) {
-        $scope.item = [
-          { id: data.properties.ID, name: data.properties.nom, surface: data.properties.surface, description: data.properties.description }
-        ];
-      });
-    });
+    // $scope.sites.$promise.then(function(resourceArray){
+    //   angular.forEach($scope.sites, function(data) {
+    //     $scope.item = [
+    //       { id: data.properties.ID, name: data.properties.nom, surface: data.properties.surface, description: data.properties.description }
+    //     ];
+    //   });
+    // });
 
     // Ajout des site sur la carte
     $http.get('modules/core/client/data/sites.json').then(function (res) {

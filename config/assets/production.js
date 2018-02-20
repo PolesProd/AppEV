@@ -25,7 +25,7 @@ module.exports = {
         'public/lib/jquery/dist/jquery.min.js',
         'public/lib/leaflet/dist/leaflet.js',
         'public/lib/angular/angular.js',
-        'public/lib/moment/min/moment.min.js',
+        'public/lib/moment/min/moment-with-locales.min.js',
         'public/lib/moment/locale/fr.js',
         'public/lib/angular-i18n/angular-locale_fr-fr.js',
         'public/lib/angular-animate/angular-animate.js',
