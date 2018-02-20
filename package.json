@@ -39,6 +39,7 @@
   "dependencies": {
     "acl": "^0.4.11",
     "amazon-s3-uri": "0.0.3",
+    "angular-cookies": "^1.6.9",
     "angular-leaflet-directive": "^0.10.0",
     "angular-material-data-table": "^0.10.10",
     "angular-sanitize": "^1.6.9",
