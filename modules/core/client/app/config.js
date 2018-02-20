@@ -16,7 +16,7 @@
       'ui.bootstrap',
       'ngFileUpload',
       'ui-notification',
-      'angular-sanitize',
+      'ngSanitize',
       'ngCookies',
       'ngMaterial',
       'ngMaterialDatePicker',
