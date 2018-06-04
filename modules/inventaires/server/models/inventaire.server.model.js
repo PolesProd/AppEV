@@ -17,75 +17,71 @@ var InventaireSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  nom: {
+  modele: {
     type: String,
     default: '',
     trim: true,
-    required: 'Nom requis'
+    required: 'Modèle requis'
   },
-  du: {
+  marque: {
     type: String,
     default: '',
     trim: true,
-    required: 'Date requise'
+    required: 'Marque requise'
   },
-  au: {
+  quantite: {
     type: String,
     default: '',
-    required: 'Date requise'
+    required: 'Quantité requise'
   },
-  equipe: {
+  status: {
     type: String,
     default: '',
-    required: 'Équipe requise'
+    required: 'Status requis'
   },
-  site: {
+  lieu: {
     type: String,
     default: '',
     required: 'Site requis'
   },
-  taches: {
+  type: {
     type: String,
     default: '',
-    required: 'Au moins 3 tâches sont requise'
-  },
-  isFullDay: {
-    type: Boolean,
-    default: false
+    required: 'Type requis'
   },
   user: {
     type: Schema.ObjectId,
     ref: 'User'
   }
-}, { collection: 'plannings' });
+}, { collection: 'inventories' });
 
 InventaireSchema.statics.seed = seed;
 
 mongoose.model('Inventaire', InventaireSchema);
 
 /**
-* Seeds the User collection with document (Inventaire)
-* and provided options.
-*/
+ * Seeds the User collection with document (Inventaire)
+ * and provided options.
+ */
 function seed(doc, options) {
   var Inventaire = mongoose.model('Inventaire');
 
-  return new Promise(function (resolve, reject) {
+  return new Promise(function(resolve, reject) {
 
     skipDocument()
       .then(findAdminUser)
       .then(add)
-      .then(function (response) {
+      .then(function(response) {
         return resolve(response);
       })
-      .catch(function (err) {
+      .catch(function(err) {
         return reject(err);
       });
 
     function findAdminUser(skip) {
       var User = mongoose.model('User');
 
-      return new Promise(function (resolve, reject) {
+      return new Promise(function(resolve, reject) {
         if (skip) {
           return resolve(true);
         }
@@ -94,7 +90,7 @@ function seed(doc, options) {
           .findOne({
             roles: { $in: ['admin'] }
           })
-          .exec(function (err, admin) {
+          .exec(function(err, admin) {
             if (err) {
               return reject(err);
             }
@@ -107,12 +103,12 @@ function seed(doc, options) {
     }
 
     function skipDocument() {
-      return new Promise(function (resolve, reject) {
+      return new Promise(function(resolve, reject) {
         Inventaire
           .findOne({
             title: doc.title
           })
-          .exec(function (err, existing) {
+          .exec(function(err, existing) {
             if (err) {
               return reject(err);
             }
@@ -127,7 +123,7 @@ function seed(doc, options) {
 
             // Remove Inventaire (overwrite)
 
-            existing.remove(function (err) {
+            existing.remove(function(err) {
               if (err) {
                 return reject(err);
               }
@@ -139,7 +135,7 @@ function seed(doc, options) {
     }
 
     function add(skip) {
-      return new Promise(function (resolve, reject) {
+      return new Promise(function(resolve, reject) {
         if (skip) {
           return resolve({
             message: chalk.yellow('Database Seeding: Inventaire\t' + doc.title + ' skipped')
@@ -148,7 +144,7 @@ function seed(doc, options) {
 
         var equipe = new Inventaire(doc);
 
-        equipe.save(function (err) {
+        equipe.save(function(err) {
           if (err) {
             return reject(err);
           }

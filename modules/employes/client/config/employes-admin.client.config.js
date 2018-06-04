@@ -1,4 +1,4 @@
-﻿(function () {
+﻿(function() {
   'use strict';
 
   // Configuring the Employes Admin module

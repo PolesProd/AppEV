@@ -1,0 +1,99 @@
+<div class="page-header">
+  <h1>{{vm.inventaire._id ? 'Editer inventaire' : 'Nouveau inventaire'}}</h1>
+</div>
+
+<div class="pull-right">
+  <a ng-show="vm.inventaire._id" class="btn btn-primary" ng-click="vm.remove()">
+    <i class="glyphicon glyphicon-trash"></i>
+  </a>
+</div>
+
+<form name="vm.form.inventaireForm" class="form-horizontal" ng-submit="vm.save(vm.form.inventaireForm.$valid)" novalidate>
+  <fieldset>
+    <div class="form-row">
+      <div class="col-md-4">
+        <div class="col-md-4">
+          <md-input-container class="md-block">
+            <label class="control-label" for="modele">Modèle</label>
+            <input name="modele" type="text" ng-model="vm.inventaire.modele" id="modele" class="form-control" placeholder="Prénom" required>
+            <div ng-messages="vm.form.inventaireForm.modele.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Prénom requis.</p>
+            </div>
+          </md-input-container>
+        </div>
+
+        <div class="col-md-4">
+          <md-input-container class="md-block">
+            <!-- Use floating label instead of placeholder -->
+            <label class="control-label" for="marque">Marque</label>
+            <input name="marque" type="text" ng-model="vm.inventaire.marque" id="marque" class="form-control" placeholder="marque" required>
+            <div ng-messages="vm.form.inventaireForm.marque.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">marque requis.</p>
+            </div>
+          </md-input-container>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-5">
+        <md-input-container class="md-block">
+          <label class="control-label" for="quantite">quantite</label>
+          <input name="quantite" type="text" ng-model="vm.inventaire.quantite" id="quantite" class="form-control" placeholder="12" required>
+          <div ng-messages="vm.form.inventaireForm.quantite.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">quantite requise.</p>
+          </div>
+        </md-input-container>
+      </div>
+
+      <div class="col-md-5">
+        <md-input-container class="md-block">
+          <label class="control-label" for="status">status</label>
+          <input name="status" type="text" ng-model="vm.inventaire.status" id="status" class="form-control" placeholder="status" required>
+          <div ng-messages="vm.form.inventaireForm.status.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">status requise</p>
+          </div>
+        </md-input-container>
+      </div>
+
+      <div class="col-md-2">
+        <md-input-container class="md-block">
+          <label class="control-label" for="lieu">Lieu</label>
+          <input name="lieu" type="text" ng-model="vm.inventaire.lieu" id="lieu" class="form-control" placeholder="92390" required>
+          <div ng-messages="vm.form.inventaireForm.lieu.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Lieu requis</p>
+          </div>
+        </md-input-container>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-2">
+        <md-input-container class="md-block">
+          <label class="control-label" for="type">Type</label>
+          <md-input-container class="md-block">
+            <label for="type">Type</label>
+            <md-select ng-model="vm.inventaire.type" md-on-close="clearSearchTerm()" data-md-container-class="selectdemoSelectHeader" multiple>
+              <md-select-header class="demo-select-header">
+                <input ng-model="searchTerm" type="search" placeholder="Chercher un type..." class="demo-header-searchbox md-text">
+              </md-select-header>
+              <md-optgroup label="type">
+                <md-option ng-value="type" ng-repeat="type in types | filter:searchTerm">{{type.name}}</md-option>
+              </md-optgroup>
+            </md-select>
+          </md-input-container>
+          <div ng-messages="vm.form.inventaireForm.type.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Type requis.</p>
+          </div>
+        </md-input-container>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-12">
+        <button type="submit" class="btn btn-default">{{vm.inventaire._id ? 'Mettre à jour' : 'Créer'}}</button>
+      </div>
+    </div>
+    </div>
+  </fieldset>
+</form>

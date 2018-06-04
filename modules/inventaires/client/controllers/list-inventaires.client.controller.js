@@ -1,56 +1,52 @@
-(function () {
+(function() {
   'use strict';
 
   angular
     .module('inventaires')
-    .controller('InventairesListController', InventairesListController);
+    .controller('InventairesListController', InventairesListController)
+    .directive('stRatio', function() {
+      return {
+        link: function(scope, element, attr) {
+          var ratio = +(attr.stRatio);
 
-  InventairesListController.$inject = ['$scope', 'InventairesService'];
+          element.css('width', ratio + '%');
 
-  function InventairesListController($scope, InventairesService) {
+        }
+      };
+    });
+
+  InventairesListController.$inject = ['$scope', '$http', 'InventairesService', 'Authentication'];
+
+  function InventairesListController($scope, $http, InventairesService, Authentication) {
     var vm = this;
 
+    vm.authentication = Authentication;
     vm.inventaires = InventairesService.query();
 
-    $scope.selected = [];
+    // Récuperation du contenu de la collection Inventaire
+    $scope.datas = [];
+    $scope.datas = vm.inventaires;
 
-    $scope.query = {
-      order: 'name',
-      limit: 5,
-      page: 1
-    };
+    $scope.datas.$promise.then(function(resourceArray) {
+      // Initialise un array vide pour les data
+      $scope.options = [];
 
-    function success(items) {
-      $scope.items = [
-        {nom: 'azerty', type: 'azerty', exemple: 'azerty', exemple2: 'azerty', exemple3: 'azerty', exemple4: 'azerty'},
-        {nom: 'azerty', type: 'azerty', exemple: 'azerty', exemple2: 'azerty', exemple3: 'azerty', exemple4: 'azerty'},
-        {nom: 'azerty', type: 'azerty', exemple: 'azerty', exemple2: 'azerty', exemple3: 'azerty', exemple4: 'azerty'},
-        {nom: 'azerty', type: 'azerty', exemple: 'azerty', exemple2: 'azerty', exemple3: 'azerty', exemple4: 'azerty'},
-        {nom: 'azerty', type: 'azerty', exemple: 'azerty', exemple2: 'azerty', exemple3: 'azerty', exemple4: 'azerty'},
-        {nom: 'azerty', type: 'azerty', exemple: 'azerty', exemple2: 'azerty', exemple3: 'azerty', exemple4: 'azerty'},
-        {nom: 'azerty', type: 'azerty', exemple: 'azerty', exemple2: 'azerty', exemple3: 'azerty', exemple4: 'azerty'},
-        {nom: 'azerty', type: 'azerty', exemple: 'azerty', exemple2: 'azerty', exemple3: 'azerty', exemple4: 'azerty'},
-        {nom: 'azerty', type: 'azerty', exemple: 'azerty', exemple2: 'azerty', exemple3: 'azerty', exemple4: 'azerty'},
-        {nom: 'azerty', type: 'azerty', exemple: 'azerty', exemple2: 'azerty', exemple3: 'azerty', exemple4: 'azerty'},
-        {nom: 'azerty', type: 'azerty', exemple: 'azerty', exemple2: 'azerty', exemple3: 'azerty', exemple4: 'azerty'},
-        {nom: 'azerty', type: 'azerty', exemple: 'azerty', exemple2: 'azerty', exemple3: 'azerty', exemple4: 'azerty'},
-        {nom: 'azerty', type: 'azerty', exemple: 'azerty', exemple2: 'azerty', exemple3: 'azerty', exemple4: 'azerty'},
-        {nom: 'azerty', type: 'azerty', exemple: 'azerty', exemple2: 'azerty', exemple3: 'azerty', exemple4: 'azerty'},
-        {nom: 'azerty', type: 'azerty', exemple: 'azerty', exemple2: 'azerty', exemple3: 'azerty', exemple4: 'azerty'},
-        {nom: 'azerty', type: 'azerty', exemple: 'azerty', exemple2: 'azerty', exemple3: 'azerty', exemple4: 'azerty'},
-        {nom: 'azerty', type: 'azerty', exemple: 'azerty', exemple2: 'azerty', exemple3: 'azerty', exemple4: 'azerty'},
-        {nom: 'azerty', type: 'azerty', exemple: 'azerty', exemple2: 'azerty', exemple3: 'azerty', exemple4: 'azerty'},
-        {nom: 'azerty', type: 'azerty', exemple: 'azerty', exemple2: 'azerty', exemple3: 'azerty', exemple4: 'azerty'},
-        {nom: 'azerty', type: 'azerty', exemple: 'azerty', exemple2: 'azerty', exemple3: 'azerty', exemple4: 'azerty'},
-        {nom: 'azerty', type: 'azerty', exemple: 'azerty', exemple2: 'azerty', exemple3: 'azerty', exemple4: 'azerty'},
-        {nom: 'azerty', type: 'azerty', exemple: 'azerty', exemple2: 'azerty', exemple3: 'azerty', exemple4: 'azerty'},
-        {nom: 'azerty', type: 'azerty', exemple: 'azerty', exemple2: 'azerty', exemple3: 'azerty', exemple4: 'azerty'},
-        {nom: 'azerty', type: 'azerty', exemple: 'azerty', exemple2: 'azerty', exemple3: 'azerty', exemple4: 'azerty'}
-      ];
-    }
+      // Boucle à l'interieur de la collection Inventaire
+      angular.forEach($scope.datas, function(params) {
 
-    $scope.getDesserts = function () {
-      $scope.promise = items.get($scope.query, success).$promise;
-    };
+        // Injecte la value d'un item à l'interieur de l'array 'options'
+        $scope.options.push({
+          modele: params.modele,
+          marque: params.marque,
+          quantite: params.quantite,
+          status: params.status,
+          lieu: params.lieu,
+          type: params.type
+        });
+      });
+      console.log($scope.options);
+    });
+
+    $scope.selectedPredicate = $scope.predicates[0];
   }
 }());

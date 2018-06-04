@@ -1,4 +1,4 @@
-(function () {
+(function() {
   'use strict';
 
   angular
@@ -54,7 +54,7 @@
     // });
 
     // Ajout des site sur la carte
-    $http.get('modules/core/client/data/map.geojson').then(function (res) {
+    $http.get('modules/core/client/data/map.geojson').then(function(res) {
       $scope.geojson = {
         data: res.data,
         style: {
@@ -66,65 +66,65 @@
           fillOpacity: 0.7
         },
         // angular.element('#myselector').triggerHandler('click');
-        onEachFeature: function (feature, layer) {
+        onEachFeature: function(feature, layer) {
           layer.on({
-          click: function showResultsInDiv(){
-            var zoneMap = feature.properties.ID
-            zoneMap = document.getElementById(zoneMap);
-            if (zoneMap.attributes[2].nodeValue === 'false') {
-              // fermeture de tous les elements ouverts si il y en a
-              var pan = document.getElementsByClassName('panel-collapse');
-              for (var i = 0; i<pan.length; i++) {
-                if (pan[i].attributes[2].nodeValue === 'true')
+            click: function showResultsInDiv() {
+              var zoneMap = feature.properties.ID
+              zoneMap = document.getElementById(zoneMap);
+              if (zoneMap.attributes[2].nodeValue === 'false') {
+                // fermeture de tous les elements ouverts si il y en a
+                var pan = document.getElementsByClassName('panel-collapse');
+                for (var i = 0; i < pan.length; i++) {
+                  if (pan[i].attributes[2].nodeValue === 'true')
+                    pan[i].previousElementSibling.classList.remove('active');
+                  pan[i].classList.remove('in');
+                  pan[i].attributes[2].nodeValue = 'false';
+                }
+                // Scroll to element in div
+                $('#accordion').animate({
+                  scrollTop: $('#' + feature.properties.ID).prev()[0].offsetTop
+                }, 500);
+
+                // ouverture de la div de la zone selectionné
+                zoneMap.previousElementSibling.classList.add('active');
+                zoneMap.classList.add('collapsing');
+                zoneMap.style.height = '';
+                zoneMap.attributes[2].nodeValue = 'true';
+
+
+                setTimeout(function() {
+                  zoneMap.classList.remove('collapsing');
+                  zoneMap.classList.add('in');
+                }, 500);
+
+              } else {
+                // Si on reclique sur sur la meme div fermeture de la cible.
+                var pan = document.getElementsByClassName('panel-collapse');
+                for (var i = 0; i < pan.length; i++) {
+                  if (pan[i].attributes[2].nodeValue == 'true');
+
                   pan[i].previousElementSibling.classList.remove('active');
-                pan[i].classList.remove('in');
-                pan[i].attributes[2].nodeValue = 'false'
+                  pan[i].classList.remove('in');
+                  pan[i].attributes[2].nodeValue = 'false';
+                }
               }
-              // Scroll to element in div
-              $('#accordion').animate({
-                scrollTop: $('#'+feature.properties.ID).prev()[0].offsetTop
-              }, 500);
-
-              // ouverture de la div de la zone selectionné
-              zoneMap.previousElementSibling.classList.add('active');
-              zoneMap.classList.add('collapsing');
-              zoneMap.style.height = '';
-              zoneMap.attributes[2].nodeValue = 'true';
-
-
-              setTimeout(function () {
-                zoneMap.classList.remove('collapsing');
-                zoneMap.classList.add('in');
-              }, 500);
-
-            } else {
-              // Si on reclique sur sur la meme div fermeture de la cible.
-              var pan = document.getElementsByClassName('panel-collapse');
-              for (var i = 0; i<pan.length; i++) {
-                if (pan[i].attributes[2].nodeValue == 'true')
-
-                  pan[i].previousElementSibling.classList.remove('active');
-                pan[i].classList.remove('in');
-                pan[i].attributes[2].nodeValue = 'false'
-              }
+              console.log('#' + zoneMap);
+              console.log(zoneMap);
             }
-            console.log('#'+zoneMap);
-            console.log(zoneMap)
-          }
-        });
-      },
-
-        pointToLayer: function (feature, latlng) {
-          var arbre = feature.geometry.type;
-          var leaf_icon = L.icon({
-            iconUrl: 'modules/core/client/img/icons/arbre.png',
-            shadowUrl: 'modules/core/client/img/icons/arbre_ombre.png',
-            iconSize: [16, 22],
-            shadowSize: [16, 22]
           });
+        },
+
+        pointToLayer: function(feature, latlng) {
+          var arbre = feature.geometry.type;
+          // var leaf_icon = L.icon({
+          //   iconUrl: 'modules/core/client/img/icons/arbre.png',
+          //   shadowUrl: 'modules/core/client/img/icons/arbre_ombre.png',
+          //   iconSize: [16, 22],
+          //   shadowSize: [16, 22]
+          // });
 
           if (arbre === 'Point') {
-            return L.marker(latlng, { icon: leaf_icon });
+            return L.marker(latlng /* , { icon: leaf_icon } */ );
           }
         }
       };

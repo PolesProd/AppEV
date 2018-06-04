@@ -1,4 +1,4 @@
-(function (window) {
+(function(window) {
   'use strict';
 
   var applicationModuleName = 'mean';
@@ -19,9 +19,9 @@
       'ngSanitize',
       'ngCookies',
       'ngMaterial',
+      'smart-table',
       'ngMaterialDatePicker',
-      'leaflet-directive',
-      'md.data.table'
+      'leaflet-directive'
     ],
     registerModule: registerModule
   };
@@ -38,7 +38,7 @@
   }
 
   // Angular-ui-notification configuration
-  angular.module('ui-notification').config(function (NotificationProvider) {
+  angular.module('ui-notification').config(function(NotificationProvider) {
     NotificationProvider.setOptions({
       delay: 2000,
       startTop: 20,

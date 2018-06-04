@@ -13,9 +13,7 @@
     "angular-resource": "~1.5.0",
     "angular-aria": "~1.6.9",
     "angular-material": "~1.1.7",
-    "angular-material-data-table": "^0.10.10",
     "angular-sanitize": "~1.6.9",
-    "moment": "~2.20.1",
     "angular-ui-notification": "~0.2.0",
     "angular-ui-router": "~0.2.18",
     "bootstrap": "~3.3.6",
@@ -27,7 +25,8 @@
     "ng-material-datetimepicker": "^1.13.0",
     "angular-bootstrap-calendar": "^1.0.0",
     "angular-bootstrap-colorpicker": "^3.0.32",
-    "angular-i18n": "^1.6.9"
+    "angular-i18n": "^1.6.9",
+    "angular-smart-table": "^2.1.11"
   },
   "resolutions": {
     "angular": "~1.5.0"

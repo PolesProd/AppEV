@@ -1,6 +1,14 @@
 <section>
   <div class="page-header">
     <h1>{{vm.equipe.nom}}</h1>
+    <div class="pull-right" ng-show="vm.equipe.isCurrentUserOwner">
+      <a class="btn btn-primary" ui-sref="equipes.edit({ equipeId: vm.equipe._id })">
+        <i class="glyphicon glyphicon-edit"></i>
+      </a>
+      <a class="btn btn-primary" ng-click="vm.remove()">
+        <i class="glyphicon glyphicon-trash"></i>
+      </a>
+    </div>
   </div>
 
   <p class="lead">{{vm.equipe.responsable}}</p>

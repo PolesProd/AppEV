@@ -13,12 +13,12 @@
     <div class="form-row">
       <div class="col-md-6">
         <md-input-container class="md-block" flex-gt-sm="">
-        <label class="control-label" for="nom">Nom</label>
-        <input name="nom" type="text" ng-model="vm.equipe.nom" id="nom" class="form-control" placeholder="Nom" required>
-        <div ng-messages="vm.form.equipeForm.nom.$error" role="alert">
-          <p class="help-block error-text" ng-message="required">Nom requis.</p>
-        </div>
-      </md-input-container>
+          <label class="control-label" for="nom">Nom</label>
+          <input name="nom" type="text" ng-model="vm.equipe.nom" id="nom" class="form-control" placeholder="Nom" required>
+          <div ng-messages="vm.form.equipeForm.nom.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Nom requis.</p>
+          </div>
+        </md-input-container>
       </div>
 
       <div class="col-md-6">
@@ -70,7 +70,7 @@
             </md-select-header>
 
             <md-optgroup label="membre">
-              <md-option ng-value="employe" ng-repeat="employe in employes | filter:searchTerm">{{employe.nom}} {{employe.prenom}}</md-option>
+              <md-option ng-value="employe.nom" ng-repeat="employe in employes | filter:searchTerm">{{employe.nom}} {{employe.prenom}}</md-option>
             </md-optgroup>
           </md-select>
           <div ng-messages="vm.form.equipeForm.membre.$error" role="alert">
