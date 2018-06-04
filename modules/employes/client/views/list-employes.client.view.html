@@ -1,8 +1,8 @@
-<section>
+<section class="col-xs-offset-3 col-xs-5">
   <div class="page-header">
     <h1>Liste des employés</h1>
   </div>
-  <div class="list-group">
+  <div class="list-group col-xs-offset-3 col-xs-5" >
     <a ng-repeat="employe in vm.employes" ui-sref="employes.view({ employeId: employe._id })" class="list-group-item">
       <h4 class="list-group-item-heading">{{employe.nom}} {{employe.prenom}}</h4>
       <p class="list-group-item-text" ng-bind="employe.content"></p>

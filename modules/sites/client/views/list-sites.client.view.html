@@ -1,18 +1,18 @@
 <section>
-  <div class="page-header">
+  <div class="page-header col-xs-offset-3 col-xs-5">
     <h1>Liste des sites</h1>
   </div>
-  <div class="list-group">
+  <div class="list-group col-xs-offset-2 col-xs-8">
     <a ng-repeat="site in vm.sites" ui-sref="sites.view({ siteId: site._id })" class="list-group-item">
       <h4 class="list-group-item-heading">{{site.properties.nom}}</h4>
-      <img src="{{site.properties.image1}}" class="img-thumbnail photo" alt="">
+      <img src="{{site.properties.image1}}" class="img-thumbnail rounded mx-auto d-block photo" alt="">
       <p class="list-group-item-text" ng-bind="site.properties.description"></p>
       <small class="list-group-item-text">
-        Posted on
+        Posté le
         <span ng-bind="site.created | date:'mediumDate'"></span>
-        by
+        par
         <span ng-if="site.user" ng-bind="site.user.displayName"></span>
-        <span ng-if="!site.user">Deleted User</span>
+        <span ng-if="!site.user">utilisateur supprimé</span>
       </small>
     </a>
   </div>

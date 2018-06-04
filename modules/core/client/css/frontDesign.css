@@ -1,107 +1,116 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i');
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-
 /*========================== GLOBAL ==============================*/
-body{
+
+body {
 	width: 100vw;
 	overflow-x: hidden;
 	margin: 0;
 	padding: 0;
 	font-family: 'PT Sans', sans-serif;
+	background-image: url("../img/background/fond.jpg");
 }
 
 /*========================== HEADER ==============================*/
-#header{
-	background: rgb(1,152,181);
-	background: -moz-linear-gradient(top, rgba(1,152,181,1) 0%, rgba(0,101,97,1) 100%);
-	background: -webkit-linear-gradient(top, rgba(1,152,181,1) 0%,rgba(0,101,97,1) 100%);
-	background: linear-gradient(to bottom, rgba(1,152,181,1) 0%,rgba(0,101,97,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0198b5', endColorstr='#006561',GradientType=0 );
+
+#header {
+	background: rgb(15, 157, 88);
+	background: -moz-linear-gradient(top, rgba(15, 157, 88, 1) 0%, rgba(11, 128, 67, 1) 100%);
+	background: -webkit-linear-gradient(top, rgba(15, 157, 88, 1) 0%, rgba(11, 128, 67, 1) 100%);
+	background: linear-gradient(to bottom, rgba(15, 157, 88, 1) 0%, rgba(11, 128, 67, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0198b5', endColorstr='#006561', GradientType=0);
 	color: white;
 }
 
-.nav-link a, .user-header-dropdown-toggle span {
+.nav-link a,
+.user-header-dropdown-toggle span {
 	color: white;
 }
 
-#header h1{
+#header h1 {
 	text-transform: uppercase;
-	margin-top: 4%;
-	color: white;
+	margin-top: 13%;
+	color: #fff;
 	text-align: center;
-	font-size: 1.5em;
-	font-weight: bold;
+	font-size: 2em;
+	font-weight: bolder;
+	font-family: 'Convergence', sans-serif;
+	margin-left: 165px;
 }
 
 /*Layout*/
+
 .navbar {
 	float: right;
 	/*font-family: 'PT Sans', sans-serif;*/
 	margin-bottom: 10px;
 }
-.navbar-brand{
-	float: right;
 
+.navbar-brand {
+	float: right;
 }
-.navbar-brand img{
+
+.navbar-brand img {
 	width: 100%;
 }
 
-.container{
+.container {
 	max-width: 100%;
 }
 
 /* User Interface */
-.navbar-header{
+
+.navbar-header {
 	float: none;
 }
 
-.navbar-collapse{
+.navbar-collapse {
 	padding-left: 0;
 }
 
-.nav-tabs{
+.nav-tabs {
 	border-bottom: none;
 }
 
-.nav-tabs > li > a{
+.nav-tabs>li>a {
 	text-transform: uppercase;
-	border: 4px solid #af8f5c;
+	border: 4px solid #D7910B;
 }
 
-.nav-tabs > li.open > a{
-	color: #af8f5c;
-	border: 4px solid #af8f5c;
+.nav-tabs>li.open>a {
+	color: #0b8043;
+	border: 4px solid #0b8043;
 	border-bottom: white;
 }
 
-.nav-tabs > li.active > a{
+.nav-tabs>li.active>a {
 	border-bottom: white;
 }
 
-.nav-tabs > li.open:hover > a{
-	color: #af8f5c;
-	border: 4px solid #af8f5c;
+.nav-tabs>li.open:hover>a {
+	color: #0b8043;
+	border: 4px solid #0b8043;
 	border-bottom: white;
 }
 
-h2.text-center.ng-binding{
+h2.text-center.ng-binding {
 	margin-top: 0;
 }
 
 /* Hover state */
-#header .nav-tabs > li > a:hover{
-	color: #af8f5c;
+
+#header .nav-tabs>li>a:hover {
+	color: #0b8043;
 }
 
-.nav-tabs > li > a:hover{
-	color: #af8f5c;
+.nav-tabs>li>a:hover {
+	color: #0b8043;
 	background-color: #fff;
-	border: 4px solid #af8f5c;
+	border: 4px solid #0b8043;
 }
 
-.user-header-dropdown-toggle span{
+.user-header-dropdown-toggle span {
 	text-transform: uppercase;
 	font-weight: bold;
 	font-size: 1.2em;
@@ -111,10 +120,23 @@ h2.text-center.ng-binding{
 	float: none;
 }
 
+.shape {
+	margin-left: 94px;
+	font-size: 23px;
+	position: relative;
+	display: inline-block;
+	text-align: center;
+}
+
+fieldset a {
+	color: #333;
+}
+
 /*========================== HOME ==============================*/
+
 /*==================== Affichage de chaques sites ==============*/
 
-.displayHome{
+.displayHome {
 	max-height: 80vh;
 	overflow: hidden;
 }
@@ -124,12 +146,13 @@ h2.text-center.ng-binding{
 	font-family: 'Merriweather', serif;
 }
 
-.siteInfos img{
-	width:100%;
+.siteInfos img {
+	width: 100%;
 }
 
 /*======================= Carte =============================*/
-#map-info{
+
+#map-info {
 	padding-right: 8px;
 	width: 103%;
 	max-height: 70vh;
@@ -138,15 +161,17 @@ h2.text-center.ng-binding{
 }
 
 /*===================== Structure Homepage ===================*/
-.columnsContainer{
+
+.columnsContainer {
 	position: inherit;
 }
 
-.leftColumn, .rightColumn{
+.leftColumn,
+.rightColumn {
 	padding: 10px;
 }
 
-.rightColumn{
+.rightColumn {
 	width: 60%;
 	float: right;
 	position: relative;
@@ -162,6 +187,7 @@ h2.text-center.ng-binding{
 }
 
 /*========================= Accordeon des sites ==================*/
+
 /*div[class*='col-'] {
   padding: 0 30px;
 }*/
@@ -200,7 +226,7 @@ a:active {
 	width: 36vw;*/
 }
 
-.panel-group > .panel:first-child .panel-heading {
+.panel-group>.panel:first-child .panel-heading {
 	border-radius: 4px 4px 0 0;
 }
 
@@ -208,12 +234,13 @@ a:active {
 	border-radius: 0;
 }
 
-.panel-group .panel + .panel {
+.panel-group .panel+.panel {
 	margin-top: 0;
 }
 
 .panel-heading {
-	background-color: #009688;
+	background-color: #61a752;
+
 	border-radius: 0;
 	border: none;
 	color: #fff;
@@ -246,6 +273,7 @@ a:active {
 	border-radius: 0;
 	transition: border-radius linear 0s;
 }
+
 /* #bs-collapse icon scale option */
 
 .panel-heading a:before {
@@ -281,6 +309,7 @@ a:active {
 	transform: scale(1);
 	transition: all 0.5s;
 }
+
 /* accordion rotate icon option */
 
 #accordion .panel-heading a:before {
@@ -299,28 +328,32 @@ a:active {
 	transition: all 0.5s;
 }
 
-#map-container{
+#map-container {
 	height: auto;
 	width: auto;
 }
 
+#titleScreen {
+	background: red;
+}
+
 /*===================== MEDIA QUERIES ========================*/
+
 @media screen and (min-width: 760px) {
-	header.navbar.navbar-inverse.ng-scope{
+	header.navbar.navbar-inverse.ng-scope {
 		width: 50%;
 	}
-
 	.leftColumn {
 		margin-right: 19.5em;
 	}
-
 	.rightColumn {
 		position: absolute;
 	}
 }
 
-@media (min-width: 768px){
+@media (min-width: 768px) {
 	.navbar-nav {
 		float: none;
 	}
 }
+

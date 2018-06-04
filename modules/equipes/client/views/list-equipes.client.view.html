@@ -2,7 +2,7 @@
   <div class="page-header">
     <h1>Liste des employés</h1>
   </div>
-  <div class="list-group">
+  <div class="list-group col-xs-offset-3 col-xs-5">
     <a ng-repeat="equipe in vm.equipes" ui-sref="equipes.view({ equipeId: equipe._id })" class="list-group-item">
       <h4 class="list-group-item-heading">{{equipe.nom}}</h4>
       <p class="list-group-item-text">{{equipe.site}}</p>

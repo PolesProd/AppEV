@@ -4,11 +4,11 @@
   </div>
   <small>
     <em class="text-muted">
-      Posted on
+      Posté le
       <span ng-bind="vm.site.created | date:'mediumDate'"></span>
-      by
+      par
       <span ng-if="vm.site.user" ng-bind="vm.site.user.displayName"></span>
-      <span ng-if="!vm.site.user">Deleted User</span>
+      <span ng-if="!vm.site.user">Utilisateur supprimé </span>
     </em>
   </small>
   <p class="lead" ng-bind="vm.site.content"></p>

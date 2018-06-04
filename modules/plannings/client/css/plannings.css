@@ -3,9 +3,52 @@ ul.dropdown-menu li {
 }
 
 ul.dropdown-menu li span.red {
-	color: red;
+	color:#0b8043;
+
 }
 
 ul.dropdown-menu li span.green {
 	color: green;
 }
+
+mwl-calendar .cal-context {
+
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+mwl-calendar .cal-month-box .cal-month-day {
+
+    position: relative;
+    display: block;
+    width: 100%;
+	border: 1px solid #61a752
+
+	;
+
+}
+
+mwl-calendar .cal-slide-content{
+	background: #61a752;
+
+}
+
+mwl-calendar .badge-important{
+	background: #D7910B;
+
+}
+
+mwl-calendar span[data-cal-date] {
+	color: #2e6fa6;
+	opacity: 5;
+}
+
+h2.text-center.ng-binding{
+	text-transform:uppercase;
+	font-family: 'Convergence',
+	sans-serif;
+
+
+}
+

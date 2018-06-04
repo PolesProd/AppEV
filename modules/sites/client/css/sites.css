@@ -2,3 +2,10 @@
 	width: 100%;
 	height: auto;
 }
+
+
+h1{
+text-transform: uppercase;
+font-family: 'Convergence', sans-serif;
+text-align: center;
+}
